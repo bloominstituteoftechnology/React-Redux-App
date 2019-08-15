@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { css } from 'styled-components' 
+import styled from 'styled-components' 
 
 const Fragment = (props) => {
     console.log(props)
@@ -10,16 +10,27 @@ const Fragment = (props) => {
     background-position: center;
     background-blend-mode: overlay;
     height:100vh;
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+    border-top: 15px solid #c2fe59;
+    padding: 0
     `;
 
-    const Title = styled.h1`
-    
+    const Caption = styled.div`
+    text-align: right;
+    max-width:50%;
+    `
+
+    const Title = styled.p`
+    background-color: #c2fe59;
+    padding-right: 5px;
     `;
 
     return(
         <div>
             <Tile primaryimageurl={props.primaryimageurl}>
-                <Title>{props.title}</Title>
+                <Caption><Title>{props.title} <a href={props.url}>{props.objectnumber}</a></Title></Caption>
             </Tile>
         </div>
     )
