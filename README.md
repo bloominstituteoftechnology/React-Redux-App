@@ -12,7 +12,7 @@ Commit your code regularly and meaningfully. This helps both you and your team l
 
 ### Description
 
-In this project you'll take this crypto currency tracker app and build two custom hooks that, when composed together, will allow users to set and persist a dark mode preference.
+In this project you'll choose an api to consume. You will build an application from scratch that uses your chosen API and displays the data you are getting from it.
 
 ## Project Set Up
 
