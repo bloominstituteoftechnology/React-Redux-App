@@ -15,6 +15,12 @@ export const reducer = (state = initialState, action) => {
             objects: action.payload,
             error: ''
           };
+        case HARVARD_DATA_FAILURE:
+          return {
+            ...state,
+            isLoading: false,
+            error: `Error: ${action.payload}`
+          };
         default:
           return state;
       }

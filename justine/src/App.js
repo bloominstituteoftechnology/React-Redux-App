@@ -1,17 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { getData } from './actions/actions'
+import Fragments from './components/Fragments.js'
 
 const App = (props) => {
   return (
     <div className="App">
       <button onClick={props.getData}>
         {props.isLoading ? (
-          "Loading"
+          'Loading'
         ) : (
-          'Get Objects'
+          'TEN FRAGMENTS'
         )}
       </button>
+      <Fragments objects={props.objects} />
     </div>
   );
 }

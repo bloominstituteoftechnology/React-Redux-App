@@ -8,11 +8,11 @@ export const getData = () => {
     return dispatch => {
       dispatch({ type: HARVARD_DATA_START });
       axios
-        .get('https://api.harvardartmuseums.org/object?person=28810&apikey=7063a2f0-bf8e-11e9-adec-bbc79eda807d')
+        .get(`https://api.harvardartmuseums.org/object?classification=Fragments&sort=random&q=totalpageviews:[1 TO 5]&apikey=7063a2f0-bf8e-11e9-adec-bbc79eda807d`)
         .then(res => {
           // res.data.data
           console.log(res);
-          dispatch({ type: HARVARD_DATA_SUCCESS, payload: res.data });
+          dispatch({ type: HARVARD_DATA_SUCCESS, payload: res.data.records });
         })
         .catch(err => {
           dispatch({ type: HARVARD_DATA_FAILURE, payload: err.response });
