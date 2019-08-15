@@ -6,7 +6,7 @@ import {
     FETCH_PLANET_DATA_PENDING,
     FETCH_PLANET_DATA_SUCCESS,
     FETCH_PLANET_DATA_ERROR
-} from "./actions";
+} from "../actions";
 
 
 const initialDataState = {

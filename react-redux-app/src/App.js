@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import  Home  from "./components/Home";
-import  About  from "./components/About";
-import  Contact  from "./components/Contact";
-import  Planet  from "./components/Planet";
+// import  Home  from "./components/Home";
+// import  About  from "./components/About";
+// import  Contact  from "./components/Contact";
+// import  Planet  from "./components/Planet";
 import './App.css';
 
 const App = () => (
@@ -23,10 +23,10 @@ const App = () => (
       </div>
       <hr />
       
-      <Route exact path="/" component={Home} />
+      {/* <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/planet/:id" component={Planet}/>
+      <Route path="/planet/:id" component={Planet}/> */}
   </Router>
 );
 
