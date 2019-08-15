@@ -1,0 +1,18 @@
+button{
+    font-family: 'Indie Flower', cursive;
+    font-size: 1rem;
+}
+
+.pups {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 5px;
+    height:150px;
+    margin: 5px;
+    width:150px;
+}
