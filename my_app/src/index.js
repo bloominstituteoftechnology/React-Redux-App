@@ -7,7 +7,8 @@ import './index.css';
 import App from './App';
 import { newsReducer } from './reducers/newsReducer';
 
-const store = createStore(newsReducer);
+const store = createStore(newsReducer, applyMiddleware(thunk));
+console.log(store);
 
 ReactDOM.render(
     <Provider store={store}>

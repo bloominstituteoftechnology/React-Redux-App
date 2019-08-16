@@ -7,7 +7,10 @@ const Articles = (props) => {
 
     return (
         <>
-            <p>{props.content.title}</p>
+            <a href={props.url}><p>{props.content.title}</p></a>
+            {/* <p>{props.source.name}</p> */}
+            <p>{props.author}</p>
+            <img src={props.urlToImage} />
         </>
     )
 }

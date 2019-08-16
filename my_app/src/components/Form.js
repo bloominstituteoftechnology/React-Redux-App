@@ -4,60 +4,21 @@ import { getData } from '../actions/articleActions';
 
 const Form = (props) => {
 
-    // const handleChange = e => {
-    //     e.preventDefault();
-    // }
+    let today = new Date().toISOString();
+    // today.splice(0, 10);
+    console.log('today', today);
+
+    const selectors = {country: '', topic: ''};
+
+    const handleChange = e => {
+        e.preventDefault();
+    }
 
     return (
-        // <form>
-        //     {/* <label>
-        //     country:
-        //         <input
-        //             type="text"
-        //             name="country"
-        //             // value={}
-        //             onChange={event => handleChange(event)}
-        //         />
-        //     </label>
-        //     <label>
-        //     topic:
-        //         <input
-        //             type="text"
-        //             name="topic"
-        //             // value={}
-        //             onChange={event => handleChange(event)}
-        //         />
-        //     </label>
-        //     <label>
-        //     mentioning:
-        //         <input
-        //             type="text"
-        //             name="mentioning"
-        //             // value={}
-        //             onChange={event => handleChange(event)}
-        //         />
-        //     </label>
-        //     <label>
-        //     date:
-        //         <input
-        //             type="text"
-        //             name="date"
-        //             // value={}
-        //             onChange={event => handleChange(event)}
-        //         />
-        //     </label>
-        //     <label>
-        //     publishers:
-        //         <input
-        //             type="text"
-        //             name="publishers"
-        //             // value={}
-        //             onChange={event => handleChange(event)}
-        //         />
-        //     </label> */}
-        //     <button onClick={props.getData}>Submit</button>
-        // </form>
+        <>
+        <h1>click here to generate today's big headlines</h1>
         <button onClick={props.getData}>Submit</button>
+        </>
     )
 }
 
