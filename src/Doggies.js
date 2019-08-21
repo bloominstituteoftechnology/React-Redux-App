@@ -32,6 +32,6 @@ const mapStateToProps = state => {
     };
 };
 export default connect(
-    mapStateToProps,
+    mapStateToProps,   
     { getDoggies }
 )(Doggies);

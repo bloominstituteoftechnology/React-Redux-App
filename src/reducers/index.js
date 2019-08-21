@@ -2,7 +2,7 @@ import { FETCH_DOGGIES_START,FETCH_DOGGIES_SUCCESS,FETCH_DOGGIES_FAILED } from '
 
 const iState = {
     dogs: [],
-    loading: false,
+    loading: false ,
     error: ''
 };
 
