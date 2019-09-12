@@ -6,18 +6,24 @@ import AdviceList from "./components/AdviceList.js";
 
 function App() {
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-      </header>
 
-      <AdviceList />
-    </div>
+      <div className = "todo-main-div">
+
+        <div className = "header-div">
+          <h1>Advice Generator</h1>
+        </div>
+
+        <AdviceList />        
+
+      </div>
+
+  </div>
+
   );
 }
 
 export default App;
+
+

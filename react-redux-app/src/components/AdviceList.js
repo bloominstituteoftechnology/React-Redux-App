@@ -19,11 +19,17 @@ function AdviceList(props) {
       console.log("advice here: ", props.advice);
     
       return (
-        <div>
+        <>
+        <div className = "todo-list-div">
           <h2>{props.advice}</h2>
+        </div>
+
+        <div className = "generator-button-div">
           
           <button onClick={props.getAdvice}>I Need Advice</button>
         </div>
+
+        </>
       );  
 
 }
