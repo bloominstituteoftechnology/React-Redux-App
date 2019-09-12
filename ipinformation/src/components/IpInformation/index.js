@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 
-import { getIp, getData } from '../../store/actions';
+import { asyncGetIp, asyncGetData } from '../../store/actions';
 
 import { connect } from 'react-redux';
 
-const IpInformation = ({ getIp, getData, ip, ipData, isFetchingIp, isFetchingData, error, dataPopulated }) => {
+const IpInformation = ({ asyncGetData, asyncGetIp, ip, ipData, isFetchingIp, isFetchingData, error, dataPopulated }) => {
     useEffect(() => {
-        getIp();
-    },[getIp])
+        asyncGetIp();
+    },[asyncGetIp])
 
     const getIpData = () => {
-        getData(ip);
+        asyncGetData(ip);
     };
 
     if (ip) {
@@ -55,6 +55,6 @@ const mapStateToProps = state => {
 export default connect(
     mapStateToProps,
 {
-    getIp,
-    getData
+    asyncGetIp,
+    asyncGetData
 })(IpInformation);
