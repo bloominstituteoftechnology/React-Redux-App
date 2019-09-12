@@ -11,11 +11,12 @@ export const getAdvice = () => dispatch => {
     axios
       //
       .get("https://api.adviceslip.com/advice")
+      
       .then(res =>
         //TELL OUR APP TO TRANSITION TO A SUCCESSFUL STATE
         
 
-        dispatch({ type: FETCH_ADVICE_SUCCESS, payload: res.data.results })
+        dispatch({ type: FETCH_ADVICE_SUCCESS, payload: res.data.slip.advice })
         
       )
       //TELLS OUR APP THAT THE CALLED FAILED AND WE NEED TO GO INTO AN ERROR STATE
@@ -25,5 +26,8 @@ export const getAdvice = () => dispatch => {
           type: FETCH_ADVICE_FAIL,
           payload: `${err.data} ${err.data}`
         })
+        
       );
+
+      
   };
