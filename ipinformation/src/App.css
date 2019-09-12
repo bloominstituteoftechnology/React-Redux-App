@@ -1,0 +1,23 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  justify-content: center;
+}
+
+.data {
+  font-weight: bold;
+}
+
+.IpInformation {
+  background: lightblue;
+  border: 2px dashed blue;
+  padding: 20px;
+}
+
+.ip {
+  padding: 5px;
+  border: 2px solid red;
+  text-align: center;
+}
