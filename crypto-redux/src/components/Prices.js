@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { getPrice } from '../actions';
 import Price from './Price';
+import MarketCap from './MarketCap';
 
-const Prices = ({ getPrice, prices, isFetching, error }) => {
+const Prices = ({ getPrice, getMarketCap, prices, isFetching, error }) => {
   const [posts, setPosts] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(25)
@@ -13,6 +14,7 @@ const Prices = ({ getPrice, prices, isFetching, error }) => {
     getPrice()
   }, [getPrice])
 
+
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
@@ -20,7 +22,6 @@ const Prices = ({ getPrice, prices, isFetching, error }) => {
   if (isFetching) {
     return <h2>Fetching Prices...</h2>
   }
-  console.log(prices)
   return (
     <div className="prices-container">
       {prices.map(price => (
