@@ -1,22 +1,19 @@
 .App {
   text-align: center;
+  background-color: #AAB2BD
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.prices-container{
+  margin: 0 auto;
+  max-width: 1080px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
 }
 
-.App-link {
-  color: #09d3ac;
+.price-card {
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 10px;
 }
