@@ -22,9 +22,10 @@ const Prices = ({ getPrice, getMarketCap, prices, isFetching, error }) => {
   if (isFetching) {
     return <h2>Fetching Prices...</h2>
   }
+  let sliced = prices.slice(0, 50)
   return (
     <div className="prices-container">
-      {prices.map(price => (
+      {sliced.map(price => (
         <Price price={price} key={price.id} />
       ))}
     </div>
