@@ -5,7 +5,8 @@ const initialState = {
     pokemon: [],
     error: (""),
     isFetching: false,
-    url: "https://pokeapi.co/api/v2/pokemon"
+    nextURL: "https://pokeapi.co/api/v2/pokemon",
+    lastURL: "https://pokeapi.co/api/v2/pokemon"
 }
 
 const reducer = (state = initialState, action) => {
@@ -25,7 +26,8 @@ const reducer = (state = initialState, action) => {
                 pokemon: action.payload.results,
                 error: (""),
                 isFetching: false,
-                url: action.payload.next
+                nextURL: action.payload.next,
+                lastURL: action.payload.previous
             }
 
         case FETCH_POKEMON_FAILURE:

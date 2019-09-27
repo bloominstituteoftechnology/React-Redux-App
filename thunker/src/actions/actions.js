@@ -37,7 +37,6 @@ export const nextPokemon = (currentURL) => dispatch => {
                 payload: res.data
             })
         })
-
 }
 
 const mapStateToProps = state => {
