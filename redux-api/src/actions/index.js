@@ -10,12 +10,13 @@ export const ADD_CAT_FAILURE= 'ADD_CAT_FAILURE'
 
 
 export const fetchCats = ()=> {
-    const promise = axios.get ('https://api.thecatapi.com/v1/images/search');
+    const promise = axios.get ('https://dog.ceo/api/breed/hound/list');
     return dispatch => {
         dispatch({type: FETCH_CAT});
         promise 
         .then(res => {
-            dispatch({type: FETCH_CAT_SUCCESS, payload: res.data})
+            console.log('RES==>',res)
+            dispatch({type: FETCH_CAT_SUCCESS, payload: res.data.message})
         })
         .catch(err=> {
             console.log(err);
@@ -23,4 +24,29 @@ export const fetchCats = ()=> {
         })
     }
 }
+
+// export const fetchCats = () => {
+//     return function(dispatch){
+//         dispatch({type: FETCH_CAT});
+//         setTimeout(()=> {
+//             axios.get('https://dog.ceo/api/breeds/image/random'
+
+//             )
+//             .then(res => {
+//                 console.log(res);
+//                 dispatch({type: FETCH_CAT_SUCCESS, payload:res.data})
+//             })
+//             .catch(err => {
+//                 console.log(
+//                   "bk: actions/index.js: fetchRandomTaco: axios: catch: err",
+//                   err
+//                 );
+//                 dispatch({
+//                   type: FETCH_CAT_FAILURE,
+//                   payload: err.message + " fetching cat data!"
+//                 });
+//         })
+//     },2000);
+// };
+// }
 

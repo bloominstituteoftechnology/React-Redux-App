@@ -7,49 +7,43 @@ import {connect} from 'react-redux';
 
 
 
-function App(){
+ 
+
+class App extends Component{
+
+  componentDidMount(){
+    this.props.fetchCats()
+
+  }
+   
+   render(){
+    console.log('APP PROPS', this.props)
+
   return (
-    <div className= 'Cat'>
-      <h1>Hello Cats!</h1>
-      <Cats/>
-    </div>
-  )
-}
-
-export default App;
-
-// class App extends Component{
-//   state = {
-//     cats:[]
-//   }
-
-//   render(){
-//   return (
-//     <div className="App">
-//       <header className="App-header">
+    <div className="App">
+      <header className="App-header">
          
-//        <Cats/>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }}
+       <Cats/>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
+}}
 
-// const mapStateToProps = state => {
-//   return {
-//     cats: state.cats
-//   }
-// }
-// // export default App;
-
-// export default connect (
-//   mapStateToProps,
-//    {fetchCats}
-// )(App)
+const mapStateToProps = state => {
+  return {
+    cats: state.cats
+  }
+}
+ 
+export default connect (
+  mapStateToProps,
+   {fetchCats}
+)(App)

@@ -2,14 +2,12 @@ import {
     FETCH_CAT,
     FETCH_CAT_SUCCESS,
     FETCH_CAT_FAILURE,
-    // ADD_CAT,
-    // ADD_CAT_SUCCESS,
-    // ADD_CAT_FAILURE
+    
 } from '../actions'
 
 
 const initialState ={
-cats:[],
+cats: [],
 fetchingCats: false,
 error:null
 }
@@ -30,7 +28,10 @@ const rootReducer =(state = initialState, action)=>{
                 fetchingCats:false,
                 error: 'ERROR fetching cats'
             })
+
+            
         }
+        default: return state;
     }
 }
 
