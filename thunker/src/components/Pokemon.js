@@ -8,10 +8,10 @@ const Pokemon = (props) => {
         axios
             .get(props.url)
             .then(res =>{
-                console.log(res.data)
+                //console.log(res.data)
                 setPokemon(res.data)
             })
-    }, []
+    }, [props.url]
     )
     
 

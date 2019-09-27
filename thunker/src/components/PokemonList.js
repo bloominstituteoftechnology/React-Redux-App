@@ -2,13 +2,13 @@ import React, {useEffect} from "react"
 import {connect} from "react-redux"
 
 import Pokemon from "./Pokemon"
-import {fetchPokemon} from "../actions/actions"
+import {fetchPokemon, nextPokemon} from "../actions/actions"
 
 const PokemonList = (props) => {
     useEffect(() => {
         props.fetchPokemon()
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [props.fetchPokemon])
+    }, [])
     
     console.log(props.pokemon)
 
@@ -17,14 +17,18 @@ const PokemonList = (props) => {
             {props.pokemon.map(pokemon => {
                 return <Pokemon pokemon={pokemon} url={pokemon.url}/>
             })}
+            <button onClick={() => props.nextPokemon(props.url)}>Next</button>
         </div>
+        
+        
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        pokemon: state.pokemon
+        pokemon: state.pokemon,
+        url: state.url
     }
 }
 
-export default connect(mapStateToProps, {fetchPokemon})(PokemonList)
+export default connect(mapStateToProps, {fetchPokemon, nextPokemon})(PokemonList)
