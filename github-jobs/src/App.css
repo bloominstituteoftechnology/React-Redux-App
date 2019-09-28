@@ -11,15 +11,21 @@
 .joblist {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: flex-start;
+  justify-content: center;
+  padding: 1%;
 }
 
 .job {
+  border: 1px solid lightgrey;
+  padding: 5px 0 5px 15px;
   display: flex;
   flex-direction: column;
-  max-width: 500px;
-  margin: 2%;
+  width: 400px;
+  height: auto;
+  margin: 1%;
 }
 
-
+.job:hover {
+  background-color: #f0ffff;
+}
