@@ -1,22 +1,25 @@
 .App {
+  /*text-align: center;*/
+}
+
+.main-header,
+.loading-header {
   text-align: center;
+  margin: 50px auto;
 }
 
-.App-logo {
-  height: 40vmin;
+.joblist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.job {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 500px;
+  margin: 2%;
 }
 
-.App-link {
-  color: #09d3ac;
-}
+

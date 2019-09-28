@@ -10,11 +10,11 @@ function JobList({ getJobs, jobs, isFetching, error }) {
   }, [getJobs]);
 
   if(isFetching) {
-    return <h2>... fetching jobs ...</h2>
+    return <h2 className="loading-header">... fetching jobs ...</h2>
   }
 
   return (
-    <div>
+    <div className="joblist">
       { jobs.map( job => (
         <Job key={job.id} job={job} />
       ))}
