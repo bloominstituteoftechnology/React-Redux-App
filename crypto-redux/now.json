@@ -1,8 +1,8 @@
 {
   "version": 2,
   "name": "crypto-redux",
-  "builds": [{ "src": "project-name/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+  "builds": [{ "src": "crypto-redux/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
   "routes": [
-      { "src": "/(.*)", "dest": "project-name/$1" }
+      { "src": "/(.*)", "dest": "crypto-redux/$1" }
   ]
 }
