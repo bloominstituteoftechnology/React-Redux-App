@@ -17,3 +17,11 @@
   flex-wrap: wrap;
   padding: 10px;
 }
+
+.market-cap-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
