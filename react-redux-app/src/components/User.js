@@ -8,14 +8,18 @@ const User = props => {
     props.getUser();
   }, []);
   return (
-    <div>
+    <div className="userCard">
       <img className="userImage" src={props.user.avatar_url} alt="pic" />
       <div className="userInfo">
-        <h1 className="userName">{props.user.name}</h1>
-        <em className="userBio">{props.user.bio}</em>
-        <p>Location:{props.user.location}</p>
-        <p>Followers:{props.user.follower}</p>
-        <p>Following:{props.user.following}</p>
+        <div className="left">
+          <h1 className="userName">{props.user.name}</h1>
+          <em className="userBio">{props.user.bio}</em>
+        </div>
+        <div className="right">
+          <p>Location:{props.user.location}</p>
+          <p>Followers:{props.user.followers}</p>
+          <p>Following:{props.user.following}</p>
+        </div>
       </div>
     </div>
   );

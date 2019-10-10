@@ -1,0 +1,32 @@
+.App {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.userCard {
+  border: 1px black solid;
+  width: 50%;
+  margin-left: 25%;
+  text-align: center;
+}
+
+.userImage {
+  width: 100%;
+}
+
+.userInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.left {
+  width: 50%;
+  padding: 5%;
+}
+
+.right {
+  width: 50%;
+  font-size: 0.8rem;
+  padding: 5%;
+}
