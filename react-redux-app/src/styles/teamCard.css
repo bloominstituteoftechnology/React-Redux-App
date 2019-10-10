@@ -9,6 +9,12 @@
 .card {
     margin: 3vh;
     padding: 2vh;
-    background:darkgray;
-    color:white
+    background:dimgray;
+    color:white;
+    width: 25vh;
+}
+
+.team-logo{
+    height: 10vh;
+    
 }
