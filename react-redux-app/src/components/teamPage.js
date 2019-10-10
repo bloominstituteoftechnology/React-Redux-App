@@ -13,7 +13,7 @@ const TeamPage = props => {
     }
 
     return (
-        <div>
+        <div className='card-container'>
             {props.error && <p>{props.error}</p>} 
             {props.mlbData.map(team => (        
                 <TeamCard  

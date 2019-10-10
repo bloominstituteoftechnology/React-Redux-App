@@ -1,0 +1,14 @@
+.card-container{
+    margin: 5vh;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+
+}
+
+.card {
+    margin: 3vh;
+    padding: 2vh;
+    background:darkgray;
+    color:white
+}

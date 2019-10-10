@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import TeamPage from './components/teamPage'
+import './styles/teamCard.css'
 
 function App() {
   return (
