@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-
 import rootReducer from './reducer';
 
-import CatFacts from './components/DogPictures';
+import './styles.css';
+
+import DogPictures from './components/DogPictures';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <h1>Chihuahua pictures</h1>
-      <CatFacts />
+      <DogPictures />
     </div>
   );
 }

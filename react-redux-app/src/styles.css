@@ -1,0 +1,10 @@
+.dog-image {
+    border: 3px solid black;
+    height: 200px;
+    width: 200px;
+    margin: 1%;
+}
+
+body {
+    background-color: grey;
+}
