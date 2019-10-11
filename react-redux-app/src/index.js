@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 
 import rootReducer from './reducer';
 
-import CatFacts from './components/CatFacts';
+import CatFacts from './components/DogPictures';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -17,7 +17,7 @@ const store = createStore(
 function App() {
   return (
     <div className="App">
-      <h1>Cat Facts</h1>
+      <h1>Chihuahua pictures</h1>
       <CatFacts />
     </div>
   );

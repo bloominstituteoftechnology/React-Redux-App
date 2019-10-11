@@ -5,19 +5,19 @@ import { fetchFacts } from '../actions';
 
 import Fact from './Fact';
 
-const CatFacts = props => {
+const DogPictures = props => {
   useEffect(() => {
     props.fetchFacts();
   }, []);
 
   if (props.isFetching) {
-    return <h2>Loading Cat Facts...</h2>;
+    return <h2>Loading Pictures of Chihuahuas...</h2>;
   }
 
   return (
     <div>
       {props.error && <p>{props.error}</p>}
-      {props.catFacts.map(fact => (
+      {props.dogPictures.map(fact => (
         
         <Fact key={fact._id} fact={fact} />
       ))}
@@ -27,7 +27,7 @@ const CatFacts = props => {
 
 const mapStateToProps = state => {
   return {
-    catFacts: state.catFacts,
+    dogPictures: state.dogPictures,
     isFetching: state.isFetching,
     error: state.error
   };
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { fetchFacts }
-)(CatFacts);
+)(DogPictures);
