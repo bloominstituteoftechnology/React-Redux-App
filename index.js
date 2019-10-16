@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducer';
+import rootReducer from './react-redux-app/src/reducer';
 
 import './styles.css';
 
-import DogPictures from './components/DogPictures';
+import DogPictures from './react-redux-app/src/components/DogPictures';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
