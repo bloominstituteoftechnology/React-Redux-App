@@ -13,6 +13,10 @@ const PlayerList = props => {
         props.fetchRoster();
     }, [])
     
+    if(props.isFetching){
+        return <h2>Loading Roster</h2>
+    }
+    
     return (
         <div className='player-list'>
             {props.teamRoster.map((player, index) => {

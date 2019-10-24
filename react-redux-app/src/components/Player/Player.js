@@ -9,7 +9,7 @@ const Player = props => {
 
     return (
         <div className='player-card'>
-            <Card>
+            <Card className='ind-players'>
                 <Card.Content>
                     <Card.Header>
                         {props.player.name_display_first_last}
