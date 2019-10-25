@@ -20,7 +20,7 @@ export function fetchTacoVenues() {
     dispatch({ type: FETCH_TACO_START });
 
     axios
-    .get(`https://api.foursquare.com/v2/venues/search?client_id=${REACT_APP_ID}&client_secret=${REACT_APP_SECRET}&v=20180323&limit=20&near=detroit&query=tacos&&radius=10000`)
+    .get(`https://api.foursquare.com/v2/venues/search?client_id=${REACT_APP_ID}&client_secret=${REACT_APP_SECRET}&v=20180323&limit=2&near=detroit&query=tacos&&radius=10000`)
     .then(res => {
         // Code for handling API response
         console.log("FSQ", res.data.response.venues)
