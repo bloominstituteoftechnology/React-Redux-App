@@ -17,4 +17,3 @@ export default App;
 
 // https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1
 // https://api.lyrics.ovh/
-// https://picsum.photos/seed/picsum/200/300
