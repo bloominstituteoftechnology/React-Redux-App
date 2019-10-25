@@ -7,6 +7,7 @@ function Input() {
                    name="name"
                    placeholder="Enter Name"
                 />
+            <button>Enter</button>
         </form>
     )
 }
