@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Input() {
+function Input(props) {
     return (
         <form>
             <input type="text"
                    name="name"
                    placeholder="Enter Name"
                 />
-            <button>Enter</button>
+            <button className="enter">Enter</button>
         </form>
     )
 }
