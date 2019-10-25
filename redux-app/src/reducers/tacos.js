@@ -2,7 +2,8 @@ import {
     FETCH_TACO_START,
     FETCH_TACO_SUCCESS,
     FETCH_TACO_ERROR,
-    UPDATE_LOCATION
+    UPDATE_LOCATION,
+    UPDATE_TYPE
   } from "../actions/tacos";
   
   const initialState = {
@@ -12,7 +13,8 @@ import {
     // including the loading and error states
     isLoading: false,
     error: null,
-    location: ''
+    location: '',
+    type: ''
   };
   
   // our finite state machine written out in code--
@@ -41,6 +43,11 @@ import {
       return {
         ...state,
         location: action.payload
+      };
+      case UPDATE_TYPE:
+      return {
+        ...state,
+        type: action.payload
       };
       default:
         return state;
