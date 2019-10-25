@@ -77,3 +77,11 @@ img {
     transform: rotate(360deg);
   }
 }
+
+.card{
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 400px;
+  border: 1px solid darkgray;
+  margin-top: 1.5px;
+}
