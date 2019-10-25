@@ -5,7 +5,7 @@ import {
 } from "../actions/questions";
 
 const initialState = {
-  quiz: [],
+  results: [],
   isLoading: false,
   error: null
 };
@@ -20,7 +20,7 @@ export function reducer(state = initialState, action) {
     case FETCH_QUESTIONS_SUCCESS:
       return {
         ...state,
-        quiz: [...state.results, ...action.payload],
+        results: [...state.results, ...action.payload],
         isLoading: false
       };
     case FETCH_QUESTIONS_FAILED:
