@@ -79,9 +79,23 @@ img {
 }
 
 .card{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   border-radius: 5px;
   width: 400px;
   border: 1px solid darkgray;
   margin-top: 1.5px;
+}
+.card .info{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.icon{
+  height: 50%;
+  background: rgb(50, 57, 97);
 }

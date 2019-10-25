@@ -19,8 +19,6 @@ function App(props) {
     props.fetchTacoVenues(newLocation, newType)
   },[newType])
 
-
-
   
   const handleInputChanges = e => {
     setNewLocation(e.target.value);

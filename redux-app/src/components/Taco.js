@@ -3,9 +3,12 @@ import axios from 'axios'
 
 export default function Taco(props) {
 
-const [image, setImage] = useState('https://placekeanu.com/350/500/y')
+// const [image, setImage] = useState('https://placekeanu.com/350/500/y')
 const REACT_APP_ID = process.env.REACT_APP_ID;
 const REACT_APP_SECRET = process.env.REACT_APP_SECRET;
+console.log("Taco", props)
+console.log("categories", props.taco.categories[0].icon)
+const image = props.taco.categories[0].icon;
 
 // useEffect(()=>{
 //     axios
@@ -21,9 +24,11 @@ const REACT_APP_SECRET = process.env.REACT_APP_SECRET;
 
     return (
         <div className="card">
-            {/* <img src={image}/> */}
-            <h2>{props.taco.name}</h2>
-            <h3>{props.taco.location.formattedAddress[0]}</h3>
+            <img className="icon" src={`${image.prefix}64${image.suffix}`}/>
+            <div className="info">
+                <h2>{props.taco.name}</h2>
+                <h3>{props.taco.location.formattedAddress[0]}</h3>
+            </div>
         </div>
     )
 }
