@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from "react-redux";
+import TitleForm from './components/TitleForm';
+
 
 import './App.css';
 
-function App() {
+function App(props) {
+
+  useEffect(() => {
+    props.fetchDog();
+  }, []);
+
+  
   return (
     <div className="App">
       <header className="App-header">
