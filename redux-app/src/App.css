@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -95,7 +101,33 @@ img {
   flex-direction: column;
   text-align: center;
 }
+.card .info h2, .card .info h4{
+  margin: 0;
+}
 .icon{
   height: 50%;
   background: rgb(50, 57, 97);
+}
+
+form{
+  background: rgb(50, 57, 97);
+}
+
+input {
+  padding: 6px;
+  background: white;
+  border: none;
+  color: black;
+  border-bottom: 1px solid black;
+  margin-top: 0;
+  margin-right: 8px;
+  font-size: 24px;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+input:focus {
+  outline: none;
 }
