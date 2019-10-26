@@ -6,10 +6,10 @@ import TitleForm from './components/TitleForm';
 import './App.css';
 
 function App(props) {
-
-  useEffect(() => {
-    props.fetchDog();
-  }, []);
+// please fix and update props.artist
+  // useEffect(() => {
+  //   props.artist();
+  // }, []);
 
   
   return (
