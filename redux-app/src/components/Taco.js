@@ -1,14 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import axios from 'axios'
 
 export default function Taco(props) {
 
-// const [image, setImage] = useState('https://placekeanu.com/350/500/y')
-const REACT_APP_ID = process.env.REACT_APP_ID;
-const REACT_APP_SECRET = process.env.REACT_APP_SECRET;
 console.log("Taco", props)
 console.log("categories", props.taco.categories[0])
-// const image = ;
 
 const [newImage, setImg] = useState('https://picsum.photos/64/64?random=1?grayscale')
 
@@ -25,7 +20,7 @@ useEffect(()=>{
 
     return (
         <div className="card">
-            <img className="icon" src={newImage}/>
+            <img className="icon" src={newImage} alt="venue-icon"/>
             <div className="info">
                 <h2>{props.taco.name}</h2>
                 <h4>{props.taco.location.formattedAddress[0]}</h4>

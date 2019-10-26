@@ -110,7 +110,33 @@ img {
 }
 
 form{
+  padding: 3px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background: rgb(50, 57, 97);
+}
+select{
+  padding: 5px;
+  font-size: 22px;
+  border-radius: 5px;
+}
+
+button {
+  padding: 6px 8px;
+  font-size: 16px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #ffffff22;
+}
+
+button:focus {
+  outline: none;
 }
 
 input {
@@ -118,10 +144,9 @@ input {
   background: white;
   border: none;
   color: black;
-  border-bottom: 1px solid black;
-  margin-top: 0;
-  margin-right: 8px;
-  font-size: 24px;
+  border: 1px solid rgb(50, 57, 97);
+  border-radius: 5px;
+  font-size: 22px;
 }
 
 input::placeholder {

@@ -4,11 +4,13 @@ import Tacos from './components/Tacos'
 import { fetchTacoVenues, updateLocation, updateType } from "./actions/tacos";
 import { connect } from "react-redux";
 
+
+
 function App(props) {
 
+  const [newLocation, setNewLocation] = useState("Detroit");
+  const [newType, setNewType] = useState("cravings");
 
-  const [newLocation, setNewLocation] = useState("Lansing");
-  const [newType, setNewType] = useState("Tacos");
 
   useEffect(() => {
     // kick off our asyncronous action creator
@@ -54,7 +56,7 @@ console.log("newType", newType)
             <option value="Events">Events</option>
             <option value="Brewery">Brewery</option>
           </select>
-          <button type="submit">Save</button>
+          <button type="submit">Submit</button>
         </form>
 
       <Tacos venues={props.venues} 
