@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
     artist: artistReducer
 });
 
-const store = createStore(applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 
 ReactDOM.render(

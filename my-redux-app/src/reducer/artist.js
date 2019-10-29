@@ -1,4 +1,4 @@
-import { TOGGLE_EDITING, UPDATE_ARTIST } from "../actions/title";
+import { TOGGLE_EDITING, UPDATE_ARTIST } from "../action/artist";
 
 export const initialState = {
     title: "Song Lyrics",

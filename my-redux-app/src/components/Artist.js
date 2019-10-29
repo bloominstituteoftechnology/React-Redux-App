@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toggleArtist } from "../actions/theme";
+import { toggleArtist } from "../action/artist";
 
 function Artist(props) {
   return (

@@ -1,61 +1,72 @@
-import React, { useState, useEffect } from 'react';
-import { withFormik, Form, Field } from 'formik';
-import * as yup from 'yup';
-import axios from 'axios'
+import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { addTitle } from '../action/title';
 
-const TitleForm = ({ errors, touched, status }) => {
-  const [songLyrics, setSongLyrics] = useState ([])
+const TitleForm = props => {
+    const dispatch = useDispatch()
+    const [newTitle, setNewTitle] = useState({
+        name: ""
+    });
 
-useEffect(() => {
-    if (status) {
-        setSongLyrics([ ...songLyrics, status ])
-    }
-  }, [status])
-  
+    const handleChanges = e => {
+        setNewTitle({
+            ...newTitle,
+            [e.target.name]: e.target.value
+        })
+    };
 
-     return (
-      <Form>
-      {touched.artist && errors.artist && <p className='error'>{errors.artist}</p>}
-      <Field type="text" name="artist" placeholder="Artist" />
+    const handleEdit = e => {
+        e.preventDefault();
+        props.toggleEditing();
+    };
 
-         {touched.title && errors.title && <p className='error'>{errors.title}</p>}
-      <Field type="text" name="title" placeholder="Song Title" />
+    const handleSubmit = e => {
+        e.preventDefault();
+        dispatch(
+            addTitle(newTitle)
+        )
+        setNewTitle("");
+        props.updateTitle(newTitle || props.title);
+    };
 
-      <Field component="textarea" name="lyrics" placeholder="Lyrics" />
+    return (
+        <div>
+            {props.title ? (
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="text"
+                        name="title"
+                        placeholder="Song Title"
+                        value={newTitle}
+                        onChange={handleChanges}
+                    />
 
-      <button type="submit">Submit</button>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            name="artist"
+                            placeholder="Artist"
+                            value={newArtist}
+                            onChange={handleChanges}
+                        />
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                name="lyrics"
+                                placeholder="Song Lyrics"
+                                value={newTitle}
+                                onChange={handleChanges}
+                            />
+                    <button type="submit">Submit</button>
+                </form>
+            ) : (
+                    <div>
+                        <h1>{props.Title}</h1>
+                        <button onClick={handleEdit}>Edit</button>
+                    </div>
+                )}
+        </div>
+    );
+};
 
-      {songLyrics.map(songLyric => (
-           <div>Species: {songLyric.title}</div>
-         ))}
-
-      </Form>
-  )
-}
-
-export default withFormik({
-    mapPropsToValues: (values) => {
-    
-      return {
-      
-        artist: values.artist || '',
-        title: values.title || '',
-        lyrics: values.lyrics || ''
-    }
-}, 
-validationSchema: yup.object().shape({
-    artist: yup.string().required('Artist is required'),
-    title: yup.string().required('Title is required'),
-    lyrics: yup.string()
-
-}),
-handleSubmit: (values, { setStatus }) => {
-  axios.post("", values)
-  .then((response) => {
-    setStatus(response.data)
-  })
-  .catch((error) => {
-    console.log('Error:', error)
-  })
- }
-})(TitleForm);
+export default TitleForm;

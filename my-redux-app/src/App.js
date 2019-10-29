@@ -1,21 +1,26 @@
 import React, { useEffect } from 'react';
-import { connect } from "react-redux";
+import { fetchSong } from '../action/songs';
 import TitleForm from './components/TitleForm';
+import Title from './components/Title';
+import Artist from './components/Artist';
 
 
 import './App.css';
 
 function App(props) {
-// please fix and update props.artist
+
   useEffect(() => {
-    props.artist();
+    props.fetchSong();
   }, []);
 
   
   return (
     <div className="App">
       <header className="App-header">
-        
+        <TitleForm />
+        <Title title={props.title} />
+        <Artist artist={props.artist} />
+
       </header>
     </div>
   );
