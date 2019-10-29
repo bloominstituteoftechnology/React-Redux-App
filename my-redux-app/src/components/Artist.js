@@ -4,7 +4,10 @@ import { toggleArtist } from "../actions/theme";
 
 function Artist(props) {
   return (
-    
+    <Form>
+      <input type='text' value={props.enabled} onChange={props.toggle} />
+      <span>Song Lyrics</span>
+    </Form>
   );
 }
 

@@ -5,9 +5,7 @@ import axios from 'axios'
 
 const TitleForm = ({ errors, touched, status }) => {
   const [songLyrics, setSongLyrics] = useState ([])
-  // errors === form validation errors that come from formik
-// touched === an object with true/false for each input field, whether the user has touched it yet or not
-// status === an object coming from formik containing a new animal (from when we call setStatus)
+
 useEffect(() => {
     if (status) {
         setSongLyrics([ ...songLyrics, status ])
@@ -37,9 +35,9 @@ useEffect(() => {
 
 export default withFormik({
     mapPropsToValues: (values) => {
-      // this makes these inputs 'controlled', sets the values automatically for us.
+    
       return {
-        // these keys line up with the 'name' attribute on our Fields.
+      
         artist: values.artist || '',
         title: values.title || '',
         lyrics: values.lyrics || ''

@@ -7,9 +7,9 @@ import './App.css';
 
 function App(props) {
 // please fix and update props.artist
-  // useEffect(() => {
-  //   props.artist();
-  // }, []);
+  useEffect(() => {
+    props.artist();
+  }, []);
 
   
   return (

@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { reducer as titleReducer } from './reducer/title';
 import { reducer as artistReducer } from './reducer/artist';
-import axios from 'axios';
+
 import './index.css';
 import './styles.css';
 import App from './App';
