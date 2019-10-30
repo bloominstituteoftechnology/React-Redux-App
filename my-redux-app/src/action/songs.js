@@ -4,10 +4,8 @@ export const SONG_NAME = "SONG_NAME";
 export const SONG_SUCCESS = "SONG_SUCCESS";
 export const SONG_ERROR = "SONG_ERROR";
 
-export const song = () => {
-    return dispatch => {
+export const song = () => dispatch => {
         dispatch({ type: SONG_NAME });
-
         axios
             .get("https://api.lyrics.ovh/v1/artist/title")
             .then(res => {
@@ -17,10 +15,8 @@ export const song = () => {
                 dispatch({ type: SONG_ERROR, payload: err.response });
             });
     };
-}
 
-export const addSong = (newSong) => {
-    return dispatch => {
+export const addSong = (newSong) => dispatch => {
         axios
             .post("https://api.lyrics.ovh/v1/artist/title", newSong)
             .then((res) => {
@@ -31,4 +27,3 @@ export const addSong = (newSong) => {
                 console.log('Error:', err);
             })
     }
-}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-// import { song } from '../action/songs';
+import { addSong } from '../action/songs';
 
 const SongForm = () => {
     const dispatch = useDispatch()
@@ -20,7 +20,7 @@ const SongForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(
-            newSong(newSong)
+           addSong(newSong)
         )
         setNewSong({
             name: "",
@@ -39,21 +39,21 @@ const SongForm = () => {
                     value={newSong.name}
                     onChange={handleChanges} />
 
-                    <input
-                        type="text"
-                        name="artist"
-                        placeholder="Artist"
-                        value={newSong.artist}
-                        onChange={handleChanges} />
+                <input
+                    type="text"
+                    name="artist"
+                    placeholder="Artist"
+                    value={newSong.artist}
+                    onChange={handleChanges} />
 
-                        <input
-                            type="textarea"
-                            name="lyrics"
-                            placeholder="Song Lyrics"
-                            value={newSong.lyrics}
-                            onChange={handleChanges} />
+                <input
+                    type="textarea"
+                    name="lyrics"
+                    placeholder="Song Lyrics"
+                    value={newSong.lyrics}
+                    onChange={handleChanges} />
 
-                    <button type="submit">Submit</button>
+                <button type="submit">Submit</button>
 
             </form>          
         </div>
