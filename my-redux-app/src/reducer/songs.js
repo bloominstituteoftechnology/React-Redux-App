@@ -1,30 +1,29 @@
 import {
-    FETCH_SONG_START,
-    FETCH_SONG_SUCCESS,
-    FETCH_SONG_ERROR
+    SONG_NAME,
+    SONG_SUCCESS,
+    SONG_ERROR
 } from "../action/songs";
 
 const initialState = {
-    song: null,
-   
+    song: [""],
     isLoading: false,
     error: null
 };
 
 export function reducer(state = initialState, action) {
     switch (action.type) {
-        case FETCH_SONG_START:
+        case SONG_NAME:
             return {
                 ...state,
                 isLoading: true
             };
-        case FETCH_SONG_SUCCESS:
+        case SONG_SUCCESS:
             return {
                 ...state,
                 song: action.payload,
                 isLoading: false
             };
-        case FETCH_SONG_ERROR:
+        case SONG_ERROR:
             return {
                 ...state,
                 error: action.payload,

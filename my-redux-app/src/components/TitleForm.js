@@ -5,7 +5,9 @@ import { addTitle } from '../action/title';
 const TitleForm = props => {
     const dispatch = useDispatch()
     const [newTitle, setNewTitle] = useState({
-        name: ""
+        name: "",
+        artist: "",
+        lyrics: ""
     });
 
     const handleChanges = e => {
@@ -15,58 +17,48 @@ const TitleForm = props => {
         })
     };
 
-    const handleEdit = e => {
-        e.preventDefault();
-        props.toggleEditing();
-    };
-
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(
             addTitle(newTitle)
         )
-        setNewTitle("");
-        props.updateTitle(newTitle || props.title);
+        setNewTitle({
+            name: "",
+            artist: "",
+            lyrics: ""
+        });
     };
 
     return (
         <div>
-            {props.title ? (
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Song Title"
+                    value={newTitle.name}
+                    onChange={handleChanges} />
+
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
-                        name="title"
-                        placeholder="Song Title"
-                        value={newTitle}
-                        onChange={handleChanges}
-                    />
+                        name="artist"
+                        placeholder="Artist"
+                        value={newArtist.artist}
+                        onChange={handleChanges} />
 
                     <form onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name="artist"
-                            placeholder="Artist"
-                            value={newArtist}
-                            onChange={handleChanges}
-                        />
-                        <form onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                name="lyrics"
-                                placeholder="Song Lyrics"
-                                value={newTitle}
-                                onChange={handleChanges}
-                            />
+                        <Field Component="textarea"
+                            name="lyrics"
+                            placeholder="Song Lyrics"
+                            value={newTitle.lyrics}
+                            onChange={handleChanges} />
+
                     <button type="submit">Submit</button>
+                    
                 </form>
-            ) : (
-                    <div>
-                        <h1>{props.Title}</h1>
-                        <button onClick={handleEdit}>Edit</button>
-                    </div>
-                )}
-        </div>
-    );
+            </div>
+        );
 };
 
 export default TitleForm;

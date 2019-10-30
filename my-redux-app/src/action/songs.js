@@ -1,22 +1,34 @@
 import axios from "axios";
 
-export const FETCH_SONG_START = "FETCH_SONG_START";
-export const FETCH_SONG_SUCCESS = "FETCH_SONG_SUCCESS";
-export const FETCH_SONG_ERROR = "FETCH_SONG_ERROR";
+export const SONG_NAME = "SONG_NAME";
+export const SONG_SUCCESS = "SONG_SUCCESS";
+export const SONG_ERROR = "SONG_ERROR";
 
-export function fetchSong() {
+export const song = () => {
     return dispatch => {
-        dispatch({ type: FETCH_SONG_START });
+        dispatch({ type: SONG_NAME });
 
         axios
-            .get("")
+            .get("https://api.lyrics.ovh/")
             .then(res => {
-                // enter the "success" state
-                dispatch({ type: FETCH_SONG_SUCCESS, payload: res.data.message });
+                dispatch({ type: SONG_SUCCESS, payload: res.data });
             })
             .catch(err => {
-                // enter the "error" state
-                dispatch({ type: FETCH_SONG_ERROR, payload: err });
+                dispatch({ type: SONG_ERROR, payload: err.response });
             });
     };
+}
+
+export const addSong = (newSong) => {
+    return dispatch => {
+        axios
+            .post("https://api.lyrics.ovh/lyrics", newSong)
+            .then((res) => {
+                dispatch({ type: SONG_SUCCESS, payload: res.data });
+            })
+            .catch((err) => {
+                dispatch({ type: SONG_ERROR, payload: err.response });
+                console.log('Error:', err);
+            })
+    }
 }

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { fetchSong } from '../action/songs';
+import { song } from './action/songs';
 import TitleForm from './components/TitleForm';
 import Title from './components/Title';
-import Artist from './components/Artist';
+// import Artist from './components/Artist';
 
 
 import './App.css';
@@ -10,18 +10,16 @@ import './App.css';
 function App(props) {
 
   useEffect(() => {
-    props.fetchSong();
+    props.song();
   }, []);
 
   
   return (
     <div className="App">
-      <header className="App-header">
+      <h1>Song Lyrics</h1>
         <TitleForm />
         <Title title={props.title} />
-        <Artist artist={props.artist} />
-
-      </header>
+        {/* <Artist artist={props.artist} /> */}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { TOGGLE_EDITING, UPDATE_TITLE } from "../action/title";
 
 export const initialState = {
-    title: "Song Lyrics",
+    title: "",
     editing: false
 };
 

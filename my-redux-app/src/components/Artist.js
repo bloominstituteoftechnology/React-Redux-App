@@ -1,24 +1,29 @@
 import React from "react";
 import { connect } from "react-redux";
-import { toggleArtist } from "../action/artist";
+// import { toggleArtist } from "../action/artist";
 
 function Artist(props) {
   return (
-    <Form>
-      <input type='text' value={props.enabled} onChange={props.toggle} />
-      <span>Song Lyrics</span>
-    </Form>
+    {
+      props.artists.map(artist => {
+        return (
+          <div key={artist.id} >
+            <h1>{artist.name}</h1>
+          </div>
+        )
+      })
+    }  
   );
 }
 
 function mapStateToProps(state) {
     return {
-    enabled: state.artist
+      artist: state.artist,
     };
   }
   
   const mapDispatchToProps = {
-    toggle: toggleArtist
+    song
   };
 
   export default connect(
