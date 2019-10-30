@@ -5,7 +5,7 @@ import {
 } from "../action/songs";
 
 const initialState = {
-    song: [""],
+    song: [],
     isLoading: false,
     error: null
 };
@@ -27,7 +27,7 @@ export function reducer(state = initialState, action) {
             return {
                 ...state,
                 error: action.payload,
-                isLoading: false
+                isLoading: true
             };
         default:
             return state;

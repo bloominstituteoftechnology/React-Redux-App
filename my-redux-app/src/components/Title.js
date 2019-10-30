@@ -10,7 +10,10 @@ return (
       props.titles.map(title => {
         return (
           <div key={title.id} >
-            <h1>{title.name}</h1>
+            <h2>{title.name}</h2>
+            <h2>{title.artist}</h2>
+            <h3>{title.lyrics}</h3>
+
           </div>
         )
       })
@@ -22,7 +25,6 @@ return (
 function mapStateToProps(state) {
     return {
       title: state.title,
-      editing: state.title.editing
     };
   }
 

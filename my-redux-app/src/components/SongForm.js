@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { addTitle } from '../action/title';
+// import { song } from '../action/songs';
 
-const TitleForm = props => {
+const SongForm = () => {
     const dispatch = useDispatch()
-    const [newTitle, setNewTitle] = useState({
+    const [newSong, setNewSong] = useState({
         name: "",
         artist: "",
         lyrics: ""
     });
 
     const handleChanges = e => {
-        setNewTitle({
-            ...newTitle,
+        setNewSong({
+            ...newSong,
             [e.target.name]: e.target.value
         })
     };
@@ -20,9 +20,9 @@ const TitleForm = props => {
     const handleSubmit = e => {
         e.preventDefault();
         dispatch(
-            addTitle(newTitle)
+            newSong(newSong)
         )
-        setNewTitle({
+        setNewSong({
             name: "",
             artist: "",
             lyrics: ""
@@ -36,29 +36,29 @@ const TitleForm = props => {
                     type="text"
                     name="title"
                     placeholder="Song Title"
-                    value={newTitle.name}
+                    value={newSong.name}
                     onChange={handleChanges} />
 
-                <form onSubmit={handleSubmit}>
                     <input
                         type="text"
                         name="artist"
                         placeholder="Artist"
-                        value={newArtist.artist}
+                        value={newSong.artist}
                         onChange={handleChanges} />
 
-                    <form onSubmit={handleSubmit}>
-                        <Field Component="textarea"
+                        <input
+                            type="textarea"
                             name="lyrics"
                             placeholder="Song Lyrics"
-                            value={newTitle.lyrics}
+                            value={newSong.lyrics}
                             onChange={handleChanges} />
 
                     <button type="submit">Submit</button>
-                    
-                </form>
-            </div>
+
+            </form>          
+        </div>
+           
         );
 };
 
-export default TitleForm;
+export default SongForm;

@@ -9,7 +9,7 @@ export const song = () => {
         dispatch({ type: SONG_NAME });
 
         axios
-            .get("https://api.lyrics.ovh/")
+            .get("https://api.lyrics.ovh/v1/artist/title")
             .then(res => {
                 dispatch({ type: SONG_SUCCESS, payload: res.data });
             })
@@ -22,7 +22,7 @@ export const song = () => {
 export const addSong = (newSong) => {
     return dispatch => {
         axios
-            .post("https://api.lyrics.ovh/lyrics", newSong)
+            .post("https://api.lyrics.ovh/v1/artist/title", newSong)
             .then((res) => {
                 dispatch({ type: SONG_SUCCESS, payload: res.data });
             })
