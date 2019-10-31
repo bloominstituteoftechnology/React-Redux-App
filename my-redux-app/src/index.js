@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import { reducer } from './reducer/songs';
 // import { reducer as titleReducer } from './reducer/title';
 // import { reducer as artistReducer } from './reducer/artist';
 
@@ -17,7 +18,7 @@ import App from './App';
 //     artist: artistReducer
 // });
 
-const store = createStore(applyMiddleware(thunk, logger));
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 
 ReactDOM.render(

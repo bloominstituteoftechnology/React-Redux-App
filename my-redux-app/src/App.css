@@ -23,6 +23,16 @@ body {
   text-align: center;
 }
 
+h1 {
+  font-size: 3.0rem;
+  color: purple;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: white;
+}
+
 form {
   width: 460px;
   margin: 100px auto 50px;

@@ -1,38 +1,33 @@
 import React from "react";
-import { connect } from "react-redux";
-import { song } from '../action/songs';
+// import { connect } from "react-redux";
+// import { song } from '../action/songs';
+import { useSelector } from 'react-redux';
 
-function Title(props) {
-
+export default function Title() {
+  const songs = useSelector(state =>
+    state.songs
+  )
+  console.log(songs)
 return (
     <div>
-    {
-      props.titles.map(title => {
-        return (
-          <div key={title.id} >
-            <h2>{title.name}</h2>
-            <h2>{title.artist}</h2>
-            <h3>{title.lyrics}</h3>
+    <h2>{songs.lyrics}</h2>
+  </div>
+    )    
+}  
 
-          </div>
-        )
-      })
-    }  
-    </div>
-  );
-};
+    
 
-function mapStateToProps(state) {
-    return {
-      title: state.title,
-    };
-  }
+// function mapStateToProps(state) {
+//     return {
+//       title: state.title,
+//     };
+//   }
 
-  const mapDispatchToProps = {
-    song
-  };
+//   const mapDispatchToProps = {
+//     song
+//   };
 
-  export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Title);
+//   export default connect(
+//     mapStateToProps,
+//     mapDispatchToProps
+//   )(Title)
