@@ -10,7 +10,6 @@ function App() {
     <div className="App">
       <h1>Song Lyrics</h1>
         <SongForm />
-        <Title />
     </div>
   );
 }

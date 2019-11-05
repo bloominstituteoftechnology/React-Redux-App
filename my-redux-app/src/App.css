@@ -25,12 +25,12 @@ body {
 
 h1 {
   font-size: 3.0rem;
-  color: purple;
+  color: rgb(255, 255, 255);
 }
 
 h2 {
   font-size: 1.8rem;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 form {
@@ -119,4 +119,8 @@ select:focus {
 
 select option {
   font-weight: normal;
+}
+
+button {
+  background-color: rgb(82, 192, 82);
 }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { song } from '../action/songs';
 import Title from './Title';
@@ -8,10 +8,10 @@ const SongForm = () => {
     const [newSong, setNewSong] = useState({song:''});
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        console.log(newArtist)
-        dispatch(song(newArtist, newSong));
-    }, [dispatch, newArtist, newSong]);
+    // useEffect(() => {
+    //     console.log(newArtist)
+    //     dispatch(song(`${newArtist.artist}`, `${newSong.song}`));
+    // }, [dispatch, newArtist, newSong]);
     
     const handleArtist = e => {
         setNewArtist({
@@ -29,15 +29,12 @@ const SongForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // dispatch(
-        //    addSong(newSong)
-        // )
-        setNewArtist('');
-        setNewSong('');
+        dispatch(song(`${newArtist.artist}`, `${newSong.song}`));
+        setNewArtist({artist: ''});
+        setNewSong({song: ''});
     };
 
     return (
-        <>
         <div>
             <form onSubmit={handleSubmit}>
 
@@ -57,14 +54,12 @@ const SongForm = () => {
 
                 <button type="submit">Submit</button>
 
+                    <div>
+                        <Title />
+                    </div>
             </form>          
         </div>
-        
-           <div>
-           <Title newSong={newSong} newArtist={newArtist}/>
-          </div>
-          </>
-        );
+    );
 };
 
 export default SongForm;
