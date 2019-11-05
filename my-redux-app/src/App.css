@@ -40,10 +40,11 @@ form {
   width: 460px;
   margin: 100px auto 50px;
   padding: 32px;
-  background-color: rgb(110, 103, 221);
+  background-color: rgb(165, 160, 226);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   text-align: left;
   border-radius: 7px;
+  border: solid rgb(92, 92, 107);
 }
 
 .error {
@@ -72,7 +73,7 @@ input:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 0 3px rgba(55, 41, 104, 0.74);
   outline: none;
-  color: rgba(195, 183, 240, 0.767);
+  color: rgba(47, 42, 66, 0.884);
 }
 
 input.error {
@@ -127,4 +128,6 @@ select option {
 
 button {
   background-color: rgb(82, 192, 82);
+  border: solid rgb(56, 133, 75);
+  color: rgb(13, 46, 9);
 }
