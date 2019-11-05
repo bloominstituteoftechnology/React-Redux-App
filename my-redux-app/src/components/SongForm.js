@@ -8,11 +8,6 @@ const SongForm = () => {
     const [newSong, setNewSong] = useState({song:''});
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     console.log(newArtist)
-    //     dispatch(song(`${newArtist.artist}`, `${newSong.song}`));
-    // }, [dispatch, newArtist, newSong]);
-    
     const handleArtist = e => {
         setNewArtist({
             ...newArtist,
