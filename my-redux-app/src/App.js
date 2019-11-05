@@ -1,6 +1,5 @@
 import React from 'react';
 import SongForm from './components/SongForm';
-import Title from './components/Title';
 
 import './App.css';
 
