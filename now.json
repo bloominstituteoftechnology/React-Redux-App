@@ -1,0 +1,8 @@
+{
+    "build": {
+      "env": {
+        "REACT_APP_ID": "@react_app_id",
+        "REACT_APP_SECRET": "@react_app_secret"
+      }
+    }
+  }
