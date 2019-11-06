@@ -6,6 +6,8 @@
 
 .App {
   text-align: center;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .App-logo {
@@ -92,6 +94,7 @@ img {
   margin: 0 auto;
   border-radius: 5px;
   width: 400px;
+  max-width: 90%;
   border: 1px solid darkgray;
   margin-top: 1.5px;
 }
@@ -110,6 +113,7 @@ img {
 }
 
 form{
+  width: 100%;
   padding: 3px;
   display: flex;
   justify-content: space-around;
@@ -155,4 +159,24 @@ input::placeholder {
 
 input:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .App{
+
+  }
+  body {
+    background-color: lightblue;
+  }
+  input{
+    width: 50%;
+  }
+  .card{
+    background: #ffffff;
+  }
+  .card .info h2, .card .info h4{
+    font-size: .75em;
+    color: rgb(97, 97, 97);
+  }
+
 }
