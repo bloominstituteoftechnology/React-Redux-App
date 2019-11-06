@@ -29,6 +29,9 @@
   color: #09d3ac;
 }
 
+.App h1{
+  color: #666;
+}
 
 
 label {
@@ -86,6 +89,16 @@ img {
   }
 }
 
+.taco-list{
+  width: 400px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.taco-list .hero{
+ width: 100%;
+}
+
 .card{
   display: flex;
   flex-direction: row;
@@ -93,8 +106,7 @@ img {
   align-items: center;
   margin: 0 auto;
   border-radius: 5px;
-  width: 400px;
-  max-width: 90%;
+  width: 100%;
   border: 1px solid darkgray;
   margin-top: 1.5px;
 }
@@ -162,14 +174,12 @@ input:focus {
 }
 
 @media only screen and (max-width: 600px) {
-  .App{
-
-  }
   body {
-    background-color: lightblue;
+    max-width: 100vw;
+    background-color: rgba(182, 222, 235, 0.459);
   }
   input{
-    width: 50%;
+    width: 30%;
   }
   .card{
     background: #ffffff;
