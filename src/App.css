@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+li {
+  list-style-type: none;
+}
+button {
+  background: #272c35;
+  border: none;
+  color: aliceblue;
+  width: 40%;
+  font-size: 30px;
+}
