@@ -13,11 +13,11 @@ const PlayerCard = props => {
     }
     console.log(props);
     return (
-        <div className ='player-card'>
+        <div className='player-card'>
             {props.error && <p>{props.error}</p>}
             {props.players.map(player => (
                 <BasicCard key={player.id} player={player} />
-        ))}
+            ))}
         </div>
     )
 }

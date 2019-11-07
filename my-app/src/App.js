@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import PlayerCard from './components/PlayerCard';
 
 function App() {
   return (
     <div className="App">
-      Ball Don't Lie
+      <PlayerCard />
     </div>
   );
 }
