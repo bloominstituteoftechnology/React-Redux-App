@@ -1,14 +1,25 @@
 import React from "react";
+import styled from 'styled-components';
+
+const CardHolder = styled.div`
+    background: orange;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 1px solid red;
+    width: 20%;
+    border-radius: 50px;
+`;
 
 const BasicCard = props => {
     return (
-        <div className ='basic-card' 
+
+        <CardHolder className ='basic-card' 
             key={props.player.id} >
             <h2>{`${props.player.first_name} ${props.player.last_name}`}</h2>
             <p><span>Team:</span> {props.player.team.full_name}</p>
             <p><span>Position:</span> {props.player.position}</p>
             <p><span>Division</span>: {props.player.team.division}</p>
-        </div>
+        </CardHolder>
     )
 }
 
