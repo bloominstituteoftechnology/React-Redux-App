@@ -1,11 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Charts from "./components/Charts";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div className="App">
-      Nothing Yet
+      <NavBar />
+      <h1>Coin MarketSnap</h1>
+      <Charts />
     </div>
   );
 }
