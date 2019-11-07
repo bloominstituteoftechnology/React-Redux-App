@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { fetchCoinData } from "../actions";
 
-const Chartsss = props => {
+const Charts = props => {
   // console.log(props);
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const Chartsss = props => {
   }, []);
 
   if (props.isFetching) {
-    // usually a spinner (react-loader-spinner)
+    
     return <h2>Loading Coins...</h2>;
   }
 
@@ -45,4 +45,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
   { fetchCoinData }
-)(Chartsss);
+)(Charts);
