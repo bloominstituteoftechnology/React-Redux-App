@@ -5,6 +5,11 @@ import styled from 'styled-components';
 
 const Heading = styled.h1`
   color: white;
+  width: 40%;
+  margin: 1% auto;
+  background: black;
+  padding: 2%;
+  border-radius: 20px;
 `;
 
 const PlayerContainer = styled.div`

@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "semantic": "^0.0.1",
+    "styled-components": "^4.4.1",
+    "ui": "^0.2.4"
+  }
+}

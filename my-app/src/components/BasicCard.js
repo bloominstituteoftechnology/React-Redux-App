@@ -5,7 +5,7 @@ const CardHolder = styled.div`
     background: orange;
     margin-top: 1%;
     margin-bottom: 1%;
-    border: 1px solid red;
+    border: 2px solid black;
     width: 20%;
     border-radius: 50px;
 `;
