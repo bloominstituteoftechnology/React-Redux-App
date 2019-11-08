@@ -39,11 +39,14 @@
   flex-wrap: wrap;
 }
 
-.primary_attr.str {
+.primary_attr-str {
   color: red;
 }
-.primary_attr.agi {
+.primary_attr-agi {
   color: green;
+}
+.primary_attr-int {
+  color: blue;
 }
 
 .attackType {
