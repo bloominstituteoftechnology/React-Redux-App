@@ -5,7 +5,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-    <AnimeList/>
+      <h2>Anime News</h2>
+      <AnimeList />
     </div>
   );
 }

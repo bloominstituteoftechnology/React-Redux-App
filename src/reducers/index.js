@@ -1,13 +1,12 @@
 import { ANIME_LOADING, ANIME_SUCCESS, ANIME_FAIL} from "../actions";
-  
+
   const initialState = {
     articles: [],
     error: null,
     isFetching: false
   };
-  
+
   function reducer(state = initialState, action) {
-    console.log("reducer", action);
     switch (action.type) {
       case ANIME_LOADING:
         return {
@@ -18,7 +17,7 @@ import { ANIME_LOADING, ANIME_SUCCESS, ANIME_FAIL} from "../actions";
       case ANIME_SUCCESS:
         return {
           ...state,
-          articles: action.payload.id,
+          articles: action.payload,
           isFetching: false,
           error: null
         };
@@ -33,6 +32,5 @@ import { ANIME_LOADING, ANIME_SUCCESS, ANIME_FAIL} from "../actions";
         return state;
     }
   }
-  
+
   export default reducer;
-  
