@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: auto;
 }
 
 .App-logo {
@@ -15,14 +16,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: "Holtwood One SC", serif;
 }
 li {
   list-style-type: none;
+
+  border-radius: 9px;
+  padding: 5px;
 }
-button {
+h2 {
+  padding-top: 25px;
   background: #272c35;
   border: none;
   color: aliceblue;
   width: 40%;
   font-size: 30px;
+  font-family: "Black Ops One", cursive;
+}
+img {
+  width: 35%;
 }
