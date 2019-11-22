@@ -8,11 +8,11 @@ export const getRandomUserData = () => dispatch => {
   dispatch({ type: RANDOM_USER_START });
 
   axios
-    .get('https://randomuser.me/api/')
-    .then(json =>
+    .get('https://api.kanye.rest')
+    .then(res =>
       dispatch({
         type: RANDOM_USER_SUCCESS,
-        payload: json.data.value
+        payload: res.data.quote
       })
     )
     .catch(err =>

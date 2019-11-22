@@ -1,11 +1,12 @@
 import React from 'react';
 
 import './App.css';
+import UserData from './components/UserData';
 
 function App() {
   return (
     <div className="Appy">
-<h1>hello world</h1>
+<UserData />
     </div>
   );
 }

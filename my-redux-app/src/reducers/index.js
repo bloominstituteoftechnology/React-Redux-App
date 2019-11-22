@@ -3,7 +3,7 @@ import {RANDOM_USER_START, RANDOM_USER_SUCCESS, RANDOM_USER_FAILURE} from '../ac
 const initialState = {
     isLoading: false,
     error: "",
-    user: {gender: "", name: "", phone: 0 }
+    user: {name: "Kanye West", quote: "" }
 }
 
 const reducer = (state=initialState, action) => {
