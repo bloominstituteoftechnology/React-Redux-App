@@ -1,4 +1,4 @@
-import {RANDOM_USER_START, RANDOM_USER_SUCCESS, RANDOM_USER_FAILURE} from '../actions';
+import {RANDOM_QUOTE_START, RANDOM_QUOTE_SUCCESS, RANDOM_QUOTE_FAILURE} from '../actions';
 
 const initialState = {
     isLoading: false,
@@ -8,18 +8,18 @@ const initialState = {
 
 const reducer = (state=initialState, action) => {
     switch(action.type){
-        case RANDOM_USER_START:
+        case RANDOM_QUOTE_START:
             return {
                 ...state,
                 isLoading: true
             };
-            case RANDOM_USER_SUCCESS: 
+            case RANDOM_QUOTE_SUCCESS: 
             return {
                 ...state, 
-                user: {...state.user, name: action.payload},
+                user: {...state.user, quote: action.payload},
                 isLoading: false
             };
-            case RANDOM_USER_FAILURE: 
+            case RANDOM_QUOTE_FAILURE: 
             return {
                 ...state, 
                 error: action.payload,

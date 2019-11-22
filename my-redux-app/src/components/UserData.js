@@ -2,23 +2,36 @@ import React from "react";
 import { connect } from "react-redux";
 import { getRandomUserData } from "../actions";
 
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const useStyles = makeStyles(theme => ({
+    button: {
+      margin: theme.spacing(1),
+    },
+    input: {
+      display: 'none',
+    },
+  }));
+
 const UserData = props => {
+    const classes = useStyles();
   return (
     <div>
-      <button
+      <Button variant="contained" color="secondary" className={classes.button}
         onClick={() => {
           props.getRandomUserData();
         }}
       >
         Get Random Yeezy Quote
-      </button>
+      </Button>
       {props.error && <div>{props.error}</div>}
       {props.isloading ? (
         <div>loading...</div>
       ) : (
         <section>
-          <h1>{props.user.name}</h1>
           <h2>{props.user.quote}</h2>
+          <h1>-{props.user.name}</h1>
         </section>
       )}
     </div>
