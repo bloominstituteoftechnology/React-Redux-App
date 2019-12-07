@@ -56,8 +56,10 @@
 }
 
 button {
-  width: 10vw;
-  background: #5f65e9;
+  width: 188px;
+  /*background: #5f65e9;*/
+  background: linear-gradient(99.98deg, #5557fe -2.36%, #9555fe 103.67%);
+  border-radius: 5px;
   color: white;
   font-size: 1rem;
   font-weight: bold;
@@ -68,6 +70,11 @@ button {
   padding: 10px;
   box-shadow: 0 3px 0 0 rgba(0, 0, 0, 0.507);
   margin: 35px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5f65e9;
 }
 
 
