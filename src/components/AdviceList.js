@@ -1,8 +1,17 @@
 import React, { useEffect } from "react";
-import { bounce, zoomInLeft, swing, slideInRight, tada, rubberBand, slideInLeft, rollIn, fadeInDownBig, hinge } from 'react-animations';
+import { bounce, 
+         zoomInLeft, 
+         swing, 
+         slideInRight, 
+         tada, 
+         rubberBand, 
+         slideInLeft, 
+         rollIn, 
+         fadeInDownBig, 
+         hinge } from 'react-animations';
+import {Paper} from '@material-ui/core';
 import styled, { keyframes } from "styled-components";
 import { connect } from "react-redux";
-
 import { getAdvice } from "../actions/actions.js";
 
 //styled components with 10 different animations
