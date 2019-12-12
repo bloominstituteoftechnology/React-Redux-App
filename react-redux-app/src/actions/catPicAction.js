@@ -9,7 +9,8 @@ export const getCat = () => dispatch => {
   axios
     .get('https://aws.random.cat/meow')
     .then(response => {
-      dispatch({ type: FETCH_CAT_SUCCESS, payload: response.data.value });
+      console.log('this is the API response', response);
+      dispatch({ type: FETCH_CAT_SUCCESS, payload: response.data });
     })
     .catch(error => {
       dispatch({ type: FETCH_CAT_FAILURE, payload: error.response });
