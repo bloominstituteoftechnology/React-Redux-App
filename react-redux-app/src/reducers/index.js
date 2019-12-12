@@ -18,7 +18,7 @@ function reducer(state = initialState, action) {
     case ANIME_SUCCESS:
       return {
         ...state,
-        articles: action.payload.id,
+        articles: action.payload,
         isFetching: false,
         error: null
       }

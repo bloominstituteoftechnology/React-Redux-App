@@ -5,9 +5,8 @@ import AnimeList from './components/AnimeList';
 function App() {
   return (
     <div className="App">
-        <p>
-          Identity theft is not a joke Jim!
-        </p>
+      <h2>Anime News</h2>
+      <AnimeList />
     </div>
   );
 }
