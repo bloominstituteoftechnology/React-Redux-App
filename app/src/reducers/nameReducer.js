@@ -10,7 +10,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
-    switch(action, type){
+    switch(action.type){
         case FETCH_NAME_START:
             return{
                 ...state,
