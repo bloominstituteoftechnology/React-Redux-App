@@ -10,7 +10,7 @@ export const getCat = () => dispatch => {
     .get('https://aws.random.cat/meow')
     .then(response => {
       console.log('this is the API response', response);
-      dispatch({ type: FETCH_CAT_SUCCESS, payload: response.data });
+      setTimeout(() => dispatch({ type: FETCH_CAT_SUCCESS, payload: response.data }), 1500)
     })
     .catch(error => {
       dispatch({ type: FETCH_CAT_FAILURE, payload: error.response });

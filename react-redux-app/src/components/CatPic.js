@@ -11,7 +11,7 @@ const CatPic = props => {
 
   return (
     <CatWrapper>
-      {!props.cat && !props.isFetching && <p>Wanna see a cat?</p>}
+      {!props.cat && !props.isFetching && <p>Pssst, wanna see a cat?</p>}
       <CatBtn onClick={props.getCat}>CAT!</CatBtn>
       {props.isFetching && (
         <Loader type="Puff" color="#00BFFF" height={100} width={100} />

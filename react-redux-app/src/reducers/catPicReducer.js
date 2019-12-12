@@ -3,7 +3,7 @@ import { FETCH_CAT_START,
   FETCH_CAT_FAILURE} from '../actions/catPicAction';
 
 export const initialState = {
-  cat: '',
+  cat: {},
   isFetching: false,
   error: '',
   id: 1234,
@@ -14,6 +14,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_CAT_START:
       return {
         ...state, 
+        cat: {},
         isFetching: true
       }
     case FETCH_CAT_SUCCESS:
