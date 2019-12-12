@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.characterImg{
+  display: block;
+  margin: 0 auto;
+  width: 25%;
+}
+
+.characterDesc{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.characterAttrs{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 30%;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3%;
+}
+
+.characterAttrs p{
+  width: 45%;
+  margin: 15px auto
+}
