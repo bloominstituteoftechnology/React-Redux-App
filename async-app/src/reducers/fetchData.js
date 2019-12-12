@@ -16,7 +16,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching:false,
-                questions: [...state.questions, action.payload]
+                questions: [action.payload]
             }
         
         default:

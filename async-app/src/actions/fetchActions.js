@@ -7,8 +7,9 @@ export const getData = () => dispatch => {
     axios
     .get('https://opentdb.com/api.php?amount=1')
     .then(res => {
+        
         console.log(res);
-        dispatch({type: FETCHED_DATA, payload: res.data.results[0]});
+        dispatch({type: FETCHED_DATA, payload:res.data.results[0]});
         
     })
     .catch(err => console.log(err));
