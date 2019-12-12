@@ -5,7 +5,7 @@ import {getName} from '../actions';
 const Name = props => {
     return(
         <div>
-            <h1>Female Names in Japanese</h1>
+            <h1>NIPPON NAMES</h1>
             {!props.name && !props.isFetching && <p>Who's this?</p>}
             {props.isFetching}
             {props.name && <p>{props.name.name}</p>}
