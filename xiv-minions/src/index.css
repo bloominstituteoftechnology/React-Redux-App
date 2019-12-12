@@ -1,14 +1,97 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+* {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-family: 'Roboto Mono', monospace;  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 4rem;
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+p, a {
+  font-size: 1.8rem;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.App {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.minion-container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.minion-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.minion-card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  margin-bottom: 50px;
+}
+
+.minion-name {
+  text-transform: uppercase;
+  width: 192px;
+}
+
+.minion-page {
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.minion-header {
+  width: 100%;
+  display: flex;
+}
+
+.minion-icon {
+  width: 100px;
+}
+
+.minion-page-name {
+  text-transform: uppercase;
+}
+
+.minion-tooltip {
+  font-size: 1.6rem;
 }

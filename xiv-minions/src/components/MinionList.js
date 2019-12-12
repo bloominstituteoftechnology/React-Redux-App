@@ -2,22 +2,29 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getMinions } from '../store/actions';
 
+import MinionCard from './MinionCard';
+
 const MinionList = props => {
+    const fetch = props.getMinions;
+
     useEffect(() => {
-        props.getMinions();
-    }, []);
+        fetch();
+    }, [fetch]);
+
     return (
-        <div>
+        <div className='minion-container'>
             {props.isFetching && <p>Loading...</p>}
             {props.minions && (
-                <div>
+                <div className='minion-list'>
                     {props.minions.map(minion => {
-                        if (minion.Name) {return (
-                            <div key={minion.ID}>
-                                <img src={`https://xivapi.com${minion.Icon}`} />
-                                <h3>{minion.Name}</h3>
-                            </div>
-                        )          }              
+                        if (minion.Name) {
+                            return (
+                                <MinionCard
+                                    key={minion.ID}
+                                    minion={minion}
+                                />
+                            )
+                        } else return null;
                     })}
                 </div>
             )}
