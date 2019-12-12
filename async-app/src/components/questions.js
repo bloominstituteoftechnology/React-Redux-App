@@ -1,4 +1,5 @@
 import React from 'react';
+import he from 'he';
 
 
 const Questions = (props) => {
@@ -7,7 +8,7 @@ const Questions = (props) => {
             {console.log(props)}
             {props.state.questions.map(item => 
                 <div key={Date.now()}>
-                <p>{item.question}</p>
+                <p>{he.decode(item.question)}</p>
                 </div>
             )}
         </div>

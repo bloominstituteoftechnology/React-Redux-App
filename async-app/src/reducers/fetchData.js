@@ -1,4 +1,4 @@
-import {FETCHING_DATA_START, FETCHED_DATA} from '../actions/'
+import {FETCHING_DATA_START, FETCHED_DATA, FETCHED_ERROR} from '../actions/'
 const initialState = {
     questions:[],
     isFetching: false,
@@ -18,7 +18,13 @@ const reducer = (state = initialState, action) => {
                 isFetching:false,
                 questions: [action.payload]
             }
-        
+        case FETCHED_ERROR:
+            return {
+                ...state,
+                isFetching:false,
+                error: action.payload
+
+            }
         default:
             return state;
     };
