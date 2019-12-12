@@ -23,7 +23,7 @@ const catReducer = (state = initialState, action) => {
         case FETCH_CAT_SUCCESS:
             return {
                 ...state,
-                joke: action.payload,
+                cat: action.payload,
                 isFetching: false,
                 error: ''
             };
