@@ -5,7 +5,7 @@ import {
 } from '../actions';
 
 const initialState = {
-    minions: [],
+    minions: null,
     isFetching: false,
     error: ''
 };
@@ -18,6 +18,7 @@ const reducer = (state = initialState, action) => {
                 isFetching: true
             };
         case FETCH_MINIONS_SUCCESS:
+            console.log(action.payload);
             return {
                 ...state,
                 minions: action.payload,
