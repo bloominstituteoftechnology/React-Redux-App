@@ -14,7 +14,7 @@ const MinionList = props => {
     return (
         <div className='minion-container'>
             {props.isFetching && <p>Loading...</p>}
-            {props.minions && (
+            {!props.isFetching && props.minions && (
                 <div className='minion-list'>
                     {props.minions.map(minion => {
                         if (minion.Name) {

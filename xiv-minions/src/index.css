@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
-* {
-  font-size: 62.5%;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,23 +9,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
+  background-image: linear-gradient(to bottom right, #0F0F0F, #6A6A6A);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 h1 {
-  font-size: 4rem;
-  margin-bottom: 50px;
+  font-size: 3rem;
+  margin: 25px 0 50px;
+  color: #FFF;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
+  color: #FFF;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 
-p, a {
-  font-size: 1.8rem;
+p {
+  color: #FFF;
 }
 
 code {
@@ -67,6 +69,10 @@ code {
   margin-bottom: 50px;
 }
 
+.minion-icon {
+  margin-bottom: 10px;
+}
+
 .minion-name {
   text-transform: uppercase;
   width: 192px;
@@ -74,6 +80,7 @@ code {
 
 .minion-page {
   max-width: 650px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -82,10 +89,13 @@ code {
 .minion-header {
   width: 100%;
   display: flex;
+  align-items: flex-end;
+  margin-bottom: 25px;
 }
 
-.minion-icon {
+.minion-page-icon {
   width: 100px;
+  margin-right: 20px;
 }
 
 .minion-page-name {
@@ -93,5 +103,6 @@ code {
 }
 
 .minion-tooltip {
-  font-size: 1.6rem;
+  font-size: 0.8rem;
+  margin: 20px 0 50px 50px;
 }

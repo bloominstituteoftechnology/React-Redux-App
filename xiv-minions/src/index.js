@@ -5,6 +5,8 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 import App from './App';
