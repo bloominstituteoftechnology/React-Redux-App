@@ -6,16 +6,17 @@ import MinionCard from './MinionCard';
 
 const MinionList = props => {
     const fetch = props.getMinions;
+    const minions = props.minions;
 
     useEffect(() => {
-        fetch();
-    }, [fetch]);
+        !props.minions && fetch();
+    }, [fetch, minions]);
 
     return (
         <div className='minion-container'>
             {props.isFetching && <p>Loading...</p>}
-            {!props.isFetching && props.minions && (
-                <div className='minion-list'>
+            {props.minions && (
+                <div className='minion-list fade-in'>
                     {props.minions.map(minion => {
                         if (minion.Name) {
                             return (

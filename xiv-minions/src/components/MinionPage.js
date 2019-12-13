@@ -21,7 +21,7 @@ const MinionPage = props => {
         <>
             {props.isFetching && <p>Loading...</p>}
             {!props.isFetching && props.soloMinion && (
-                <div className='minion-page'>
+                <div className='minion-page fade-in'>
                     <div className='minion-header'>
                         <img className='minion-page-icon' src={`https://xivapi.com${props.soloMinion.Icon}`} id='minion-icon' alt='minion icon' />
                         <Tooltip className='summon-desc' placement='bottom-start' isOpen={tooltipOpen} target='minion-icon' toggle={toggle}>
