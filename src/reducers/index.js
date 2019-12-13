@@ -1,9 +1,18 @@
-import { FETCH_QUOTE_START, FETCH_QUOTE_SUCCESS, FETCH_QUOTE_FAILURE } from '../actions/index';
+import { 
+  FETCH_QUOTE_START, 
+  FETCH_QUOTE_SUCCESS, 
+  FETCH_QUOTE_FAILURE,
+  ADD_FAVORITE
+  } from '../actions/index';
 
 const initialState = {
-  quote: null,
+  quote: {
+    quote: null,
+    favorite: false
+  },
   isFetching: false,
-  error: ''
+  error: '',
+  favorites: []
 };
 
 export const reducer = (state = initialState, action) => {
@@ -16,7 +25,9 @@ export const reducer = (state = initialState, action) => {
     case FETCH_QUOTE_SUCCESS:
       return {
         ...state,
-        quote: action.payload,
+        quote: {
+          ...state,
+          quote: action.payload},
         isFetching: false,
         error: ''
       }
@@ -25,6 +36,15 @@ export const reducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         error: action.payload
+      }
+    case ADD_FAVORITE:
+      return {
+        ...state,
+        quote: {
+          ...state.quote,
+          favorite: true
+        },
+        favorites: [...state.favorites, action.payload]
       }
     default:
       return state
