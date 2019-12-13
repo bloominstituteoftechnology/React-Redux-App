@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const NewLandingPageContainer = styled.div`
+const LandingContainer = styled.div`
     height: 87.5vh;
     width: 1024px;
     margin: 0 auto;
@@ -21,13 +21,13 @@ const NewLandingPageContainer = styled.div`
     }
 `
 
-const NewLandingPage = () => {
+const Landing = () => {
     return (
-        <NewLandingPageContainer>
+        <LandingContainer>
             <h1>The #1 stock market research application</h1>
             <h2>Financial research made easier</h2>
-        </NewLandingPageContainer>
+        </LandingContainer>
     );
 };
 
-export default NewLandingPage;
+export default Landing;
