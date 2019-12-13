@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Tooltip } from 'reactstrap';
+import { Spinner, Tooltip } from 'reactstrap';
 
 import { getSoloMinion } from '../store/actions';
 
@@ -19,7 +19,7 @@ const MinionPage = props => {
 
     return (
         <>
-            {props.isFetching && <p>Loading...</p>}
+            {props.isFetching && <Spinner style={{ width: '3rem', height: '3rem' }} color='light' />}
             {!props.isFetching && props.soloMinion && (
                 <div className='minion-page fade-in'>
                     <div className='minion-header'>

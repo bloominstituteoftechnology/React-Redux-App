@@ -7,6 +7,7 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import './index.css';
 
 import App from './App';
