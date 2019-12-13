@@ -5,3 +5,8 @@ export {
     getData
 
 } from './fetchActions';
+export {
+    CHECK_AWN_CORRECT,
+    CHECK_AWN_WRONG,
+    checkAwnser
+} from './awnAction';
