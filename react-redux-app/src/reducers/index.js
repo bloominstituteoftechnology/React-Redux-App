@@ -18,13 +18,14 @@ const reducer = (state = initialState, action) => {
         ...state,
         isFetching: true,
         
+        
       };
     case FETCH_POKEMON_SUCCESS:
       return {
         ...state,
         pokemon: action.payload,
         isFetching: false,
-        error: ''
+        
       };
     case FETCH_POKEMON_FAILED:
       return {

@@ -1,36 +1,37 @@
 import React from "react";
 import { connect } from "react-redux";
 import { fetchPokemon } from "../actions";
+import Loading from "./Loading";
 
 function PokeList(props) {
   console.log("PokeList", props);
   return (
     <>
-      <button onClick={() => props.dispatch(fetchPokemon())}>Get Data</button>
-      {props.isFetching && <div></div>}
+    <h1>PokeData</h1>
+      <button onClick={props.fetchPokemon}>Get Data</button>
+  {props.isFetching && <div><Loading/></div>}
       {props.error && <div>{props.error.message}</div>}
-      <ul>
+      <div>
         {props.pokemon.map(p => (
-          <li className="pokemon" key={p.name}>
+          
+          <p className="pokemon" key={p.name}>
             {p.name}
-          </li>
+          </p>
+          
         ))}
-      </ul>
+      </div>
     </>
   );
 }
 
-const mapDispatchToProps = state => {
+const mapStateToProps = state => {
   return{
-   pokemon: state.pokemon,
-   error: state.error,
-   isFetching: state.isFetching 
+  pokemon: state.pokemon,
+  error: state.error,
+  isFetching: state.isFetching 
   }
-  
-  
 };
 
 export default connect( 
-  mapDispatchToProps, {fetchPokemon}
-  
+  mapStateToProps, {fetchPokemon}
 )(PokeList);
