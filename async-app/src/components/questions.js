@@ -33,7 +33,7 @@ const Questions = (props) => {
     const handleAwn = (e) => {
         
         
-            return props.state.checkAwnser(e.target.innerText,props.state.data.questions[0].correct_answer);
+            return props.state.checkAwnser(e.target.innerText,he.decode(props.state.data.questions[0].correct_answer));
         
     }
     
