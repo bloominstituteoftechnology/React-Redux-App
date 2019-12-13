@@ -9,7 +9,7 @@ This project allows you to practice the concepts and techniques learned in this 
 ### Commits
 
 Commit your code regularly and meaningfully. This helps both you and your team lead in case you ever need to return to old code for any number of reasons.
-
+ff
 ### Description
 
 In this project you'll choose an api to consume. You will build an application from scratch that uses your chosen API and displays the data you are getting from it.
