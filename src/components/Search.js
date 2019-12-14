@@ -88,11 +88,10 @@ const Search = props => {
                     <p>Volume: {props.data['Time Series (Daily)'][yesterday]['5. volume']}</p>
                 </div>
             }
+            {props.error && <h2>There was an error...</h2>}
         </SearchContainer>
     );
 };
-
-// what do && these mean, iterating through an object, link tag on button, conditionals in jsx and syntax, `${moment().format('YYYY-MM-DD').subtract(1, 'days')}`
 
 const mapStateToProps = state => {
     return {

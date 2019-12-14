@@ -100,7 +100,7 @@ const Header = props => {
                 <Link to='/'><h1>guacMarket</h1></Link>
                 <form onSubmit={onSubmit} autoComplete='off' spellCheck='false'>
                     <input type='text' placeholder='Ticker Symbol' value={input} onChange={onChange}/>
-                    <button type='submit'>{!props.fetching ? <div className='loader'></div> : <i className="fas fa-search"></i>}</button>
+                    <button type='submit'>{props.fetching ? <div className='loader'></div> : <i className="fas fa-search"></i>}</button>
                 </form>
             </header>
         </HeaderContainer>
