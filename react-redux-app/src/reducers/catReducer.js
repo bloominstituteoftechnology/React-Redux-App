@@ -31,7 +31,7 @@ const catReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                eror: action.payload
+                error: action.payload
             };
         default:
             return state;

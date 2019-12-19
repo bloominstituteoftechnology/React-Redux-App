@@ -17,8 +17,6 @@ const CatDiv = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    // align-items: center;
-    // width: 500px;  this actually interfeered with the flex box
     max-width: 900px;
     // border: 1px solid #BADA55;
     margin: 0 auto;
@@ -26,6 +24,7 @@ const CatDiv = styled.div`
 
 const CatImage = styled.img`
 
+    // needs to match the width constraint of the div it's contained within
     max-width: 100%;
 `
 
