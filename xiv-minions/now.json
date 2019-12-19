@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "xiv-minions",
+    "builds": [{ "src": "xiv-minions/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+    "routes": [
+        { "src": "/(.*)", "dest": "React-Redux-App/xiv-minions/$1" }
+    ]
+}
