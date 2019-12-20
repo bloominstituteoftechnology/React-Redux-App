@@ -12,7 +12,7 @@ function App(props) {
     <div className="App">
       {console.log(`State: ${props}`)}
       <Header state={props}/>
-      <Player state={props.user}/>
+      <Player state={props.user} isfetching={props.data.isfetching}/>
       <Questions state={props} />
     </div>
   );

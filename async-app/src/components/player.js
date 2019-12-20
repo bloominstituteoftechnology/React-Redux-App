@@ -2,7 +2,7 @@ import React from 'react';
 
 const Player = (props) => {
     return (
-        <div>
+        <div className='player-points'>
             {console.log(`player log: ${props.state}`)}
             <p>Correct: {props.state.right}</p>
             <p>Wrong: {props.state.wrong}</p>

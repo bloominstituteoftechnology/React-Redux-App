@@ -1,6 +1,7 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 import he from 'he';
+import Loader from 'react-loader-spinner';
 
 
 const Questions = (props) => {
@@ -39,6 +40,11 @@ const Questions = (props) => {
     
     return(
         <div>
+            {!props.state.data.isFetching && props.state.data.questions.length < 1 && <p>Load a Question!</p>} 
+             {props.state.data.isFetching && <p>Loading Question! </p>}
+            {props.state.data.isFetching && ( 
+        <Loader type="ThreeDots" color="#00BFFF" height={100} width={100} />
+      )}
             
             {props.state.data.questions.map(item => 
                 
