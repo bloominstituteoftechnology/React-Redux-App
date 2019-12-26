@@ -39,7 +39,7 @@ const Questions = (props) => {
     }
     
     return(
-        <div>
+        <div className='questions-cont'>
             {!props.state.data.isFetching && props.state.data.questions.length < 1 && <p>Load a Question!</p>} 
              {props.state.data.isFetching && <p>Loading Question! </p>}
             {props.state.data.isFetching && ( 

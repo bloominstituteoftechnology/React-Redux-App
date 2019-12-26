@@ -17,6 +17,7 @@ export const checkAwnser = (awn, correct) => dispatch => {
         console.log(`${awn} and ${correct}`);
         
         dispatch({ type: CHECK_AWN_WRONG });
+        dispatch(getData());
         
     }
 
