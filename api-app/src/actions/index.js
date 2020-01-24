@@ -1,15 +1,13 @@
 import axios from 'axios'
 
 
-export const FETCHING_ACTIVITY_START = 'FETCHING_ACTIVITY_START'
 export const FETCHING_DATA_SUCCESS = 'FETCHING_DATA_SUCCESS'
 
 export const fetchActivity = () => dispatch => {
-        dispatch({type: FETCHING_ACTIVITY_START});
-        axios.get('https://www.boredapi.com/api/activity')
+        axios.get('https://api.coinranking.com/v1/public/coins')
         .then(res => {
-            console.log(res.data)
-            dispatch({type:FETCHING_DATA_SUCCESS, payload: res.data})
+            console.log(res.data.data.coins)
+            dispatch({type: FETCHING_DATA_SUCCESS, payload: res.data.data.coins})
         })
         .catch(err => console.log(err))
     

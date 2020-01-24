@@ -1,31 +1,40 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Loader from 'react-loader-spinner'
 
 import {fetchActivity} from '../actions'
 
 const Activity = props => {
+    console.log(props)
     return (
-        <div>
-            <button onClick={props.fetchActivity}>Get Activity</button>
-            {!props.activity && !props.isLoading && (<h2>Yasss!!!!</h2>)}
-            {props.isLoading &&
-                (<Loader 
-                type="ThreeDots" 
-                color="#somecolor" 
-                height={80} 
-                width={80} />)}
-            {props.activity && !props.isLoading && (
-                <h2>{props.activity.activity}</h2>
-            )}
+        <div className="nextTry">
+            <button onClick={props.fetchActivity}>Check Crypto</button>
+           
+            {props.activity.activity.map((mov)=>( 
+
+
+<section className= 'cryptoContainer'>
+<ul>
+  <li>
+  
+    <figure >
+      
+    <h1 className= 'text'>{mov.name} | {mov.symbol}</h1>
+    
+     <img src={mov.iconUrl} className= 'posterImage'/>
+     <h3 className= 'textNew'>${mov.price}</h3>
+    </figure>
+  </li>
+</ul>           
+</section>
+
+            ))}
         </div>
     )
 }
 
 const mapStateToProps = state => {
     return {
-        isLoading: state.isLoading,
-        activity: state.activity,
+        activity: state,
         error: state.error
     }
 }
