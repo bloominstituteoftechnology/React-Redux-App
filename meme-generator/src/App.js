@@ -12,7 +12,17 @@ function App() {
   }, []);
   return (
     <div style={{ textAlign: "center" }}>
-      {template && <Meme template={template} />} {/*here we are displaying the meme component that was selected by the user */}
+      {template && (
+        <form onSubmit={e => {
+          e.preventDefault()
+          //add logic to create meme from the api
+        }}>
+          <Meme template={template} />
+          <input placeholder="top text" />
+          <input placeholder="bottom text" />
+          <button type="submit">create meme</button>
+        </form>
+      )} 
       {!template && (//we are displaying a list of templates until the user clicks on a meme => that will update the state and it will set the template/meme
         <>
           <h1>Pick a Meme</h1>
