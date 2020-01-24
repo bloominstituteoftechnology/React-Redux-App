@@ -1,10 +1,15 @@
-const FUNNY_STUFF_ARRIVED = "FUNNY_STUFF_ARRIVED";
-const COLLECTING_FUNNY_STUFF = "COLLECTING_FUNNY_STUFF";
-
+import {
+    COLLECTING_FUNNY_STUFF,
+    FUNNY_STUFF_ARRIVED,
+    FUNNY_SETUP,
+    FUNNY_PUNCHLINE
+} from "../actions/jokeActions";
 
 const initialState = {
   loadingFunny: false,
   activity: null,
+  setup: "",
+  punchline: "",
   error: ""
 };
 
@@ -21,6 +26,18 @@ export const jokeReducer = (state = initialState, action) => {
         loadingFunny: false,
         activity: action.payload
       };
+      case FUNNY_SETUP:
+        return {
+          ...state,
+          loadingFunny: false,
+          setup: action.payload
+        };
+    // case FUNNY_PUNCHLINE:
+    //   return {
+    //     ...state,
+    //     loadingFunny: false,
+    //     punchline: action.payload
+    //   };
     default:
       return state;
   }
