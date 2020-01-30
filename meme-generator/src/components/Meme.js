@@ -3,7 +3,7 @@ import React from 'react';
 export const Meme = ({template, onClick}) => {
     return (
         <img
-            style={{ width: 200 }}
+            style={{ width: "15%", padding:"2%", border: "2px solid yellow", display:"flex-row", flexWrap:"wrap", margin: "2%" }}
             key={template.id}
             src={template.url}
             alt={template.name}

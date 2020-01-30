@@ -28,9 +28,9 @@ function App() {
   }
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", height: "100%" }}>
       {template && (
-        <form
+        <form style={{background: "black", color: "white", border: "3px solid orange"}}
           onSubmit={async e => {
             e.preventDefault();
             // add logic to create meme from api
@@ -50,23 +50,23 @@ function App() {
             setMeme(json.data.url);
           }}
         >
-          <Meme template={template} />
+          <Meme template={template} /><br/>
           <input
             placeholder="top text"
             value={topText}
             onChange={e => setTopText(e.target.value)}
-          />
+          /><br/>
           <input
             placeholder="bottom text"
             value={bottomText}
             onChange={e => setBottomText(e.target.value)}
-          />
+          /><br/>
           <button type="submit">create meme</button>
         </form>
       )}
       {!template && (
         <>
-          <h1>Pick a template</h1>
+          <h1 style={{padding: "2%", border:"4px solid yellow", background: "black", color: "white"}}>Pick a template</h1>
           {templates.map(template => {
             return (
               <Meme
