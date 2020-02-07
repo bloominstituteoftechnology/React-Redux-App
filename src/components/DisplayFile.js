@@ -17,7 +17,7 @@ const DisplayFile = () => {
             <h3>{param.title}</h3>
             <CardBody>
           <Jumbotron flush className='imgDiv'>
-            <CardImg src={param.primaryimageurl} alt='art' />
+            <CardImg src={param.primaryimageurl} alt='There is no Art for this Holder Today Try Tomorrow' />
           </Jumbotron>
           <ListGroup flush>
           <ol>
