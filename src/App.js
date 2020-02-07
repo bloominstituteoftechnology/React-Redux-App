@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import DataFile from './components/DataFile';
+import DisplayFile from './components/DisplayFile';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider }  from "react-redux";
+import reducer from "./reducers"
+import {Alert} from 'reactstrap'
+
+const store = createStore(reducer,applyMiddleware(thunk))
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <Provider store={store}>
+    <div className='App'>
+      <header>
+      <Alert color="primary"><h1>Mini Harvard Art Museum</h1></Alert>
+        <DataFile />
+        <DisplayFile/>
       </header>
-    </div>
+      </div>
+    </Provider>
   );
 }
 

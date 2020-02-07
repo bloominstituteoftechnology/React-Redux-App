@@ -1,38 +1,29 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
+  background-image: url('./images/grey-concrete-stair-inside-building-2422253.jpg');
+  height: 1000px;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card{
+  height: 1500px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ .imgDiv{
+  height: 1000px;
+  margin: 0 auto;
+} 
+
+img{
+  width: 100%;
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ol{
+  list-style-type: armenian;
+  font-weight: 600;
 }
