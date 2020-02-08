@@ -9,7 +9,6 @@ export const getData = () => dispatch => {
     axios
         .get("https://api.pokemontcg.io/v1/cards")
         .then(response => {
-            console.log("Pokemon: ", response)
             dispatch({ type: UPDATE_DATA, payload: response.data.cards})
         })
         .catch(err => {

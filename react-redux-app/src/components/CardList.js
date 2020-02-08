@@ -1,19 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { getData } from "../actions";
 
 const CardList = (props) => {
-  console.log("CardList: ", props)
-  useEffect(() => {
-      props.getData();
-    }, []);
-
   return (
     <>
       {props.error ? (
         <div>{props.error}</div>
       ) : (
-        props.cards.map(card => <div>{card.name}</div>)
+        props.data.map(pokemon => <div><img src={pokemon.imageUrl}></img></div>)
       )}
     </>
   );
@@ -21,7 +16,7 @@ const CardList = (props) => {
 
 const mapStateToProps = state => {
   return {
-    cards: state.cards,
+    data: state.data,
     error: state.error
   };
 };

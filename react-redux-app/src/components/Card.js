@@ -10,7 +10,7 @@ const Card = props => {
     return (
         <div>
             {props.isFetchingData ? (
-                <div>Fetching Data...</div>
+                <div>Fetching Pokemon...</div>
                 ) : (
                 <button onClick={handleGetData}>Get Pokemon</button>
                 )}
