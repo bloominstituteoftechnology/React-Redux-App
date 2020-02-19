@@ -11,8 +11,11 @@ import Typography from '@material-ui/core/Typography';
 
 
 const useStyles = makeStyles({
+  cards: {
+    width: 500,  
+  },
   root: {
-    maxWidth: 345,
+    maxWidth: 400,
     borderRadius: 5,
     margin: 20,
   },
@@ -25,7 +28,7 @@ const BeerCard = props => {
   const classes = useStyles();
 
   return (
-    <div className='cards'>
+    <div className={classes.cards}>
     {props.error ? (
         <div className='error'>{props.error}</div>
     ) : (

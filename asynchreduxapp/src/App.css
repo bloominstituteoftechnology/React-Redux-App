@@ -1,14 +1,11 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  background-color: beige;
 }
 
 div.error {
   color: red;
 }
 
-.cards {
-  border-radius: 10px;
-  padding: 1%;
-  margin: 1%;
-}
+
