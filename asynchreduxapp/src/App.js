@@ -1,6 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import BeerButton from './components/BeerButton';
+import { createStore, applyMiddleware } from 'redux';
+import { beerReducer as reducer} from './reducers/beerReducer';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+import BeerList from './components.BeerList';
+
+
 
 function App() {
   return (
