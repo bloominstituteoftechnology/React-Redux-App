@@ -5,7 +5,7 @@ import { getData } from '../actions';
 
 const BeerButton = props => {
     const handleGetData = e => {
-        e.preventDafault();
+        e.preventDefault();
         props.getData();
     };
     return (
