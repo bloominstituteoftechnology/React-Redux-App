@@ -14,7 +14,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <h1>BEER List</h1>
+        <h1 className='h1'>BEER List</h1>
         <BeerButton />
         {/* <BeerList /> */}
         <BeerCard />

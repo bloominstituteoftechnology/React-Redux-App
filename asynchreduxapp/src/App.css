@@ -3,7 +3,10 @@
   text-align: center;
   background-color: beige;
 }
-
+.h1 {
+  margin: 2%;
+  padding: 2%;
+}
 div.error {
   color: red;
 }
