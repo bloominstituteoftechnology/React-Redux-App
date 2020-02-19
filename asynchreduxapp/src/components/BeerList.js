@@ -7,7 +7,7 @@ const BeerList = props => {
             {props.error ? (
                 <div className='error'>{props.error}</div>
             ) : (
-                props.beers.map(beer => <div>{beer.beer.name}</div>)
+                props.beers.map(beer => <div>{beer.name}</div>)
             )}
         </div>
     );
