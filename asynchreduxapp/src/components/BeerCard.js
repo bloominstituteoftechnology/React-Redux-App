@@ -61,12 +61,7 @@ const BeerCard = props => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+        
       </CardActions>
       <ExpansionPanel>
         <ExpansionPanelSummary
@@ -81,6 +76,8 @@ const BeerCard = props => {
             {beer.food_pairing}
             </Typography>
             </ExpansionPanelDetails>
+      </ExpansionPanel>
+      <ExpansionPanel>      
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
