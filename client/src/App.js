@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+//redux stuff
+import { connect } from "react-redux";
+import { getData } from "./actions";
+//
+import QuotesComponent from "./components/QuotesComponent";
 
-function App() {
+const App = ({ quotes, loading, error, getData }) => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <QuotesComponent
+        getData={getData}
+        quotes={quotes}
+        error={error}
+        loading={loading}
+      />
     </div>
   );
-}
+};
 
-export default App;
+const MSTP = state => {
+  // console.log(state);
+  return {
+    quotes: state.quotes,
+    loading: state.loading,
+    error: state.error
+  };
+};
+
+export default connect(MSTP, { getData })(App);
