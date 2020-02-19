@@ -9,9 +9,12 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    borderRadius: 5,
+    margin: 20,
   },
   media: {
     height: 140,
@@ -22,7 +25,7 @@ const BeerCard = props => {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className='cards'>
     {props.error ? (
         <div className='error'>{props.error}</div>
     ) : (

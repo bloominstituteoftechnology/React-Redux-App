@@ -5,7 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { beerReducer as reducer} from './reducers/beerReducer';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import BeerList from './components/BeerList';
+// import BeerList from './components/BeerList';
+import BeerCard from './components/BeerCard';
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -15,7 +16,8 @@ export default function App() {
       <div className="App">
         <h1>BEER List</h1>
         <BeerButton />
-        <BeerList />
+        {/* <BeerList /> */}
+        <BeerCard />
       </div>
     </Provider>
   );
