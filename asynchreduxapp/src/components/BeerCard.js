@@ -8,15 +8,23 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
-const useStyles = makeStyles({
+
+const useStyles = makeStyles(theme =>({
   cards: {
       direction:'row',
       justifyContent: 'space-evenly',
       alignItems: 'flex-start',
   },  
-
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
+  },
   root: {
     maxWidth: 300,
     borderRadius: 5,
@@ -25,7 +33,7 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
-});
+}));
 
 const BeerCard = props => {
   const classes = useStyles();
@@ -60,6 +68,33 @@ const BeerCard = props => {
           Learn More
         </Button>
       </CardActions>
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            >
+            <Typography className={classes.heading}>Food Pairings</Typography>
+        </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+            <Typography>
+            {beer.food_pairing}
+            </Typography>
+            </ExpansionPanelDetails>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>Brewers Tips</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+           {beer.brewers_tips}
+          </Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>     
+
     </Card>
     ))}
     </div>
