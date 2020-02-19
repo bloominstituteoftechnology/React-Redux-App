@@ -7,9 +7,9 @@ export const SET_ERROR = "SET_ERROR";
 export const getData = () => dispatch => {
   dispatch({ type: FETCH_DATA });
   axios
-    .get("https://programming-quotes-api.herokuapp.com/quotes/lang/en")
+    .get("https://programming-quotes-api.herokuapp.com/quotes/random")
     .then(res => {
-      console.log(res);
+      // console.log(res);
       dispatch({ type: NEW_QUOTE, payload: res.data });
     })
     .catch(err => {

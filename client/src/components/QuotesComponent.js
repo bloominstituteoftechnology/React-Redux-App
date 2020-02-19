@@ -1,5 +1,9 @@
 import React from "react";
 import SingleQuote from "./SingleQuote";
+//redux stuff
+import { connect } from "react-redux";
+import { getData } from "../actions";
+//
 
 const QuotesComponent = props => {
   console.log(props);
@@ -10,12 +14,19 @@ const QuotesComponent = props => {
   };
   return (
     <div>
-      <div>
-        <SingleQuote />
-      </div>
+      {<SingleQuote quotes={props.quotes} />}
       <button onClick={handleGetData}>hit me </button>
     </div>
   );
 };
 
-export default QuotesComponent;
+const MSTP = state => {
+  console.log(state);
+  return {
+    quotes: state.quotes,
+    loading: state.loading,
+    error: state.error
+  };
+};
+
+export default connect(MSTP, { getData })(QuotesComponent);

@@ -6,15 +6,10 @@ import { getData } from "./actions";
 //
 import QuotesComponent from "./components/QuotesComponent";
 
-const App = ({ quotes, loading, error, getData }) => {
+const App = ({ quotes, loading, error }) => {
   return (
     <div className="App">
-      <QuotesComponent
-        getData={getData}
-        quotes={quotes}
-        error={error}
-        loading={loading}
-      />
+      <QuotesComponent quotes={quotes} error={error} loading={loading} />
     </div>
   );
 };

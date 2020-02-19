@@ -1,7 +1,8 @@
 import React from "react";
 
 const SingleQuote = props => {
-  return <div>hello from single quote</div>;
+  console.log(props);
+  return <div>{props.quotes.en}</div>;
 };
 
 export default SingleQuote;
