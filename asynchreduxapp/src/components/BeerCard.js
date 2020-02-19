@@ -12,12 +12,15 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   cards: {
-    width: 500,  
-  },
+      direction:'row',
+      justifyContent: 'space-evenly',
+      alignItems: 'flex-start',
+  },  
+
   root: {
-    maxWidth: 400,
+    maxWidth: 300,
     borderRadius: 5,
-    margin: 20,
+    margin: 30,
   },
   media: {
     height: 140,
