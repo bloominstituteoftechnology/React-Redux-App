@@ -1,0 +1,29 @@
+.houses-card-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2% 3%;
+    color: rgb(237, 241, 235);
+    border:1px solid antiquewhite;
+    background-color: rgba(20, 150, 211, 0.911);
+    margin: 2%;
+    border-radius: 50px;
+    box-shadow:inset 0px 5px 5px 1px #000000;
+    
+}
+
+.houses-card-container h1 {
+    font-size: 2.5rem;
+    padding-bottom: 1%;
+}
+
+.houses-card-container p {
+    font-size: 1.3rem;
+}
+
+.houses-button-div {
+    text-align: center;
+}
+
+
+
