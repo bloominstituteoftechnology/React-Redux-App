@@ -17,7 +17,9 @@ export default function App() {
         <h1 className='h1'>BEER List</h1>
         <BeerButton />
         {/* <BeerList /> */}
+        <div className='beercards'>
         <BeerCard />
+        </div>
       </div>
     </Provider>
   );

@@ -13,7 +13,7 @@ const BeerButton = props => {
             {props.isFetchingData ? (
                 <div> We are fetching your Beer</div>
             ) : (
-                <button onClick = {handleGetData}>Get my Beer List</button>
+                <button className='beerbutton'onClick = {handleGetData}>Get my Beer List</button>
             )}
         </div>
     );
