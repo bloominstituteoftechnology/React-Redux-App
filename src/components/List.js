@@ -3,13 +3,15 @@ import { connect } from 'react-redux';
 
 const List = props => {
     return (
-        <>
+        <div className='outer-card'>
         {props.error ? (
             <div className='error'>{props.error}</div>
         ) : (
-            props.missions.map(mission => <div>{mission.mission_name}</div>)
+            props.missions.map(mission =><div className='wrapper-card'>
+             <div className='card'>{mission.mission_name}</div> 
+             </div>)
         )}
-        </>
+        </div>
     )
 };
 const mapStateToProps = state => {
