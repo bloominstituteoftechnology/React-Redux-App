@@ -1,8 +1,8 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  
-  background-image: "../public/images/fabio-alves-_fLgxjACz5k-unsplash.jpg";
+  background-color: beige;
+  background-image: "../src/images/fabio-alves-_fLgxjACz5k-unsplash.jpg";
   background-repeat: no-repeat;
 }
 .h1 {
