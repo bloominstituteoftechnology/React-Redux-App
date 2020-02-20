@@ -28,9 +28,10 @@
 
 h3 {
   border-bottom: inset;
-  width: 10%;
+  width: 25%;
   margin: 0 auto;
   font-family: fantasy;
+  letter-spacing: 3px;
 }
 button:focus {
   outline: none;
