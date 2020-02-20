@@ -32,10 +32,12 @@ const QuotesComponent = ({ getData, error, quotes, loading }) => {
               <button
                 style={{
                   color: "green",
+                  textShadow: ".2px .2px .5px white",
                   cursor: "pointer",
                   fontSize: "1.2rem",
                   marginTop: "4em",
                   fontFamily: "serif",
+                  marginBottom: "5em",
                   border: "none",
                   backgroundColor: "transparent"
                 }}
