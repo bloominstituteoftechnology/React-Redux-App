@@ -9,7 +9,9 @@ import QuotesComponent from "./components/QuotesComponent";
 const App = ({ quotes, loading, error }) => {
   return (
     <div className="App">
-      <QuotesComponent quotes={quotes} error={error} loading={loading} />
+      <div className="App-div">
+        <QuotesComponent quotes={quotes} error={error} loading={loading} />
+      </div>
     </div>
   );
 };

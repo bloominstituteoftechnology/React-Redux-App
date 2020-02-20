@@ -4,24 +4,58 @@ import SingleQuote from "./SingleQuote";
 import { connect } from "react-redux";
 import { getData } from "../actions";
 //
+import Loader from "react-loader-spinner";
 
-const QuotesComponent = props => {
-  console.log(props);
-
+const QuotesComponent = ({ getData, error, quotes, loading }) => {
+  // console.log(props);
   const handleGetData = e => {
     e.preventDefault();
-    props.getData();
+    getData();
   };
   return (
     <div>
-      {<SingleQuote quotes={props.quotes} />}
-      <button onClick={handleGetData}>hit me </button>
+      <div>
+        {!error ? (
+          loading ? (
+            <Loader type="Puff" color="#00BFFF" height={177} width={300} />
+          ) : (
+            <div style={{ height: "15vh" }}>
+              {quotes.map(q => (
+                <SingleQuote
+                  error={error}
+                  author={q.author}
+                  loading={loading}
+                  quote={q.title}
+                  key={q.author}
+                />
+              ))}
+              <button
+                style={{
+                  color: "green",
+                  cursor: "pointer",
+                  fontSize: "1.2rem",
+                  marginTop: "4em",
+                  fontFamily: "serif",
+                  border: "none",
+                  backgroundColor: "transparent"
+                }}
+                onClick={handleGetData}
+              >
+                {" "}
+                New Quote
+              </button>
+            </div>
+          )
+        ) : (
+          <div>{error}</div>
+        )}
+      </div>
     </div>
   );
 };
 
 const MSTP = state => {
-  console.log(state);
+  // console.log(state);
   return {
     quotes: state.quotes,
     loading: state.loading,
