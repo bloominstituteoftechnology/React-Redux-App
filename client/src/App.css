@@ -15,6 +15,17 @@
   width: 100%;
 }
 
+@media screen and (max-width: 800px) {
+  .App-div {
+    top: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .App-div {
+    top: 20%;
+  }
+}
+
 h3 {
   border-bottom: inset;
   width: 10%;
