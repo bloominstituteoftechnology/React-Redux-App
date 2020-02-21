@@ -21,7 +21,7 @@ const Jokes = props => {
       {props.joke ? (
         <h4>{props.joke}</h4>
       ) : (
-        <p>Fetch a joke for some giggles!</p>
+        <p>Get a Great Quote and Be Inspired!</p>
       )}
     </>
   );

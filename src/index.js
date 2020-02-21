@@ -15,7 +15,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 function App() {
   return (
     <div className="App">
-      <h1>Jokes 😂</h1>
+      <h1>Great Quotes</h1>
       <Jokes />
     </div>
   );
