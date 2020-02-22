@@ -4,19 +4,17 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import { reducer } from './store/reducers';
+import rootReducer from './reducers';
 
-import Jokes from './components/Jokes';
-
+import PokemonList from './components/PokemonList';
 import './styles.css';
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 function App() {
   return (
     <div className="App">
-      <h1>Great Quotes</h1>
-      <Jokes />
+      <PokemonList />
     </div>
   );
 }
