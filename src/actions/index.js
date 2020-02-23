@@ -1,16 +1,19 @@
 import axios from 'axios';
 
-export const FETCH_POKEMON_START = 'FETCH_POKEMON_START';
-export const FETCH_POKEMON_SUCCESS = 'FETCH_POKEMON_SUCCESS';
-export const FETCH_POKEMON_FAIL = 'FETCH_POKEMON_FAIL';
+export const FETCH_DATA = 'FETCH_DATA';
+export const UPDATE_QUOTE = 'UPDATE_QUOTE';
+export const SET_ERROR = 'SET_ERROR';
 
-export const getPokemon = () => dispatch => {
-  dispatch({ type: FETCH_POKEMON_START });
-  axios
-    .get('https://pokeapi.co/api/v2/pokemon/')
-    .then(res =>
-      
-      dispatch({ type: FETCH_POKEMON_SUCCESS, payload: res.data.results })
-    )
-    .catch(err => dispatch({ type: FETCH_POKEMON_FAIL, payload: err }));
+export const getData = () => dispatch => {
+    dispatch({type: FETCH_DATA});
+    axios
+        .get ('https://type.fit/api/quotes')
+        .then(res => {
+            console.log(res);
+        // dispatch({type: UPDATE_QUOTE, payload: res.data});
+        })
+    .catch(err => {
+        console.error('errors fetching data', err);
+        // dispatch({type: SET_ERROR, payload: 'error fetching data from api'});
+});
 };

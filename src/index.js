@@ -1,28 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
+import './index.css';
+import App from './App';
+
+import {createStore, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import {quotesReducer as reducer} from './reducers/quoteReducer'
+
 import thunk from 'redux-thunk';
 
-import rootReducer from './reducers';
+const store = createStore(reducer, applyMiddleware(thunk));
 
-import PokemonList from './components/PokemonList';
-import './styles.css';
-
-const store = createStore(rootReducer, applyMiddleware(thunk));
-
-function App() {
-  return (
-    <div className="App">
-      <PokemonList />
-    </div>
-  );
-}
-
-const rootElement = document.getElementById('root');
 ReactDOM.render(
-  <Provider store={store}>
+<Provider store={store}>
     <App />
-  </Provider>,
-  rootElement
-);
+</Provider>, document.getElementById('root'));
