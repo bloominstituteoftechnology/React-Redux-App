@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import {getData} from '../actions/index';
+import cuid from 'cuid';
 
 const QuotesList = props => {
   useEffect(() => {
@@ -13,7 +14,7 @@ return(
   {props.quotes.map(quotes=>{
 
     return(
-      <div className='quotes'>
+      <div key={cuid()} className='quotes'>
         <p>{quotes.text}</p>
         <p>{quotes.author}</p>
         </div>

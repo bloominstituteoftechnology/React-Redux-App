@@ -8,9 +8,9 @@ import QuotesList from './components/QuotesList';
 function App() {
   return (
     <div className="App">
-      <h1>Hello there</h1>
+      <h1>Famous Quotes</h1>
       <QuotesForm />
-      <QuotesList/>
+     <QuotesList />
     </div>
   );
 }
