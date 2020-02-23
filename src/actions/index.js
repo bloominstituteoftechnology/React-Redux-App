@@ -9,11 +9,11 @@ export const getData = () => dispatch => {
     axios
         .get ('https://type.fit/api/quotes')
         .then(res => {
-            console.log(res);
-        // dispatch({type: UPDATE_QUOTE, payload: res.data});
+            console.log('response',res.data);
+        dispatch({type: UPDATE_QUOTE, payload: res.data});
         })
     .catch(err => {
         console.error('errors fetching data', err);
-        // dispatch({type: SET_ERROR, payload: 'error fetching data from api'});
+        dispatch({type: SET_ERROR, payload: 'error fetching data from api'});
 });
 };

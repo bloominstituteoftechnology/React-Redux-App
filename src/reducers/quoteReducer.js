@@ -13,9 +13,11 @@ const initialState ={
 // }
 
 export const quotesReducer = (state=initialState, action) =>{
+  console.log("Action from reducer", action)
     switch(action.type) {
         case FETCH_DATA :
             return {
+            
                 ...state,
                 isFetchingData: true,
                 quotes: []
