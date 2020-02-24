@@ -6,11 +6,7 @@ const initialState ={
     error:''
 };
 
-// export const getData = () =>{
-//     return{
 
-//     }
-// }
 
 export const quotesReducer = (state=initialState, action) =>{
   console.log("Action from reducer", action)

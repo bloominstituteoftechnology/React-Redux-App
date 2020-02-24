@@ -1,6 +1,10 @@
+body {
+  background-color: rgb(215, 220, 195);
+}
+
 .App {
     text-align: center;
-    background-color: paleturquoise;
+    
   }
   
   h1{
