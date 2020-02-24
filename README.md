@@ -16,30 +16,30 @@ In this project you'll choose an api to consume. You will build an application f
 
 ## Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] CD into the project base directory `cd react-redux-app`
-- [ ] Use CRA to create a new React app, the `cd` into the react app
-- [ ] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your team lead as collaborator on Github.
+- [x] Clone your OWN version of the repository in your terminal
+- [x] CD into the project base directory `cd react-redux-app`
+- [x] Use CRA to create a new React app, the `cd` into the react app
+- [x] Using the same command tool (yarn or npm) start up the app using `yarn start` or `npm start`
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x]Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete by merging the branch back into master.
-- [ ] Do your magic!
+- [x] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
+- [x] Add your team lead as a reviewer on the pull-request
+- [x] Your team lead will count the project as complete by merging the branch back into master.
+- [x] Do your magic!
 
 ## Minimum Viable Product
 
-- [ ] Build a React Redux app
-- [ ] Fetch data inside an async action creator from an API of your choosing
-- [ ] Add the data from the API to the Redux store
-- [ ] Display the data from the store in a component
-- [ ] _Some_ styling must be applied. It can be basic, but the app must not only use browser default stylings
+- [x] Build a React Redux app
+- [x] Fetch data inside an async action creator from an API of your choosing
+- [x] Add the data from the API to the Redux store
+- [x] Display the data from the store in a component
+- [x] _Some_ styling must be applied. It can be basic, but the app must not only use browser default stylings
 
 ## Directions
 
