@@ -1,8 +1,8 @@
 {
     "version": 2,
-    "name": "asyncreduxapp",
+    "name": "asynchreduxapp",
     "builds": [{ "src": "asynchreduxapp/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
     "routes": [
-        { "src": "/(.*)", "dest": "asyncreduxapp/$1" }
+        { "src": "/(.*)", "dest": "asynchreduxapp/$1" }
     ]
 }
