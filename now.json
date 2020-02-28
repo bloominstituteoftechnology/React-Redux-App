@@ -15,5 +15,4 @@
            "src": "/(.*)", 
            "dest": "async-redux-react-cra/$1" 
         }
-    ]
-}
+    ]}
