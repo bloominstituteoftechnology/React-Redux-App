@@ -8,6 +8,7 @@
 
 
 export const mainReducer = (state = initialState, action) => {
+    
     switch(action.type){
         case GET_DATA:
             return {
@@ -16,6 +17,7 @@ export const mainReducer = (state = initialState, action) => {
             };
             case UPDATE_HOUSES:
                 return {
+                    
                     ...state,
                     houses:action.payload,
                     isFetchingData:false

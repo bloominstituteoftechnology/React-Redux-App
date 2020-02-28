@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import './App.scss';
 import Houses from './components/Houses';
 import Housesmap from './components/Housesmap'
 import armorImg from './images/armor.jpg'
