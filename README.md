@@ -22,7 +22,7 @@ In this project you'll choose an api to consume. You will build an application f
 - [ ] CD into the project base directory `cd React-Redux-App`.
 - [ ] Run `npx create-react-app app --use-npm` to make a CRA app.
 - [ ] CD into the react app `cd app`.
-- [ ] Start up the app using `npm start`
+- [ ] Start up the app using `npm start`.
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
