@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-export const FETCH_WINES_SUCCESS = 'FETCH_WINES_SUCCESS'
+export const FETCH_WINES_SUCCESS = 'FETCH_WINES_SUCCESS';
 
-export const FETCH_WINES_REQUEST = 'FETCH_WINES_REQUEST'
+export const FETCH_WINES_REQUEST = 'FETCH_WINES_REQUEST';
 
 export const FETCH_WINES_ERROR = 'FETCH_WINES_ERROR';
 
@@ -27,13 +27,9 @@ export const searchWines = (item) => dispatch => {
         //     
         .then(res => {
 
-            dispatch({ type: FETCH_WINES_SUCCESS, payload: res.data });
+            dispatch({ type: FETCH_WINES_SUCCESS, payload: res.data.pairedWines});
         })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-        })
+        
 
         .catch(err => {
             dispatch({

@@ -6,9 +6,12 @@ import { connect } from "react-redux";
 import { searchWines } from './actions';
 import WineList from './components/WinesList';
 import {WineSearch} from './components/WineSearch';
+import { render } from 'react-dom';
 
 
 function App({wine, searchWines, isFetching}) {
+  console.log("App Props:", wine);
+
   const newWineSearch = item => {
     
     searchWines(item);
@@ -18,7 +21,7 @@ function App({wine, searchWines, isFetching}) {
       <header className="App-header">
         <div className="welcome">
           
-          <h1>Search Bar</h1>
+          
           <h4>Welcome to the Wine Bar</h4>
 
           <WineSearch fetch={isFetching} find={newWineSearch}/>
@@ -27,9 +30,9 @@ function App({wine, searchWines, isFetching}) {
         </div>
       </header>
 
-      <div className="App-body">
+      <body className="App-body">
         <WineList wine={wine} />
-      </div>
+      </body>
     </div>
   );
 }
