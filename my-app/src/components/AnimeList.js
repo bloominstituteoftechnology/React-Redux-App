@@ -20,6 +20,7 @@ const useStyles = makeStyles(theme => ({
     marginTop: 10,
     display: "flex",
     justifyContent: "center"
+    
   },
   root: {
     width: "30%"
