@@ -1,37 +1,50 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-/* import logo from "../images/truck-logo.png";
-import "../scss/NavStyle.scss";
- */ import ScrollAnimation from "react-animate-on-scroll";
+import { Link, NavLink } from "react-router-dom";
+
+import "../scss/nav.scss";
+import logo from "../img/MX_Nav_EN.png";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Navbar = props => {
+  window.addEventListener("resize", function() {
+    if (window.innerWidth > 1041)
+      document.querySelector(".nav-bar").classList.remove("menu-open");
+  });
   return (
     <header className="header-section">
       <ScrollAnimation
         offset={0}
-        animateIn="fadeInLeft"
+        animateIn="fadeIn"
         animateOnce="true"
         className="logo-con"
-      />
-      {/* <img className="logo-img" src={logo} alt="FoodTruck Logo" />
-      </ScrollAnimation> */}
-
-      <nav className="nav-bar">
-        <NavLink
+      >
+        <Link
           onClick={props.resetBooster}
           to="/"
           exact
           activeClassName="activeLink"
         >
-          Home
-        </NavLink>
+          <img className="logo-img" src={logo} alt="mtg Logo" />
+        </Link>
+      </ScrollAnimation>
+      <div
+        class="hamburger"
+        onClick={() => {
+          document.querySelector(".nav-bar").classList.toggle("menu-open");
+        }}
+      >
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <nav className="nav-bar">
         <NavLink
           to="/throne_of_eldraine"
           onClick={props.resetBooster}
           exact
           activeClassName="activeLink"
         >
-          Throne of Eldraine
+          <i class="ss ss-eld" /> Throne of Eldraine
         </NavLink>
         <NavLink
           to="/modern_horizons"
@@ -39,6 +52,7 @@ const Navbar = props => {
           exact
           activeClassName="activeLink"
         >
+          <i class="ss ss-mh1" />
           Modern Horizons I
         </NavLink>
         <NavLink
@@ -47,6 +61,7 @@ const Navbar = props => {
           exact
           activeClassName="activeLink"
         >
+          <i class="ss ss-war" />
           War of the Spark
         </NavLink>
         <NavLink
@@ -55,6 +70,7 @@ const Navbar = props => {
           exact
           activeClassName="activeLink"
         >
+          <i class="ss ss-rna" />
           Ravnica Allegiance
         </NavLink>
       </nav>

@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&display=swap");
+$phone: 400px;
+$smallTablet: 520px;
+$smallScreen: 1040px;
+$bigScreen: 1150px;
+$hugeScreen: 1270px;
+
+body {
+  background-color: black;
+}
+.content-wrapper {
+  height: 100vh;
+
+  video {
+    height: 110vh;
+    width: 100%;
+    @media screen and (min-width: $hugeScreen) {
+      height: 135vh !important;
+    }
+    @media screen and (min-width: $bigScreen) {
+      height: 120vh;
+    }
+    @media screen and (max-width: 920px) {
+      height: 90vh;
+    }
+    @media screen and (max-width: 800px) {
+      height: 80vh;
+    }
+    @media screen and (max-width: 650px) {
+      height: 70vh;
+    }
+    @media screen and (max-width: $smallTablet) {
+      height: 60vh;
+    }
+    @media screen and (max-width: 410px) {
+      height: 53vh;
+    }
+  }
+  .text-content {
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    /*     background: rgba(255, 255, 255, 0.466);
+ */
+    padding: 1rem;
+    color: rgb(252, 252, 252);
+    @media screen and (max-width: 920px) {
+      top: 70%;
+    }
+    @media screen and (max-width: 755px) {
+      top: 55%;
+    }
+    @media screen and (max-width: 410px) {
+      top: 50%;
+      left: 3%;
+    }
+    h1 {
+      font-family: "Georgia", serif;
+      text-shadow: 2px 2px 1px #000000;
+    }
+    h2 {
+      font-family: "Open Sans", sans-serif;
+      text-shadow: 2px 2px 1px #000000;
+    }
+  }
+  h3 {
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    display: none;
+    @media screen and (max-width: 1000px) {
+      display: inline-block;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+    @media screen and (max-width: 800px) {
+      left: 45%;
+    }
+    @media screen and (max-width: $phone) {
+      left: 40%;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    text-shadow: none;
+    background: #c7371b;
+    padding: 0.5rem;
+    color: white;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+    box-shadow: 2px 2px 1px #1a1919d2;
+    border-radius: 5px;
+    &:hover {
+      background-color: white;
+      color: #c7371b;
+      font-weight: 900;
+    }
+  }
+}

@@ -18,7 +18,7 @@ function App(props) {
     <>
       <Nav clicked={props.clicked} resetBooster={props.resetBooster} />
       <Route exact path="/">
-        <Main />
+        <Main resetBooster={props.resetBooster} />
       </Route>
       <Route exact path="/throne_of_eldraine">
         <Eldraine

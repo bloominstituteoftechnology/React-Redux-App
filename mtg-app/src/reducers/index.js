@@ -50,6 +50,7 @@ function reducer(state = initialState, action) {
     case "RESET_BOOSTER":
       return {
         ...state,
+        isFetching: false,
         clicked: false
       };
     default:

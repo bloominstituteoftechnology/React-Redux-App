@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap");
+
+$phone: 400px;
+$smallTablet: 520px;
+$smallScreen: 1040px;
+body {
+  margin: 0;
+}
+.header-section {
+  top: 0;
+  height: 12vh;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  @media screen and (max-width: $smallScreen) {
+    height: 10vh;
+    .hamburger {
+      position: absolute;
+      cursor: pointer;
+      left: 5%;
+      top: 50%;
+      transform: translate(-5%, -50%);
+      z-index: 2;
+      .line {
+        width: 30px;
+        height: 3px;
+        background: white;
+        margin: 5px;
+      }
+    }
+  }
+  .menu-open {
+    width: 15rem;
+    transition: 0.5s;
+    align-items: center;
+    justify-content: flex-start;
+
+    a {
+      height: 10%;
+      font-size: 1rem;
+      width: 100%;
+      text-align: center;
+      padding-top: 2.5rem;
+      transition: 0.7s;
+      i {
+        display: inline-block;
+      }
+    }
+    .activeLink {
+      background: white;
+      color: black;
+      border-bottom: none;
+      i {
+        color: black;
+      }
+    }
+  }
+  .logo-con {
+    width: 20%;
+    @media screen and (max-width: $smallTablet) {
+      width: 40%;
+    }
+    .logo-img {
+      max-width: 100%;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.nav-bar {
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+  @media screen and (max-width: $smallScreen) {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    width: 0;
+    height: 100vh;
+    background-color: black;
+    border-left: none;
+    border-bottom: none;
+    z-index: 2;
+    flex-direction: column;
+    margin: 0;
+
+    a {
+      font-size: 0;
+    }
+    i {
+      display: none;
+    }
+  }
+  a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: "Open Sans", sans-serif;
+
+    @media screen and (max-width: $phone) {
+      /*       font-size: 0.8rem;
+ */
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: gold;
+    }
+  }
+  i {
+    color: white;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.activeLink {
+  border-bottom: solid 2px red;
+}
