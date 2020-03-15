@@ -6,7 +6,7 @@ export default function Main(props) {
   return (
     <>
       <div className="content-wrapper">
-        <video autoPlay="autoplay" loop="loop">
+        <video autoPlay="autoplay" muted="muted" loop="loop">
           <source
             type="video/mp4"
             src="https://media.magic.wizards.com/AVS2efHWWj_0.mp4"
