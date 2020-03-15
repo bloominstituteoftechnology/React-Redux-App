@@ -49,7 +49,7 @@ export default function Eldraine(props) {
             Open Booster Pack
           </button>
         </div>
-        <h3>Made by love 2020</h3>
+        <h3>Made with love 2020</h3>
       </div>
 
       <div className="sweet-loading">

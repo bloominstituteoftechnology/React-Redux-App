@@ -20,7 +20,7 @@ export default function Main(props) {
             <span className="btn">Try It Now </span>
           </Link>
         </div>
-        <h3>Made by love 2020</h3>
+        <h3>Made with love 2020</h3>
       </div>
     </>
   );
