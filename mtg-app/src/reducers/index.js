@@ -8,7 +8,8 @@ const initialState = {
   set: "",
   cards: [],
   error: "",
-  isFetching: false
+  isFetching: false,
+  clicked: false
 };
 
 function reducer(state = initialState, action) {
@@ -40,6 +41,16 @@ function reducer(state = initialState, action) {
         ...state,
         error: action.payload,
         isFetching: false
+      };
+    case "CLICK_BOOSTER":
+      return {
+        ...state,
+        clicked: true
+      };
+    case "RESET_BOOSTER":
+      return {
+        ...state,
+        clicked: false
       };
     default:
       return state;

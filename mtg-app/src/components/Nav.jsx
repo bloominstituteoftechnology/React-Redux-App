@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import "../scss/NavStyle.scss";
  */ import ScrollAnimation from "react-animate-on-scroll";
 
-const Navbar = () => {
+const Navbar = props => {
   return (
     <header className="header-section">
       <ScrollAnimation
@@ -17,19 +17,44 @@ const Navbar = () => {
       </ScrollAnimation> */}
 
       <nav className="nav-bar">
-        <NavLink to="/" exact activeClassName="activeLink">
+        <NavLink
+          onClick={props.resetBooster}
+          to="/"
+          exact
+          activeClassName="activeLink"
+        >
           Home
         </NavLink>
-        <NavLink to="/throne_of_eldraine" exact activeClassName="activeLink">
+        <NavLink
+          to="/throne_of_eldraine"
+          onClick={props.resetBooster}
+          exact
+          activeClassName="activeLink"
+        >
           Throne of Eldraine
         </NavLink>
-        <NavLink to="/modern_horizons" exact activeClassName="activeLink">
+        <NavLink
+          to="/modern_horizons"
+          onClick={props.resetBooster}
+          exact
+          activeClassName="activeLink"
+        >
           Modern Horizons I
         </NavLink>
-        <NavLink to="/war_of_the_spark" exact activeClassName="activeLink">
+        <NavLink
+          to="/war_of_the_spark"
+          onClick={props.resetBooster}
+          exact
+          activeClassName="activeLink"
+        >
           War of the Spark
         </NavLink>
-        <NavLink to="/ravnica_allegiance" exact activeClassName="activeLink">
+        <NavLink
+          onClick={props.resetBooster}
+          to="/ravnica_allegiance"
+          exact
+          activeClassName="activeLink"
+        >
           Ravnica Allegiance
         </NavLink>
       </nav>

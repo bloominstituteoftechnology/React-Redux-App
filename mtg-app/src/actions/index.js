@@ -23,3 +23,11 @@ export const getBooster = set => dispatch => {
       });
     });
 };
+
+export const clickBooster = () => {
+  return { type: "CLICK_BOOSTER" };
+};
+
+export const resetBooster = () => {
+  return { type: "RESET_BOOSTER" };
+};

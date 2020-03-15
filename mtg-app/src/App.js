@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getBooster } from "./actions";
+import { getBooster, clickBooster, resetBooster } from "./actions";
 
 import "./App.css";
 
@@ -16,7 +16,7 @@ function App(props) {
   console.log(props.cards);
   return (
     <>
-      <Nav />
+      <Nav clicked={props.clicked} resetBooster={props.resetBooster} />
       <Route exact path="/">
         <Main />
       </Route>
@@ -26,16 +26,39 @@ function App(props) {
           isFetching={props.isFetching}
           error={props.error}
           getBooster={props.getBooster}
+          clicked={props.clicked}
+          clickBooster={props.clickBooster}
         />
       </Route>
       <Route exact path="/war_of_the_spark">
-        <War />
+        <War
+          cards={props.cards}
+          isFetching={props.isFetching}
+          error={props.error}
+          getBooster={props.getBooster}
+          clicked={props.clicked}
+          clickBooster={props.clickBooster}
+        />
       </Route>
       <Route exact path="/modern_horizons">
-        <Modern />
+        <Modern
+          cards={props.cards}
+          isFetching={props.isFetching}
+          error={props.error}
+          getBooster={props.getBooster}
+          clicked={props.clicked}
+          clickBooster={props.clickBooster}
+        />
       </Route>
       <Route exact path="/ravnica_allegiance">
-        <Ravnica />
+        <Ravnica
+          cards={props.cards}
+          isFetching={props.isFetching}
+          error={props.error}
+          getBooster={props.getBooster}
+          clicked={props.clicked}
+          clickBooster={props.clickBooster}
+        />
       </Route>
     </>
   );
@@ -44,7 +67,12 @@ function App(props) {
 const mapStateToProps = state => ({
   cards: state.cards,
   error: state.error,
-  isFetching: state.isFetching
+  isFetching: state.isFetching,
+  clicked: state.clicked
 });
 
-export default connect(mapStateToProps, { getBooster })(App);
+export default connect(mapStateToProps, {
+  getBooster,
+  clickBooster: clickBooster,
+  resetBooster: resetBooster
+})(App);
