@@ -12,28 +12,31 @@ body {
   height: 100vh;
 
   video {
-    height: 110vh;
+    height: 100vh;
     width: 100%;
     @media screen and (min-width: $hugeScreen) {
-      height: 135vh !important;
+      height: 115vh !important;
     }
     @media screen and (min-width: $bigScreen) {
-      height: 120vh;
+      height: 110vh;
+    }
+    @media screen and (max-width: 1040px) {
+      height: 95vh;
     }
     @media screen and (max-width: 920px) {
-      height: 90vh;
-    }
-    @media screen and (max-width: 800px) {
       height: 80vh;
     }
-    @media screen and (max-width: 650px) {
+    @media screen and (max-width: 800px) {
       height: 70vh;
     }
-    @media screen and (max-width: $smallTablet) {
+    @media screen and (max-width: 650px) {
       height: 60vh;
     }
+    @media screen and (max-width: $smallTablet) {
+      height: 50vh;
+    }
     @media screen and (max-width: 410px) {
-      height: 53vh;
+      height: 43vh;
     }
   }
   .text-content {

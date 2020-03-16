@@ -12,13 +12,16 @@ body {
   height: 100vh;
 
   video {
-    height: 110vh;
+    height: 100vh;
     width: 100%;
     @media screen and (min-width: $hugeScreen) {
       height: 135vh !important;
     }
     @media screen and (min-width: $bigScreen) {
       height: 120vh;
+    }
+    @media screen and (max-width: 1040px) {
+      height: 95vh;
     }
     @media screen and (max-width: 920px) {
       height: 90vh;
