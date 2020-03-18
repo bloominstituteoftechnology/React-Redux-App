@@ -1,5 +1,5 @@
 import React from 'react';
-import CovidTracker from './components/covidTracker';
+import CovidTracker from './components/CovidTracker';
 
 function App() {
   return ( 
