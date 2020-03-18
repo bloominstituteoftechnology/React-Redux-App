@@ -47,10 +47,13 @@
   border: 1px blue dotted;
   background-color: papayawhip;
   margin: 10%;
+  padding: 5%;
 }
 
 .comic-box {
   display: flex;
   flex-flow: column nowrap;
   background-color: lightcyan;
+  padding: 3%;
+  margin: 3%
 }

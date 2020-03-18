@@ -13,21 +13,21 @@ export const ADD_COMIC = "ADD_COMIC";
 export const NOT_WAITING = "NOT_WAITING";
 export const REMOVE_COMIC = "REMOVE_COMIC";
 export const getComics = () => dispatch => {
-    dispatch({ type: SET_ERROR, payload: "" })
+    dispatch({ type: SET_ERROR, payload: "" });
     dispatch({ type: GET_TOTAL });
     axios.get("https://cors-anywhere.herokuapp.com/http://xkcd.com/info.0.json")
         .then(res => {
             console.log("Got latest: ",res);
             dispatch({ type: GET_FIVE });
             for (let i = 0; i < 5; i++){
-                axios.get(`https://cors-anywhere.herokuapp.com/http://xkcd.com/${getRand(res.num)}/info.0.json`)
+                axios.get(`https://cors-anywhere.herokuapp.com/http://xkcd.com/${getRand(res.data.num)}/info.0.json`)
                     .then(resp => {
                         console.log("Got comic: ", resp);
-                        dispatch({ type: ADD_COMIC, payload: resp });
+                        dispatch({ type: ADD_COMIC, payload: resp.data });
                         i === 4 && dispatch({ type: NOT_WAITING });
                     })
                     .catch(er => {
-                        console.error("Error fetching comic # ", res.num, " Error: ", er);
+                        console.error("Error fetching comic # ", res.datanum, " Error: ", er);
                         dispatch({ type: SET_ERROR, payload: "Error fetching more comics."});
                     });
             }

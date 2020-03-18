@@ -1,9 +1,9 @@
 import React from "react";
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
+// import { createStore, applyMiddleware } from "redux";
+// import { Provider } from "react-redux";
+// import thunk from "redux-thunk";
 
-import { appReducer as reducer } from "./reducers/appReducer";
+// import { appReducer as reducer } from "./reducers/appReducer";
 
 import Header from "./components/Header";
 import ComicList from "./components/ComicList";

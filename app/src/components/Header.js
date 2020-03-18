@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getComics } from "../actions/appActions";
 
 const Header = props => {
+    console.log(props);
     const handleGetComics = e => {
         e.preventDefault();
         props.getComics();
@@ -22,9 +23,12 @@ const Header = props => {
     );
 };
 
-const mapStateToProps = state => ({
-        waiting: state.waiting,
-        error: state.error
-    });
+const mapStateToProps = state => {
+        return {
+            waiting: state.waiting,
+            error: state.error
+        }
+        // return {waiting:""}
+    };
 
 export default connect( mapStateToProps, { getComics })(Header);
