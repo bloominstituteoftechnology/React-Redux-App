@@ -11,7 +11,7 @@ const Header = props => {
     }
     return (
         <>
-            <h1>Random List of XKCD Comics</h1>
+            <h1>Arbitrary Selection of XKCD Strips</h1>
             {props.waiting && (
                 <div>{props.waiting}</div>
             )}

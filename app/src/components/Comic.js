@@ -12,7 +12,7 @@ const Comic = props => {
     return (
         <div className="comic-box">
             <h2>{props.comic.safe_title}</h2>
-            <img src={props.comic.img} alt={props.comic.alt} />
+            <img className="com-img" src={props.comic.img} alt={props.comic.alt} title={props.comic.alt}/>
             <button onClick={handleDeleteComic}>Delete</button>
         </div>
     )
@@ -22,7 +22,6 @@ const mapStateToProps = state => {
     return {
         error: state.error
     }
-    // return {waiting:""}
 };
 
 export default connect( mapStateToProps, { deleteComic })(Comic);

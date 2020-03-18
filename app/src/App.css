@@ -43,17 +43,30 @@
 
 .comics-list {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
   border: 1px blue dotted;
   background-color: papayawhip;
-  margin: 10%;
-  padding: 5%;
+  align-items: center;
+  margin: 5%;
+  padding: 3%;
 }
 
 .comic-box {
   display: flex;
   flex-flow: column nowrap;
   background-color: lightcyan;
+  border: 1px blue dotted;
   padding: 3%;
-  margin: 3%
+  margin: 3%;
+  align-items: center;
+}
+
+.com-img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  margin: 2%;
 }
