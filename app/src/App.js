@@ -1,8 +1,9 @@
 import React from 'react';
+import CovidTracker from './components/covidTracker';
 
 function App() {
   return ( 
-    <div>app</div>
+    <CovidTracker />
   );
 }
 

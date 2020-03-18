@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import appReducer from './appReducer';
+import covidTracker from './covidTracker';
 
 export default combineReducers({
-    appReducer
+    covidTracker
 });
