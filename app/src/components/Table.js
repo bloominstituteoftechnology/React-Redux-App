@@ -1,8 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import MaterialTable from 'material-table';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCountry } from '../actions/covidTracker';
+
 const Table = () => {
+    const dispatch = useDispatch();
     const table = {
         data: useSelector(state => state.data.Countries),
         columns: [
@@ -10,9 +13,17 @@ const Table = () => {
             { title: 'Confirmed cases', field: 'TotalConfirmed', type: 'numeric' }
         ]
     }
-    
+
     return (
-        <MaterialTable title='Cases by country' columns={table.columns} data={table.data} />
+        <MaterialTable
+            title='Cases by country' 
+            columns={table.columns}
+            data={table.data} 
+            onRowClick={(e, data) => dispatch(selectCountry(data))}
+            options={{
+                paging: false
+            }}
+        />
     )
 }
 

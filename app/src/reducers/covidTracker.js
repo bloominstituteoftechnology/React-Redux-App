@@ -1,9 +1,10 @@
-import { FETCH_DATA, LOADING_ERROR } from '../actions/types';
+import { FETCH_DATA, LOADING_ERROR, UPDATE_COUNTRY } from '../actions/types';
 
 const initialState = {
     loading: true,
     data: {},
-    error: ''
+    error: '',
+    country: {}
 }
 
 export default (state=initialState, action) => {
@@ -23,6 +24,11 @@ export default (state=initialState, action) => {
                 loading: false,
                 error: '',
                 data: payload
+            }
+        case UPDATE_COUNTRY:
+            return {
+                ...state,
+                country: payload
             }
         default:
             return state;

@@ -14,7 +14,7 @@ const CovidTracker = () => {
                 <Grid item><Table /></Grid>
                 <Grid item><CountryDetails /></Grid>
             </Grid>
-            <pre>{JSON.stringify(data, null, 2)}</pre>
+            {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
         </Fragment>
     )
 }
