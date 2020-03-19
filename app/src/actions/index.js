@@ -1,9 +1,9 @@
 import axios from "axios";
 
-//Asynchronice function build out
+//Asynchronice function build out, thunk
 export const fetchDog = () => dispatch => {
 
-    dispatch({ type: 'FERCHING_DATA_START' });
+    dispatch({ type: 'FETCHING_DATA_START' });
     
     //make API call
     axios.get('https://dog.ceo/api/breeds/image/random')
@@ -12,8 +12,14 @@ export const fetchDog = () => dispatch => {
         //res.data => activity
         dispatch({ type: 'FETCHING_DATA_SUCCESS', payload: res.data})
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        console.log(err);
+        dispatch({type: 'SHOW_ERROR', payload: err})
+        
+
+    });
 };
+
 
 
 // const thunk = action => next => store => {
