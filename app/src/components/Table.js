@@ -1,5 +1,6 @@
 import React from 'react';
 import MaterialTable from 'material-table';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCountry } from '../actions/covidTracker';
@@ -15,15 +16,17 @@ const Table = () => {
     }
 
     return (
-        <MaterialTable
-            title='Cases by country' 
-            columns={table.columns}
-            data={table.data} 
-            onRowClick={(e, data) => dispatch(selectCountry(data))}
-            options={{
-                paging: false
-            }}
-        />
+        <Scrollbars>
+            <MaterialTable
+                title='Cases by country' 
+                columns={table.columns}
+                data={table.data} 
+                onRowClick={(e, data) => dispatch(selectCountry(data))}
+                options={{
+                    paging: false
+                }}
+            />
+        </Scrollbars>
     )
 }
 

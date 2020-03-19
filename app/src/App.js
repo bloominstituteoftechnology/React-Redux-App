@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { CssBaseline } from '@material-ui/core';
 import CovidTracker from './components/CovidTracker';
 
 function App() {
   return ( 
-    <CovidTracker />
+    <Fragment>
+      <CssBaseline />
+      <CovidTracker />
+    </Fragment>
   );
 }
 

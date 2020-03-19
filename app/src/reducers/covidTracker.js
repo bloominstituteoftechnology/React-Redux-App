@@ -4,7 +4,7 @@ const initialState = {
     loading: true,
     data: {},
     error: '',
-    country: {}
+    countryData: {}
 }
 
 export default (state=initialState, action) => {
@@ -28,7 +28,7 @@ export default (state=initialState, action) => {
         case UPDATE_COUNTRY:
             return {
                 ...state,
-                country: payload
+                countryData: payload
             }
         default:
             return state;

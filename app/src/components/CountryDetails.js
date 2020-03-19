@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 const CountryDetails = () => {
-    const country = useSelector(state => state.country);
+    const countryData = useSelector(state => state.countryData);
     return (
-        <div>
-            <pre>{JSON.stringify(country, null, 2)}</pre>
-        </div>
+        <Scrollbars>
+            <pre>{JSON.stringify(countryData, null, 2)}</pre>
+        </Scrollbars>
     )
 }
 

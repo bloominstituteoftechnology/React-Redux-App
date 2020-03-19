@@ -5,17 +5,20 @@ import Table from './Table';
 import CountryDetails from './CountryDetails';
 
 const CovidTracker = () => {
-    const { data, loading } = useSelector(state => state);
+    const loading = useSelector(state => state.loading);
     
     return (
-        loading ? <CircularProgress /> :
-        <Fragment>
-            <Grid container justify='space-around'>
-                <Grid item><Table /></Grid>
-                <Grid item><CountryDetails /></Grid>
-            </Grid>
-            {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
-        </Fragment>
+        <Grid container justify='center' alignItems='center' style={{height: '100vh', overflow: 'hidden'}}>
+            { loading ? <CircularProgress /> :
+            <Fragment>
+                <Grid item xs={3} style={{height: '100%'}}>
+                    <Table />
+                </Grid>
+                <Grid item xs={9} style={{height: '100%'}}>
+                    <CountryDetails />
+                </Grid>
+            </Fragment> }
+        </Grid>
     )
 }
 
