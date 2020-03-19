@@ -26,7 +26,8 @@ const CountryDetails = () => {
         countryData ? 
         <Scrollbars style={{overflowX:'hidden'}}>
             <Container className={container}>
-                <Typography variant='h2' component='h1'>{countryData.Country}</Typography>
+                <Typography variant='h2'>{countryData.Country}</Typography>
+                <Typography variant='h5' component='h1'>Covid 19</Typography>
                 <Divider className={titleDivider}  />
                 <Grid container direction='column' alignItems='center' justify='center'>
                     <Card className={card}>
