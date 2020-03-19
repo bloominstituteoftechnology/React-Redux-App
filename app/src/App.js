@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+//import { connect } from 'react-redux';
+import NewsList from './components/NewsList'
 
 function App() {
   return (
