@@ -1,4 +1,5 @@
 import React from 'react';
+import News from './News';
 import { useSelector } from 'react-redux';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { Container, Grid, Typography, Card, CardContent, CardHeader, List, ListItem, ListItemText, Divider, makeStyles } from '@material-ui/core';
@@ -6,7 +7,8 @@ import { Container, Grid, Typography, Card, CardContent, CardHeader, List, ListI
 const styles = makeStyles(theme => ({
     container: {
         padding: theme.spacing(2),
-        height: '100%'
+        height: '100%',
+        width: '100%'
     },
     titleDivider: {
         marginBottom: theme.spacing(2)
@@ -18,11 +20,11 @@ const styles = makeStyles(theme => ({
 }))
 
 const CountryDetails = () => {
-    const countryData = useSelector(state => state.countryData);
+    const countryData = useSelector(state => state.country.data);
     const { container, card, titleDivider } = styles();
     return (
         countryData ? 
-        <Scrollbars>
+        <Scrollbars style={{overflowX:'hidden'}}>
             <Container className={container}>
                 <Typography variant='h2' component='h1'>{countryData.Country}</Typography>
                 <Divider className={titleDivider}  />
@@ -42,6 +44,7 @@ const CountryDetails = () => {
                             </List>
                         </CardContent>
                     </Card>
+                    <News />
                 </Grid>
             </Container>
         </Scrollbars>
