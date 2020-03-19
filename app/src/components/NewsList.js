@@ -6,12 +6,15 @@ import { fetchNews } from '../actions/newsActions';
 const NewsList = (props) => {
     //console.log(props.fetchNews)
     return (
-        <div>
-            <NewsCard />
-            {!props.isLoading ? <button onClick={(e => {
+        <div className="newslist">
+             <button onClick={(e => {
                 e.preventDefault()
                 props.fetchNews()
-            })}>fetch News</button> : <p>{props.articles[0].title}</p>}
+            })}>fetch News</button> 
+
+        {props.articles.map((article, i) => (
+            <NewsCard key={i} article={article}/>
+        ))}
             
         </div>
     )
