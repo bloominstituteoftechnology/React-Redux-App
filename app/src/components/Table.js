@@ -24,7 +24,8 @@ const Table = () => {
                 style={{height: '100%'}}
                 options={{
                     paging: false,
-                    showTitle: false
+                    showTitle: false,
+                    searchFieldAlignment: 'left'
                 }}
             />
         </Scrollbars>

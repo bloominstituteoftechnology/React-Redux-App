@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Typography, makeStyles, Container, Divider, Grid } from '@material-ui/core';
+import { Typography, makeStyles, Container, Divider, Grid, Link } from '@material-ui/core';
 import NewsCard from './NewsCard';
 
 const styles = makeStyles(theme => ({
@@ -26,6 +26,7 @@ const News = () => {
             {news.length > 0 ? 
                 <Container className={container}>
                     <Typography variant='h3'>Headlines</Typography>
+                    <Link target='_blank' href='https://newsapi.org/'><Typography variant='caption'>powered by NewsAPI.org</Typography></Link>
                     { !countryData && <Typography variant='h5' component='h1'>Covid 19</Typography> }
                     <Divider className={titleDivider}  />
                     <Grid container direction='column' alignItems='center' justify='center'>
