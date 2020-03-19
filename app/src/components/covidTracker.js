@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { CircularProgress, Grid } from '@material-ui/core';
 import Table from './Table';
 import CountryDetails from './CountryDetails';
+import News from './News';
+import Scrollbars from 'react-custom-scrollbars';
 
 const CovidTracker = () => {
     const loading = useSelector(state => state.loading);
@@ -15,7 +17,10 @@ const CovidTracker = () => {
                     <Table />
                 </Grid>
                 <Grid item xs={9} style={{height: '100%'}}>
-                    <CountryDetails />
+                    <Scrollbars style={{overflowX:'hidden'}}>
+                        <CountryDetails />
+                        <News />
+                    </Scrollbars>
                 </Grid>
             </Fragment> }
         </Grid>
