@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.dog-frame {
+  margin-top: 30px;
+  align-items: center;
+}
+
+.dog-image {
+  border-radius: 30px;
+}
