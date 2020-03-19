@@ -5,7 +5,7 @@ export const fetchData = () => async dispatch => {
     // Fetch covid data
     try {
         const resCovidData = await axios.get('https://api.covid19api.com/summary');
-        const resNewsData = await axios.get('http://newsapi.org/v2/top-headlines?q=corona&apiKey=a283966851f24fc991d479ec659e8893');
+        const resNewsData = await axios.get('http://newsapi.org/v2/top-headlines?country=us&q=corona&apiKey=a283966851f24fc991d479ec659e8893');
         dispatch({
             type: FETCH_DATA,
             payload: {
