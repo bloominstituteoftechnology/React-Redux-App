@@ -7,7 +7,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'FERCHING_ACTIVITY_START':
+        case 'FERCHING_DATA_START':
             return {
                 ...state,
                 isLoading: true

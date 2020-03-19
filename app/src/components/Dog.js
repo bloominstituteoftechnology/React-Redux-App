@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchActivity } from '../actions';
+import { fetchDog } from '../actions';
 import Loader from 'react-loader-spinner';
 
-const Activity = (props) => {
+const Dog = (props) => {
     return (
         <div>
-            <button onClick={props.fetchActivity}>Get Image</button>
+            <button onClick={props.fetchDog}>Get Image</button>
             {!props.message && !props.isLanding && (
             <h2>Go ahead and fetch a new image!</h2>
             )}
@@ -28,6 +28,8 @@ const Activity = (props) => {
     );
 }
 
+//Connect function is going to wrap up the Dog component, so connect function use inside this file.
+//mapStateToProps is one of the parameter of connect function, so mapStateToProps is declared inside this file.
 const mapStateToProps = state => {
     return {
         isLoading: state.isLoading,
@@ -37,5 +39,5 @@ const mapStateToProps = state => {
 }
 export default connect(
     mapStateToProps, 
-    { fetchActivity }
-)(Activity);
+    { fetchDog }
+)(Dog);

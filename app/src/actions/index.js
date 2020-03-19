@@ -1,9 +1,9 @@
 import axios from "axios";
 
 //Asynchronice function build out
-export const fetchActivity = () => dispatch => {
+export const fetchDog = () => dispatch => {
 
-    dispatch({ type: 'FERCHING_ACTIVITY_START' });
+    dispatch({ type: 'FERCHING_DATA_START' });
     
     //make API call
     axios.get('https://dog.ceo/api/breeds/image/random')
