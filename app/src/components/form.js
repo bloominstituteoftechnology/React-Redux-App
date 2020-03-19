@@ -11,7 +11,7 @@ const Form = props => {
     return (
         <>
         {props.isFetchingData ? (
-            <h4>Looking for good enough Quote...</h4>
+            <h4>Looking for a good enough Quote...</h4>
         ): (
             <button onClick={data}>Get Quote</button>
         )}

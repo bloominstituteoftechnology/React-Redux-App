@@ -2,12 +2,31 @@
   text-align: center;
   background-image: url('https://planwashington.org/media/1665/led.jpg?anchor=center&mode=crop&width=1600&height=900&rnd=130952187570000000');
   height: 100vh;
-  color: white;
+  color: #DDDDDD;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+button{
+  border: none;
+  background-image: linear-gradient(#e383b9, #5f65e9); 
+  border-radius: 15px;
+  width: 200px;
+  height: 15vh;
+  font-size: large;
+  font-family: cursive;
+  color: white;
+}
+button:active {
+  background-color: palevioletred;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+h1{
+  font-size: 50px;
+  font-family: cursive;
 }
 
 @media (prefers-reduced-motion: no-preference) {
