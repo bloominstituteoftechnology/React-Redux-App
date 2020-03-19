@@ -19,14 +19,14 @@ const styles = makeStyles(theme => ({
 }))
 
 const News = () => {
-    const news = useSelector(state => state.news);
+    const { news, countryData } = useSelector(state => state);
     const { container, titleDivider } = styles();
     return (
         <div>
             {news.length > 0 ? 
                 <Container className={container}>
                     <Typography variant='h3'>Headlines</Typography>
-                    <Typography variant='h5' component='h1'>Covid 19</Typography>
+                    { !countryData && <Typography variant='h5' component='h1'>Covid 19</Typography> }
                     <Divider className={titleDivider}  />
                     <Grid container direction='column' alignItems='center' justify='center'>
                         { news.map((article, i) => (
