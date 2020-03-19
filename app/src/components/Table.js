@@ -18,12 +18,12 @@ const Table = () => {
     return (
         <Scrollbars>
             <MaterialTable
-                title='Cases by country' 
                 columns={table.columns}
                 data={table.data} 
                 onRowClick={(e, data) => dispatch(selectCountry(data))}
                 options={{
-                    paging: false
+                    paging: false,
+                    showTitle: false
                 }}
             />
         </Scrollbars>

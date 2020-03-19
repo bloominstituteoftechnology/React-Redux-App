@@ -4,7 +4,7 @@ const initialState = {
     loading: true,
     data: {},
     error: '',
-    countryData: {}
+    countryData: null
 }
 
 export default (state=initialState, action) => {
