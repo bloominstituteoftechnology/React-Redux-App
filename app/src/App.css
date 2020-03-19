@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+img{
+	padding: 20px;
+	background-color: rgba(128,128,125,0.8);
+	max-height: 500px;
+	max-width: 500px;
+	border-radius: 20px;
+}
