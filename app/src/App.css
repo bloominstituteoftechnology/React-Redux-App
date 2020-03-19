@@ -1,8 +1,13 @@
 .App {
   text-align: center;
   background-image: url('https://planwashington.org/media/1665/led.jpg?anchor=center&mode=crop&width=1600&height=900&rnd=130952187570000000');
- height: 100vh;
+ height: 96vh;
   color: #DDDDDD;
+  font-family: cursive;
+  color: black;
+-webkit-text-fill-color: white; 
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: black;
 }
 
 .App-logo {
