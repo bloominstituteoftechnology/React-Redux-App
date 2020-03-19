@@ -16,8 +16,8 @@ const useStyles = makeStyles(theme => ({
         width: '80%'
     },
     articleDescrition: {
-        paddingRight: theme.spacing(2),
-        paddingLeft: theme.spacing(2),
+        marginRight: theme.spacing(2),
+        marginLeft: theme.spacing(2),
         color: theme.palette.text.secondary
     },
     subContentContainer: {
