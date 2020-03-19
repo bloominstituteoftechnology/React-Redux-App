@@ -5,7 +5,7 @@ const Quotes = props =>{
     console.log(props)
     return (
         <div>
-                <h2>{props.quote.author}</h2>
+                <h2><u>{props.quote.author}</u></h2>
                 <h3>{props.quote.content}</h3>
             </div>
         )}
