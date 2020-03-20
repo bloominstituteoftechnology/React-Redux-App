@@ -21,6 +21,7 @@ const Table = () => {
                 columns={table.columns}
                 data={table.data} 
                 onRowClick={(e, data) => dispatch(selectCountry(data))}
+                style={{minHeight: '100%'}}
                 options={{
                     paging: false,
                     showTitle: false,
