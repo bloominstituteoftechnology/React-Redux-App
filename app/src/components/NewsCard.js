@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { Card, CardHeader, CardMedia, makeStyles, Collapse, CardActions, Typography, IconButton, CardContent, Link } from '@material-ui/core';
+import { Card, CardHeader, CardMedia, makeStyles, Collapse, CardActions, Typography, IconButton, CardContent, Link, Hidden } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
     card: {
         display: 'flex',
-        flexWrap: 'wrap',
+        flexWrap: 'nowrap',
         margin: theme.spacing(2)
     },
     image: {
-        width: '20%'
-    },
-    content: {
-        width: '80%'
+        width: '20%',
+        minWidth: '20%'
     },
     articleDescrition: {
         marginRight: theme.spacing(2),
@@ -42,7 +40,6 @@ const NewsCard = ({ article }) => {
     const {
         card,
         image,
-        content,
         articleDescrition,
         expand,
         expandOpen,
@@ -59,8 +56,10 @@ const NewsCard = ({ article }) => {
     return (
         <Link href={article.url} target='_blank'>
             <Card className={card}>
-                <CardMedia className={image} image={article.urlToImage} title="Live from space album cover" />
-                <CardContent className={content}>
+                <Hidden smDown>
+                    <CardMedia className={image} image={article.urlToImage} title="Live from space album cover" />
+                </Hidden>
+                <CardContent>
                     <CardHeader title={article.title} />
                     <div className={subContentContainer}>
                         <Typography className={articleDescrition} variant='body2' >{article.description}</Typography>
