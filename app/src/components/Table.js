@@ -11,7 +11,7 @@ const Table = () => {
         data: useSelector(state => state.data.Countries),
         columns: [
             { title: 'Country', field: 'Country' },
-            { title: 'Confirmed cases', field: 'TotalConfirmed', type: 'numeric' }
+            { title: 'Confirmed cases', field: 'TotalConfirmed', type: 'numeric', defaultSort: 'desc' }
         ]
     }
 
