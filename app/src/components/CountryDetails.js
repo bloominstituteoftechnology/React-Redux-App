@@ -12,7 +12,6 @@ const styles = makeStyles(theme => ({
         marginBottom: theme.spacing(2)
     },
     card: {
-        width: '40%',
         marginTop: theme.spacing(2)
     }
 }))
@@ -28,7 +27,7 @@ const CountryDetails = () => {
                 <Typography variant='h5' component='h2'>Covid Tracker</Typography>
                 <Divider className={titleDivider}  />
                 <Grid container direction='column' alignItems='center' justify='center'>
-                    <Card className={card}>
+                    <Card xs={12} md={6} className={card}>
                         <CardHeader title={`Total confirmed cases:\n${countryData.TotalConfirmed}`} />
                         <CardContent>
                             <List>

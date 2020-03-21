@@ -1,4 +1,4 @@
-import { FETCH_DATA, LOADING_ERROR, UPDATE_COUNTRY } from '../actions/types';
+import { FETCH_DATA, LOADING_ERROR, UPDATE_COUNTRY, TOGGLE_MOBILE } from '../actions/types';
 
 const initialState = {
     loadingCovidData: true,
@@ -7,7 +7,8 @@ const initialState = {
     data: {},
     error: '',
     countryData: null,
-    news: []
+    news: [],
+    mobileOpen: false
 }
 
 export default (state=initialState, action) => {
@@ -37,7 +38,13 @@ export default (state=initialState, action) => {
             return {
                 ...state,
                 countryData: payload.countryData,
-                news: payload.news
+                news: payload.news,
+                mobileOpen: false
+            };
+        case TOGGLE_MOBILE:
+            return {
+                ...state,
+                mobileOpen: !state.mobileOpen
             };
         default:
             return state;

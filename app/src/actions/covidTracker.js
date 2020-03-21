@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOADING_ERROR, FETCH_DATA, UPDATE_COUNTRY } from './types';
+import { LOADING_ERROR, FETCH_DATA, UPDATE_COUNTRY, TOGGLE_MOBILE } from './types';
 
 export const fetchData = () => async dispatch => {
     // Fetch covid data
@@ -40,4 +40,10 @@ export const selectCountry = (country) => async dispatch => {
             payload: `Error fetching data: ${err.message}`
         })
     }
+}
+
+export const toggleMobile = () => dispatch => {
+    dispatch({
+        type: TOGGLE_MOBILE
+    })
 }
