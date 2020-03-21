@@ -45,7 +45,7 @@ const Navbar = ({ navHeihgt }) => {
                 </IconButton>
                 <Typography variant="h6" noWrap>
                     <Box component='span' marginLeft={{ xs: 'none', sm: '300px' }}>
-                        Corona News
+                        COVID News
                     </Box>
                 </Typography>
                 <Button className={classes.headlinesButton} onClick={() => dispatch(fetchTopHeadlines())}>Top Headlines</Button>
