@@ -14,8 +14,6 @@ const useStyles = makeStyles(theme => ({
         minWidth: '20%'
     },
     articleDescrition: {
-        marginRight: theme.spacing(2),
-        marginLeft: theme.spacing(2),
         color: theme.palette.text.secondary
     },
     subContentContainer: {
@@ -60,7 +58,7 @@ const NewsCard = ({ article }) => {
                     <CardMedia className={image} image={article.urlToImage} title="Live from space album cover" />
                 </Hidden>
                 <CardContent>
-                    <CardHeader title={article.title} />
+                    <CardHeader style={{padding: '0'}} title={article.title} />
                     <div className={subContentContainer}>
                         <Typography className={articleDescrition} variant='body2' >{article.description}</Typography>
                         {/* <CardActions className={collapseIcon} disableSpacing>
