@@ -16,7 +16,7 @@ const CovidTracker = () => {
                 <Grid item xs={3} style={{height: '100%'}}>
                     <Table />
                 </Grid>
-                <Grid item xs={9} style={{height: '100%'}}>
+                <Grid item xs={12} md={9} style={{height: '100%'}}>
                     <Scrollbars style={{overflowX:'hidden'}}>
                         <CountryDetails />
                         <News />

@@ -23,8 +23,7 @@ export const fetchData = () => async dispatch => {
 
 export const selectCountry = (country) => async dispatch => {
     try {
-        const url = 
-            `http://newsapi.org/v2/top-headlines?q=+${country.Country}&apiKey=a283966851f24fc991d479ec659e8893`;
+        const url = `https://newsapi.org/v2/everything?q=+${country.Country}&apiKey=a283966851f24fc991d479ec659e8893`;
 
         const res = await axios.get(url);
 
@@ -41,6 +40,4 @@ export const selectCountry = (country) => async dispatch => {
             payload: `Error fetching data: ${err.message}`
         })
     }
-    
-
 }
