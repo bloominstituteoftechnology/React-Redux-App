@@ -39,9 +39,8 @@ const Navbar = ({ navHeihgt }) => {
             </IconButton>
             <Typography variant="h6" noWrap>
                 <Box component='span' margin={{ xs: 'none', sm: '300px' }}>
-                Corona News
+                    Corona News
                 </Box>
-                
             </Typography>
             </Toolbar>
         </AppBar>
