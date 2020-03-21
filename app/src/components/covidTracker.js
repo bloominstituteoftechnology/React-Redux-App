@@ -11,7 +11,7 @@ import News from './News';
 import CountriesList from './CountriesList';
 import Navbar from './Navbar';
 
-const navbarHeight = '12%';
+const navbarHeight = '70px';
 
 const useStyles = makeStyles(theme => ({
     content: {

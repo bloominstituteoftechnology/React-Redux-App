@@ -6,7 +6,7 @@ import Table from './Table';
 // material-ui
 import { makeStyles, Hidden, Drawer } from '@material-ui/core';
 
-const drawerWidth = 250;
+const drawerWidth = 300;
 
 const useStyles = makeStyles(theme => ({
     countriesList: {

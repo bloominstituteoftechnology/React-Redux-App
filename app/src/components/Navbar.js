@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toggleMobile } from '../actions/covidTracker';
 
 // material-ui
-import { makeStyles, AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import { makeStyles, AppBar, Toolbar, IconButton, Typography, Box } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
@@ -38,7 +38,10 @@ const Navbar = ({ navHeihgt }) => {
                 <Menu />
             </IconButton>
             <Typography variant="h6" noWrap>
+                <Box component='span' margin={{ xs: 'none', sm: '300px' }}>
                 Corona News
+                </Box>
+                
             </Typography>
             </Toolbar>
         </AppBar>
