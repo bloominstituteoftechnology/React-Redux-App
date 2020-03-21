@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOADING_ERROR, FETCH_DATA, UPDATE_COUNTRY, TOGGLE_MOBILE } from './types';
+import { LOADING_ERROR, FETCH_DATA, UPDATE_COUNTRY, TOGGLE_MOBILE, FETCH_TOP_HEADLINES } from './types';
 
 export const fetchData = () => async dispatch => {
     // Fetch covid data
@@ -12,6 +12,22 @@ export const fetchData = () => async dispatch => {
                 data: resCovidData.data,
                 news: resNewsData.data.articles
             }
+        })
+    } catch(err) {
+        dispatch({
+            type: LOADING_ERROR,
+            payload: `Error fetching data: ${err.message}`
+        })
+    }
+}
+
+export const fetchTopHeadlines = () => async dispatch => {
+    try {
+        const res = await axios.get('https://newsapi.org/v2/top-headlines?country=us&q=corona&apiKey=a283966851f24fc991d479ec659e8893');
+
+        dispatch({
+            type: FETCH_TOP_HEADLINES,
+            payload: res.data.articles
         })
     } catch(err) {
         dispatch({
