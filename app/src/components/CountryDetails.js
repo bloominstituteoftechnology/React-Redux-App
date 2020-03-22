@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Container, Grid, Typography, Card, CardContent, CardHeader, List, ListItem, ListItemText, Divider, makeStyles } from '@material-ui/core';
+import { Container, Grid, Typography, Divider, makeStyles } from '@material-ui/core';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const styles = makeStyles(theme => ({
     container: {
@@ -11,14 +12,18 @@ const styles = makeStyles(theme => ({
     titleDivider: {
         marginBottom: theme.spacing(2)
     },
-    card: {
-        marginTop: theme.spacing(2)
+    detailsContainer: {
+        maxWidth: theme.breakpoints.values.sm
+    },
+    totalCases: {
+        fontWeight: 'bold',
+        color: theme.palette.primary.light
     }
 }))
 
 const CountryDetails = () => {
     const countryData = useSelector(state => state.countryData);
-    const { container, card, titleDivider } = styles();
+    const { container, titleDivider, totalCases, detailsContainer } = styles();
     
     return (
         countryData ? 
@@ -26,22 +31,33 @@ const CountryDetails = () => {
                 <Typography variant='h3' component='h1'>{countryData.Country}</Typography>
                 <Typography variant='h5' component='h2'>Covid Tracker</Typography>
                 <Divider className={titleDivider}  />
-                <Grid container direction='column' alignItems='center' justify='center'>
-                    <Card xs={12} md={6} className={card}>
-                        <CardHeader title={`Total confirmed cases:\n${countryData.TotalConfirmed}`} />
-                        <CardContent>
-                            <List>
-                                <ListItem>
-                                    <ListItemText primary='Recovered cases:' />
-                                    <Typography>{ countryData.TotalRecovered }</Typography>
-                                </ListItem>
-                                <ListItem>
-                                    <ListItemText primary='Fatal cases:' />
-                                    <Typography>{ countryData.TotalDeaths }</Typography>
-                                </ListItem>
-                            </List>
-                        </CardContent>
-                    </Card>
+                <Grid container className={detailsContainer} direction='column' alignItems='flex-start' justify='flex-start'>
+                    <Grid container item xs='300'>
+                        <Grid item xs={8}>
+                            <Typography variant='h6'>Total confirmed cases:</Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Typography variant='h6' className={totalCases}>{countryData.TotalConfirmed}</Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid container>
+                        <Grid item container xs={8} alignItems='center'>
+                            <span style={{fontSize: '32px', color: 'green', lineHeight: '1rem'}}>•</span>
+                            <Typography> Recovered cases:</Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Typography>{ countryData.TotalRecovered }</Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid container>
+                        <Grid item container xs={8} alignItems='center'>
+                            <span style={{fontSize: '32px', color: 'darkred', lineHeight: '1rem'}}>•</span>
+                            <Typography> Faltal cases:</Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+                            <Typography>{ countryData.TotalDeaths }</Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Container>
         : null
