@@ -7,13 +7,21 @@ const defaultTheme = createMuiTheme();
 const cardTheme = {
     ...defaultTheme,
     overrides: {
+        MuiCardContent: {
+            root: {
+                padding: defaultTheme.spacing(2),
+                [defaultTheme.breakpoints.down('sm')]: {
+                    padding: '10px 5px 10px 10px !important'
+                }
+            }
+        },
         MuiTypography: {
             h5: {
                 fontSize: defaultTheme.typography.h5.fontSize,
                 fontWeight: defaultTheme.typography.h5.fontWeight,
                 [defaultTheme.breakpoints.down('sm')]: {
-                    fontSize: '1rem',
-                    fontWeight: 'bold'
+                    fontSize: '0.9rem',
+                    fontWeight: '500'
                 }
             }
         }
@@ -24,7 +32,10 @@ const useStyles = makeStyles(theme => ({
     card: {
         display: 'flex',
         flexWrap: 'nowrap',
-        margin: theme.spacing(2)
+        margin: `0 0 15px`
+    },
+    cardContent: {
+        padding: '1 !important'
     },
     image: {
         width: '20%',
@@ -60,7 +71,8 @@ const NewsCard = ({ article }) => {
         expandOpen,
         fullArticleContainer,
         collapseIcon,
-        subContentContainer
+        subContentContainer,
+        cardContent
     } = useStyles();
     const [expanded, setExpanded] = useState(false);
 
@@ -72,30 +84,15 @@ const NewsCard = ({ article }) => {
         <ThemeProvider theme={cardTheme}>
         <Link href={article.url} target='_blank'>
             <Card className={card}>
-                <Hidden smDown>
-                    <CardMedia className={image} image={article.urlToImage} title="Live from space album cover" />
-                </Hidden>
+                <CardMedia className={image} image={article.urlToImage} title={article.title} />
                 <CardContent>
                     <CardHeader style={{padding: '0'}} title={article.title} />
-                    <div className={subContentContainer}>
-                        <Typography className={articleDescrition} variant='body2' >{article.description}</Typography>
-                        {/* <CardActions className={collapseIcon} disableSpacing>
-                            <IconButton onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more"
-                            className={clsx(expand, {
-                                [expandOpen]: expanded,
-                            })} >
-                                <ExpandMore />
-                            </IconButton>
-                        </CardActions> */}
-                    </div>
+                    <Hidden smDown>
+                        <div className={subContentContainer}>
+                            <Typography className={articleDescrition} variant='body2' >{article.description}</Typography>
+                        </div>
+                    </Hidden>
                 </CardContent>            
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                    <CardContent className={fullArticleContainer}>
-                        <Typography paragraph>
-                            {article.content}
-                        </Typography>
-                    </CardContent>
-                </Collapse>
             </Card>
         </Link>
         </ThemeProvider>
