@@ -46,7 +46,7 @@ const CountryDetails = () => {
                             <Typography> Recovered cases:</Typography>
                         </Grid>
                         <Grid item xs={4}>
-                            <Typography>{ countryData.TotalRecovered }</Typography>
+                            <Typography>{ countryData.TotalRecovered === 0 ? '-' : countryData.TotalRecovered }</Typography>
                         </Grid>
                     </Grid>
                     <Grid container>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { Card, CardHeader, CardMedia, makeStyles, Collapse, CardActions, Typography, IconButton, CardContent, Link, Hidden, createMuiTheme, ThemeProvider } from '@material-ui/core';
-import { ExpandMore } from '@material-ui/icons';
+import { Card, CardHeader, CardMedia, makeStyles, Typography, CardContent, Link, Hidden, createMuiTheme, ThemeProvider } from '@material-ui/core';
 
 const defaultTheme = createMuiTheme();
 const cardTheme = {
@@ -18,10 +17,10 @@ const cardTheme = {
         MuiTypography: {
             h5: {
                 fontSize: defaultTheme.typography.h5.fontSize,
-                fontWeight: defaultTheme.typography.h5.fontWeight,
+                lineHeight: defaultTheme.typography.h5.lineHeight,
                 [defaultTheme.breakpoints.down('sm')]: {
-                    fontSize: '0.9rem',
-                    fontWeight: '500'
+                    fontSize: '1rem',
+                    lineHeight: '1.1rem'
                 }
             }
         }
@@ -46,19 +45,6 @@ const useStyles = makeStyles(theme => ({
     },
     subContentContainer: {
         display: 'flex'
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-          duration: theme.transitions.duration.shortest,
-        }),
-      },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-    fullArticleContainer: {
-        width: '100%'
     }
 }));
 
@@ -67,18 +53,8 @@ const NewsCard = ({ article }) => {
         card,
         image,
         articleDescrition,
-        expand,
-        expandOpen,
-        fullArticleContainer,
-        collapseIcon,
         subContentContainer,
-        cardContent
     } = useStyles();
-    const [expanded, setExpanded] = useState(false);
-
-    const handleExpandClick = () => {
-      setExpanded(!expanded);
-    };
 
     return (
         <ThemeProvider theme={cardTheme}>
