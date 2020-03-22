@@ -15,12 +15,4 @@ const theme = createMuiTheme({
     }
  });
 
-theme.typography.h5 = {
-   fontSize: theme.typography.h5.fontSize,
-   [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem',
-      fontWeight: 'bold'
-   }
-}
-
  export default theme;

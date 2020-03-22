@@ -1,7 +1,24 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { Card, CardHeader, CardMedia, makeStyles, Collapse, CardActions, Typography, IconButton, CardContent, Link, Hidden } from '@material-ui/core';
+import { Card, CardHeader, CardMedia, makeStyles, Collapse, CardActions, Typography, IconButton, CardContent, Link, Hidden, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import { ExpandMore } from '@material-ui/icons';
+
+const defaultTheme = createMuiTheme();
+const cardTheme = {
+    ...defaultTheme,
+    overrides: {
+        MuiTypography: {
+            h5: {
+                fontSize: defaultTheme.typography.h5.fontSize,
+                fontWeight: defaultTheme.typography.h5.fontWeight,
+                [defaultTheme.breakpoints.down('sm')]: {
+                    fontSize: '1rem',
+                    fontWeight: 'bold'
+                }
+            }
+        }
+    }
+}
 
 const useStyles = makeStyles(theme => ({
     card: {
@@ -52,6 +69,7 @@ const NewsCard = ({ article }) => {
     };
 
     return (
+        <ThemeProvider theme={cardTheme}>
         <Link href={article.url} target='_blank'>
             <Card className={card}>
                 <Hidden smDown>
@@ -80,6 +98,7 @@ const NewsCard = ({ article }) => {
                 </Collapse>
             </Card>
         </Link>
+        </ThemeProvider>
     )
 }
 
