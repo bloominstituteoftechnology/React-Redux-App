@@ -13,7 +13,7 @@ import ReactTooltip from "react-tooltip";
 import missingGeoMamesList from './missingGeoNamesList';
 import { useEffect } from 'react';
 // Material ui
-import { IconButton, Paper } from '@material-ui/core';
+import { IconButton, Paper, Hidden } from '@material-ui/core';
 import { ZoomIn, ZoomOut } from '@material-ui/icons';
 
 const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json';
@@ -55,7 +55,7 @@ const MapChart = () => {
   }
 
   return (
-    <>
+    <div style={{position: 'relative'}}>
       <ComposableMap height={400}
           projectionConfig={{
               rotate: [-10, 0, 0],
@@ -109,15 +109,27 @@ const MapChart = () => {
       </ComposableMap>
       <ReactTooltip place='bottom' />
 
-      <Paper style={{display: 'flex', position: 'absolute', top: '1%', right: '2%'}}>
-        <IconButton onClick={handleZoomIn}>
-          <ZoomIn />
-        </IconButton>
-        <IconButton onClick={handleZoomOut}>
-          <ZoomOut />
-        </IconButton>
-      </Paper>
-    </>
+      <Hidden mdDown>
+        <Paper style={{display: 'flex', position: 'absolute', bottom: '1%', right: '2%'}}>
+          <IconButton onClick={handleZoomIn}>
+            <ZoomIn />
+          </IconButton>
+          <IconButton onClick={handleZoomOut}>
+            <ZoomOut />
+          </IconButton>
+        </Paper>
+      </Hidden>
+      <Hidden lgUp>
+        <div style={{display: 'flex', position: 'absolute', bottom: '1%', right: '2%'}}>
+          <IconButton onClick={handleZoomIn}>
+            <ZoomIn />
+          </IconButton>
+          <IconButton onClick={handleZoomOut}>
+            <ZoomOut />
+          </IconButton>
+        </div>
+      </Hidden>
+    </div>
   )
 };
 
