@@ -37,10 +37,10 @@ const MapChart = () => {
 
   return (
     <>
-      <ComposableMap height={350}
+      <ComposableMap height={400}
           projectionConfig={{
               rotate: [-10, 0, 0],
-              scale: 120
+              scale: 147
           }}
       >
         <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
