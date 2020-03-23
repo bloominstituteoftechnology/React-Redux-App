@@ -10,6 +10,7 @@ import CountryDetails from './CountryDetails';
 import News from './News';
 import CountriesList from './CountriesList';
 import Navbar from './Navbar';
+import MapChart from './Map/MapChart';
 
 const navbarHeight = '70px';
 
@@ -32,6 +33,7 @@ const CovidTracker = () => {
                 <CountriesList />
                 <main className={classes.content}>
                     <Scrollbars style={{overflowX:'hidden'}}>
+                        <MapChart />
                         <CountryDetails />
                         <News />
                     </Scrollbars>
