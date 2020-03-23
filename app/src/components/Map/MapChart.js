@@ -10,6 +10,7 @@ import {
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
 import missingGeoMamesList from './missingGeoNamesList';
+import { useEffect } from 'react';
 
 const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json';
 
@@ -26,6 +27,10 @@ const colorScale = value => {
 const MapChart = () => {
   const data = useSelector(state => state.data.Countries);
   const [toolTipContent, setToolTipContent] = useState('');
+
+  useEffect(() => {
+    ReactTooltip.rebuild();
+  }, [toolTipContent]);
 
   return (
     <>
@@ -50,7 +55,7 @@ const MapChart = () => {
                   key={geo.rsmKey}
                   geography={geo}
                   fill={d ? colorScale(d.TotalConfirmed) : "#F5F4F6"}
-                  
+                  data-tip={d ? `${d.Country}: ${d.TotalConfirmed} cases` : ''}
                   onMouseEnter={() => {
                     d ? setToolTipContent(`${d.Country}: ${d.TotalConfirmed} cases`) : setToolTipContent("");
                   }}
@@ -78,9 +83,8 @@ const MapChart = () => {
         </Geographies>
       )}
     </ComposableMap>
-    <ReactTooltip>
-        {toolTipContent}
-    </ReactTooltip>
+    <ReactTooltip />
+        
     </>
   )
 };
