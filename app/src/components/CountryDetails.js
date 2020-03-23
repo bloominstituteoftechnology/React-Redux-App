@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Container, Grid, Typography, Divider, makeStyles } from '@material-ui/core';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 const styles = makeStyles(theme => ({
     container: {

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
+import React from 'react';
 import { Card, CardHeader, CardMedia, makeStyles, Typography, CardContent, Link, Hidden, createMuiTheme, ThemeProvider } from '@material-ui/core';
 
 const defaultTheme = createMuiTheme();

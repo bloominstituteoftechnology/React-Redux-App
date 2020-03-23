@@ -16,10 +16,13 @@ const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-map
 
 const colorScale = value => {
   const color = scaleLinear()
-  .domain([0, 90000])
+  .domain([0, 100, 1000, 3000, 90000])
   .range([
-    "#ffe0db",
-    "#b81c00"
+    "#FFC0A8",
+    "#FFAB8C",
+    "#F26149",
+    "#C73B29",
+    "#9D0B0B"
   ]);
   return color(value);
 }
@@ -34,57 +37,56 @@ const MapChart = () => {
 
   return (
     <>
-    <ComposableMap
-        projectionConfig={{
-            rotate: [-10, 0, 0],
-            scale: 147
-        }}
-    >
-      <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
-      <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
-      {data && (
-        <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map(geo => {
-              let d = data.find(countryData => countryData.Country === geo.properties.NAME);
-              if(!d) {
-                d = data.find(countryData => countryData.Country === missingGeoMamesList[geo.properties.ISO_A3]);
-              }
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  fill={d ? colorScale(d.TotalConfirmed) : "#F5F4F6"}
-                  data-tip={d ? `${d.Country}: ${d.TotalConfirmed} cases` : ''}
-                  onMouseEnter={() => {
-                    d ? setToolTipContent(`${d.Country}: ${d.TotalConfirmed} cases`) : setToolTipContent("");
-                  }}
-                  onMouseLeave={() => {
-                    setToolTipContent("");
-                  }}
-                  style={{
-                    default: {
-                      fill: "#D6D6DA",
-                      outline: "none"
-                    },
-                    hover: {
-                      fill: "#F53",
-                      outline: "none"
-                    },
-                    pressed: {
-                      fill: "#E42",
-                      outline: "none"
-                    }
-                  }}
-                />
-              );
-            })
-          }
-        </Geographies>
-      )}
-    </ComposableMap>
-    <ReactTooltip />
-        
+      <ComposableMap height={350}
+          projectionConfig={{
+              rotate: [-10, 0, 0],
+              scale: 120
+          }}
+      >
+        <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
+        <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
+        {data && (
+          <Geographies geography={geoUrl}>
+            {({ geographies }) =>
+              geographies.map(geo => {
+                let d = data.find(countryData => countryData.Country === geo.properties.NAME);
+                if(!d) {
+                  d = data.find(countryData => countryData.Country === missingGeoMamesList[geo.properties.ISO_A3]);
+                }
+                return (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    fill={d ? colorScale(d.TotalConfirmed) : "lightgray"}
+                    strokeWidth={0.3}
+                    data-tip={d ? `${d.Country}: ${d.TotalConfirmed} cases` : ''}
+                    onMouseEnter={() => {
+                      d ? setToolTipContent(`${d.Country}: ${d.TotalConfirmed} cases`) : setToolTipContent("");
+                    }}
+                    onMouseLeave={() => {
+                      setToolTipContent("");
+                    }}
+                    style={{
+                      default: {
+                        outline: "none"
+                      },
+                      hover: {
+                        fill: d ? "#F53" : 'lightgray',
+                        outline: "none",
+                      },
+                      pressed: {
+                        fill: "#E42",
+                        outline: "none"
+                      }
+                    }}
+                  />
+                );
+              })
+            }
+          </Geographies>
+        )}
+      </ComposableMap>
+      <ReactTooltip />
     </>
   )
 };

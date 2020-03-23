@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { CssBaseline } from '@material-ui/core';
 import CovidTracker from './components/CovidTracker';
 // Material-ui
