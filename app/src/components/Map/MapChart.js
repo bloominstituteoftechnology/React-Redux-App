@@ -12,6 +12,9 @@ import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
 import missingGeoMamesList from './missingGeoNamesList';
 import { useEffect } from 'react';
+// Material ui
+import { IconButton, Paper } from '@material-ui/core';
+import { ZoomIn, ZoomOut } from '@material-ui/icons';
 
 const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json';
 
@@ -31,10 +34,25 @@ const colorScale = value => {
 const MapChart = () => {
   const data = useSelector(state => state.data.Countries);
   const [toolTipContent, setToolTipContent] = useState('');
+  const [zoom, setZoom] = useState(1);
 
   useEffect(() => {
     ReactTooltip.rebuild();
   }, [toolTipContent]);
+
+  function handleZoomIn() {
+    if (zoom >= 4) return;
+    setZoom(zoom * 2);
+  }
+
+  function handleZoomOut() {
+    if (zoom <= 1) return;
+    setZoom(zoom / 2);
+  }
+
+  function handleZoomEnd(position) {
+    setZoom(position.zoom);
+  }
 
   return (
     <>
@@ -44,7 +62,7 @@ const MapChart = () => {
               scale: 147
           }}
       >
-      <ZoomableGroup zoom={1}>
+      <ZoomableGroup zoom={zoom} onZoomEnd={handleZoomEnd} zoomSensitivity={1}>
         <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
         <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
         {data && (
@@ -90,6 +108,15 @@ const MapChart = () => {
         </ZoomableGroup>
       </ComposableMap>
       <ReactTooltip place='bottom' />
+
+      <Paper style={{display: 'flex', position: 'absolute', top: '1%', right: '2%'}}>
+        <IconButton onClick={handleZoomIn}>
+          <ZoomIn />
+        </IconButton>
+        <IconButton onClick={handleZoomOut}>
+          <ZoomOut />
+        </IconButton>
+      </Paper>
     </>
   )
 };
