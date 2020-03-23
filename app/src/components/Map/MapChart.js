@@ -86,7 +86,7 @@ const MapChart = () => {
           </Geographies>
         )}
       </ComposableMap>
-      <ReactTooltip />
+      <ReactTooltip place='bottom' />
     </>
   )
 };
