@@ -22,8 +22,8 @@ const News = () => {
     const { news, countryData } = useSelector(state => state);
     const { container, titleDivider } = styles();
     return (
-        <div>
-            {news.length > 0 ? 
+        
+            news.length > 0 ? 
                 <Container className={container}>
                     <Typography variant='h3'>Headlines</Typography>
                     <Link target='_blank' href='https://newsapi.org/'><Typography variant='caption'>powered by NewsAPI.org</Typography></Link>
@@ -38,8 +38,8 @@ const News = () => {
                     </Grid>
                 </Container>
                 : null
-            }
-        </div>
+            
+        
     )
 }
 

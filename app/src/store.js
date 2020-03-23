@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers';
+// import rootReducer from './reducers';
 import covidTrackerReducer from './reducers/covidTracker';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';

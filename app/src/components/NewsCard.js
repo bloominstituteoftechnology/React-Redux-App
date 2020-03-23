@@ -1,40 +1,49 @@
-import React, { useState } from 'react';
-import clsx from 'clsx';
-import { Card, CardHeader, CardMedia, makeStyles, Collapse, CardActions, Typography, IconButton, CardContent, Link } from '@material-ui/core';
-import { ExpandMore } from '@material-ui/icons';
+import React from 'react';
+import { Card, CardHeader, CardMedia, makeStyles, Typography, CardContent, Link, Hidden, createMuiTheme, ThemeProvider } from '@material-ui/core';
+
+const defaultTheme = createMuiTheme();
+const cardTheme = {
+    ...defaultTheme,
+    overrides: {
+        MuiCardContent: {
+            root: {
+                padding: defaultTheme.spacing(2),
+                [defaultTheme.breakpoints.down('sm')]: {
+                    padding: '10px 5px 10px 10px !important'
+                }
+            }
+        },
+        MuiTypography: {
+            h5: {
+                fontSize: defaultTheme.typography.h5.fontSize,
+                lineHeight: defaultTheme.typography.h5.lineHeight,
+                [defaultTheme.breakpoints.down('sm')]: {
+                    fontSize: '1rem',
+                    lineHeight: '1.1rem'
+                }
+            }
+        }
+    }
+}
 
 const useStyles = makeStyles(theme => ({
     card: {
         display: 'flex',
-        flexWrap: 'wrap',
-        margin: theme.spacing(2)
+        flexWrap: 'nowrap',
+        margin: `0 0 15px`
+    },
+    cardContent: {
+        padding: '1 !important'
     },
     image: {
-        width: '20%'
-    },
-    content: {
-        width: '80%'
+        width: '20%',
+        minWidth: '20%'
     },
     articleDescrition: {
-        marginRight: theme.spacing(2),
-        marginLeft: theme.spacing(2),
         color: theme.palette.text.secondary
     },
     subContentContainer: {
         display: 'flex'
-    },
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-          duration: theme.transitions.duration.shortest,
-        }),
-      },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-    fullArticleContainer: {
-        width: '100%'
     }
 }));
 
@@ -42,47 +51,26 @@ const NewsCard = ({ article }) => {
     const {
         card,
         image,
-        content,
         articleDescrition,
-        expand,
-        expandOpen,
-        fullArticleContainer,
-        collapseIcon,
-        subContentContainer
+        subContentContainer,
     } = useStyles();
-    const [expanded, setExpanded] = useState(false);
-
-    const handleExpandClick = () => {
-      setExpanded(!expanded);
-    };
 
     return (
+        <ThemeProvider theme={cardTheme}>
         <Link href={article.url} target='_blank'>
             <Card className={card}>
-                <CardMedia className={image} image={article.urlToImage} title="Live from space album cover" />
-                <CardContent className={content}>
-                    <CardHeader title={article.title} />
-                    <div className={subContentContainer}>
-                        <Typography className={articleDescrition} variant='body2' >{article.description}</Typography>
-                        {/* <CardActions className={collapseIcon} disableSpacing>
-                            <IconButton onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more"
-                            className={clsx(expand, {
-                                [expandOpen]: expanded,
-                            })} >
-                                <ExpandMore />
-                            </IconButton>
-                        </CardActions> */}
-                    </div>
+                <CardMedia className={image} image={article.urlToImage} title={article.title} />
+                <CardContent>
+                    <CardHeader style={{padding: '0'}} title={article.title} />
+                    <Hidden smDown>
+                        <div className={subContentContainer}>
+                            <Typography className={articleDescrition} variant='body2' >{article.description}</Typography>
+                        </div>
+                    </Hidden>
                 </CardContent>            
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                    <CardContent className={fullArticleContainer}>
-                        <Typography paragraph>
-                            {article.content}
-                        </Typography>
-                    </CardContent>
-                </Collapse>
             </Card>
         </Link>
+        </ThemeProvider>
     )
 }
 
