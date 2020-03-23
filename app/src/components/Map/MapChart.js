@@ -62,6 +62,53 @@ const MapChart = () => {
               scale: 147
           }}
       >
+
+      <Hidden lgUp>
+      <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
+        <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
+        {data && (
+          <Geographies geography={geoUrl}>
+            {({ geographies }) =>
+              geographies.map(geo => {
+                let d = data.find(countryData => countryData.Country === geo.properties.NAME);
+                if(!d) {
+                  d = data.find(countryData => countryData.Country === missingGeoMamesList[geo.properties.ISO_A3]);
+                }
+                return (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    fill={d ? colorScale(d.TotalConfirmed) : "lightgray"}
+                    strokeWidth={0.3}
+                    data-tip={d ? `${d.Country}: ${d.TotalConfirmed} cases` : ''}
+                    onMouseEnter={() => {
+                      d ? setToolTipContent(`${d.Country}: ${d.TotalConfirmed} cases`) : setToolTipContent("");
+                    }}
+                    onMouseLeave={() => {
+                      setToolTipContent("");
+                    }}
+                    style={{
+                      default: {
+                        outline: "none"
+                      },
+                      hover: {
+                        fill: d ? "#F53" : 'lightgray',
+                        outline: "none",
+                      },
+                      pressed: {
+                        fill: "#E42",
+                        outline: "none"
+                      }
+                    }}
+                  />
+                );
+              })
+            }
+          </Geographies>
+        )}
+      </Hidden>
+
+      <Hidden mdDown>
       <ZoomableGroup zoom={zoom} onZoomEnd={handleZoomEnd} zoomSensitivity={1}>
         <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
         <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
@@ -106,6 +153,7 @@ const MapChart = () => {
           </Geographies>
         )}
         </ZoomableGroup>
+        </Hidden>
       </ComposableMap>
       <ReactTooltip place='bottom' />
 
@@ -119,7 +167,7 @@ const MapChart = () => {
           </IconButton>
         </Paper>
       </Hidden>
-      <Hidden lgUp>
+      {/* <Hidden lgUp>
         <div style={{display: 'flex', position: 'absolute', bottom: '1%', right: '2%'}}>
           <IconButton onClick={handleZoomIn}>
             <ZoomIn />
@@ -128,7 +176,7 @@ const MapChart = () => {
             <ZoomOut />
           </IconButton>
         </div>
-      </Hidden>
+      </Hidden> */}
     </div>
   )
 };
