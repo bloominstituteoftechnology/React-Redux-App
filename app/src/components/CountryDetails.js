@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Container, Grid, Typography, Divider, makeStyles } from '@material-ui/core';
 
@@ -23,9 +23,20 @@ const styles = makeStyles(theme => ({
 const CountryDetails = () => {
     const countryData = useSelector(state => state.countryData);
     const { container, titleDivider, totalCases, detailsContainer } = styles();
+
+    const myRef = React.createRef();
+    useEffect(() => {
+        if(countryData) {
+            myRef.current.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    }, [countryData])
     
     return (
         countryData ? 
+        <div ref={myRef}>
             <Container className={container}>
                 <Typography variant='h3' component='h1'>{countryData.Country}</Typography>
                 <Typography variant='h5' component='h2'>Covid Tracker</Typography>
@@ -59,6 +70,7 @@ const CountryDetails = () => {
                     </Grid>
                 </Grid>
             </Container>
+            </div>
         : null
     )
 }
