@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCountry } from '../../actions/covidTracker';
+
+// react-simple-maps
 import {
     ComposableMap,
     Geographies,
@@ -11,7 +14,7 @@ import {
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
 import missingGeoMamesList from './missingGeoNamesList';
-import { useEffect } from 'react';
+
 // Material ui
 import { IconButton, Paper, Hidden } from '@material-ui/core';
 import { ZoomIn, ZoomOut } from '@material-ui/icons';
@@ -30,6 +33,56 @@ const colorScale = value => {
   ]);
   return color(value);
 }
+
+const Map = ({ data, setToolTipContent }) => {
+  const dispatch = useDispatch();
+  return (
+  <>
+    <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
+    <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
+      {data && (
+        <Geographies geography={geoUrl}>
+          {({ geographies }) =>
+          geographies.map(geo => {
+            let d = data.find(countryData => countryData.Country === geo.properties.NAME);
+            if(!d) {
+              d = data.find(countryData => countryData.Country === missingGeoMamesList[geo.properties.ISO_A3]);
+            }
+            return (
+              <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                fill={d ? colorScale(d.TotalConfirmed) : "lightgray"}
+                strokeWidth={0.3}
+                data-tip={d ? `${d.Country}: ${d.TotalConfirmed} cases` : ''}
+                onMouseEnter={() => {
+                  d ? setToolTipContent(`${d.Country}: ${d.TotalConfirmed} cases`) : setToolTipContent("");
+                }}
+                onMouseLeave={() => {
+                  setToolTipContent("");
+                }}
+                onClick={d && (() => dispatch(selectCountry(d)))}
+                style={{
+                  default: {
+                    outline: "none"
+                  },
+                  hover: {
+                    fill: d ? "#F53" : 'lightgray',
+                    outline: "none",
+                  },
+                  pressed: {
+                    fill: "#E42",
+                    outline: "none"
+                  }
+                }}
+              />
+            );
+          })
+        }
+      </Geographies>
+    )}
+  </>
+)}
 
 const MapChart = () => {
   const data = useSelector(state => state.data.Countries);
@@ -62,53 +115,24 @@ const MapChart = () => {
               scale: 147
           }}
       >
-      <ZoomableGroup zoom={zoom} onZoomEnd={handleZoomEnd} zoomSensitivity={1}>
-        <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
-        <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
-        {data && (
-          <Geographies geography={geoUrl}>
-            {({ geographies }) =>
-              geographies.map(geo => {
-                let d = data.find(countryData => countryData.Country === geo.properties.NAME);
-                if(!d) {
-                  d = data.find(countryData => countryData.Country === missingGeoMamesList[geo.properties.ISO_A3]);
-                }
-                return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill={d ? colorScale(d.TotalConfirmed) : "lightgray"}
-                    strokeWidth={0.3}
-                    data-tip={d ? `${d.Country}: ${d.TotalConfirmed} cases` : ''}
-                    onMouseEnter={() => {
-                      d ? setToolTipContent(`${d.Country}: ${d.TotalConfirmed} cases`) : setToolTipContent("");
-                    }}
-                    onMouseLeave={() => {
-                      setToolTipContent("");
-                    }}
-                    style={{
-                      default: {
-                        outline: "none"
-                      },
-                      hover: {
-                        fill: d ? "#F53" : 'lightgray',
-                        outline: "none",
-                      },
-                      pressed: {
-                        fill: "#E42",
-                        outline: "none"
-                      }
-                    }}
-                  />
-                );
-              })
-            }
-          </Geographies>
-        )}
-        </ZoomableGroup>
+        {/* Large screens */}
+        <Hidden lgUp>
+          <Map data={data} setToolTipContent={setToolTipContent} />              
+        </Hidden>
+
+        {/* Small screens     */}
+        <Hidden mdDown>
+          <ZoomableGroup zoom={zoom} onZoomEnd={handleZoomEnd} zoomSensitivity={1}>
+            <Map data={data} setToolTipContent={setToolTipContent} />
+          </ZoomableGroup>
+        </Hidden>
+
       </ComposableMap>
+
+      {/* Tooltip */}
       <ReactTooltip place='bottom' />
 
+      {/* Zoom buttons */}
       <Hidden mdDown>
         <Paper style={{display: 'flex', position: 'absolute', bottom: '1%', right: '2%'}}>
           <IconButton onClick={handleZoomIn}>
@@ -118,16 +142,6 @@ const MapChart = () => {
             <ZoomOut />
           </IconButton>
         </Paper>
-      </Hidden>
-      <Hidden lgUp>
-        <div style={{display: 'flex', position: 'absolute', bottom: '1%', right: '2%'}}>
-          <IconButton onClick={handleZoomIn}>
-            <ZoomIn />
-          </IconButton>
-          <IconButton onClick={handleZoomOut}>
-            <ZoomOut />
-          </IconButton>
-        </div>
       </Hidden>
     </div>
   )
