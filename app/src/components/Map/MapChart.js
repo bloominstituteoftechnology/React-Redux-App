@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCountry } from '../../actions/covidTracker';
+
+// react-simple-maps
 import {
     ComposableMap,
     Geographies,
@@ -11,7 +14,7 @@ import {
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
 import missingGeoMamesList from './missingGeoNamesList';
-import { useEffect } from 'react';
+
 // Material ui
 import { IconButton, Paper, Hidden } from '@material-ui/core';
 import { ZoomIn, ZoomOut } from '@material-ui/icons';
@@ -31,7 +34,9 @@ const colorScale = value => {
   return color(value);
 }
 
-const Map = ({ data, setToolTipContent }) => (
+const Map = ({ data, setToolTipContent }) => {
+  const dispatch = useDispatch();
+  return (
   <>
     <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
     <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
@@ -56,6 +61,7 @@ const Map = ({ data, setToolTipContent }) => (
                 onMouseLeave={() => {
                   setToolTipContent("");
                 }}
+                onClick={d && (() => dispatch(selectCountry(d)))}
                 style={{
                   default: {
                     outline: "none"
@@ -76,7 +82,7 @@ const Map = ({ data, setToolTipContent }) => (
       </Geographies>
     )}
   </>
-)
+)}
 
 const MapChart = () => {
   const data = useSelector(state => state.data.Countries);
