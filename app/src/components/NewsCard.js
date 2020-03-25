@@ -59,7 +59,9 @@ const NewsCard = ({ article }) => {
         <ThemeProvider theme={cardTheme}>
         <Link href={article.url} target='_blank'>
             <Card className={card}>
+                { article.urlToImage ? 
                 <CardMedia className={image} image={article.urlToImage} title={article.title} />
+                : <div className={image}></div> }
                 <CardContent>
                     <CardHeader style={{padding: '0'}} title={article.title} />
                     <Hidden smDown>

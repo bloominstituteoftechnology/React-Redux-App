@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCountry } from '../../actions/covidTracker';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 // react-simple-maps
 import {
@@ -16,7 +17,7 @@ import ReactTooltip from "react-tooltip";
 import missingGeoMamesList from './missingGeoNamesList';
 
 // Material ui
-import { IconButton, Paper, Hidden } from '@material-ui/core';
+import { IconButton, Paper, Hidden, Divider, Grid } from '@material-ui/core';
 import { ZoomIn, ZoomOut } from '@material-ui/icons';
 
 const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json';
@@ -93,57 +94,44 @@ const MapChart = () => {
     ReactTooltip.rebuild();
   }, [toolTipContent]);
 
-  function handleZoomIn() {
-    if (zoom >= 4) return;
-    setZoom(zoom * 2);
-  }
-
-  function handleZoomOut() {
-    if (zoom <= 1) return;
-    setZoom(zoom / 2);
-  }
-
-  function handleZoomEnd(position) {
-    setZoom(position.zoom);
-  }
-
   return (
-    <div style={{position: 'relative'}}>
-      <ComposableMap height={400}
-          projectionConfig={{
-              rotate: [-10, 0, 0],
-              scale: 147
-          }}
-      >
-        {/* Large screens */}
-        <Hidden lgUp>
-          <Map data={data} setToolTipContent={setToolTipContent} />              
-        </Hidden>
+    <Grid container>
+      <Grid container item xs={12} justify='center'>
+        <TransformWrapper>
+        {({ zoomIn, zoomOut }) => 
+          <div style={{ position: 'relative' }}>
+            <TransformComponent >
+              <ComposableMap height={400}
+                projectionConfig={{
+                  scale: 147,
+                  rotation: [-11, 0, 0],
+                }}
+                style={{
+                    width: "1000px",
+                    maxWidth: "100%"
+                }}
+              >
+                <Map data={data} setToolTipContent={setToolTipContent} />  
+              </ComposableMap> 
+            </TransformComponent>
 
-        {/* Small screens     */}
-        <Hidden mdDown>
-          <ZoomableGroup zoom={zoom} onZoomEnd={handleZoomEnd} zoomSensitivity={1}>
-            <Map data={data} setToolTipContent={setToolTipContent} />
-          </ZoomableGroup>
-        </Hidden>
-
-      </ComposableMap>
-
-      {/* Tooltip */}
-      <ReactTooltip place='bottom' />
-
-      {/* Zoom buttons */}
-      <Hidden mdDown>
-        <Paper style={{display: 'flex', position: 'absolute', bottom: '1%', right: '2%'}}>
-          <IconButton onClick={handleZoomIn}>
-            <ZoomIn />
-          </IconButton>
-          <IconButton onClick={handleZoomOut}>
-            <ZoomOut />
-          </IconButton>
-        </Paper>
-      </Hidden>
-    </div>
+            {/* Zoom buttons */}
+            <Hidden mdDown>
+              <Paper style={{display: 'flex', position: 'absolute', bottom: '1%', right: '2%'}}>
+                <IconButton onClick={zoomIn}>
+                  <ZoomIn />
+                </IconButton>
+                <IconButton onClick={zoomOut}>
+                  <ZoomOut />
+                </IconButton>
+              </Paper>
+            </Hidden>
+          </div>
+        } 
+        </TransformWrapper>
+        <ReactTooltip place='bottom' />
+      </Grid>
+    </Grid>
   )
 };
 
