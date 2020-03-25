@@ -24,13 +24,15 @@ const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-map
 
 const colorScale = value => {
   const color = scaleLinear()
-  .domain([0, 100, 1000, 3000, 90000])
+  .domain([0, 100, 1000, 3000, 10000, 50000, 80000])
   .range([
     "#FFC0A8",
     "#FFAB8C",
     "#F26149",
     "#C73B29",
-    "#9D0B0B"
+    "#9D0B0B",
+    "#740000",
+    "#3f0000"
   ]);
   return color(value);
 }
@@ -62,7 +64,7 @@ const Map = ({ data, setToolTipContent }) => {
                 onMouseLeave={() => {
                   setToolTipContent("");
                 }}
-                onClick={d && (() => dispatch(selectCountry(d)))}
+                onDoubleClick={d && (() => dispatch(selectCountry(d)))}
                 style={{
                   default: {
                     outline: "none"
