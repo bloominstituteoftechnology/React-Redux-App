@@ -99,7 +99,7 @@ const MapChart = () => {
   return (
     <Grid container>
       <Grid container item xs={12} justify='center'>
-        <TransformWrapper>
+        <TransformWrapper doubleClick={{ disabled: true }}>
         {({ zoomIn, zoomOut }) => 
           <div style={{ position: 'relative' }}>
             <TransformComponent >
