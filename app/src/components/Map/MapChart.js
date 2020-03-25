@@ -90,7 +90,6 @@ const Map = ({ data, setToolTipContent }) => {
 const MapChart = () => {
   const data = useSelector(state => state.data.Countries);
   const [toolTipContent, setToolTipContent] = useState('');
-  const [zoom, setZoom] = useState(1);
 
   useEffect(() => {
     ReactTooltip.rebuild();
@@ -99,7 +98,7 @@ const MapChart = () => {
   return (
     <Grid container>
       <Grid container item xs={12} justify='center'>
-        <TransformWrapper doubleClick={{ disabled: true }}>
+        <TransformWrapper onPanningStart={() => {debugger; setToolTipContent('')}} doubleClick={{ disabled: true }}>
         {({ zoomIn, zoomOut }) => 
           <div style={{ position: 'relative' }}>
             <TransformComponent >
