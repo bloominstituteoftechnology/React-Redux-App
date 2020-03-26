@@ -98,7 +98,10 @@ const MapChart = () => {
   return (
     <Grid container>
       <Grid container item xs={12} justify='center'>
-        <TransformWrapper onPanningStart={() => {debugger; setToolTipContent('')}} doubleClick={{ disabled: true }}>
+        <TransformWrapper
+        onPanning={() => setToolTipContent('')}
+        onPinching={() => setToolTipContent('')}
+        doubleClick={{ disabled: true }} >
         {({ zoomIn, zoomOut }) => 
           <div style={{ position: 'relative' }}>
             <TransformComponent >
@@ -130,7 +133,7 @@ const MapChart = () => {
           </div>
         } 
         </TransformWrapper>
-        <ReactTooltip place='bottom' />
+        <ReactTooltip place='bottom' />}
       </Grid>
     </Grid>
   )
