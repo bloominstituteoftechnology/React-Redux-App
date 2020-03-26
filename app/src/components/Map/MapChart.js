@@ -133,7 +133,7 @@ const MapChart = () => {
           </div>
         } 
         </TransformWrapper>
-        <ReactTooltip place='bottom' />}
+        <ReactTooltip place='bottom' />
       </Grid>
     </Grid>
   )
