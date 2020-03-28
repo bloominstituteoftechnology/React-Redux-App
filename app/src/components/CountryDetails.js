@@ -62,7 +62,7 @@ const CountryDetails = () => {
                     <Grid container>
                         <Grid item container xs={8} alignItems='center'>
                             <span style={{fontSize: '32px', color: 'darkred', lineHeight: '1rem'}}>•</span>
-                            <Typography> Faltal cases:</Typography>
+                            <Typography> Fatal cases:</Typography>
                         </Grid>
                         <Grid item xs={4}>
                             <Typography>{ countryData.TotalDeaths }</Typography>
