@@ -2,22 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCountry } from '../../actions/covidTracker';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-
 // react-simple-maps
 import {
     ComposableMap,
     Geographies,
     Geography,
     Sphere,
-    Graticule,
-    ZoomableGroup
+    Graticule
   } from "react-simple-maps";
 import { scaleLinear } from "d3-scale";
 import ReactTooltip from "react-tooltip";
 import missingGeoMamesList from './missingGeoNamesList';
-
 // Material ui
-import { IconButton, Paper, Hidden, Divider, Grid } from '@material-ui/core';
+import { IconButton, Paper, Hidden, Divider, Grid, makeStyles } from '@material-ui/core';
 import { ZoomIn, ZoomOut } from '@material-ui/icons';
 
 const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json';
@@ -87,10 +84,22 @@ const Map = ({ data, setToolTipContent }) => {
   </>
 )}
 
+const useStyles = makeStyles(theme => ({
+  map: {
+    border: 'solid 1px',
+    borderColor: theme.palette.secondary.light,
+    boxShadow: '0px 1px 10px 0px rgba(0,0,0,0.12)',
+    borderRadius: '15px',
+    '&:hover': {
+      cursor: 'grab'
+    }
+  }
+}))
+
 const MapChart = () => {
   const data = useSelector(state => state.data.Countries);
   const [toolTipContent, setToolTipContent] = useState('');
-
+  const { map } = useStyles();
   useEffect(() => {
     ReactTooltip.rebuild();
   }, [toolTipContent]);
@@ -98,12 +107,12 @@ const MapChart = () => {
   return (
     <Grid container>
       <Grid container item xs={12} justify='center'>
-        <TransformWrapper
+        <TransformWrapper 
         onPanning={() => setToolTipContent('')}
         onPinching={() => setToolTipContent('')}
         doubleClick={{ disabled: true }} >
         {({ zoomIn, zoomOut }) => 
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative' }}  className={map}>
             <TransformComponent >
               <ComposableMap height={400}
                 projectionConfig={{
