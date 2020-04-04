@@ -90,9 +90,8 @@ const useStyles = makeStyles(theme => ({
     borderColor: theme.palette.secondary.light,
     boxShadow: '0px 1px 10px 0px rgba(0,0,0,0.12)',
     borderRadius: '15px',
-    '&:hover': {
-      cursor: 'grab'
-    }
+    margin: theme.spacing(2),
+    overflow: 'hidden'
   }
 }))
 
@@ -105,16 +104,14 @@ const MapChart = () => {
   }, [toolTipContent]);
 
   return (
-    <Grid container>
-      <Grid container item xs={12} justify='center'>
+    <Grid container justify='center'>
+      <Grid container item xs={12} md={9} justify='center'>
         <TransformWrapper 
-        onPanning={() => setToolTipContent('')}
-        onPinching={() => setToolTipContent('')}
         doubleClick={{ disabled: true }} >
         {({ zoomIn, zoomOut }) => 
           <div style={{ position: 'relative' }}  className={map}>
             <TransformComponent >
-              <ComposableMap height={400}
+              <ComposableMap height={400} cursor={'grab'}
                 projectionConfig={{
                   scale: 147,
                   rotation: [-11, 0, 0],
