@@ -1,13 +1,49 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input,
+button {
+  display: inline-block;
+  outline: none;
+}
+
+.container {
+  //   border: 1px solid red;
+  width: 1400px;
+  margin: 2rem auto 0;
+
+  .search-form {
+    //  border: 1px solid blue;
+    width: 50%;
+    margin: auto;
+
+    input {
+      width: 50%;
+      font-size: 1.1rem;
+      padding: 0.3rem;
+      border-radius: 5px;
+    }
+
+    button {
+      font-size: 1.1rem;
+      padding: 0.3rem 2rem;
+      margin-left: 1rem;
+      border-radius: 5px;
+    }
+  }
+
+  // ------------- FORM ENDS HERE   --------------
+
+  .cocktails {
+    border: 1px solid red;
+    margin-top: 4rem;
+
+    .single-cocktail {
+      border: 1px solid green;
+      width: 350px;
+    }
+  }
 }
