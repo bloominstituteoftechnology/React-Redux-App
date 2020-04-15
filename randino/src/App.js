@@ -9,7 +9,7 @@ import {ranDino} from './dinoRandomizer'
 import { reducer } from "./reducers"
 import Header from "./components/Header";
 import DinoText from "./components/DinoText"
-const store = createStore(reducer, applyMiddleware(thunk))
+const store = createStore(reducer,  applyMiddleware(thunk))
 
 function App() {
   

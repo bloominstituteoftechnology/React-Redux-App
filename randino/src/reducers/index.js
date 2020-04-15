@@ -1,5 +1,5 @@
 import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR } from "../actions";
-
+import {ranDino} from "../dinoRandomizer"
 const initialState = {
     
     dinoInfo: {},
@@ -10,12 +10,14 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
         case FETCH_DATA:
+            
             return {
                 ...state,
                 isLoading: true
             };
         case DATA_SUCCESS:
             return {
+                
                 ...state,
                 dinoInfo: action.payload,
                 isLoading: false,
