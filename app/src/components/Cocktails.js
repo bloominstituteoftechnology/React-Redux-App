@@ -5,6 +5,9 @@ const Cocktails = () => {
   return (
     <div className="cocktails">
       <SingleCocktail />
+      <SingleCocktail />
+      <SingleCocktail />
+      <SingleCocktail />
     </div>
   );
 };

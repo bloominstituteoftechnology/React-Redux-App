@@ -17,7 +17,7 @@ a {
 
 .container {
   //   border: 1px solid red;
-  width: 1400px;
+  width: 1500px;
   margin: 0 auto;
   background: #f4f4f4;
 
@@ -48,13 +48,16 @@ a {
     border: 1px solid red;
     margin-top: 4rem;
     padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
 
     .single-cocktail {
-      border: 1px solid green;
+      border: 1px solid rgb(150, 150, 150);
       width: 350px;
       border-radius: 5px;
       text-transform: capitalize;
       background: white;
+      margin: 0 0.5rem 2rem;
 
       img {
         width: 100%;
@@ -86,6 +89,52 @@ a {
             // text-align: center;
           }
         }
+      }
+    }
+  }
+
+  // COCKTAIL DESCRIPTION
+
+  .Desc {
+    height: 100vh;
+    .cocktail-desc {
+      border: 1px solid red;
+      padding: 5rem 1rem 1rem;
+      display: flex;
+      justify-content: space-between;
+
+      .img-container {
+        img {
+          width: 700px;
+        }
+      }
+
+      .information-desc {
+        border: 1px solid red;
+        width: 50%;
+
+        h3 {
+          font-size: 2.5rem;
+          text-transform: capitalize;
+          margin-bottom: 2rem;
+        }
+
+        p {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+
+    .btn-desc {
+      text-align: center;
+      margin: 1rem 0;
+
+      a {
+        padding: 0.3rem 2rem;
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 1.1rem;
+        border: 1px solid rgb(161, 161, 163);
       }
     }
   }
