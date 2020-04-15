@@ -1,13 +1,13 @@
 import React from "react";
 import SingleCocktail from "./SingleCocktail";
 
-const Cocktails = () => {
+const Cocktails = ({ data }) => {
+  console.log(data);
   return (
     <div className="cocktails">
-      <SingleCocktail />
-      <SingleCocktail />
-      <SingleCocktail />
-      <SingleCocktail />
+      {data.map((item) => (
+        <SingleCocktail key={item.idDrink} data={item} />
+      ))}
     </div>
   );
 };

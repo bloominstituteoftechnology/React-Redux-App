@@ -1,12 +1,13 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 
-const SearchForm = () => {
+const SearchForm = ({ getInputValue }) => {
   return (
     <div className="search-form">
       <Formik
         initialValues={{ search: "" }}
         onSubmit={(values, { resetForm }) => {
+          getInputValue(values.search);
           resetForm();
         }}
       >
