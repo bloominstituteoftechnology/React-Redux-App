@@ -1,0 +1,27 @@
+.container{
+    width: 80%;
+    margin:0 auto;
+}
+
+.text{
+    width: 80%;
+    display:flex;
+    background-color: saddlebrown;
+}
+
+.text h3{
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: red;
+}
+.text h4{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: red;
+}
