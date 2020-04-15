@@ -1,29 +1,38 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const SingleCocktail = () => {
-  const { path, url } = useRouteMatch();
+const SingleCocktail = ({ data }) => {
+  const { id } = useParams();
 
-  console.log(url);
+  const singleDrink = data.find((drink) => drink.idDrink === id);
+  const {
+    strDrink,
+    strCategory,
+    strAlcoholic,
+    strGlass,
+    strInstructions,
+    strDrinkThumb,
+  } = singleDrink;
   return (
     <div className="Desc">
       <div className="cocktail-desc">
         <div className="img-container">
-          <img
-            src="https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg"
-            alt=""
-          />
+          <img src={strDrinkThumb} alt={strDrink} />
         </div>
         <div className="information-desc">
-          <h3>name</h3>
-          <p>alcoholic</p>
-          <p>cocktail glass</p>
-          <p>instructions</p>
-          <div className="ingredients">
-            <ul>
-              <li></li>
-            </ul>
-          </div>
+          <h3>{strDrink}</h3>
+          <p>
+            type: <span>{strAlcoholic}</span>
+          </p>
+          <p>
+            category: <span>{strCategory}</span>
+          </p>
+          <p>
+            serve in: <span>{strGlass}</span>
+          </p>
+          <p>
+            instructions: <span>{strInstructions}</span>
+          </p>
         </div>
       </div>
       <div className="btn-desc">
