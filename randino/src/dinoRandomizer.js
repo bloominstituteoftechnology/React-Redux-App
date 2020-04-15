@@ -1,4 +1,4 @@
-const dinosaurList = [
+export const dinosaurList = [
 	"Aardonyx",
 	"Abelisaurus",
 	"Abrictosaurus",
@@ -1071,15 +1071,13 @@ const dinosaurList = [
 	"Zupaysaurus"
 ];
 
-function getRandomInt(min, max) {
+export function getRandomInt(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-const randomDinoIndex = getRandomInt(0, (dinosaurList.length - 1));
+export const randomDinoIndex = getRandomInt(0, (dinosaurList.length - 1));
 
 export const ranDino = dinosaurList[randomDinoIndex];
 
-console.log(ranDino);
-console.log(ranDino)
