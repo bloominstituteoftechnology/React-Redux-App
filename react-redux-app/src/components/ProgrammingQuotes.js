@@ -24,6 +24,7 @@ const ProgrammingQuotes = props => {
       )}
       {props.quote &&<div className="text">
                       <h3>"{props.quote}"</h3>
+                      <br/>
                       <h4>{props.author}</h4>
                      </div>}
       {props.error && <p className="error">{props.error}</p>}

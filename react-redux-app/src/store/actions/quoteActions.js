@@ -18,7 +18,7 @@ export const fetchQuote = () => {
         // status: err.response.status
         dispatch({
           type: 'FETCH_QUOTE_FAILURE',
-          payload: `Error ${err.response}: ${err.response}`
+          payload: `Error ${err}`
         });
       });
   };
