@@ -1,0 +1,40 @@
+body {
+  background-color: lightgrey;
+  box-sizing:border-box;
+  margin:0 auto;
+  width:100%;
+  
+}
+
+.App {
+  text-align: center;
+}
+
+.container {
+  margin:0 auto;
+  text-align: center;
+
+  width:100%
+  
+}
+
+header {
+  background-color:cyan;
+  width:98%;
+  text-align:center;
+  font-size:3rem;
+  margin:0 auto;
+  
+}
+
+p {
+  width: 95%;
+  
+  border:1px solid blue;
+  font-size:1.8rem;
+  background-color:lightpink;
+  margin :1%;
+  text-align:left;
+  padding:30px 5px;
+  margin:10px;
+}
