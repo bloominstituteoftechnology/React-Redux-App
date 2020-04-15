@@ -25,7 +25,8 @@ export const fetchData = () => dispatch => {
             const dinoText = res.data.query.pages[pageIDString].extract;
             const dinoInfo = {
                 name: dinoName,
-                text: dinoText
+                text: dinoText,
+                url: `https://en.wikipedia.org/wiki/${dinoName}`
             }
             console.log(dinoInfo)
             dispatch({ type: DATA_SUCCESS, payload: dinoInfo })

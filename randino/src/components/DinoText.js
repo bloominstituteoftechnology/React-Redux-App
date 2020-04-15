@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const DinoText = props => {
   return (
-    <div>
+    <div className="container">
       {props.isLoading ? (
         <div>data loading...</div>
       ) : (
@@ -11,10 +11,10 @@ const DinoText = props => {
           {props.error && (
             <div style={{ color: "red" }}>*error loading data*</div>
           )}
-          <div>
-              <h3>{props.dinoInfo.name}</h3>
+            <div className="notification is-bold margin-fixer">
+              <h3 className="subtitle"><a href={props.dinoInfo.url}>{props.dinoInfo.name}</a></h3>
               <p>{props.dinoInfo.text}</p>
-          </div>
+            </div>
         </div>
       )}
     </div>
