@@ -10,15 +10,22 @@ button {
   outline: none;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+}
+
 .container {
   //   border: 1px solid red;
   width: 1400px;
-  margin: 2rem auto 0;
+  margin: 0 auto;
+  background: #f4f4f4;
 
   .search-form {
     //  border: 1px solid blue;
     width: 50%;
     margin: auto;
+    padding-top: 4rem;
 
     input {
       width: 50%;
@@ -40,10 +47,46 @@ button {
   .cocktails {
     border: 1px solid red;
     margin-top: 4rem;
+    padding: 1rem;
 
     .single-cocktail {
       border: 1px solid green;
       width: 350px;
+      border-radius: 5px;
+      text-transform: capitalize;
+      background: white;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .information {
+        //   border: 1px solid blue;
+        padding: 0 1rem;
+
+        h3 {
+          margin: 1rem 0;
+        }
+
+        .btn {
+          text-align: center;
+          //  border: 1px solid red;
+          margin: 1rem 0;
+
+          a {
+            padding: 0.3rem 2rem;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 1.1rem;
+            border: 1px solid rgb(161, 161, 163);
+            // width: 50%;
+            //  height: 100%;
+            margin: 0 auto;
+            // text-align: center;
+          }
+        }
+      }
     }
   }
 }
