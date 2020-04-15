@@ -23,6 +23,12 @@ export const dataReducer = (state = initialValue, action) => {
         loading: false,
         data: action.payload,
       };
+    case "ERROR":
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
 
     default:
       return state;

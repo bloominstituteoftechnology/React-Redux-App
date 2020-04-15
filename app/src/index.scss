@@ -16,14 +16,12 @@ a {
 }
 
 .container {
-  //   border: 1px solid red;
   width: 1500px;
   height: 100vh;
   margin: 0 auto;
   background: #f4f4f4;
 
   .search-form {
-    //  border: 1px solid blue;
     width: 50%;
     margin: auto;
     padding-top: 4rem;
@@ -72,7 +70,6 @@ a {
       }
 
       .information {
-        //   border: 1px solid blue;
         padding: 0 1rem;
 
         h3 {
@@ -81,7 +78,6 @@ a {
 
         .btn {
           text-align: center;
-          //  border: 1px solid red;
           margin: 1rem 0;
 
           a {
@@ -90,11 +86,8 @@ a {
             display: inline-block;
             font-size: 1.1rem;
             border: 1px solid rgb(161, 161, 163);
-            // width: 50%;
-            //  height: 100%;
             margin: 0 auto;
             transition: all 0.5s ease;
-            // text-align: center;
 
             &:hover {
               color: white;
@@ -110,8 +103,8 @@ a {
 
   .Desc {
     height: 100vh;
+
     .cocktail-desc {
-      border: 1px solid red;
       padding: 5rem 1rem 1rem;
       display: flex;
       justify-content: space-between;
@@ -123,7 +116,6 @@ a {
       }
 
       .information-desc {
-        border: 1px solid red;
         width: 50%;
 
         h3 {
@@ -148,7 +140,7 @@ a {
 
     .btn-desc {
       text-align: center;
-      margin: 1rem 0;
+      margin: 3rem 0 2rem;
 
       a {
         padding: 0.3rem 2rem;

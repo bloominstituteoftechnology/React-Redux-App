@@ -11,7 +11,7 @@ const MainApp = () => {
   const reducer = useSelector((state) => ({
     ...state,
   }));
-  const { data, searchVal } = reducer.dataReducer;
+  const { data, searchVal, error } = reducer.dataReducer;
 
   useEffect(() => {
     dispatch({ type: "FETCHING_DATA" });
@@ -20,11 +20,10 @@ const MainApp = () => {
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchVal}`
       )
       .then((res) => {
-        //   console.log(res.data.drinks);
         dispatch({ type: "NEW_DATA", payload: res.data.drinks });
       })
       .catch((err) => {
-        console.log(err);
+        dispatch({ type: "ERROR", payload: err });
       });
   }, [searchVal]);
 
@@ -32,18 +31,20 @@ const MainApp = () => {
     dispatch({ type: "GET_INPUT_VALUE", payload: value });
   };
 
-  //   console.log("new data here => ", data);
-
   return (
     <div className="container">
-      <Route exact path="/">
-        <SearchForm getInputValue={getInputValue} />
-        <Cocktails data={data} />
-      </Route>
+      {!error && (
+        <div>
+          <Route exact path="/">
+            <SearchForm getInputValue={getInputValue} />
+            <Cocktails data={data} />
+          </Route>
 
-      <Route exact path="/des/:id">
-        <CocktailDescription data={data} />
-      </Route>
+          <Route exact path="/des/:id">
+            <CocktailDescription data={data} />
+          </Route>
+        </div>
+      )}
     </div>
   );
 };
