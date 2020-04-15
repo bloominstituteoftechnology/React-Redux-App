@@ -1,10 +1,7 @@
 import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR } from "../actions";
 
 const initialState = {
-    dinoInfo: {
-        dinoText: [],
-        dinoImg: []
-    },
+    dinoInfo: "",
     isLoading: false,
     error: ""
 }
