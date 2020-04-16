@@ -6,8 +6,8 @@ export const fetchQuote = () => {
     axios
       .get('https://jack-donaghy-quotes.herokuapp.com/quotes')
       .then(res => {
-        // res.data.quote
-        dispatch({ type: 'FETCH_QUOTE_SUCCESS', payload: res.data.quote });
+        console.log(res.data);
+        dispatch({ type: 'FETCH_QUOTE_SUCCESS', payload: res.data });
       })
       .catch(err => {
         // message: err.response.data
@@ -19,3 +19,5 @@ export const fetchQuote = () => {
       });
   };
 };
+
+

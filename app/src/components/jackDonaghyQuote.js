@@ -5,15 +5,17 @@ import Loader from 'react-loader-spinner';
 import { fetchQuote } from '../store/actions/quoteActions';
 
 
-const jackDonaghyQuote = props => {
+const JackDonaghyQuote = props => {
   useEffect(() => {
     props.fetchQuote();
   }, []);
 
-
   return (
     <div>
-      <h1>Jack Donaghy Wisdom 🥃 </h1>
+      <h1>Jack Donaghy Wisdom</h1>
+      <div>
+      <span>🥃</span>
+      </div>
       {props.isFetching && (
       <Loader type="Puff" color="#1B9D0B" height={100} width={100} />
       )}
@@ -35,4 +37,4 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps,
    { fetchQuote }
-   )(jackDonaghyQuote);
+   )(JackDonaghyQuote);
