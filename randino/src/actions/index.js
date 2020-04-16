@@ -33,5 +33,5 @@ export const fetchData = () => dispatch => {
         })
         .catch(err => dispatch({ type: DATA_ERROR, payload: err}))
         
-    }, 10)
+    }, 1500)
 }

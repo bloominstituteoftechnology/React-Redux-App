@@ -4,6 +4,7 @@ const initialState = {
     
     dinoInfo: {},
     isLoading: false,
+    hasLoaded: false,
     error: ""
 }
 
@@ -13,7 +14,8 @@ export const reducer = (state = initialState, action) => {
             
             return {
                 ...state,
-                isLoading: true
+                isLoading: true,
+                hasLoaded: true,
             };
         case DATA_SUCCESS:
             return {
