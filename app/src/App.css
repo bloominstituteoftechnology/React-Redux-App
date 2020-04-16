@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Rye&display=swap');
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,28 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1586829135343-132950070391?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+  background-repeat: no-repeat, repeat;
+}
+
+.header h1{
+  color: white;
+  font-family: 'Rye', cursive;;
+}
+
+.lyrics{
+  color: white;
+  width: 50%;
+  margin: 0 auto;
+
+  padding: 10px
+}
+
+

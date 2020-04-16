@@ -11,17 +11,17 @@ const SongLyrics = ( props ) => {
     }, [])
 
     return (
-        <div>
-            <h1>Song Lyrics</h1>
-            {props.isFetching && <Loader
-         type="Bars"
-         color="#00BFFF"
-         height={100}
-         width={100}
-         
- 
-      />}
+        <div className='header' >
+            <h1>Adventure of a Lifetime</h1>
+            {<Loader
+                type="Bars"
+                color="#C08A78"
+                height={100}
+                width={100}
+            />}
+            <div className='lyrics'>
             {props.lyric && <h3>{props.lyric}</h3>}
+            </div>
         </div>
     )
 }
