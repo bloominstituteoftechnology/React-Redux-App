@@ -6,7 +6,7 @@ import PokemonCard from "./pokemon-card";
 import { fetchPokemon } from "../actions";
 
 const Pokemon = props => {
-    console.log(props, "props on line 8");
+    console.log("props line 8", props);
 
     const [searchParams, setSearchParams] = useState("default");
     const [text, setText] = useState("");

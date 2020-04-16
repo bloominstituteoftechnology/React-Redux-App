@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 import {
     FETCHING_POKEMON_START,
@@ -34,10 +33,5 @@ export const reducer = (state = initialState, action) => {
             return state;
     }
 };
-=======
-import {
-    FETCHING_GEMINI_START,
-    FETCHING_GEMINI_SUCCESS,
-    FETCHING_GEMINI_FAILURE
-} from "../actions"
->>>>>>> 796ddc0eda8adfba8ef29ac64552223190ebe626
+
+
