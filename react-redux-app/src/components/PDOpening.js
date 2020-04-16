@@ -7,7 +7,7 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-  background: white;
+  background: #4682B4;
   height: 50px;
   width: 150px;
   border-bottom: 8px solid black;
@@ -17,7 +17,7 @@ const Header = styled.div`
 
 const HeaderAngle = styled.div`
   position: absolute;
-  background: #dc0a2d;
+  background: #4682B4;
   height: 60px;
   width: 100px;
   left: 512px;
@@ -25,13 +25,13 @@ const HeaderAngle = styled.div`
   transform: rotate(40deg);
   border-bottom: 8px solid black;
   z-index: 1;
-  background: white;
+
 `;
 
 const SmallHeader = styled.div`
   position: relative;
   left: 25px;
-  background: white;
+  background: #4682B4;
   height: 75px;
   width: 225px;
   border-bottom: 8px solid black;
