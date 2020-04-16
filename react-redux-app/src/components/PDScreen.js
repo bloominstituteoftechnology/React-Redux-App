@@ -3,10 +3,13 @@ import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
-    margin-top: 30px;
+    padding-top: 30px;
+    border-left: 5px solid;
+    width: 400px;
+    justify-content: center;
 `
 const ScreenFrame = styled.div`
-    width: 225px;
+    width: 275px;
     height: 200px;
     background-color: lightgray;
     display: flex;
@@ -14,6 +17,11 @@ const ScreenFrame = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    border: 1px solid;
+    border-left: none;
+    border-top: none;
+    box-shadow: 5px 5px;
+    
 `
 const ScreenFrameCorner = styled.div`
     width: 0px;
@@ -25,14 +33,15 @@ const ScreenFrameCorner = styled.div`
 const Screen = styled.div`
     background: black;
     height: 140px;
-    width: 190px;
+    width: 230px;
     margin-right: 15px;
+    border-radius: 7px;
 `
 
 const ScreenFrameBottom = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 190px;
+    width: 230px;
     height: 10px;
     align-items: center;
     margin-right: 10px;
@@ -40,7 +49,7 @@ const ScreenFrameBottom = styled.div`
 const ScreenFrameTop = styled.div`
     display: flex;
     justify-content: space-around;
-    width: 50px;
+    width: 75px;
 `
 
 const ScreenButton = styled.div`
@@ -49,16 +58,18 @@ const ScreenButton = styled.div`
     background: red;
     border-radius: 50px;
     border: 1px solid black;
+    box-shadow: 1.5px 1.5px;
 `
 
 const Hamburger = styled.img`
-    height: 25px;
-    width: 25px;
+    height: 45px;
+    width: 35px;
 `
 
 const ScreenSmallButton = styled(ScreenButton)`
-    height: 5px;
-    width: 5px;
+    height: 7px;
+    width: 7px;
+    box-shadow: 1px 1px;
 `
 
 const PDScreen = () => {
