@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
 .App {
   text-align: center;
 }
@@ -5,12 +7,6 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -28,11 +24,177 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.posterImage {
+  max-width: 75px;
+  padding-top: 5%;
+  padding-left: 3%;
+}
+
+.main {
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.m-title {
+  font-family: "Orbitron", sans-serif;
+  margin-top: 2.5rem;
+  width: 100%;
+  text-align: center;
+}
+.m-container {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@keyframes bouncy {
+  0% {
+    top: 0em;
   }
-  to {
-    transform: rotate(360deg);
+  40% {
+    top: 0em;
   }
+  43% {
+    top: -0.9em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.4em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
+}
+
+.m-btn {
+  animation: bouncy 2s infinite linear;
+  padding: 1rem;
+  border: 0.1em solid #ffffff;
+  border-radius: 0.12em;
+  text-decoration: none;
+  font-weight: 500;
+  color: #ffffff;
+  transition: transform 0.3s ease-in-out;
+}
+.m-btn:hover {
+  transform: scale(1.07);
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.cryptoContainer ul {
+  transition: 0.2s ease-in-out;
+}
+
+.cryptoContainer:hover ul {
+  filter: saturate(10);
+  opacity: 1;
+  transform: scale(1.04);
+}
+
+.cryptoContainer ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 500px));
+}
+
+.cryptoContainer ul li {
+  border-radius: 0.5rem;
+  list-style-type: none;
+}
+
+.cryptoContainer ul li figure {
+  max-height: 500px;
+  overflow: hidden;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  position: relative;
+  padding-bottom: 8%;
+  box-shadow: 0 0 5px white;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.textNew {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+
+  z-index: 2000;
+  position: fixed;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  width: 200px;
+  background: #fff;
+  border: 1px solid #29d;
+
+  overflow: hidden;
+}
+
+.pace .pace-progress {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+
+  max-width: 200px;
+  position: fixed;
+  z-index: 2000;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  height: 100%;
+  width: 100%;
+  background: #29d;
+}
+
+.pace.pace-inactive {
+  display: none;
 }
