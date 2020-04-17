@@ -1,9 +1,10 @@
-import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR } from "../actions";
+import { FETCH_DATA, DATA_SUCCESS, DATA_ERROR, CHANGE_DATA } from "../actions";
 
 const initialState = {
     data: [],
     loading: false,
-    status: ""
+    status: "",
+    selectedData: undefined
 }
 
 export const reducer = (state = initialState, action) => {
@@ -17,13 +18,18 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 data: [...state.data, ...action.payload.results],
-                loading: false
+                loading: false,
             }
         case DATA_ERROR:
             return {
                 ...state,
                 status: "Error!",
                 loading: false
+            }
+        case CHANGE_DATA:
+            return {
+                ...state,
+                selectedData: state.data[action.payload]
             }
         default:
             return state

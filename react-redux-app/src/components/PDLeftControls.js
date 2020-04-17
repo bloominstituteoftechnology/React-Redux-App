@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
+
+import { changeData } from "../actions";
 
 const Container = styled.div`
     width: 400px;
@@ -75,10 +78,20 @@ const DPadContainer = styled.div`
     
 `
 
-const PDLeftControls = () => {
+const PDLeftControls = ({ changeData }) => {
+    const [index, setIndex] = useState(0);
+
+    const handleChangeData = value => {
+        let newIndex = index + value;
+        if (newIndex >= 0 && newIndex <= 151) {
+            setIndex(newIndex)
+            changeData(newIndex)
+        }
+    };
+
     return (
         <Container>
-            <LeftButton/>
+            <LeftButton onClick={() => handleChangeData(-index)}/>
             <MidSectionContainer>
                 <span>
                     <SmallButton color="red"/>
@@ -89,11 +102,11 @@ const PDLeftControls = () => {
             <DPadContainer>
                 <DPad style={{ border: "1px solid", borderBottom: "none", borderRight: "5px solid"}}/>
                 <span>
-                    <DPad style={{ border: "1px solid", borderRight: "none"}} />
+                    <DPad style={{ border: "1px solid", borderRight: "none"}} onClick={() => handleChangeData(-1)} />
                     <DPad style={{ border: "2px solid #333333"}} >
                         <Dot />
                     </DPad>
-                    <DPad style={{  border: "2px solid", borderRight: "5px solid",  borderLeft: "none" }}/>
+                    <DPad style={{  border: "2px solid", borderRight: "5px solid",  borderLeft: "none" }} onClick={() => handleChangeData(1)}/>
                 </span>
                 <DPad style={{  border: "1px solid", borderRight: "5px solid", borderTop: "1px solid #333333", borderBottom: "4px solid" }}/>
             </DPadContainer>
@@ -101,4 +114,7 @@ const PDLeftControls = () => {
     )
 }
 
-export default PDLeftControls;
+
+export default connect(undefined, {
+    changeData
+})(PDLeftControls);

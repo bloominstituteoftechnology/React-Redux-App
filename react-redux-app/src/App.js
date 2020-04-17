@@ -4,7 +4,6 @@ import { fetchData } from "./actions";
 import { connect } from "react-redux";
 import styled from "styled-components";
 
-import Card from "./components/Card";
 import PDHeader from "./components/PDHeader";
 import PDScreen from "./components/PDScreen";
 import PDLeftControls from "./components/PDLeftControls";
@@ -27,16 +26,19 @@ const LeftContainer = styled.div`
     border-right: 5px solid black;
     border-bottom: 5px solid black;
 `;
-const RightContainer = styled(LeftContainer)`
-  
-`;
+const RightContainer = styled(LeftContainer)``;
 
 function App(props) {
+
+    useEffect(() => {
+        props.fetchData();
+    }, []);
+
     return (
         <Container>
             <LeftContainer>
                 <PDHeader />
-                <PDScreen />
+                <PDScreen data={props.data} />
                 <PDLeftControls />
             </LeftContainer>
             <RightContainer>
@@ -56,15 +58,3 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {
     fetchData
 })(App);
-
-// const [ data, setData ] = useState([])
-// useEffect(() => {
-//   setData(props.data)
-// }, [props.data])
-
-// <GridContainer>
-//   {data.length > 0 &&
-//     data.map((item, i) => <Card key={i} {...item}/> )
-//   }
-//   <button onClick={() => props.fetchData()}>Get data</button>
-// </GridContainer>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 const Container = styled.div`
     display: flex;
@@ -31,11 +32,26 @@ const ScreenFrameCorner = styled.div`
 `
 
 const Screen = styled.div`
-    background: black;
+    background: ${props => props.selectedData ? "darkturquoise" : "black"};
     height: 140px;
     width: 230px;
     margin-right: 15px;
     border-radius: 7px;
+    
+    h2 {
+        color: navy;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+    }
+`
+
+const ScreenImage = styled.img`
+    height: 125px;
+    width: 125px;
+    background-size: cover;
+    display: flex;
+    margin: 0 auto;
 `
 
 const ScreenFrameBottom = styled.div`
@@ -72,7 +88,11 @@ const ScreenSmallButton = styled(ScreenButton)`
     box-shadow: 1px 1px;
 `
 
-const PDScreen = () => {
+const PDScreen = ({ selectedData }) => {
+    const itemNo = () => {
+        const splitUrl = selectedData.url.split("/");
+        return splitUrl[splitUrl.length - 2]
+    }
     return (
         <Container>
             <ScreenFrameCorner/>
@@ -81,7 +101,10 @@ const PDScreen = () => {
                     <ScreenSmallButton/>
                     <ScreenSmallButton/>
                 </ScreenFrameTop>
-                <Screen />
+                <Screen selectedData={selectedData}>
+                    {selectedData && <h2>{selectedData.name.toUpperCase()}</h2>}
+                    {selectedData && <ScreenImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${itemNo()}.png`}/>}
+                </Screen>
                 <ScreenFrameBottom>
                     <ScreenButton/>
                     <Hamburger src="https://i.ya-webdesign.com/images/navigation-bar-png-1.png" />
@@ -91,4 +114,10 @@ const PDScreen = () => {
     )
 }
 
-export default PDScreen;
+const mapStateToProps = state => {
+    return {
+        selectedData: state.selectedData
+    }
+}
+
+export default connect(mapStateToProps, undefined)(PDScreen);

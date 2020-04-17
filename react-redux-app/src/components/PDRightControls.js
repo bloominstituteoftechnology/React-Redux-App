@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -16,8 +16,12 @@ const Screen = styled.div`
     width: 300px;
     background: black;
     border-radius: 7px;
-    box-shadow: 1px 1px;
+    box-shadow: 1px 1px black;
     margin-top: 20px;
+    color: lime;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const BlueButton = styled.div`
@@ -123,23 +127,29 @@ const LightShadow = styled.div`
 `;
 
 const BlackButton = styled.div`
-    background: black;
+    background: #333333;
     height: 40px;
     width: 120px;
     border-radius: 5px;
-    box-shadow: 2px 2px;
+    box-shadow: 3px 3px;
     margin-top: 20px;
 `;
 
 const PDRightControls = () => {
+    const [ hoveredOption, setHoveredOption ] = useState("");
+    const onButtonHover = e => {
+        setHoveredOption(e.target.id)
+    }
     return (
         <Container>
-            <Screen />
-            <BlueButtonContainer>
+            <Screen>
+                {hoveredOption && <h2>{hoveredOption}</h2>}
+            </Screen>
+            <BlueButtonContainer onMouseOut={() => setHoveredOption("")}>
                 <span>
-                    <BlueButton />
-                    <BlueButton />
-                    <BlueButton />
+                    <BlueButton id="Type" onMouseOver={e => onButtonHover(e)}/>
+                    <BlueButton onMouseOver={() => setHoveredOption("Height")}/>
+                    <BlueButton onMouseOver={() => setHoveredOption("Weight")}/>
                     <BlueButton />
                     <BlueButton />
                 </span>
