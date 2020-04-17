@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-
+import { useHistory } from "react-router-dom";
 import { changeData } from "../actions";
 
 const Container = styled.div`
@@ -80,12 +80,13 @@ const DPadContainer = styled.div`
 
 const PDLeftControls = ({ changeData }) => {
     const [index, setIndex] = useState(0);
-
+    let history = useHistory();
     const handleChangeData = value => {
         let newIndex = index + value;
         if (newIndex >= 0 && newIndex <= 151) {
             setIndex(newIndex)
             changeData(newIndex)
+            history.push("/")
         }
     };
 

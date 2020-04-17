@@ -5,6 +5,7 @@ export const DATA_SUCCESS = "DATA_SUCCESS";
 export const DATA_ERROR = "DATA_ERROR";
 export const CHANGE_DATA = "CHANGE_DATA";
 export const FETCH_DETAILS = "FETCH_DETAILS";
+export const TOGGLE_APPEARANCE = "TOGGLE_APPEARANCE";
 
 export const fetchData = () => dispatch => {
     dispatch({
@@ -32,7 +33,7 @@ export const fetchDetails = (name) => dispatch => {
     })
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}/`)
     .then(res => {
-        console.log('FETCH DETAILS SUCCESS')
+        console.log('FETCH DETAILS SUCCESS', res.data)
         dispatch({ type: FETCH_DETAILS, payload: res.data })
     })
     .catch(err => {
@@ -40,3 +41,7 @@ export const fetchDetails = (name) => dispatch => {
         dispatch({ type: DATA_ERROR, payload: "Error!" })
     })
 }
+
+export const toggleAppearance = (obj) => ({
+    type: TOGGLE_APPEARANCE, payload: obj 
+})

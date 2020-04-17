@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { fetchDetails } from "../actions";
+import { fetchDetails, toggleAppearance } from "../actions";
 
 const Container = styled.div`
     width: 395px;
@@ -139,30 +139,63 @@ const BlackButton = styled.div`
     margin-top: 20px;
 `;
 
-const PDRightControls = ({ selectedData, selectedDetails, fetchDetails }) => {
-    const [ hoveredOption, setHoveredOption ] = useState("");
+const PDRightControls = ({
+    selectedData,
+    selectedDetails,
+    fetchDetails,
+    toggleAppearance,
+    direction,
+    shiny
+}) => {
+    const [hoveredOption, setHoveredOption] = useState("");
     let history = useHistory();
     const onButtonHover = e => {
-        setHoveredOption(e.target.id)
-    }
+        setHoveredOption(e.target.id);
+    };
 
     const onButtonClick = e => {
-        if (!selectedDetails && selectedData) {
-            fetchDetails(selectedData.name)
+        if (selectedData) {
+            if (selectedDetails.name !== selectedData.name) {
+                fetchDetails(selectedData.name);
+            }
+            history.push(`/${e.target.id}`);
         }
-        history.push(`/${e.target.id}`)
+    };
+
+    const handleToggleAppearance = e => {
+        if (e.target.id === "Direction") {
+            if (direction) {
+                toggleAppearance({ appearance: e.target.id.toLowerCase(), value: "" });
+                return;
+            }
+            toggleAppearance({ appearance: e.target.id.toLowerCase(), value: "back/" });
+        } else {
+            if (shiny) {
+                toggleAppearance({ appearance: e.target.id.toLowerCase(), value: "" });
+                return;
+            }
+            toggleAppearance({ appearance: e.target.id.toLowerCase(), value: "shiny/" });
+        }
     }
 
     return (
         <Container>
-            <Screen>
-                {hoveredOption && <h2>{hoveredOption}</h2>}
-            </Screen>
+            <Screen>{hoveredOption && <h2>{hoveredOption}</h2>}</Screen>
             <BlueButtonContainer onMouseOut={() => setHoveredOption("")}>
                 <span>
-                    <BlueButton id="Type" onMouseOver={e => onButtonHover(e)} onClick={(e) => onButtonClick(e)}/>
-                    <BlueButton id="Height" onMouseOver={e => onButtonHover(e)}/>
-                    <BlueButton id="Weight" onMouseOver={e => onButtonHover(e)}/>
+                    <BlueButton
+                        id="Type"
+                        onMouseOver={e => onButtonHover(e)}
+                        onClick={e => onButtonClick(e)}
+                    />
+                    <BlueButton
+                        id="Height"
+                        onMouseOver={e => onButtonHover(e)}
+                    />
+                    <BlueButton
+                        id="Weight"
+                        onMouseOver={e => onButtonHover(e)}
+                    />
                     <BlueButton />
                     <BlueButton />
                 </span>
@@ -180,18 +213,27 @@ const PDRightControls = ({ selectedData, selectedDetails, fetchDetails }) => {
             </SmallButtonContainer>
             <BottomButtonsContainer>
                 <BottomButtonsSubContainer width="300">
-                    <BottomButtonsSubContainer width="100">
+                    <BottomButtonsSubContainer
+                        width="100"
+                        onMouseOut={() => setHoveredOption("")}
+                    >
                         <WhiteButton
                             style={{
                                 borderTopRightRadius: 0,
                                 borderBottomRightRadius: 0
                             }}
+                            id="Back"
+                            onClick={() => history.goBack()}
+                            onMouseOver={e => onButtonHover(e)}
                         />
                         <WhiteButton
                             style={{
                                 borderTopLeftRadius: 0,
                                 borderBottomLeftRadius: 0
                             }}
+                            id="Forward"
+                            onClick={() => history.goForward()}
+                            onMouseOver={e => onButtonHover(e)}
                         />
                     </BottomButtonsSubContainer>
                     <Light>
@@ -201,8 +243,16 @@ const PDRightControls = ({ selectedData, selectedDetails, fetchDetails }) => {
                     </Light>
                 </BottomButtonsSubContainer>
                 <BottomButtonsSubContainer width="300">
-                    <BlackButton />
-                    <BlackButton />
+                    <BlackButton
+                        id="Direction"
+                        onMouseOver={e => onButtonHover(e)}
+                        onClick={e => handleToggleAppearance(e)}
+                    />
+                    <BlackButton
+                        id="Shiny"
+                        onMouseOver={e => onButtonHover(e)}
+                        onClick={e => handleToggleAppearance(e)}
+                    />
                 </BottomButtonsSubContainer>
             </BottomButtonsContainer>
         </Container>
@@ -210,13 +260,15 @@ const PDRightControls = ({ selectedData, selectedDetails, fetchDetails }) => {
 };
 
 const mapStateToProps = state => {
-
     return {
         selectedData: state.selectedData,
-        selectedDetails: state.selectedDetails
-    }
-}
+        selectedDetails: state.selectedDetails,
+        direction: state.direction,
+        shiny: state.shiny
+    };
+};
 
 export default connect(mapStateToProps, {
-    fetchDetails
+    fetchDetails,
+    toggleAppearance
 })(PDRightControls);

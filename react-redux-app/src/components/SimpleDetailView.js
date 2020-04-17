@@ -10,13 +10,15 @@ const ViewTitle = styled.h2`
 
 const ViewText = styled.h3`
     color: black;
+    text-align: center;
+    font-size: 20px;
 `
 const SimpleDetailView = (props) => {
-    console.log(props.title)
+    console.log(props)
     return (
         <>
             <ViewTitle>{props.title.toUpperCase()}</ViewTitle>
-            
+            {props.types && props.types.map(({type}, i) => <ViewText key={i}>{type.name.toUpperCase()}</ViewText>)}
         </>
     )
 }

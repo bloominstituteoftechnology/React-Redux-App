@@ -77,11 +77,11 @@ const ScreenSmallButton = styled(ScreenButton)`
     box-shadow: 1px 1px;
 `
 
-const PDScreen = ({ selectedData, selectedDetails }) => {
+const PDScreen = ({ selectedData, selectedDetails, direction, shiny }) => {
     const itemNo = () => {
         const splitUrl = selectedData.url.split("/");
         const id = splitUrl[splitUrl.length - 2]
-        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${direction}${shiny}${id}.png`
     }
     return (
         <Container>
@@ -96,7 +96,7 @@ const PDScreen = ({ selectedData, selectedDetails }) => {
                     {
                         selectedDetails
                             &&
-                        <Route path="/Type" component={() => <SimpleDetailView title="Type"  />} />
+                        <Route path="/Type" component={() => <SimpleDetailView title="Type" types={selectedDetails.types}  />} />
                     }
                 </Screen>
                 <ScreenFrameBottom>
@@ -111,7 +111,9 @@ const PDScreen = ({ selectedData, selectedDetails }) => {
 const mapStateToProps = state => {
     return {
         selectedData: state.selectedData,
-        selectedDetails: state.selectedDetails
+        selectedDetails: state.selectedDetails,
+        direction: state.direction,
+        shiny: state.shiny
     }
 }
 

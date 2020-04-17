@@ -3,7 +3,8 @@ import {
     DATA_SUCCESS,
     DATA_ERROR,
     CHANGE_DATA,
-    FETCH_DETAILS
+    FETCH_DETAILS,
+    TOGGLE_APPEARANCE
 } from "../actions";
 
 const initialState = {
@@ -11,7 +12,11 @@ const initialState = {
     loading: false,
     status: "",
     selectedData: undefined,
-    selectedDetails: undefined
+    selectedDetails: {
+        name: undefined
+    },
+    direction: "",
+    shiny: ""
 };
 
 export const reducer = (state = initialState, action) => {
@@ -42,6 +47,11 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 selectedDetails: action.payload
+            }
+        case TOGGLE_APPEARANCE:
+            return {
+                ...state,
+                [action.payload.appearance]: action.payload.value
             }
         default:
             return state;
