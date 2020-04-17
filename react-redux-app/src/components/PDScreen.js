@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { Route } from "react-router-dom";
+
+import ItemView from "./ItemView";
+import SimpleDetailView from "./SimpleDetailView";
 
 const Container = styled.div`
     display: flex;
@@ -37,21 +41,6 @@ const Screen = styled.div`
     width: 230px;
     margin-right: 15px;
     border-radius: 7px;
-    
-    h2 {
-        color: navy;
-        text-align: center;
-        padding: 0;
-        margin: 0;
-    }
-`
-
-const ScreenImage = styled.img`
-    height: 125px;
-    width: 125px;
-    background-size: cover;
-    display: flex;
-    margin: 0 auto;
 `
 
 const ScreenFrameBottom = styled.div`
@@ -88,10 +77,11 @@ const ScreenSmallButton = styled(ScreenButton)`
     box-shadow: 1px 1px;
 `
 
-const PDScreen = ({ selectedData }) => {
+const PDScreen = ({ selectedData, selectedDetails }) => {
     const itemNo = () => {
         const splitUrl = selectedData.url.split("/");
-        return splitUrl[splitUrl.length - 2]
+        const id = splitUrl[splitUrl.length - 2]
+        return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
     }
     return (
         <Container>
@@ -102,8 +92,12 @@ const PDScreen = ({ selectedData }) => {
                     <ScreenSmallButton/>
                 </ScreenFrameTop>
                 <Screen selectedData={selectedData}>
-                    {selectedData && <h2>{selectedData.name.toUpperCase()}</h2>}
-                    {selectedData && <ScreenImage src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${itemNo()}.png`}/>}
+                    {selectedData && <Route exact path="/" component={() => <ItemView name={selectedData.name} image={itemNo()} />} />}
+                    {
+                        selectedDetails
+                            &&
+                        <Route path="/Type" component={() => <SimpleDetailView title="Type"  />} />
+                    }
                 </Screen>
                 <ScreenFrameBottom>
                     <ScreenButton/>
@@ -116,7 +110,8 @@ const PDScreen = ({ selectedData }) => {
 
 const mapStateToProps = state => {
     return {
-        selectedData: state.selectedData
+        selectedData: state.selectedData,
+        selectedDetails: state.selectedDetails
     }
 }
 

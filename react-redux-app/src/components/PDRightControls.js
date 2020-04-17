@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+
+import { fetchDetails } from "../actions";
 
 const Container = styled.div`
     width: 395px;
@@ -135,11 +139,20 @@ const BlackButton = styled.div`
     margin-top: 20px;
 `;
 
-const PDRightControls = () => {
+const PDRightControls = ({ selectedData, selectedDetails, fetchDetails }) => {
     const [ hoveredOption, setHoveredOption ] = useState("");
+    let history = useHistory();
     const onButtonHover = e => {
         setHoveredOption(e.target.id)
     }
+
+    const onButtonClick = e => {
+        if (!selectedDetails && selectedData) {
+            fetchDetails(selectedData.name)
+        }
+        history.push(`/${e.target.id}`)
+    }
+
     return (
         <Container>
             <Screen>
@@ -147,9 +160,9 @@ const PDRightControls = () => {
             </Screen>
             <BlueButtonContainer onMouseOut={() => setHoveredOption("")}>
                 <span>
-                    <BlueButton id="Type" onMouseOver={e => onButtonHover(e)}/>
-                    <BlueButton onMouseOver={() => setHoveredOption("Height")}/>
-                    <BlueButton onMouseOver={() => setHoveredOption("Weight")}/>
+                    <BlueButton id="Type" onMouseOver={e => onButtonHover(e)} onClick={(e) => onButtonClick(e)}/>
+                    <BlueButton id="Height" onMouseOver={e => onButtonHover(e)}/>
+                    <BlueButton id="Weight" onMouseOver={e => onButtonHover(e)}/>
                     <BlueButton />
                     <BlueButton />
                 </span>
@@ -196,4 +209,14 @@ const PDRightControls = () => {
     );
 };
 
-export default PDRightControls;
+const mapStateToProps = state => {
+
+    return {
+        selectedData: state.selectedData,
+        selectedDetails: state.selectedDetails
+    }
+}
+
+export default connect(mapStateToProps, {
+    fetchDetails
+})(PDRightControls);
