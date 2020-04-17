@@ -8,7 +8,7 @@ export const getData = () => dispatch => {
   dispatch({ type: DATA_GET });
   setTimeout(() => {
     axios
-      .get('https://api.covid19api.com/countries')
+      .get('https://api.ovid19api.com/countries')
 
       .then(response => {
         // console.log(
