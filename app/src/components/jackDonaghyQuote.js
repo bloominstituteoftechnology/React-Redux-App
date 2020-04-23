@@ -12,7 +12,7 @@ const JackDonaghyQuote = props => {
 
   return (
     <div>
-      <h1>Jack Donaghy Wisdom</h1>
+      <h1>The Wisdom of Jack Donaghy</h1>
       <div>
       <span>🥃</span>
       </div>
