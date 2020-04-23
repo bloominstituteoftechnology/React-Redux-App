@@ -24,7 +24,6 @@ export const dataReducer = (state = initialValue, action) => {
         // push
         loading: false,
         data: action.payload,
-        ///jhahhahha
       };
     case "ERROR":
       return {
