@@ -16,8 +16,8 @@ const SongLyrics = ( props ) => {
             {<Loader
                 type="Bars"
                 color="#C08A78"
-                height={100}
-                width={100}
+                height={90}
+                width={90}
             />}
             <div className='lyrics'>
             {props.lyric && <h3>{props.lyric}</h3>}
