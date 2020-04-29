@@ -4,6 +4,7 @@ import { Divider, Grid, Segment } from "semantic-ui-react";
 //components
 import PexelsImage from "./components/PexelsImage";
 import UserForm from "./components/UserForm";
+import WeatherData from './components/WeatherData'
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         <Grid columns={2} relaxed="very">
           <Grid.Column>
             <PexelsImage />
+          </Grid.Column>
+          <Grid.Column>
+            <WeatherData />
           </Grid.Column>
         </Grid>
         <Divider vertical />
