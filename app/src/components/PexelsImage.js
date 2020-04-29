@@ -11,10 +11,9 @@ function PexelsImage(props) {
 }
 
 const mapStateToProps = (state) => {
-    console.log("state map", state)
     return {
-        cityImage: state.pexelsReducer.cityImage,
-        altImageInfo:state.pexelsReducer.altImageInfo
+        cityImage: state.masterReducer.cityImage,
+        altImageInfo:state.masterReducer.altImageInfo
     }
 }
 
