@@ -9,7 +9,10 @@ import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+import rootReducer from "./store/reducers"
+
 const store = createStore(rootReducer, applyMiddleware(thunk, logger))
+console.log("%c Store from index", "color:cornflowerblue", store.getState())
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById("root"));
 
