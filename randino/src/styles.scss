@@ -11,10 +11,10 @@
 html, body {
     height: 100%;
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-    background-size: 400% 400%;
-    -webkit-animation: Gradient 350s ease infinite;
-    -moz-animation: Gradient 350s ease infinite;
-    animation: Gradient 350s ease infinite;
+    background-size: 200% 200%;
+    // -webkit-animation: Gradient 350s ease 100;
+    // -moz-animation: Gradient 350s ease 100;
+    // animation: Gradient 350s ease 100;
     }
   
   
@@ -64,3 +64,17 @@ div.dino-img {
 .container {
     padding-left: 40px;
 }
+
+.yys-btn {
+
+      width: 20px;
+      height: 20px;
+      outline: none;
+      background: yellow;
+      border-radius: 6px
+    
+  }
+
+  .space-right {
+      margin-right: 20px;
+  }
