@@ -17,7 +17,7 @@ export const fetchPexelImage = () => {
           //Returns Random Image from array
           dispatch({type: FETCH_PEXEL_IMAGE_SUCCESS, payload: randomImage} )})
         .catch((err) => {
-          dispatch({type:FETCH_PEXEL_IMAGE_FAIL, payload:`${err.data}`})
+          dispatch({type:FETCH_PEXEL_IMAGE_FAIL})
         });
     };
   };

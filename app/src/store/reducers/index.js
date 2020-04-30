@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux'
-import { masterReducer } from './appReducers'
+import { pexelsReducer } from './pexelsReducer'
+import { weatherReducer } from './weatherReducer'
+import { formReducer } from './formReducer'
 
-export default combineReducers({masterReducer})
+export default combineReducers({pexelsReducer, weatherReducer, formReducer})

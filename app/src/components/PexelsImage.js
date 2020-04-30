@@ -7,11 +7,11 @@ function PexelsImage(props) {
     useEffect(() => {
         props.fetchPexelImage()
     },[])
-    console.log("%c PEXELIMAGE", "color:yellow", props)
+
   return (
     <>
       {props.isImageLoading ? (
-        <Dimmer active>
+        <Dimmer active inverted>
           <Loader>Loading...</Loader>
         </Dimmer>
       ) : (
@@ -25,9 +25,9 @@ function PexelsImage(props) {
 
 const mapStateToProps = (state) => {
   return {
-    cityImage: state.masterReducer.cityImage,
-    altImageInfo: state.masterReducer.altImageInfo,
-    isImageLoading: state.masterReducer.isImageLoading,
+    cityImage: state.pexelsReducer.cityImage,
+    altImageInfo: state.pexelsReducer.altImageInfo,
+    isImageLoading: state.pexelsReducer.isImageLoading,
   };
 };
 

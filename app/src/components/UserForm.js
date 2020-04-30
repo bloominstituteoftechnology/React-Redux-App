@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Button, Form } from "semantic-ui-react";
 import { connect } from 'react-redux'
 import { searchFeature } from '../store/actions/formActions'
@@ -22,11 +22,11 @@ function UserForm(props) {
     }
 
     return (
-        <Form style={{width:"400px"}} onSubmit={submitHandler}>
+        <Form style={{width:"400px", marginLeft:"25%"}} onSubmit={submitHandler}>
             <Form.Field>
                 <label>City Name:</label>
                 <input 
-                    placeholder="Enter your city name."
+                    placeholder="Enter your city name"
                     type="text"
                     name="cityName"
                     onChange={handleChange}
@@ -40,7 +40,7 @@ function UserForm(props) {
 
 const mapStateToProps = (state) => {
     return {
-        cityName: state.masterReducer.cityName
+        cityName: state.formReducer.cityName
     }
 }
 

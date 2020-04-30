@@ -11,7 +11,7 @@ function WeatherData(props) {
   return (
     <>
       {props.isLoading ? (
-        <Dimmer active>
+        <Dimmer active inverted>
           <Loader>Loading...</Loader>
         </Dimmer>
       ) : (
@@ -43,13 +43,13 @@ function WeatherData(props) {
 
 const mapStateToProps = (state) => {
   return {
-    cityName: state.masterReducer.cityName,
-    temperature: state.masterReducer.temperature,
-    feels_like: state.masterReducer.feels_like,
-    lowOf: state.masterReducer.lowOf,
-    highOf: state.masterReducer.highOf,
-    description: state.masterReducer.description,
-    isLoading: state.masterReducer.isLoading,
+    cityName: state.weatherReducer.cityName,
+    temperature: state.weatherReducer.temperature,
+    feels_like: state.weatherReducer.feels_like,
+    lowOf: state.weatherReducer.lowOf,
+    highOf: state.weatherReducer.highOf,
+    description: state.weatherReducer.description,
+    isLoading: state.weatherReducer.isLoading,
   };
 };
 
