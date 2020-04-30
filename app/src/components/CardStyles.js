@@ -33,7 +33,7 @@ export const PosterContainer = styled.div`
 
 // Styling for each show's image
 export const Poster = styled.img`
-   width: 500px;
+   width: 400px;
    height: 300px;
    margin: 5px;
    border-radius: 30px
