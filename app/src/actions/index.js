@@ -11,8 +11,7 @@ export const getBook = () => dispatch => {
     .get("https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback")
     .then(res => {
       console.log(res);
-
-      dispatch({ type: FETCHING_BOOK_SUCCESS, payload: res.data.text });
+      dispatch({ type: FETCHING_BOOK_SUCCESS, payload: res.data.info_url});
     })
     .catch(err => {
       console.log(err);
@@ -23,3 +22,8 @@ export const getBook = () => dispatch => {
       });
     });
 };
+
+
+
+// mycallback({"ISBN:0451526538": {"bib_key": "ISBN:0451526538", "preview": "noview", "thumbnail_url": "https://covers.openlibrary.org/b/id/295577-S.jpg", 
+// "preview_url": "https://openlibrary.org/books/OL1017798M/The_adventures_of_Tom_Sawyer", "info_url": "https://openlibrary.org/books/OL1017798M/The_adventures_of_Tom_Sawyer"}});
