@@ -35,7 +35,7 @@ const reducer = (state = initialState, action) => {
                 error: ''
             };
         case FETCH_SHOW_FAIL:
-            return { // Case executes when the data has failed to be fetched from the API
+            return { // Case executes when the data has been failed to be fetched from the API
                 ...state,
                 error: action.payload
             };                   

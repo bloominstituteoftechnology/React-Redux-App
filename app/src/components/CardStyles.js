@@ -4,13 +4,12 @@ import styled from 'styled-components';
 // Styling for the Card container
 export const Card = styled.div`
     width: 50%;
-    height: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5px 25% 5px 25%;
     background: blue;
-    color: white;
+    color: black;
     border: 2px solid black;
     border-radius: 2%;
 `;
@@ -34,7 +33,7 @@ export const PosterContainer = styled.div`
 
 // Styling for each show's image
 export const Poster = styled.img`
-   width: 450px;
+   width: 500px;
    height: 300px;
    margin: 5px;
    border-radius: 30px
@@ -70,7 +69,7 @@ export const Value = styled.span`
 export const Button = styled.button`
     width: 200px;
     font-size: 1.5rem;
-    color: blue; 
+    color: blue;
     border: 3px solid black;
     border-radius: 10px;
     background-color: white;
