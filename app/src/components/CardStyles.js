@@ -4,20 +4,21 @@ import styled from 'styled-components';
 // Styling for the Card container
 export const Card = styled.div`
     width: 50%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 5px 25% 5px 25%;
     background: lightblue;
     color: white;
-    border: 2px solid white;
+    border: 2px solid black;
     border-radius: 2%;
 `;
 
 // Styling for the Title of each TV show
 export const Title = styled.h3`
     font-size: 1.6rem;
-    color: #FFFFFF;
+    color: black;
     margin-top: 15px;
     margin-bottom: 5px;
 `;
@@ -33,7 +34,7 @@ export const PosterContainer = styled.div`
 
 // Styling for each show's image
 export const Poster = styled.img`
-   width: 500px;
+   width: 450px;
    height: 300px;
    margin: 5px;
    border-radius: 30px
@@ -70,9 +71,9 @@ export const Button = styled.button`
     width: 200px;
     font-size: 1.5rem;
     color: lightblue;
-    border: 3px solid #000000;
+    border: 3px solid black;
     border-radius: 10px;
-    background-color: #FFFFFF;
+    background-color: white;
     font-family: 'Poppins', sans-serif;
     margin: 10px 0 30px 30px;
 `;
