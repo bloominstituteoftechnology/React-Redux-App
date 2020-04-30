@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 // Styling for the Card container
 export const Card = styled.div`
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5px 25% 5px 25%;
+    margin: 5px 30% 5px 30%;
     background: blue;
     color: black;
     border: 2px solid black;
