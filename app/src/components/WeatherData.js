@@ -1,55 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Item, Dimmer, Loader, Container } from "semantic-ui-react";
-import Axios from "axios";
+import { connect } from "react-redux";
+import { fetchWeatherData } from '../store/actions/weatherInfoAction'
 
-function WeatherData() {
-  const [firstLoadCity] = useState("new york city");
-  const [weatherData, setWeatherData] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
-
-  const objectTester = Object.keys(weatherData);
-  console.log("Ob Tester", objectTester.length);
-
+function WeatherData(props) {
   useEffect(() => {
-    if (isLoading) {
-    } else {
-      Axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?appid=f9039d5e70b79bc54e8913e14e31a84f&q=${firstLoadCity}&units=imperial`
-      )
-        .then((res) => {
-          setIsLoading(false);
-          setWeatherData(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [isLoading]);
+    props.fetchWeatherData();
+  }, []);
 
-  console.log("weatherData", weatherData);
   return (
     <>
-      {Object.keys(weatherData).length === 0 ? (
+      {props.isLoading ? (
         <Dimmer active>
           <Loader>Loading...</Loader>
         </Dimmer>
       ) : (
-        <Container style={{marginTop: "25px",  width:"50%"}}>
+        <Container style={{ marginTop: "25px", width: "50%" }}>
           <Item.Group>
             <Item>
               <Item.Content>
-                <Item.Header>{weatherData.name}</Item.Header>
+                <Item.Header>{props.cityName}</Item.Header>
                 <Item.Meta>
-                  Local Temperature: {Math.floor(weatherData.main.temp)}°
+                  Local Temperature: {Math.floor(props.temperature)}°
                 </Item.Meta>
                 <Item.Extra>
-                  Feels Like: {Math.floor(weatherData.main.feels_like)}
+                  Feels Like: {Math.floor(props.feels_like)}
                 </Item.Extra>
                 <Item.Extra>
-                  High of: {Math.floor(weatherData.main.temp_max)}°
+                  High of: {Math.floor(props.highOf)}°
                 </Item.Extra>
                 <Item.Extra>
-                  Low of: {Math.floor(weatherData.main.temp_min)}°
+                  Low of: {Math.floor(props.lowOf)}°
                 </Item.Extra>
               </Item.Content>
             </Item>
@@ -60,4 +41,16 @@ function WeatherData() {
   );
 }
 
-export default WeatherData;
+const mapStateToProps = (state) => {
+  return {
+    cityName: state.masterReducer.cityName,
+    temperature: state.masterReducer.temperature,
+    feels_like: state.masterReducer.feels_like,
+    lowOf: state.masterReducer.lowOf,
+    highOf: state.masterReducer.highOf,
+    description: state.masterReducer.description,
+    isLoading: state.masterReducer.isLoading,
+  };
+};
+
+export default connect(mapStateToProps, { fetchWeatherData })(WeatherData);

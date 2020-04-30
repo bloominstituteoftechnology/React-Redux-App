@@ -1,8 +1,15 @@
 const initialState = {
   cityName: "",
-  cityImage:
-    "https://pixabay.com/get/52e0d4464356a914f1dc84609629337d1238dee55b4c704c7d277adc9f4cc258_640.jpg",
-  altImageInfo: "New York City, 1890, vintage",
+  cityImage:"",
+  altImageInfo: "",
+  temperature:"",
+  feels_like:"",
+  lowOf:"",
+  highOf:"",
+  description:"",
+  isLoading:false,
+  isImageLoading:false,
+  error:"",
 };
 
 export const masterReducer = (state = initialState, action) => {
@@ -11,7 +18,42 @@ export const masterReducer = (state = initialState, action) => {
       return {
         ...state,
         cityName: action.payload.cityName,
+        
       };
+    case "FETCH_WEATHER_DATA_START" :
+        return {
+            ...state,
+            isLoading: true
+        }
+    case "FETCH_WEATHER_SUCESS":
+        return {
+            ...state,
+            isLoading:false,
+            cityName: action.payload.name,
+            feels_like: action.payload.main.feels_like,
+            highOf:action.payload.main.temp_max,
+            lowOf:action.payload.main.temp_min,
+            temperature:action.payload.main.temp
+        }
+    case "FETCH_WEATHER_DATA_FAILED":
+        return {
+            ...state,
+            isLoading: false,
+            error: action.payload.message
+        }
+    case "FETCH_PEXEL_IMAGE_START":
+        return {
+            ...state,
+            isImageLoading:true
+        }
+    case "FETCH_PEXEL_IMAGE_SUCCESS" :
+        return {
+            ...state,
+            isImageLoading:false,
+            cityImage:action.payload.largeImageURL,
+            altImageInfo:action.payload.tags,
+        }
+    
     default:
       return state;
   }

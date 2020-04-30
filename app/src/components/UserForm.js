@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Button, Form } from "semantic-ui-react";
 import { connect } from 'react-redux'
-import { searchFeature, SEARCH_TERM } from '../store/actions/formActions'
+import { searchFeature } from '../store/actions/formActions'
 
 function UserForm(props) {
     const [formValues, setFormValues] = useState({
@@ -11,6 +11,7 @@ function UserForm(props) {
     const submitHandler = (event) => {
         event.preventDefault()
         props.searchFeature(formValues)
+
     }
 
     const handleChange = (event) => {
