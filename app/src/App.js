@@ -1,15 +1,13 @@
 import React from "react";
 import "./App.css";
-import Books from "./components/Books";
+import Titles from "./component/Books";
 
 export default function App() {
   return (
     <div className="App">
-      <Quotes />
+      <Titles />
     </div>
   );
 }
 
 
-
-<script src="https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback"></script>
