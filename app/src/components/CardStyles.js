@@ -9,7 +9,7 @@ export const Card = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 5px 25% 5px 25%;
-    background: lightblue;
+    background: blue;
     color: white;
     border: 2px solid black;
     border-radius: 2%;
@@ -70,7 +70,7 @@ export const Value = styled.span`
 export const Button = styled.button`
     width: 200px;
     font-size: 1.5rem;
-    color: lightblue;
+    color: blue; 
     border: 3px solid black;
     border-radius: 10px;
     background-color: white;
