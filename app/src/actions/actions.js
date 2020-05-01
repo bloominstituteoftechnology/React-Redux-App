@@ -13,7 +13,7 @@ export const getTVShow = () => dispatch => {
         return num;
     }
 
-    // Stores a random number between 1 and 2000 and this number will be the id of the tv show that is fetched feom the api
+    // Stores a random number between 1 and 2000 and this number will be the id of the tv show that is fetched from the api
     let random = generateNumber(1, 2000);
 
     console.log(random);
