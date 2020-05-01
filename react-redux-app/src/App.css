@@ -42,7 +42,9 @@
   margin-top: 2.5rem;
   width: 100%;
   text-align: center;
+  margin-left: 2.5rem;
 }
+
 .m-container {
   color: white;
   display: flex;
@@ -77,6 +79,7 @@
 }
 
 .m-btn {
+  margin-left: 2.5rem;
   animation: bouncy 2s infinite linear;
   padding: 1rem;
   border: 0.1em solid #ffffff;
@@ -104,7 +107,7 @@
 
 .cryptoContainer ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 500px));
+  grid-template-columns: repeat(auto-fit, minmax(600px, 600px));
 }
 
 .cryptoContainer ul li {
@@ -113,7 +116,6 @@
 }
 
 .cryptoContainer ul li figure {
-  max-height: 500px;
   overflow: hidden;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
@@ -145,56 +147,4 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
-}
-
-.pace {
-  -webkit-pointer-events: none;
-  pointer-events: none;
-
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-
-  z-index: 2000;
-  position: fixed;
-  margin: auto;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 5px;
-  width: 200px;
-  background: #fff;
-  border: 1px solid #29d;
-
-  overflow: hidden;
-}
-
-.pace .pace-progress {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
-
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-
-  max-width: 200px;
-  position: fixed;
-  z-index: 2000;
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 100%;
-  height: 100%;
-  width: 100%;
-  background: #29d;
-}
-
-.pace.pace-inactive {
-  display: none;
 }

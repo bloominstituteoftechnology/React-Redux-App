@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchActivity } from "../actions";
 
 const Activity = (props) => {
+  console.log(props);
   return (
     <div className="main">
       <span className="m-btn" onClick={props.fetchActivity}>

@@ -3,6 +3,7 @@ import { FETCHING_DATA_SUCCESS } from "../actions";
 const initialState = {
   activity: [],
   error: "",
+  isFetching: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -10,6 +11,7 @@ export const reducer = (state = initialState, action) => {
     case FETCHING_DATA_SUCCESS:
       return {
         ...state,
+        isFetching: true,
         activity: action.payload,
       };
     default:
