@@ -5,7 +5,7 @@ import {
   } from "../actions";
   
   const initialState = {
-    book: [],
+    book: "",
     isFetching: false,
     error: null
   };

@@ -11,7 +11,7 @@ export const getBook = () => dispatch => {
     .get("https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&callback=mycallback")
     .then(res => {
       console.log(res);
-      dispatch({ type: FETCHING_BOOK_SUCCESS, payload: res.data.info_url});
+      dispatch({ type: FETCHING_BOOK_SUCCESS, payload: res.data});
     })
     .catch(err => {
       console.log(err);
