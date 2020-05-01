@@ -17,7 +17,7 @@ export const getBook = () => dispatch => {
       console.log(err);
 
       dispatch({
-        type: FETCHING_BOOK_FAILUR,
+        type: FETCHING_BOOK_FAILURE,
         payload: `${err.statusText} with response code ${err.status}`
       });
     });
