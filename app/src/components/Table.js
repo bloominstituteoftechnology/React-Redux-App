@@ -11,7 +11,7 @@ const Table = () => {
         data: useSelector(state => state.data.Countries),
         columns: [
             { title: 'Country', field: 'Country' },
-            { title: 'Confirmed cases', field: 'TotalConfirmed', type: 'numeric' }
+            { title: 'Confirmed cases', field: 'TotalConfirmed', type: 'numeric', defaultSort: 'desc' }
         ]
     }
 
@@ -21,7 +21,7 @@ const Table = () => {
                 columns={table.columns}
                 data={table.data} 
                 onRowClick={(e, data) => dispatch(selectCountry(data))}
-                style={{minHeight: '100%'}}
+                style={{minHeight: '100%', width: '100%'}}
                 options={{
                     paging: false,
                     showTitle: false,

@@ -1,27 +1,43 @@
 import React, { Fragment } from 'react';
+// Redux
 import { useSelector } from 'react-redux';
-import { CircularProgress, Grid } from '@material-ui/core';
-import Table from './Table';
+// Material-ui
+import { CircularProgress, Grid, makeStyles } from '@material-ui/core';
+
+import Scrollbars from 'react-custom-scrollbars';
+// Components
 import CountryDetails from './CountryDetails';
 import News from './News';
-import Scrollbars from 'react-custom-scrollbars';
+import CountriesList from './CountriesList';
+import Navbar from './Navbar';
+import MapChart from './Map/MapChart';
+
+const navbarHeight = '70px';
+
+const useStyles = makeStyles(theme => ({
+    content: {
+        height: '100%',
+        flexGrow: 1,
+        paddingTop: navbarHeight
+    }
+}));
 
 const CovidTracker = () => {
     const loading = useSelector(state => state.loading);
-    
+    const classes = useStyles();
     return (
         <Grid container justify='center' alignItems='center' style={{height: '100vh', overflow: 'hidden'}}>
             { loading ? <CircularProgress /> :
             <Fragment>
-                <Grid item xs={3} style={{height: '100%'}}>
-                    <Table />
-                </Grid>
-                <Grid item xs={12} md={9} style={{height: '100%'}}>
+                <Navbar navHeight={navbarHeight} />
+                <CountriesList />
+                <main className={classes.content}>
                     <Scrollbars style={{overflowX:'hidden'}}>
+                        <MapChart />
                         <CountryDetails />
                         <News />
                     </Scrollbars>
-                </Grid>
+                </main>
             </Fragment> }
         </Grid>
     )
