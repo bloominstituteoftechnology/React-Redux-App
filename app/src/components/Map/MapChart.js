@@ -21,7 +21,7 @@ const geoUrl = 'https://raw.githubusercontent.com/zcreativelabs/react-simple-map
 
 const colorScale = value => {
   const color = scaleLinear()
-  .domain([0, 100, 1000, 3000, 10000, 50000, 80000])
+  .domain([0, 1000, 2500, 10000, 50000, 200000, 500000])
   .range([
     "#FFC0A8",
     "#FFAB8C",
@@ -47,6 +47,9 @@ const Map = ({ data, setToolTipContent }) => {
             let d = data.find(countryData => countryData.Country === geo.properties.NAME);
             if(!d) {
               d = data.find(countryData => countryData.Country === missingGeoMamesList[geo.properties.ISO_A3]);
+            }
+            if(!d) {
+              console.log('Missing country: ', geo.properties.NAME, geo.properties.ISO_A3);
             }
             return (
               <Geography
@@ -88,8 +91,8 @@ const useStyles = makeStyles(theme => ({
   map: {
     border: 'solid 1px',
     borderColor: theme.palette.secondary.light,
-    boxShadow: '0px 1px 10px 0px rgba(0,0,0,0.12)',
-    borderRadius: '15px',
+    boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.12)',
+    borderRadius: '10px',
     margin: theme.spacing(2),
     overflow: 'hidden'
   }
