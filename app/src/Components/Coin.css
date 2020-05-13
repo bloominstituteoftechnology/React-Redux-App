@@ -1,0 +1,29 @@
+.coin-main-container {
+
+    border:5px #191970 solid;
+    border-radius:10px;
+    width:50%;
+    background-color:#6495ED;
+    color:white;
+    margin:10px;
+
+
+}
+.coin-header-name {
+
+    padding:0px;
+    margin:0px;
+
+}
+.coin-header-symbol {
+
+    padding:0px;
+    margin:0px;
+
+}
+.coin-header-rank {
+
+    padding:20px 0px 8px 0px;
+    
+
+}
