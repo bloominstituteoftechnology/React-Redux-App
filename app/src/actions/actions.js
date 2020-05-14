@@ -45,14 +45,11 @@ export const fetchCoinsSpecific = (id) => {
 
         dispatch({ type: FETCH_COINS_SPECIFIC })
         
-        
-        axios.get(`https://api.coinpaprika.com/v1/tickers/${id}`)
+
+            axios.get(`https://api.coinpaprika.com/v1/tickers/${id}`)
             .then((res) => {
 
-                console.log('inside specific')
                 dispatch({ type: FETCH_COINS_SPECIFIC_SUCCESS, payload: res.data })
-
-
 
 
             })
@@ -61,6 +58,8 @@ export const fetchCoinsSpecific = (id) => {
                 dispatch({ type: FETCH_COINS_SPECIFIC_FAILURE, payload:err })
 
             })
+        
+        
 
     }
 
