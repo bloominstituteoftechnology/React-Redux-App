@@ -10,6 +10,7 @@ const App =() => {
     <div className="App">
       <header>
         <h1>Top 100 Cryptocurrencies</h1>
+        {/* <h2>Created By: Shayne Smith</h2> */}
       </header>
 
         {/* <NmrCoin /> */}

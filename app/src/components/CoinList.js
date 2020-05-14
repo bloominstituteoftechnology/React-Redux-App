@@ -18,7 +18,7 @@ const CoinList = ({ coinList, isFetching, fetchTop100 }) => {
                 // <ol type="1">
                 <>
                     {coinList.map(coin => (
-                        <Coin key={coin.id} coin={coin} />
+                        <Coin key={coin.id} coin={coin} id={coin.id} />
                     ))}
                 </>
                 /* </ol> */
