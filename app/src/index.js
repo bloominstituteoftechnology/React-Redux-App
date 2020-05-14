@@ -8,10 +8,10 @@ import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 
-import nmrReducer from './store/reducers'
+import coinReducer from './store/reducers'
 import App from './App';
 
-const store = createStore(nmrReducer, applyMiddleware(thunk, logger));
+const store = createStore(coinReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <Provider store={store}>

@@ -31,11 +31,14 @@ export const fetchNumeraire = () => {
 export const fetchTop100 = () => {
     return dispatch => {
         dispatch({ type: FETCH_TOP_100_COINS_START });
+        console.log('fetchTop100 is running...');
 
         axios
         .get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`)
             .then(res => {
-                console.log(res);
+                const top100Coins = res.data;
+                console.log(top100Coins);
+                dispatch({ type: FETCH_TOP_100_COINS_SUCCESS, payload: top100Coins });
             })
             .catch(err => console.log(err));
     };

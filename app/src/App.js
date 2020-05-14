@@ -1,15 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Coin from './components/Coin';
+import NmrCoin from './components/NmrCoin';
 import './App.css';
+import CoinList from './components/CoinList';
 
 const App =() => {
   return (
     <div className="App">
-      <header className="header">
-        <Coin />
+      <header>
+        <h1>Top 100 Cryptocurrencies</h1>
       </header>
+
+        {/* <NmrCoin /> */}
+        <CoinList />
     </div>
   );
 };

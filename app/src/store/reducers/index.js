@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { nmrReducer as nmr } from './nmrReducer';
+import { coinReducer as coin } from './coinReducer';
 
 export default combineReducers({
-    nmr
+    coin
 });

@@ -1,39 +1,22 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 
-import { fetchNumeraire, fetchTop100 } from '../store/actions';
+const Coin = props => {
 
-const Coin = ({ isFetching, nmrPrice, fetchNumeraire, fetchTop100 }) => {
-
-    useEffect(() => {
-        fetchNumeraire();
-    }, [fetchNumeraire]);
-
-    useEffect(() => {
-        fetchTop100();
-    }, [fetchTop100]);
+    var nf = new Intl.NumberFormat();
 
     return (
-        <main>
-            <h1>Numeraire Real-Time Price</h1>
-            {console.log('Coin.js: isFetching is: ', isFetching)}
-            {isFetching && <h3>Fetching data...</h3>}
-            {!isFetching && nmrPrice && (
-                <div>
-                    <h3>Price: ${nmrPrice}</h3>
-                </div>
-            )}
-        </main>
+            <div className='coin-container'>  
+                <h2>
+                    {props.coin.name}
+                </h2>
+                <span> </span>
+                {props.coin.image ? <img src={`${props.coin.image}`}/> : null}
+                <span> </span>
+                <h3>Current Price: ${nf.format(props.coin.current_price)}</h3>
+                <span> </span>
+                <h3>Market Capitalization: ${nf.format(props.coin.market_cap)}</h3>
+            </div>
     );
 };
 
-const mapStateToProps = state => {
-    console.log('Coin.js mSTP is running...', state);
-
-    return {
-        isFetching: state.nmr.isFetching,
-        nmrPrice: state.nmr.nmrPrice
-    };
-};
-
-export default connect(mapStateToProps, { fetchNumeraire, fetchTop100 })(Coin);
+export default Coin;

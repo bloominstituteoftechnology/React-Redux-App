@@ -12,7 +12,7 @@ const initalState = {
     coinList: []
 };
 
-export const nmrReducer = (state = initalState, action) => {
+export const coinReducer = (state = initalState, action) => {
     switch(action.type) {
         case FETCH_NUMERAIRE_PRICE_START:
             return {
@@ -29,6 +29,12 @@ export const nmrReducer = (state = initalState, action) => {
             return {
                 ...state,
                 isFetching: true
+            };
+        case FETCH_TOP_100_COINS_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                coinList: [...state.coinList, ...action.payload]
             };
 
         default:
