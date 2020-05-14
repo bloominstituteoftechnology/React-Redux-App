@@ -4,7 +4,9 @@ export const FETCH_DATA_START = "FETCH_DATA_START";
 export const FETCH_DATA_SUCCES = "FETCH_DATA_SUCCES";
 export const FETCH_DATA_INFO = 'FETCH_DATA_INFO'
 
+
 export const fetchData = (coin) => {
+  
   return dispatch => {
     dispatch({ type: FETCH_DATA_START });
 

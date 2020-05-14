@@ -2,32 +2,37 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { fetchData } from "../store/actions";
-const coinName = ('pegnet', 'bitcoin', 'pegnet')
+
 
 const Pegnet = props => {
   useEffect(() => {
-    props.fetchData(coinName);
+    props.fetchData('bitcoin');
 
   }, []);
 
   return (
+
     <main className="peg-heading">
       {props.isFetching && <h3>Fetching Data...</h3>}
       {props.info && (
         <div>
-        <h1>{props.info.name}</h1>
-          <h2>Market Cap Rank:{props.info.market_cap_rank}</h2>
-          <img src={props.info.image.small}/>
+        <header className='header-peg'>
+        <h1>{props.info.name}</h1><img src={props.info.image.small}/>
+        </header>
+          <h2>Market Cap Rank: {props.info.market_cap_rank}</h2>
+
         </div>
       )}
-      {props.market_data && (
+      {props.market_data && props.info && (
         <div>
-          <h3>BTC:{props.market_data.ath.btc}</h3>
-          <h3>BNB:{props.market_data.ath.bnb}</h3>
+          <h3>BTC:(ath) {props.market_data.ath.btc}</h3>
+          <h3>ETH:(ath) {props.market_data.ath.eth}</h3>
+          <h5>Last Updated Timestamp: {props.info.last_updated}</h5>
         </div>
       )}
 
     </main>
+
   );
 };
 

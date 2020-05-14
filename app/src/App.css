@@ -2,12 +2,19 @@
   text-align: center;
 }
 .peg-heading{
-  border: 1px solid dodgerblue;
+
   background: whitesmoke;
   padding: 2%;
   margin: 3%;
   border-radius: 20px;
-  box-shadow: -5px 5px 5px blue;
+  box-shadow: -5px 5px 5px 5px grey;
+}
+
+.header-peg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 .App-logo {
   height: 40vmin;
