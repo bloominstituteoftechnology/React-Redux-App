@@ -5,7 +5,7 @@ import {
 
 const initalState = {
     isFetching: false,
-    numerairePrice: null,
+    nmrPrice: null,
     error: ""
 };
 
@@ -17,6 +17,12 @@ export const nmrReducer = (state = initalState, action) => {
                 isFetching: true
             };
         case FETCH_NUMERAIRE_PRICE_SUCCESS:
+            console.log(`${FETCH_NUMERAIRE_PRICE_SUCCESS}`, state.isFetching);
+            return {
+                ...state,
+                isFetching: false,
+                nmrPrice: action.payload
+            };
 
         default:
             return state;

@@ -7,15 +7,16 @@ const Coin = ({ isFetching, nmrPrice, fetchNumeraire }) => {
 
     useEffect(() => {
         fetchNumeraire();
-    }, []);
+    }, [fetchNumeraire]);
 
     return (
         <main>
             <h1>Numeraire Real-Time Price</h1>
+            {console.log('Coin.js: isFetching is: ', isFetching)}
             {isFetching && <h3>Fetching data...</h3>}
             {!isFetching && nmrPrice && (
                 <div>
-                    <h3>Price: </h3>
+                    <h3>Price: ${nmrPrice}</h3>
                 </div>
             )}
         </main>
@@ -23,11 +24,11 @@ const Coin = ({ isFetching, nmrPrice, fetchNumeraire }) => {
 };
 
 const mapStateToProps = state => {
-    console.log(state);
+    console.log('Coin.js mSTP is running...', state);
 
     return {
-        isFetching: state.isFetching,
-        nmrPrice: state.nmrPrice
+        isFetching: state.nmr.isFetching,
+        nmrPrice: state.nmr.nmrPrice
     };
 };
 

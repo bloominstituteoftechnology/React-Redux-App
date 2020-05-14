@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Coin from './components/Coin';
 import './App.css';
 
-const App = props => {
+const App =() => {
   return (
     <div className="App">
       <header className="header">
