@@ -1,13 +1,17 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchNumeraire } from '../store/actions';
+import { fetchNumeraire, fetchTop100 } from '../store/actions';
 
-const Coin = ({ isFetching, nmrPrice, fetchNumeraire }) => {
+const Coin = ({ isFetching, nmrPrice, fetchNumeraire, fetchTop100 }) => {
 
     useEffect(() => {
         fetchNumeraire();
     }, [fetchNumeraire]);
+
+    useEffect(() => {
+        fetchTop100();
+    }, [fetchTop100]);
 
     return (
         <main>
@@ -32,4 +36,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps, { fetchNumeraire })(Coin);
+export default connect(mapStateToProps, { fetchNumeraire, fetchTop100 })(Coin);
