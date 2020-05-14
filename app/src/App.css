@@ -1,0 +1,87 @@
+/* body {
+  background: url(./space-bg.jpg);
+  background-size: contain;
+} */
+
+.App {
+  margin: 0 auto;
+}
+
+.rocket-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.header {
+  margin: 1% auto 40%;
+  padding: 1% 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin-left: 6rem;
+  width: 60%;
+}
+
+.title {
+  margin-bottom: 4rem;
+  font-size: 3rem;
+  font-style: bold;
+}
+
+.rocket {
+  transform: rotate(180deg);
+  width: 200px;
+  position: fixed;
+  margin-top: 40%;
+  filter: invert(19%) sepia(40%) saturate(3999%) hue-rotate(184deg) brightness(98%) contrast(104%);
+  z-index: 0;
+}
+
+.container {
+  background: white;
+  width: 100%;
+  margin: 0 auto 50%;
+  z-index: 1;
+}
+
+.end {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.rocket-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  background: #005288;
+  color: white;
+  padding: 2rem;
+  margin: 0 auto 2rem;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: white;
+  width: 45%;
+  z-index: 1;
+}
+
+.rocket-card img {
+  width: 50%;
+  height: 320px;
+  border-radius: 10px;
+}
