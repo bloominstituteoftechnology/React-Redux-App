@@ -1,6 +1,7 @@
 const initialState = {
     cards: [],
-    searchTerm: "Squirtle"
+    searchTerm: "",
+    isFetching: false
 }
 
 export default (state = initialState, action) => {
@@ -10,10 +11,16 @@ export default (state = initialState, action) => {
                 ...state,
                 searchTerm: action.payload
             }
+        case 'SEARCH_POKEMON_START':
+            return {
+                ...state,
+                isFetching: true
+            }
         case 'FETCH_POKEMON':
             return {
                 ...state,
-                cards: action.payload.data.cards
+                cards: action.payload.data.cards,
+                isFetching: false
             }
         default:
             return state;
