@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { fetchCoins } from '../actions/actions'
-import { Coin } from './Coin'
+import Coin from './Coin'
 import '../App.css'
 import './Coins.css'
 
@@ -15,6 +15,8 @@ useEffect(() => {
 
 
 }, [])
+
+
 
     return(
         <div className='main-container'>

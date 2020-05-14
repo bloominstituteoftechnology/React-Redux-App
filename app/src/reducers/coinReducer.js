@@ -1,11 +1,14 @@
 import React from 'react'
-import { FETCH_COINS_START, FETCH_COINS_SUCCESS, FETCH_COINS_FAILURE } from '../actions/actions'
+import { FETCH_COINS_START, FETCH_COINS_SUCCESS, FETCH_COINS_FAILURE, FETCH_COINS_SPECIFIC, FETCH_COINS_SPECIFIC_SUCCESS, FETCH_COINS_SPECIFIC_FAILURE } from '../actions/actions'
 
 const initialState = {
 
     isFetching: false,
+    isFetchingDetails: false,
     coins: [],
-    error: null
+    coinsDetails: null,
+    error: null,
+    errorDetails: null
 
 
 }
@@ -37,6 +40,29 @@ export const coinReducer = (state=initialState, action) => {
                 error: action.payload
 
             }
+        case FETCH_COINS_SPECIFIC:
+            return {
+
+                ...state,
+                isFetchingDetails:true
+
+            }
+        case FETCH_COINS_SPECIFIC_SUCCESS:
+            return {
+    
+                    ...state,
+                    isFetchingDetails: false,
+                    coinsDetails: action.payload
+    
+                }
+        case FETCH_COINS_SPECIFIC_FAILURE:
+            return {
+        
+                    ...state,
+                    isFetchingDetails: false,
+                    errorDetails:action.payload
+        
+                }
         
         default:
             return state
