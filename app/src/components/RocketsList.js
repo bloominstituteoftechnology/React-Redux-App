@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { fetchRockets } from '../actions/fetchRockets';
 import '../App.css';
 import Rocket from './Rocket';
-import logo from '../spacex-logo.png';
+import logo from '../spacex-logo.svg';
 import rocket from '../rocket.svg';
 
 const RocketsList = props => {
