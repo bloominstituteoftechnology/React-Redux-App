@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+body {
+  
+@-webkit-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+  }
+  @-moz-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+  }
+  @-o-keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+  }
+  @keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+  }
+  @-webkit-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+  }
+  @-moz-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+  }
+  @-o-keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+  }
+  @keyframes bg-scrolling {
+    0% {
+        background-position: 50px 50px;
+    }
+  }
+  color: #999;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 2s infinite;
+  /* Safari 4+ */
+  -moz-animation: bg-scrolling-reverse 2s infinite;
+  /* Fx 5+ */
+  -o-animation: bg-scrolling-reverse 2s infinite;
+  /* Opera 12+ */
+  animation: bg-scrolling-reverse 2s infinite;
+  /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+  font-family: 'Space Mono', monospace;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5rem;
+}
+
+.logo {
+  width: 150px;
+}
+
+.links a {
+  text-decoration: none;
+  margin: 0 2rem;
+  color: rgb(23,23,23);
+  font-size: 1.2rem;
+}
+
+.links a:hover {
+  color: #005289;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.circle1 {
+  position: fixed;
+  width: 30%;
+  margin-left: 42%;
+  top: 80px;
+}
+
+.trail {
+  position: fixed;
+  width: 30%;
+  left: -80px;
+  bottom: -40px;
+}
+
+.trail2 {
+  position: fixed;
+  width: 30%;
+  right: 120px;
+  bottom: -100px;
+  transform: rotate(10deg);
+}
+
+.ship {
+  width: 15%;
+  transform: rotate(19deg);
+  right: 60px;
+  bottom: 380px;
+  position: fixed;
+  filter: invert(18%) sepia(52%) saturate(3611%) hue-rotate(187deg) brightness(98%) contrast(101%);
+}
+
+.title {
+  color: rgb(23,23,23);
+  font-weight: bold;
+  margin: 8% auto 0;
+  padding: 5% auto;
+  font-size: 6rem;
+  text-align: center;
+}
+
+.intro {
+  font-size: 1.8rem;
+  color: rgb(23,23,23);
+  width: 30%;
+  margin: 2rem auto;
+}
+
+.api {
+  text-decoration: none;
+  color: #005289;
+  font-weight: bold;
+}
+
+.home button {
+  border: none;
+  background: #005289;
+  padding: 1rem 2rem;
+}
+
+.learn {
+  color: white;
+  font-size: 1.2rem;;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.learn:hover{
+  cursor: pointer;
+}
+
+.home button:hover {
+  cursor: pointer;
+  background: #013b61;
+}
+
+.core {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  margin: auto;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.hq {
+  width: 700px;
+}
+
+.core-info { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 30%;
+  color: rgb(23,23,23);
+}
+
+.core-info p {
+  margin-top: 3rem;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.core-info h1, h2, h3 {
+  margin: 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.core-info h1 {
+  margin-bottom: 1rem;
+}
+
+.core-info h2 {
+  color: #005289;
+  font-weight: bold;
+}
+
+.article-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.articles-title {
+  color: #005289;
+  font-size: 2.8rem;
+  background: none;
+}
+
+.article-list h1 {
+  color: #005289;
+  font-size: 2.8rem;
+  background: rgb(23,23,23);
+  padding: .2rem 1rem;
+}
+
+.article {
+  background: rgb(23,23,23, .6);
+  color: white;
+  width: 50%;
+  margin: 1rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.article h1 {
+  font-size: 2rem;
+  margin: 0 0;
+}
+
+.article h2 {
+  text-align: left;
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 1.6rem;
+}
+
+.article button {
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1.2rem;
+}
+
+.article button:hover {
+  cursor: pointer;
+  background-color: #005289;
+}
+
+.reduced {
+  text-align: left;
+  margin: 1rem 0;
+  width: 80%;
+  font-size: 1rem;
+}
+
+.article a {
+  text-decoration: none;
+  color: rgb(23,23,23);
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+.mission {
+  background: rgb(23,23,23, 0.6);
+  display: inline-block;
+  margin: 1rem;
+  width: 40%;
+  padding: 2rem;
+  text-align: left;
+  color: white;
+}
+
+.missions-title{
+  font-size: 2.8rem;
+  color: #005289;
+}
+
+.mission a {
+  text-decoration: none;
+  color: rgb(23,23,23);
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+.mission-title a {
+  font-size: 2rem;
+  color: #005289;
+}
+
+.mission button {
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 1.2rem;
+}
+
+.mission button:hover {
+  cursor: pointer;
+  background-color: #005289;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 32px;
+}
+
+.icon:hover {
+  filter: invert(19%) sepia(88%) saturate(1766%) hue-rotate(184deg) brightness(98%) contrast(102%);
+}
+
+.rocket-list {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.rocket-list h1 {
+  color: #005289;
+  font-size: 2.8rem;
+}
+
+.rocket-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.rocket-card img {
+  width: 500px;
+  height: 500px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  background: rgb(23,23,23);
+  padding: 0 2rem;
+  height: 500px;
+  color: white;
+}
