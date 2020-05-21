@@ -1,67 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
+/* THE MAIN STYLES */
 body {
-  
-@-webkit-keyframes bg-scrolling-reverse {
-    100% {
-        background-position: 50px 50px;
-    }
-  }
-  @-moz-keyframes bg-scrolling-reverse {
-    100% {
-        background-position: 50px 50px;
-    }
-  }
-  @-o-keyframes bg-scrolling-reverse {
-    100% {
-        background-position: 50px 50px;
-    }
-  }
-  @keyframes bg-scrolling-reverse {
-    100% {
-        background-position: 50px 50px;
-    }
-  }
-  @-webkit-keyframes bg-scrolling {
-    0% {
-        background-position: 50px 50px;
-    }
-  }
-  @-moz-keyframes bg-scrolling {
-    0% {
-        background-position: 50px 50px;
-    }
-  }
-  @-o-keyframes bg-scrolling {
-    0% {
-        background-position: 50px 50px;
-    }
-  }
-  @keyframes bg-scrolling {
-    0% {
-        background-position: 50px 50px;
-    }
-  }
   color: #999;
   text-align: center;
-  /* img size is 50x50 */
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  -webkit-animation: bg-scrolling-reverse 2s infinite;
-  /* Safari 4+ */
-  -moz-animation: bg-scrolling-reverse 2s infinite;
-  /* Fx 5+ */
-  -o-animation: bg-scrolling-reverse 2s infinite;
-  /* Opera 12+ */
-  animation: bg-scrolling-reverse 2s infinite;
-  /* IE 10+ */
-  -webkit-animation-timing-function: linear;
-  -moz-animation-timing-function: linear;
-  -o-animation-timing-function: linear;
-  animation-timing-function: linear;
   font-family: 'Space Mono', monospace;
 }
 
+/* THE NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
@@ -75,13 +22,17 @@ nav {
 
 .links a {
   text-decoration: none;
+  padding: 0 .8rem;
   margin: 0 2rem;
   color: rgb(23,23,23);
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .links a:hover {
-  color: #005289;
+  background: rgb(23,23,23);
+  padding: 0 .8rem;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
 }
@@ -96,31 +47,32 @@ nav {
 .trail {
   position: fixed;
   width: 30%;
-  left: -80px;
-  bottom: -40px;
+  left: -3%;
+  bottom: -12%;
+  transform: rotate(-10deg);
 }
 
 .trail2 {
   position: fixed;
   width: 30%;
-  right: 120px;
-  bottom: -100px;
+  right: 5%;
+  bottom: -10%;
   transform: rotate(10deg);
 }
 
 .ship {
   width: 15%;
   transform: rotate(19deg);
-  right: 60px;
-  bottom: 380px;
+  right: 2%;
+  bottom: 40%;
   position: fixed;
-  filter: invert(18%) sepia(52%) saturate(3611%) hue-rotate(187deg) brightness(98%) contrast(101%);
+  filter: invert(45%) sepia(54%) saturate(7375%) hue-rotate(218deg) brightness(96%) contrast(83%);
 }
 
 .title {
   color: rgb(23,23,23);
   font-weight: bold;
-  margin: 8% auto 0;
+  margin: 6% auto 0;
   padding: 5% auto;
   font-size: 6rem;
   text-align: center;
@@ -130,37 +82,40 @@ nav {
   font-size: 1.8rem;
   color: rgb(23,23,23);
   width: 30%;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
 .api {
   text-decoration: none;
-  color: #005289;
+  color: royalblue;
   font-weight: bold;
+}
+
+.api:hover {
+  background: rgb(23,23,23);
+  color: #ffffff;
 }
 
 .home button {
   border: none;
-  background: #005289;
-  padding: 1rem 2rem;
-}
-
-.learn {
-  color: white;
-  font-size: 1.2rem;;
+  padding: .8rem 1.4rem;
+  margin-top: 1.2rem;
+  border: 5px solid rgb(23,23,23);
+  background: rgb(23,23,23);
+  color: #ffffff;
+  font-size: 1rem;
   font-weight: bold;
-  text-decoration: none;
-}
-
-.learn:hover{
-  cursor: pointer;
 }
 
 .home button:hover {
   cursor: pointer;
-  background: #013b61;
+  background: none;
+  box-sizing: border-box;
+  border: 5px solid rgb(23,23,23);
+  color: rgb(23,23,23);
 }
 
+/* THE CORE */
 .core {
   display: flex;
   justify-content: space-evenly;
@@ -205,10 +160,11 @@ nav {
 }
 
 .core-info h2 {
-  color: #005289;
+  color: royalblue;
   font-weight: bold;
 }
 
+/* THE HISTORY LIST */
 .article-list {
   display: flex;
   justify-content: center;
@@ -217,21 +173,25 @@ nav {
 }
 
 .articles-title {
-  color: #005289;
+  color: #ffffff;
   font-size: 2.8rem;
-  background: none;
+  background: rgb(23,23,23);
+  padding: .2rem 1rem;
+  width: 30%;
+  margin: 0 auto 2rem;
 }
 
 .article-list h1 {
-  color: #005289;
+  color: #ffffff;
   font-size: 2.8rem;
   background: rgb(23,23,23);
   padding: .2rem 1rem;
 }
 
+/* THE HISTORY */
 .article {
-  background: rgb(23,23,23, .6);
-  color: white;
+  border: 5px solid rgb(23,23,23);
+  color: rgb(23,23,23);
   width: 50%;
   margin: 1rem auto;
   padding: 2rem;
@@ -253,15 +213,27 @@ nav {
   font-size: 1.6rem;
 }
 
+.article h3 {
+  margin-top: .4rem;
+}
+
 .article button {
   border: none;
-  padding: 1rem 2rem;
+  padding: .8rem 1.4rem;
   margin-top: 1.2rem;
+  border: 5px solid rgb(23,23,23);
+  background: rgb(23,23,23);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .article button:hover {
   cursor: pointer;
-  background-color: #005289;
+  background: none;
+  box-sizing: border-box;
+  border: 5px solid rgb(23,23,23);
+  color: rgb(23,23,23);
 }
 
 .reduced {
@@ -271,26 +243,25 @@ nav {
   font-size: 1rem;
 }
 
-.article a {
-  text-decoration: none;
-  color: rgb(23,23,23);
-  font-weight: bold;
-  font-size: .8rem;
-}
-
+/* THE MISSION LIST */
 .mission {
-  background: rgb(23,23,23, 0.6);
+  background: rgb(23,23,23, 0.15);
   display: inline-block;
   margin: 1rem;
   width: 40%;
   padding: 2rem;
   text-align: left;
-  color: white;
+  color: rgb(23,23,23);
 }
 
 .missions-title{
+  color: #ffffff;
   font-size: 2.8rem;
-  color: #005289;
+  background: rgb(23,23,23);
+  padding: .2rem 1rem;
+  width: 30%;
+  margin: 0 auto 2rem;
+
 }
 
 .mission a {
@@ -302,18 +273,29 @@ nav {
 
 .mission-title a {
   font-size: 2rem;
-  color: #005289;
+  color: rgb(23,23,23);
+}
+
+.mission p {
+  font-size: 1.2rem;
 }
 
 .mission button {
   border: none;
-  padding: 1rem 2rem;
+  padding: .8rem 1.4rem;
   margin-top: 1.2rem;
+  background: rgb(23,23,23);
+  border: 5px solid rgb(23,23,23);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 .mission button:hover {
   cursor: pointer;
-  background-color: #005289;
+  color: rgb(23,23,23);
+  border: 5px solid rgb(23,23,23);
+  background: none;
 }
 
 .actions {
@@ -327,19 +309,25 @@ nav {
 }
 
 .icon:hover {
-  filter: invert(19%) sepia(88%) saturate(1766%) hue-rotate(184deg) brightness(98%) contrast(102%);
+  filter: invert(45%) sepia(54%) saturate(7375%) hue-rotate(218deg) brightness(96%) contrast(83%);
 }
 
+/* THE ROCKET LIST */
 .rocket-list {
   margin: 0 auto;
   width: 50%;
 }
 
 .rocket-list h1 {
-  color: #005289;
+  color: #ffffff;
   font-size: 2.8rem;
+  background: rgb(23,23,23);
+  padding: .2rem 1rem;
+  width: 60%;
+  margin: 0 auto 3rem;
 }
 
+/* THE ROCKET */
 .rocket-card {
   display: flex;
   justify-content: space-between;
@@ -348,7 +336,7 @@ nav {
 }
 
 .rocket-card img {
-  width: 500px;
+  width: 50%;
   height: 500px;
 }
 

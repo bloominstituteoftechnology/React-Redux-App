@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { fetchMissions } from '../actions/fetchMissions';
 import '../App.css';
-import twitter from '../twitter.svg';
+import twitter from '../images/twitter.svg';
 
 const MissionList = props => {
   useEffect(() => {
@@ -21,7 +21,7 @@ const MissionList = props => {
         ) : <hp>{mission.description}</hp>}
           </p>
           <div className='actions'>
-            <button><a href={mission.website}>Learn More</a></button>
+            <a href={mission.website}><button>Learn More</button></a>
             <a href={mission.twitter}><img  className='icon' src={twitter}></img></a>
           </div>
         </div>
