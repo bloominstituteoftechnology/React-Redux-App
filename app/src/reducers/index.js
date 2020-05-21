@@ -1,6 +1,6 @@
 const initialState = {
     cards: [],
-    searchTerm: "",
+    searchTerm: "abcd",
     isFetching: false
 }
 
