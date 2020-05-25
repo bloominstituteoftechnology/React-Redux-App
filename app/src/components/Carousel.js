@@ -1,15 +1,19 @@
 import React from "react";
 import { UncontrolledCarousel } from "reactstrap";
+import cat3 from "../assets/cat1.png";
 
 const items = [
-  {
-    // src: "https://loremflickr.com/320/240/cat?random=1",
-    src: "https://cdn2.thecatapi.com/images/dn4GBRons.jpg",
-    // altText: "Slide 1",
-    // caption: "Slide 1",
-    header: "Birman",
-    key: "1",
-  },
+  //   {
+
+  //     src: "https://cdn2.thecatapi.com/images/hYG6uIRWL.jpg",
+  //     // src: "https://loremflickr.com/320/240/cat?random=1",
+  //     //src: "https://cdn2.thecatapi.com/images/dn4GBRons.jpg",
+  //     // altText: "Slide 1",
+  //     // caption: "Slide 1",
+  //     header: "Himalayan",
+  //     //header: "Birman",
+  //     key: "1",
+  //   },
   {
     // src: "https://loremflickr.com/320/240/cat?random=2",
     src: "https://cdn2.thecatapi.com/images/imz2EwFWv.jpg",

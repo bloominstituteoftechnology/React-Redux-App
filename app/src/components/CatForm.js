@@ -23,7 +23,7 @@ const CatForm = (props) => {
         style={{
           marginTop: "3rem",
           width: "650px",
-          height: "450px",
+          height: "490px",
           display: "flex",
           alignItems: "center",
 
