@@ -1,6 +1,6 @@
 import React from "react";
 import { UncontrolledCarousel } from "reactstrap";
-import cat3 from "../assets/cat1.png";
+//import cat3 from "../assets/cat1.png";
 
 const items = [
   //   {
