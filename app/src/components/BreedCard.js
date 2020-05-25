@@ -41,7 +41,7 @@ const BreedCard = (props) => {
               color: "#4154B3",
             }}
           >
-            {`Breed: ${props.breed.name}`}
+            {`${props.breed.name}`}
           </CardTitle>
           <CardSubtitle
             style={{ marginBottom: "0.5rem" }}
