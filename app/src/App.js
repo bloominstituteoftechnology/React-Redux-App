@@ -40,16 +40,29 @@ const App = (props) => {
               color="inherit"
               aria-label="open drawer"
             >
-              <img src="https://img.icons8.com/ultraviolet/40/000000/cat.png" />
+              <Link to={"/"}>
+                <img src="https://img.icons8.com/ultraviolet/40/000000/cat.png" />
+              </Link>
             </IconButton>
+
             <Typography
               style={{ marginLeft: "3rem", fontSize: "2rem" }}
               className={classes.title}
               variant="h6"
               noWrap
             >
-              React-Redux Cats
+              <Link
+                to={"/"}
+                style={{
+                  color: "white",
+                  fontSize: "2rem",
+                  textDecoration: "none",
+                }}
+              >
+                React-Redux Cats
+              </Link>
             </Typography>
+
             <Link style={{ color: "white" }} to={"/"}>
               <img src="https://img.icons8.com/ultraviolet/40/000000/cat-footprint.png" />
             </Link>
