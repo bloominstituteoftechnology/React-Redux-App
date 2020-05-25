@@ -72,7 +72,7 @@ const App = (props) => {
               </div>
               <InputBase
                 onChange={handleFormChange}
-                style={{ marginLeft: "4rem" }}
+                style={{ marginLeft: "2rem" }}
                 placeholder="Search by breed..."
                 classes={{
                   root: classes.inputRoot,
@@ -153,9 +153,9 @@ const useStyles = makeStyles((theme) =>
       transition: theme.transitions.create("width"),
       width: "100%",
       [theme.breakpoints.up("sm")]: {
-        width: "12ch",
+        width: "20ch",
         "&:focus": {
-          width: "20ch",
+          width: "24ch",
         },
       },
     },
