@@ -22,8 +22,8 @@ const CatForm = (props) => {
       <div
         style={{
           marginTop: "3rem",
-          width: "600px",
-          height: "400px",
+          width: "650px",
+          height: "450px",
           display: "flex",
           alignItems: "center",
 
@@ -85,3 +85,6 @@ const useStyles = makeStyles((theme) =>
     },
   })
 );
+
+// width: "600px",
+//           height: "400px",

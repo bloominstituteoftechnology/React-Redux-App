@@ -12,7 +12,7 @@ const items = [
   },
   {
     // src: "https://loremflickr.com/320/240/cat?random=2",
-    src: "https://cdn2.thecatapi.com/images/rLKF3Yzcf.jpg",
+    src: "https://cdn2.thecatapi.com/images/imz2EwFWv.jpg",
     //altText: "Slide 2",
     //caption: "Slide 2",
     header: "Ocicat",
@@ -68,10 +68,10 @@ const items = [
     key: "9",
   },
   {
-    src: "https://cdn2.thecatapi.com/images/lClcFEjwx.jpg",
+    src: "https://cdn2.thecatapi.com/images/f6TE5pt6f.jpg",
     //altText: "Slide 3",
     //caption: "Slide 3",
-    header: "Bambino",
+    header: "Oriental",
     key: "9",
   },
 ];
