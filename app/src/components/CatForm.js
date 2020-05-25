@@ -38,7 +38,10 @@ const CatForm = (props) => {
         >
           {props.isFetchingData ? (
             <div style={{ margin: "0 auto" }}>
-              <Spinner style={{ width: "3rem", height: "3rem" }} type="grow" />
+              <Spinner
+                color="primary"
+                style={{ width: "3rem", height: "3rem" }}
+              />{" "}
             </div>
           ) : (
             <div

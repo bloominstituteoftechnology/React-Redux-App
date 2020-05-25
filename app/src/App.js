@@ -74,7 +74,7 @@ const App = (props) => {
 
       <Switch>
         <Route path="/cat/:catID">
-          <Cat breeds={props.breeds} />
+          <Cat breeds={props.breeds} isFetchingData={props.isFetchingData} />
         </Route>
         <Route path="/">
           <CatForm searchTerm={searchTerm} />
@@ -87,6 +87,7 @@ const App = (props) => {
 const mapStateToProps = (state) => {
   return {
     breeds: state.breeds,
+    isFetchingData: state.isFetchingData,
   };
 };
 export default connect(mapStateToProps, {})(App);

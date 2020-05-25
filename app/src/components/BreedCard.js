@@ -35,7 +35,11 @@ const BreedCard = (props) => {
       >
         <CardBody>
           <CardTitle
-            style={{ fontSize: "1.5rem", borderBottom: "1px solid grey" }}
+            style={{
+              fontSize: "1.5rem",
+              borderBottom: "1px solid grey",
+              color: "#4154B3",
+            }}
           >
             {`Breed: ${props.breed.name}`}
           </CardTitle>
