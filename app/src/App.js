@@ -57,7 +57,7 @@ const App = (props) => {
                   textDecoration: "none",
                 }}
               >
-                React-Redux Cats
+                React-Redux Async Cats
               </Link>
             </Typography>
 

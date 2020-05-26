@@ -4,7 +4,6 @@ import { UncontrolledCarousel } from "reactstrap";
 
 const items = [
   //   {
-
   //     src: "https://cdn2.thecatapi.com/images/hYG6uIRWL.jpg",
   //     // src: "https://loremflickr.com/320/240/cat?random=1",
   //     //src: "https://cdn2.thecatapi.com/images/dn4GBRons.jpg",

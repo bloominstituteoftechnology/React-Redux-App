@@ -59,6 +59,7 @@ const Cat = (props) => {
           </a>
         </p>
         <Button
+          style={{ with: "60%" }}
           onClick={handleGetImg}
           style={{ marginTop: "2rem" }}
           variant="contained"

@@ -6,6 +6,7 @@ import { getData } from "../actions";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { Spinner } from "reactstrap";
+import cat1 from "../assets/cat1.jpg";
 
 const CatForm = (props) => {
   const classes = useStyles();
