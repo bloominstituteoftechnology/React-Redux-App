@@ -64,7 +64,7 @@ const Cat = (props) => {
           variant="contained"
           color="primary"
         >
-          {`Get new photo of ${catItem.name} breed`}
+          {`Refresh photo of ${catItem.name} breed`}
         </Button>
       </div>
     </div>
