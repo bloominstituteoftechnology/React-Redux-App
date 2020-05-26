@@ -1,21 +1,33 @@
 import React, { useEffect } from "react";
-
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 import { getImage } from "../actions";
 import { Spinner } from "reactstrap";
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles((theme) =>
+  createStyles({
+    root: {
+      "& > *": {
+        margin: theme.spacing(1),
+      },
+    },
+  })
+);
 const Cat = (props) => {
+  const classes = useStyles();
   console.log("Cat props", props);
   // const { catId } = useParams();
 
   const match = useRouteMatch();
 
   // console.log("catItem", catItem);
-  //   const handleGetImg = (e) => {
-  //     e.preventDefault();
-  //     // props.getImage(props.breed.id);
-  //     props.getImage(match.params.catID);
-  //   };
+  const handleGetImg = (e) => {
+    e.preventDefault();
+    // props.getImage(props.breed.id);
+    props.getImage(match.params.catID);
+  };
   useEffect(() => {
     props.getImage(match.params.catID);
   }, []);
@@ -46,6 +58,14 @@ const Cat = (props) => {
             {catItem.wikipedia_url}
           </a>
         </p>
+        <Button
+          onClick={handleGetImg}
+          style={{ marginTop: "2rem" }}
+          variant="contained"
+          color="primary"
+        >
+          {`Get new photo of ${catItem.name} breed`}
+        </Button>
       </div>
     </div>
   );

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Route, Link, Switch } from "react-router-dom";
 import "./App.css";
-//import { BrowserRouter as Router } from "react-router-dom";
-//import { createStore, applyMiddleware } from "redux";
+
 import { connect } from "react-redux";
-//import { Provider } from "react-redux";
-//import thunk from "redux-thunk";
+
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
