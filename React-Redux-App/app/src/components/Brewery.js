@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     width: "25%",
     padding: "2rem 1%",
     margin: "1%",
+    minHeight: "150%"
   },
   title: {
     textDecoration: "none",
