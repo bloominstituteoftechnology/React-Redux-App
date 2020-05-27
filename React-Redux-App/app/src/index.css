@@ -1,0 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('./assets/bg_beer_img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    box-sizing: border-box;
+  }
