@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { createStore, applyMiddleWare } from 'redux';
-
+import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './Reducers/reducer';
+import reducer from './Reducers/reducer';
 import './App.css';
+import HpHouse from './Components/HpHouse';
+// import logger from 'redux-logger';
 
-const store = createStore(rootReducer, applyMiddleWare(thunk));
+const store = createStore(reducer, applyMiddleware(thunk));
 
 function App() {
   return (
     <div className = "App">
-
+      <HpHouse />
     </div>
   )
 }
