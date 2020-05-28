@@ -1,34 +1,37 @@
-import { FETCH_SORTINGHAT_START, FETCH_SORTINGHAT_FAIL, FETCH_SORTINGHAT_SUCCESS } from '../Actions/actions';
+import { FETCH_CHARACTERS_START, FETCH_CHARACTERS_SUCCESS, FETCH_CHARACTERS_FAILURE } from '../Actions/actions';
 
 const initialState = {
-    house: house,
-    error: '',
-    isFetching: false
-};
+    character:[],
+    isFetching: false,
+    error:'',
+}
 
-function reducer(state = initialState, action) {
-    console.log('reducer', action);
-    switch(action.type) {
-        case FETCH_SORTINGHAT_START:
-            return {
+function reducer( state = initialState, action) {
+    console.log('reducer', action.payload);
+    switch (action.type){
+        case FETCH_CHARACTERS_START:
+            return{
                 ...state,
                 isFetching: true,
-                error:''
+                error:'',
+                character:[]
             };
-        case FETCH_SORTINGHAT_SUCCESS:
-            return {
-                ...state,
-                house: action.payload,
-                isFetching: false,
-                error: ''
-            };
-        case FETCH_SORTINGHAT_FAIL:
-            return {
-                ...state,
-                error: action.payload
-            };
-        default:
-            return state;
+            case FETCH_CHARACTERS_SUCCESS:
+                console.log(action.payload)
+                return{
+                    ...state,
+                    error:'',
+                    isFetching:false,
+                    character: action.payload
+                }
+            case FETCH_CHARACTERS_FAILURE:
+                return {
+                    ...state,
+                    error: action.payload,
+                    isFetching: false,
+                }
+            default:
+                return state;
     }
 }
 

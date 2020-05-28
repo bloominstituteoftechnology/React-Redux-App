@@ -1,22 +1,14 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import reducer from './Reducers/reducer';
 import './App.css';
-import HpHouse from './Components/HpHouse';
-// import logger from 'redux-logger';
-
-const store = createStore(reducer, applyMiddleware(thunk));
+// import Characters from "./components/HpCharacter";
+import HpCharacter from './Components/HpCharacter';
 
 function App() {
   return (
-    <div className = "App">
-      <HpHouse />
+    <div className="App">
+       <HpCharacter /> 
     </div>
-  )
+  );
 }
-
-
 
 export default App;

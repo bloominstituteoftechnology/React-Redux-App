@@ -4,15 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+// import logger from 'redux-logger';
+import Reducer from './Reducers/reducer';
 
-function reducer() {
-  return {
-    title: "Hello World",
-  }
-}
+const store = createStore(Reducer, applyMiddleware(thunk));
 
 const rootElement = document.getElementById('root');
+
 ReactDOM.render(
   <Provider store ={store}>
     <App />
