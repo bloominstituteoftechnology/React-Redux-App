@@ -22,7 +22,7 @@ export const getData = () => (dispatch) => {
         dispatch({ type: UPDATE_CATS, payload: res.data });
       })
       .then(() => {
-        console.log("arrbreeds", arrbreeds);
+        // console.log("arrbreeds", arrbreeds);
         arrbreeds.map((b) => {
           axios
             .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${b.id}`)

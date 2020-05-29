@@ -7,7 +7,7 @@ import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import { Link } from "react-router-dom";
 
 const BreedCard = (props) => {
-  console.log("breedCardprops", props);
+  //console.log("breedCardprops", props);
   const handleSearchToggle = () => {
     props.setSearchToggle(true);
     props.setSearchTerm("");

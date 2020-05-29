@@ -20,12 +20,12 @@ const Cat = (props) => {
     props.getImage(match.params.catID);
   }, []);
   const catItem = props.breeds.find((breed) => breed.id === match.params.catID);
-  console.log("catItem image", catItem);
+  //console.log("catItem image", catItem);
   return (
     <Container className="themed-container" fluid={true}>
       <Row style={{ margin: "0", marginTop: "1rem", marginBottom: "1rem" }}>
         <Col xs="12" md="6" xl="6">
-          <Card style={{ border: "none" }}>
+          <Card style={{ border: "none", height: "auto" }}>
             {props.isFetchingData ? (
               <div style={{ margin: "6rem auto" }}>
                 <Spinner
@@ -35,7 +35,11 @@ const Cat = (props) => {
               </div>
             ) : (
               <div>
-                <CardImg alt="cat" src={catItem.image} />
+                <CardImg
+                  alt="cat"
+                  src={catItem.image}
+                  style={{ width: "100%" }}
+                />
               </div>
             )}
           </Card>
