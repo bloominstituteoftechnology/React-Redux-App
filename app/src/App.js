@@ -79,11 +79,12 @@ const App = (props) => {
                 alt="cat footprint"
               />
             </Link>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              {!searchToggle && (
+            {!searchToggle && (
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+
                 <InputBase
                   onChange={handleFormChange}
                   style={{ marginLeft: "2rem" }}
@@ -94,8 +95,8 @@ const App = (props) => {
                   }}
                   inputProps={{ "aria-label": "search" }}
                 />
-              )}
-            </div>
+              </div>
+            )}
           </Toolbar>
         </AppBar>
       </div>
