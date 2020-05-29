@@ -7,6 +7,7 @@ export const SET_ERROR = "SET_ERROR";
 export const FETCH_IMG_DATA = "FETCH_IMG_DATA";
 export const UPDATE_IMG = "UPDATE_IMG";
 export const SET_IMG_ERROR = "SET_IMG_ERROR";
+let arrbreeds = [];
 
 export const getData = () => (dispatch) => {
   dispatch({ type: FETCH_DATA });
@@ -17,7 +18,28 @@ export const getData = () => (dispatch) => {
       .get("https://api.thecatapi.com/v1/breeds/")
       .then((res) => {
         console.log(res);
+        arrbreeds = res.data;
         dispatch({ type: UPDATE_CATS, payload: res.data });
+      })
+      .then(() => {
+        console.log("arrbreeds", arrbreeds);
+        arrbreeds.map((b) => {
+          axios
+            .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${b.id}`)
+
+            .then((res) => {
+              // console.log(
+              //   "getImage res",
+              //   res.data[0].breeds[0].id,
+              //   res.data[0].url
+              // );
+              const dataArr = [res.data[0].breeds[0].id, res.data[0].url];
+              dispatch({
+                type: UPDATE_IMG,
+                payload: dataArr,
+              });
+            });
+        });
       })
       .catch((err) => {
         console.error("error fetching data from getData api. err: ", err);
@@ -26,7 +48,7 @@ export const getData = () => (dispatch) => {
           payload: "error fetching data from getData api",
         });
       });
-  }, 1000);
+  }, 1);
 };
 
 export const getImage = (imageId) => (dispatch) => {

@@ -19,7 +19,7 @@ const Cat = (props) => {
     props.getImage(match.params.catID);
   }, []);
   const catItem = props.breeds.find((breed) => breed.id === match.params.catID);
-
+  console.log("catItem image", catItem);
   return (
     <div className="cat-container">
       {props.isFetchingData ? (

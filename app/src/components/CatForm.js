@@ -2,14 +2,23 @@ import React from "react";
 import { connect } from "react-redux";
 import CatsList from "./CatsList";
 import Carousel from "./Carousel";
-import { getData } from "../actions";
+import { getData, getImage } from "../actions";
 
 import { Spinner } from "reactstrap";
 
 const CatForm = (props) => {
+  // const handleGetImg = () => {
+  //   props.breeds.map((breed) => props.getImage(breed.id));
+  // };
+
   const handleGetData = (e) => {
     e.preventDefault();
     props.getData();
+    // setTimeout(() => {
+    //   console.log("CatForm breeds", props.breeds);
+    // }, 3000);
+    //handleGetImg();
+    // props.breeds.map((breed) => props.getImage(breed.id));
   };
 
   return (
@@ -73,4 +82,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getData })(CatForm);
+export default connect(mapStateToProps, { getData, getImage })(CatForm);

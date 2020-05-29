@@ -1,17 +1,24 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Col } from "reactstrap";
+import { Col, CardImg } from "reactstrap";
 import cat from "../assets/cat.png";
 
 import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import { Link } from "react-router-dom";
 
 const BreedCard = (props) => {
+  console.log("breedCardprops", props);
   return (
     <Col xs="12" md="6" xl="4">
       <Card
-        style={{ margin: "0.5rem", height: "14rem", background: "#F4F4F4" }}
+        style={{ margin: "0.5rem", height: "40rem", background: "#F4F4F4" }}
       >
+        <CardImg
+          top
+          width="100%"
+          src={props.breed.image}
+          alt="Card image cap"
+        />
         <CardBody>
           <CardTitle
             style={{
