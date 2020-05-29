@@ -22,6 +22,8 @@ const CatsList = (props) => {
                 key={breed.id}
                 breed={breed}
                 setSearchToggle={props.setSearchToggle}
+                searchTerm={props.searchTerm}
+                setSearchTerm={props.setSearchTerm}
               />
             ))
         )}

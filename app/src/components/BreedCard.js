@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 
 const BreedCard = (props) => {
   console.log("breedCardprops", props);
+  const handleSearchToggle = () => {
+    props.setSearchToggle(true);
+    props.setSearchTerm("");
+  };
   return (
     <Col xs="12" md="6" xl="4">
       <Card
@@ -40,10 +44,7 @@ const BreedCard = (props) => {
           >{`Origin: ${props.breed.origin}`}</CardSubtitle>
           <CardSubtitle>{`Temperament: ${props.breed.temperament}`}</CardSubtitle>
 
-          <Link
-            to={`/cat/${props.breed.id}`}
-            onClick={() => props.setSearchToggle(true)}
-          >
+          <Link to={`/cat/${props.breed.id}`} onClick={handleSearchToggle}>
             <div style={{ marginTop: "0.8rem" }}>
               Read about me...
               <img

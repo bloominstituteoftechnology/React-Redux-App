@@ -70,6 +70,7 @@ const CatForm = (props) => {
       <CatsList
         searchTerm={props.searchTerm}
         setSearchToggle={props.setSearchToggle}
+        setSearchTerm={props.setSearchTerm}
       />
     </div>
   );

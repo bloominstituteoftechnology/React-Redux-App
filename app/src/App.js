@@ -79,6 +79,7 @@ const App = (props) => {
                 alt="cat footprint"
               />
             </Link>
+
             {!searchToggle && (
               <div className={classes.search}>
                 <div className={classes.searchIcon}>
@@ -106,7 +107,11 @@ const App = (props) => {
           <Cat />
         </Route>
         <Route path="/">
-          <CatForm searchTerm={searchTerm} setSearchToggle={setSearchToggle} />
+          <CatForm
+            searchTerm={searchTerm}
+            setSearchToggle={setSearchToggle}
+            setSearchTerm={setSearchTerm}
+          />
         </Route>
       </Switch>
     </div>
@@ -177,3 +182,5 @@ const useStyles = makeStyles((theme) =>
     },
   })
 );
+
+// {`item${props.item.purchased ? " purchased" : ""}`}classes.search
