@@ -74,10 +74,7 @@ const App = (props) => {
               to={"/"}
               onClick={() => setSearchToggle(false)}
             >
-              <img
-                src="https://img.icons8.com/ultraviolet/40/000000/cat-footprint.png"
-                alt="cat footprint"
-              />
+              <h2>Breeds</h2>
             </Link>
 
             {!searchToggle && (
