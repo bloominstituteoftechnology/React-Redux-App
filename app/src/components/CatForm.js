@@ -58,7 +58,10 @@ const CatForm = (props) => {
           )}
         </div>
       )}
-      <CatsList searchTerm={props.searchTerm} />
+      <CatsList
+        searchTerm={props.searchTerm}
+        setSearchToggle={props.setSearchToggle}
+      />
     </div>
   );
 };

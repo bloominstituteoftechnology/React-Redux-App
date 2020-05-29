@@ -23,6 +23,7 @@ import Cat from "./components/Cat";
 
 const App = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchToggle, setSearchToggle] = useState(false);
 
   const classes = useStyles();
 
@@ -35,6 +36,7 @@ const App = (props) => {
         <AppBar position="static">
           <Toolbar>
             <IconButton
+              onClick={() => setSearchToggle(false)}
               edge="start"
               className={classes.menuButton}
               color="inherit"
@@ -55,6 +57,7 @@ const App = (props) => {
               noWrap
             >
               <Link
+                onClick={() => setSearchToggle(false)}
                 to={"/"}
                 style={{
                   color: "white",
@@ -66,7 +69,11 @@ const App = (props) => {
               </Link>
             </Typography>
 
-            <Link style={{ color: "white" }} to={"/"}>
+            <Link
+              style={{ color: "white" }}
+              to={"/"}
+              onClick={() => setSearchToggle(false)}
+            >
               <img
                 src="https://img.icons8.com/ultraviolet/40/000000/cat-footprint.png"
                 alt="cat footprint"
@@ -76,17 +83,18 @@ const App = (props) => {
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
-
-              <InputBase
-                onChange={handleFormChange}
-                style={{ marginLeft: "2rem" }}
-                placeholder="Search by breed..."
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ "aria-label": "search" }}
-              />
+              {!searchToggle && (
+                <InputBase
+                  onChange={handleFormChange}
+                  style={{ marginLeft: "2rem" }}
+                  placeholder="Search by breed..."
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  inputProps={{ "aria-label": "search" }}
+                />
+              )}
             </div>
           </Toolbar>
         </AppBar>
@@ -97,7 +105,7 @@ const App = (props) => {
           <Cat />
         </Route>
         <Route path="/">
-          <CatForm searchTerm={searchTerm} />
+          <CatForm searchTerm={searchTerm} setSearchToggle={setSearchToggle} />
         </Route>
       </Switch>
     </div>

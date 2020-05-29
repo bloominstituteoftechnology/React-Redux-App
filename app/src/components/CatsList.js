@@ -17,7 +17,13 @@ const CatsList = (props) => {
                 .toLowerCase()
                 .includes(props.searchTerm.toLowerCase());
             })
-            .map((breed) => <BreedCard key={breed.id} breed={breed} />)
+            .map((breed) => (
+              <BreedCard
+                key={breed.id}
+                breed={breed}
+                setSearchToggle={props.setSearchToggle}
+              />
+            ))
         )}
       </Row>
     </Container>

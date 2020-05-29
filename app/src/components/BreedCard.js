@@ -27,7 +27,10 @@ const BreedCard = (props) => {
           >{`Origin: ${props.breed.origin}`}</CardSubtitle>
           <CardSubtitle>{`Temperament: ${props.breed.temperament}`}</CardSubtitle>
 
-          <Link to={`/cat/${props.breed.id}`}>
+          <Link
+            to={`/cat/${props.breed.id}`}
+            onClick={() => props.setSearchToggle(true)}
+          >
             <div style={{ marginTop: "0.8rem" }}>
               Read about me...
               <img
