@@ -3,7 +3,32 @@ import { connect } from 'react-redux';
 import { getCharacters } from "../Actions/actions"
 import { useDispatch } from "react-redux";
 import Character from './HpCard'
+import styled from 'styled-components';
 
+// const Card = styled.div`
+//     color: black;
+//     width: 400px;
+//     max-height: auto;
+//     margin-left: auto;
+//     margin-right: auto;
+// `;
+
+// const Explanation = styled.p`
+//     font-size: 20px;
+//     color: #26354B;
+//     display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+// `;
+
+const Title = styled.h2`
+    font-size: 42px;
+    background: -webkit-linear-gradient(left, #9C1203, #E3A000, #033807, #00165E, #2D004D  );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:black;
+`;
 
 const Characters = props =>{
 
@@ -16,8 +41,13 @@ const Characters = props =>{
 
         return (
             <div>
-                <h1 className="heading_name">Harry Potter Characters</h1>
-                <Character character={props.character} />
+                <Title>
+                    <h2 className="heading_name">Harry Potter Characters</h2>
+                </Title>
+                <div>
+                    <Character className="character" character={props.character} /> 
+                </div>
+
                 <button className="fetch_button" onClick={ fetchCharacters }>Fetch some characters</button>
             </div>
         )
