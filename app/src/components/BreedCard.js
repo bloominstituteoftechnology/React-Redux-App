@@ -11,7 +11,13 @@ const BreedCard = (props) => {
   return (
     <Col xs="12" md="6" xl="4">
       <Card
-        style={{ margin: "0.5rem", height: "45rem", background: "#F4F4F4" }}
+        style={{
+          margin: "0.5rem",
+          height: "auto",
+          // height: "38rem",
+          // overflowY: "scroll",
+          background: "#F4F4F4",
+        }}
       >
         <CardImg
           top
