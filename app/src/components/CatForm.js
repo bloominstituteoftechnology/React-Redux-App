@@ -3,39 +3,25 @@ import { connect } from "react-redux";
 import CatsList from "./CatsList";
 import Carousel from "./Carousel";
 import { getData, getImage } from "../actions";
+import { Container, Row, Col } from "reactstrap";
 
 import { Spinner } from "reactstrap";
 
 const CatForm = (props) => {
-  // const handleGetImg = () => {
-  //   props.breeds.map((breed) => props.getImage(breed.id));
-  // };
-
   const handleGetData = (e) => {
     e.preventDefault();
     props.getData();
-    // setTimeout(() => {
-    //   console.log("CatForm breeds", props.breeds);
-    // }, 3000);
-    //handleGetImg();
-    // props.breeds.map((breed) => props.getImage(breed.id));
   };
 
   return (
     <div style={{ marginTop: "2rem" }}>
-      <div
-        style={{
-          marginTop: "3rem",
-          width: "650px",
-          height: "490px",
-          display: "flex",
-          alignItems: "center",
-
-          margin: "0 auto",
-        }}
-      >
-        <Carousel />
-      </div>
+      <Container>
+        <Row>
+          <Col xs="12" md="10" xl="8" style={{ margin: "0 auto" }}>
+            <Carousel />
+          </Col>
+        </Row>
+      </Container>
       {!props.breeds.length && (
         <div
           style={{ margin: "1rem auto", display: "flex", alignItems: "center" }}
