@@ -23,7 +23,7 @@ import styled from 'styled-components';
 
 const Title = styled.h2`
     font-size: 42px;
-    background: -webkit-linear-gradient(left, #9C1203, #E3A000, #033807, #00165E, #2D004D  );
+    background: -webkit-linear-gradient(left, #0E1A40, #222F5B, #5D5D5D, #946B2D, #000000  );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
