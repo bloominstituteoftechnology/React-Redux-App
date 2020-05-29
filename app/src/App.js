@@ -10,20 +10,22 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import { createStyles, fade, makeStyles } from "@material-ui/core/styles";
-import MenuIcon from "@material-ui/icons/Menu";
+
 import SearchIcon from "@material-ui/icons/Search";
 
 //import { catsReducer as reducer } from "./reducers/catsReducer";
 
 import CatForm from "./components/CatForm";
-import CatsList from "./components/CatsList";
+
 import Cat from "./components/Cat";
 
 //const store = createStore(reducer, applyMiddleware(thunk));
 
 const App = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
+
   const classes = useStyles();
+
   const handleFormChange = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -39,7 +41,10 @@ const App = (props) => {
               aria-label="open drawer"
             >
               <Link to={"/"}>
-                <img src="https://img.icons8.com/ultraviolet/40/000000/cat.png" />
+                <img
+                  src="https://img.icons8.com/ultraviolet/40/000000/cat.png"
+                  alt="cat"
+                />
               </Link>
             </IconButton>
 
@@ -62,12 +67,16 @@ const App = (props) => {
             </Typography>
 
             <Link style={{ color: "white" }} to={"/"}>
-              <img src="https://img.icons8.com/ultraviolet/40/000000/cat-footprint.png" />
+              <img
+                src="https://img.icons8.com/ultraviolet/40/000000/cat-footprint.png"
+                alt="cat footprint"
+              />
             </Link>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
+
               <InputBase
                 onChange={handleFormChange}
                 style={{ marginLeft: "2rem" }}
@@ -85,7 +94,7 @@ const App = (props) => {
 
       <Switch>
         <Route path="/cat/:catID">
-          <Cat breeds={props.breeds} isFetchingData={props.isFetchingData} />
+          <Cat />
         </Route>
         <Route path="/">
           <CatForm searchTerm={searchTerm} />

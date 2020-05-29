@@ -22,7 +22,7 @@ export const catsReducer = (state = initialState, action) => {
         breeds: [],
       };
     case UPDATE_CATS:
-      console.log("cats i am here");
+      //console.log("cats i am here");
       return {
         ...state,
         breeds: action.payload,
@@ -42,14 +42,14 @@ export const catsReducer = (state = initialState, action) => {
         isFetchingData: true,
       };
     case UPDATE_IMG:
-      console.log("i am here UPDATE_IMG");
+      // console.log("i am here UPDATE_IMG");
       return {
         ...state,
         breeds: state.breeds.map((breed, index) => {
-          console.log("breed", breed, "index", index);
+          //  console.log("breed", breed, "index", index);
 
           if (breed.id === action.payload[0]) {
-            console.log("breed*****", breed);
+            // console.log("breed*****", breed);
             return {
               ...breed,
               image: action.payload[1],

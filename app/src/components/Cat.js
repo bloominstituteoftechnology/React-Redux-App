@@ -1,38 +1,25 @@
 import React, { useEffect } from "react";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+
 import { useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
 import { getImage } from "../actions";
 import { Spinner } from "reactstrap";
 import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      "& > *": {
-        margin: theme.spacing(1),
-      },
-    },
-  })
-);
 const Cat = (props) => {
-  const classes = useStyles();
-  console.log("Cat props", props);
-  // const { catId } = useParams();
-
   const match = useRouteMatch();
 
-  // console.log("catItem", catItem);
   const handleGetImg = (e) => {
     e.preventDefault();
-    // props.getImage(props.breed.id);
+
     props.getImage(match.params.catID);
   };
+
   useEffect(() => {
     props.getImage(match.params.catID);
   }, []);
   const catItem = props.breeds.find((breed) => breed.id === match.params.catID);
-  console.log("catItem", catItem);
+
   return (
     <div className="cat-container">
       {props.isFetchingData ? (
@@ -41,7 +28,7 @@ const Cat = (props) => {
         </div>
       ) : (
         <div className="photo">
-          <img src={catItem.image} style={{ width: "600px" }}></img>
+          <img alt="cat" src={catItem.image} style={{ width: "600px" }}></img>
         </div>
       )}
       <div className="desc">
@@ -54,14 +41,17 @@ const Cat = (props) => {
         <p>Hairless level: {catItem.hairless}</p>
         <p>
           Wikipedia:{" "}
-          <a href={catItem.wikipedia_url} target="_blank">
+          <a
+            href={catItem.wikipedia_url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {catItem.wikipedia_url}
           </a>
         </p>
         <Button
-          style={{ with: "60%" }}
+          style={{ with: "60%", marginTop: "2rem" }}
           onClick={handleGetImg}
-          style={{ marginTop: "2rem" }}
           variant="contained"
           color="primary"
         >
@@ -72,5 +62,11 @@ const Cat = (props) => {
   );
 };
 //export default Cat;
+const mapStateToProps = (state) => {
+  return {
+    breeds: state.breeds,
+    isFetchingData: state.isFetchingData,
+  };
+};
 
-export default connect(null, { getImage })(Cat);
+export default connect(mapStateToProps, { getImage })(Cat);

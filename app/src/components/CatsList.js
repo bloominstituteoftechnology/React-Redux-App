@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row } from "reactstrap";
 import { getData } from "../actions";
 import BreedCard from "./BreedCard";
-//import { Link, useHistory } from "react-router-dom";
 
 const CatsList = (props) => {
   return (

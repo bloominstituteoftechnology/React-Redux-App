@@ -2,32 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { Col } from "reactstrap";
 import cat from "../assets/cat.png";
-//import { getImage } from "../actions";
-//import { Link } from "react-router-dom";
-//import Cat from "./Cat";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-} from "reactstrap";
-import {
-  //   useParams,
-  //   Route,
-  Link,
-  //   NavLink,
-  //   Switch,
-  //   useRouteMatch,
-} from "react-router-dom";
+
+import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const BreedCard = (props) => {
-  //   const handleGetImg = (e) => {
-  //     e.preventDefault();
-  //     props.getImage(props.breed.id);
-  //   };
   return (
     <Col xs="12" md="6" xl="4">
       <Card
@@ -52,6 +31,7 @@ const BreedCard = (props) => {
             <div style={{ marginTop: "0.8rem" }}>
               Read about me...
               <img
+                alt="cat"
                 src={cat}
                 style={{ width: "2rem", marginLeft: "1rem" }}
               />{" "}

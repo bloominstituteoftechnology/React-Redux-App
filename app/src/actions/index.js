@@ -36,7 +36,7 @@ export const getImage = (imageId) => (dispatch) => {
   axios
     .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${imageId}`)
     .then((res) => {
-      console.log("getImage res", res.data[0].breeds[0].id, res.data[0].url);
+      //console.log("getImage res", res.data[0].breeds[0].id, res.data[0].url);
       const dataArr = [res.data[0].breeds[0].id, res.data[0].url];
       dispatch({
         type: UPDATE_IMG,
@@ -44,7 +44,7 @@ export const getImage = (imageId) => (dispatch) => {
       });
     })
     .catch((err) => {
-      console.error("error fetching data from getImage api. err: ", err);
+      // console.error("error fetching data from getImage api. err: ", err);
       dispatch({
         type: SET_IMG_ERROR,
         payload: "error fetching data from getImage api",

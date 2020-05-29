@@ -1,22 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import CatsList from "./CatsList";
 import Carousel from "./Carousel";
 import { getData } from "../actions";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
+
 import { Spinner } from "reactstrap";
-import cat1 from "../assets/cat1.jpg";
 
 const CatForm = (props) => {
-  const classes = useStyles();
   const handleGetData = (e) => {
     e.preventDefault();
     props.getData();
   };
-  //   useEffect(() => {
-  //     props.getData();
-  //   }, []);
 
   return (
     <div style={{ marginTop: "2rem" }}>
@@ -56,6 +50,7 @@ const CatForm = (props) => {
             >
               {`Get Breeds `}
               <img
+                alt="cat footprint"
                 style={{ marginLeft: "1rem", fontSize: "3rem" }}
                 src="https://img.icons8.com/ultraviolet/40/000000/cat-footprint.png"
               />
@@ -76,16 +71,3 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, { getData })(CatForm);
-
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      "& > *": {
-        margin: theme.spacing(1),
-      },
-    },
-  })
-);
-
-// width: "600px",
-//           height: "400px",
