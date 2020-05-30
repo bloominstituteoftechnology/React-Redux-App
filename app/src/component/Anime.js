@@ -2,10 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 const Anime = ({anime, isLoading, error}) => {
+  
     return (
         <div>
             {isLoading && <p>Loading...</p>}
-            {anime && anime.map((a, i) => <p key={i}>{a.anime}</p>)}
+            {anime && anime.map((a, i) => <p key={i}>{a.title}</p>)}
             {error && <p>Uh oh, error</p>}
         </div>
     )
