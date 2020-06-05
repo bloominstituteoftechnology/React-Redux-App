@@ -33,8 +33,8 @@ const CovidTracker = () => {
                 <CountriesList />
                 <main className={classes.content}>
                     <Scrollbars style={{overflowX:'hidden'}}>
-                        <MapChart />
                         <CountryDetails />
+                        <MapChart />
                         <News />
                     </Scrollbars>
                 </main>
