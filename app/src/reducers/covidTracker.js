@@ -32,13 +32,13 @@ export default (state=initialState, action) => {
                 loading: false,
                 error: '',
                 data: payload.data,
-                news: payload.news
+                news: payload?.news
             };
         case UPDATE_COUNTRY:
             return {
                 ...state,
                 countryData: payload.countryData,
-                news: payload.news,
+                news: payload?.news,
                 mobileOpen: false
             };
         case TOGGLE_MOBILE:
