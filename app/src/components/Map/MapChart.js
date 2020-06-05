@@ -89,10 +89,7 @@ const Map = ({ data, setToolTipContent }) => {
 
 const useStyles = makeStyles(theme => ({
   map: {
-    border: 'solid 1px',
-    borderColor: theme.palette.secondary.light,
-    boxShadow: '0px 1px 5px 0px rgba(0,0,0,0.12)',
-    borderRadius: '10px',
+    backgroundColor: '#fff',
     margin: theme.spacing(2),
     overflow: 'hidden'
   }

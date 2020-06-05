@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "d3-scale": "^3.2.1",
+    "dotenv": "^8.2.0",
     "material-table": "^1.57.2",
     "react": "^16.13.0",
     "react-custom-scrollbars": "^4.2.1",

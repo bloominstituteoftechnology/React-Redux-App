@@ -42,7 +42,7 @@ const CountryDetails = () => {
                 <Typography variant='h5' component='h2'>Covid Tracker</Typography>
                 <Divider className={titleDivider}  />
                 <Grid container className={detailsContainer} direction='column' alignItems='flex-start' justify='flex-start'>
-                    <Grid container item xs='300'>
+                    <Grid container item>
                         <Grid item xs={8}>
                             <Typography variant='h6'>Total confirmed cases:</Typography>
                         </Grid>
