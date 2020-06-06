@@ -3,29 +3,42 @@ import { connect } from "react-redux";
 
 import { fetchActivity } from "../actions";
 
+const formatter = new Intl.NumberFormat("en-US", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
 const Activity = (props) => {
   console.log(props);
   return (
     <div className="main">
-      <span className="m-btn" onClick={props.fetchActivity}>
+      <span className="btn bouncy" id="button" onClick={props.fetchActivity}>
         Check Current Prices
       </span>
       <div className="m-container">
-        {props.activity.activity.map((mov) => (
-          <section className="cryptoContainer">
-            <ul>
-              <li>
-                <figure>
-                  <h1 className="text">
-                    {mov.name} | {mov.symbol}
-                  </h1>
-                  <img src={mov.iconUrl} className="posterImage" />
-                  <h3 className="textNew">${mov.price}</h3>
-                </figure>
-              </li>
-            </ul>
-          </section>
-        ))}
+        <table id="table">
+          <thead>
+            <tr className="hdr">
+              <td>Name</td>
+              <td colSpan="2">Price</td>
+            </tr>
+          </thead>
+          {props.activity.activity.map((coin) => (
+            <tbody key={coin.id}>
+              <tr>
+                <td>
+                  <img src={coin.iconUrl} className="posterImage" />
+                  <div className="text">
+                    {coin.name} | {coin.symbol}
+                  </div>
+                </td>
+                <td>
+                  <div className="price">${formatter.format(coin.price)}</div>
+                </td>
+              </tr>
+            </tbody>
+          ))}
+        </table>
       </div>
     </div>
   );

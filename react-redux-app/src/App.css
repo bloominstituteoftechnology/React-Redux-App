@@ -1,35 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
-
-.App {
-  text-align: center;
+.navbar {
+  width: 100vw;
+  height: 3rem;
+  background: rgb(39, 39, 39);
+  font-family: "Orbitron", sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+.menu {
+  padding-top: 0.7rem;
+  margin: 0 4rem;
+}
+.menu a {
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0 1rem;
+}
+#glowbar {
+  background: linear-gradient(75deg, #cc19cc, #6f20d6);
+  position: relative;
+  top: 1rem;
+  width: 100vw;
+  height: 0.5rem;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.3), 0 2px 3px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12);
+}
+.wrapper {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-.posterImage {
-  max-width: 75px;
-  padding-top: 5%;
-  padding-left: 3%;
-}
-
 .main {
   font-family: "Orbitron", sans-serif;
   display: flex;
@@ -37,114 +37,193 @@
   align-items: center;
 }
 
+.btn {
+  text-transform: uppercase;
+  word-spacing: 2.5px;
+  position: relative;
+  cursor: pointer;
+  padding: 1rem;
+  background: linear-gradient(to right, #cc19cc, #6f20d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 2px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #cc19cc, #6f20d6);
+  text-decoration: none;
+  font-weight: bold;
+  margin: 2rem auto;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  -webkit-background-clip: none;
+  background-clip: none;
+  -webkit-text-fill-color: unset;
+  background: none;
+  color: white;
+}
+.btn {
+  position: relative;
+  transition: all 0.2s;
+}
+.btn:before {
+  background: linear-gradient(to right, #cc19cc, #6f20d6);
+  display: inline-flex;
+  content: "";
+  width: 270px !important;
+  height: 55px !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: all 0.1s ease-in-out;
+}
+.btn:hover:before {
+  opacity: 1;
+}
+
 .m-title {
+  background: linear-gradient(to right, #cc19cc, #6f20d6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  word-spacing: 10px;
   font-family: "Orbitron", sans-serif;
-  margin-top: 2.5rem;
-  width: 100%;
+  width: 40%;
   text-align: center;
-  margin-left: 2.5rem;
+  margin: 4rem auto 0 auto;
 }
 
 .m-container {
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
 }
 
-@keyframes bouncy {
+#loading {
+  opacity: 0;
+  position: absolute;
+  top: 45vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
+  animation: loading 1.5s cubic-bezier(0.8, 0.5, 0.2, 1.4) infinite;
+  transform-origin: bottom center;
+  position: relative;
+  margin: 3px;
+}
+.loading-text {
+  font-size: 1.3rem;
+  width: 15rem;
+  position: absolute;
+  top: 10vh;
+  left: 1.4vw;
+  color: white;
+  font-weight: bold;
+}
+
+@-webkit-keyframes loading {
   0% {
-    top: 0em;
-  }
-  40% {
-    top: 0em;
-  }
-  43% {
-    top: -0.9em;
-  }
-  46% {
-    top: 0em;
-  }
-  48% {
-    top: -0.4em;
+    transform: translateY(0px);
+    background-color: rgba(49, 49, 49, 0);
   }
   50% {
-    top: 0em;
+    transform: translateY(50px);
+    background-color: white;
   }
   100% {
-    top: 0em;
+    transform: translateY(0px);
+    background-color: rgba(49, 49, 49, 0);
   }
 }
-
-.m-btn {
-  margin-left: 2.5rem;
-  animation: bouncy 2s infinite linear;
-  padding: 1rem;
-  border: 0.1em solid #ffffff;
-  border-radius: 0.12em;
-  text-decoration: none;
-  font-weight: 500;
-  color: #ffffff;
-  transition: transform 0.3s ease-in-out;
+@keyframes loading {
+  0% {
+    transform: translateY(0px);
+    background-color: rgba(49, 49, 49, 0);
+  }
+  50% {
+    transform: translateY(50px);
+    background-color: white;
+  }
+  100% {
+    transform: translateY(0px);
+    background-color: rgba(49, 49, 49, 0);
+  }
 }
-.m-btn:hover {
-  transform: scale(1.07);
-  color: #000000;
-  background-color: #ffffff;
+.circle-1 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.circle-2 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.circle-3 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.circle-4 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.circle-5 {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.circle-6 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.circle-7 {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+.circle-8 {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
-.cryptoContainer ul {
-  transition: 0.2s ease-in-out;
+table {
+  opacity: 0;
+  width: 60vw;
+  background: rgb(37, 37, 37);
 }
 
-.cryptoContainer:hover ul {
-  filter: saturate(10);
-  opacity: 1;
-  transform: scale(1.04);
+.hdr {
+  text-align: center;
 }
 
-.cryptoContainer ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 600px));
-}
-
-.cryptoContainer ul li {
-  border-radius: 0.5rem;
-  list-style-type: none;
-}
-
-.cryptoContainer ul li figure {
-  overflow: hidden;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+td {
+  width: auto;
+  height: 40px;
   position: relative;
-  padding-bottom: 8%;
-  box-shadow: 0 0 5px white;
 }
 
-.text {
-  color: white;
-  font-size: 20px;
+img {
   position: absolute;
-  top: 35%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+  top: 6px;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0 5px 0 0;
+  -webkit-filter: saturate(0%) url(#gradient);
+  filter: saturate(0%) url(#gradient);
 }
-.textNew {
+.text {
+  margin-left: 50px;
   color: white;
   font-size: 20px;
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+}
+.price {
+  text-align: right;
+  color: white;
+  font-size: 20px;
+  margin-right: 0.5rem;
 }

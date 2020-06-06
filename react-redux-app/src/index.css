@@ -5,14 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(
-    90deg,
-    rgba(248, 0, 255, 1) 0%,
-    rgba(16, 101, 255, 1) 100%
-  );
+  background: rgb(49, 49, 49);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+html {
+  overflow-x: hidden;
 }

@@ -5,11 +5,21 @@ export const fetchActivity = () => (dispatch) => {
   axios
     .get("https://api.coinranking.com/v1/public/coins")
     .then((res) => {
-      console.log(res.data.data.coins);
-      dispatch({
-        type: FETCHING_DATA_SUCCESS,
-        payload: res.data.data.coins,
-      });
+      document.getElementById("loading").className =
+        "animate__animated animate__fadeIn";
+      setTimeout(() => {
+        document.getElementById("loading").className =
+          "animate__animated animate__fadeOut";
+        setTimeout(() => {
+          document.getElementById("table").className =
+            "animate__animated animate__fadeIn";
+          console.log(res.data.data.coins);
+          dispatch({
+            type: FETCHING_DATA_SUCCESS,
+            payload: res.data.data.coins,
+          });
+        }, 200);
+      }, 3000);
     })
     .catch((err) => console.log(err));
 };
