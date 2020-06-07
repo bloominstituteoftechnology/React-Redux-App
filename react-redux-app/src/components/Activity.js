@@ -12,6 +12,7 @@ const Activity = (props) => {
   console.log(props);
   return (
     <div className="main">
+      <h1 className="m-title">Crypto Currency Price Tracker</h1>
       <span className="btn bouncy" id="button" onClick={props.fetchActivity}>
         Check Current Prices
       </span>
@@ -27,7 +28,11 @@ const Activity = (props) => {
             <tbody key={coin.id}>
               <tr>
                 <td>
-                  <img src={coin.iconUrl} className="posterImage" />
+                  <img
+                    alt="coin thumbnail"
+                    src={coin.iconUrl}
+                    className="posterImage"
+                  />
                   <div className="text">
                     {coin.name} | {coin.symbol}
                   </div>
