@@ -1,12 +1,12 @@
 import React from "react";
-
+import "./styles.css";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-import CatForm from "./components/CatForm";
-import CatList from "./components/CatList";
-import { catReducer as reducer } from "./reducers/CatReducer";
+import MissionForm from "./components/MissionForm";
+import MissionsList from "./components/MissionsList";
+import { missionsReducer as reducer } from "./reducers/missionsReducer";
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
@@ -16,9 +16,9 @@ export default function App() {
       {/* //any component within this Provider will have access to the Redux store */}
 
       <div className='App'>
-        <h1>Genrenator</h1>
-        <CatForm />
-        <CatList />
+        <h1>Space Missions</h1>
+        <MissionForm />
+        <MissionsList />
       </div>
     </Provider>
   );
