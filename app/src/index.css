@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #010;
+  background-color: #004;
 }
 
 code {
@@ -52,4 +52,32 @@ button {
   border-radius: 8px;
   background-color: crimson;
   color: white;
+  margin-bottom: 60px;
+}
+
+.list {
+  width: 200px;
+  height: 90px;
+  border: 2px solid lightgrey;
+  border-radius: 8px;
+  background-color: linen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-items: center;
+  margin-left: 42%;
+  margin-bottom: 3%;
+}
+
+span {
+  font-weight: bold;
+}
+
+item1 {
+  font-weight: 500;
+}
+.item2 {
+  color: crimson;
 }

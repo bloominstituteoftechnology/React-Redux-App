@@ -27,5 +27,25 @@ export const getData = () => (dispatch) => {
       .catch((error) => {
         dispatch({ type: DATA_ERROR, payload: error });
       });
-  }, 1500);
+  }, 500);
 };
+
+// export const SEARCH_IMAGES = "SEARCH_IMAGES";
+
+// const API_TOKEN = "16954247-b3d29ac9ac8ba57afa0aacc2e";
+
+// export const getData = (queryAttributes) => (dispatch) => {
+//   dispatch({ type: DATA_GET });
+
+//   axios
+//     .get(
+//       `https://pixabay.com/api/?key=${API_TOKEN}&q=${queryAttributes
+//         .split(" ")
+//         .join("+")}&image_type=photo&pretty=true&per_page=15`
+//     )
+
+//     .then((response) =>
+//       dispatch({ type: SEARCH_IMAGES, payload: response.data.hits })
+//     )
+//     .catch((error) => console.error(error));
+// };
