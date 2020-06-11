@@ -1,25 +1,23 @@
 import React from "react";
-import "./styles.css";
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
 
-import MissionForm from "./components/MissionForm";
-import MissionsList from "./components/MissionsList";
-import { missionsReducer as reducer } from "./reducers/missionsReducer";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import { reducer } from "./reducers/countryReducer";
+import "./App.css";
+import Country from "./components/Country";
 
 const store = createStore(reducer, applyMiddleware(thunk));
-
-export default function App() {
+// console.log(store.state);
+function App() {
   return (
     <Provider store={store}>
-      {/* //any component within this Provider will have access to the Redux store */}
-
+      {/* anything inside provide will have access to store */}
       <div className='App'>
-        <h1>Space Missions</h1>
-        <MissionForm />
-        <MissionsList />
+        <Country />
       </div>
     </Provider>
   );
 }
+
+export default App;
