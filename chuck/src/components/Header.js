@@ -79,6 +79,7 @@ export default function Header() {
   const handleSearch = e => {
     e.preventDefault();
     getSearchResults(search);
+    setSearch('');
   };
 
   return (
@@ -86,7 +87,7 @@ export default function Header() {
       <AppBar position='static'>
         <Toolbar className={classes.toolbar}>
           <Typography className={classes.title} variant='h5' noWrap>
-            Chuck Norris
+            Chucks
           </Typography>
           <form onSubmit={handleSearch}>
             <div className={classes.search}>
@@ -96,6 +97,7 @@ export default function Header() {
                 </IconButton>
               </div>
               <InputBase
+                value={search}
                 className={classes.input}
                 inputProps={{
                   'aria-label': 'search',
