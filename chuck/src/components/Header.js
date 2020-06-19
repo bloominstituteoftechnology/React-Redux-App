@@ -6,6 +6,8 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import IconButton from '@material-ui/core/IconButton';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../actions';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,6 +27,7 @@ const useStyles = makeStyles(theme => ({
     alignSelf: 'flex-end',
   },
   search: {
+    marginTop: '3em',
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -66,6 +69,8 @@ const useStyles = makeStyles(theme => ({
 export default function Header() {
   const classes = useStyles();
   const [search, setSearch] = useState();
+  const dispatch = useDispatch();
+  const getSearchResults = search => dispatch(actions.getSearchResults(search));
 
   const onChange = e => {
     setSearch(e.target.value);
@@ -73,7 +78,7 @@ export default function Header() {
 
   const handleSearch = e => {
     e.preventDefault();
-    console.log(search);
+    getSearchResults(search);
   };
 
   return (
@@ -81,15 +86,12 @@ export default function Header() {
       <AppBar position='static'>
         <Toolbar className={classes.toolbar}>
           <Typography className={classes.title} variant='h5' noWrap>
-            Chuck Norris Jokes
+            Chuck Norris
           </Typography>
           <form onSubmit={handleSearch}>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
-                <IconButton
-                  className={classes.iconButton}
-                  aria-label='search'
-                  >
+                <IconButton className={classes.iconButton} aria-label='search'>
                   <SearchIcon />
                 </IconButton>
               </div>
@@ -100,7 +102,7 @@ export default function Header() {
                   className: classes.inputField,
                 }}
                 onChange={onChange}
-                placeholder='Search…'
+                placeholder='Search Chucks…'
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,

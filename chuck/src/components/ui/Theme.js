@@ -42,13 +42,17 @@ export default createMuiTheme({
       textAlign: 'center',
     },
     h2: {
-      fontSize: '5.6rem',
+      fontSize: '4rem',
       lineHeight: 1.4,
       textAlign: 'center',
     },
 
     h3: {},
-    h4: {},
+    h4: {
+        fontSize: '2rem',
+        fontStyle: 'italic',
+        color: blue,
+    },
     h5: {
         color: lightBlue,
       fontSize: '4rem',
