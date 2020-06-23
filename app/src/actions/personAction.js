@@ -10,7 +10,10 @@ export const getPerson = () => dispatch => {
   axios
     .get("https://randomuser.me/api/")
     .then(results => {
-      dispatch({ type: FETCHING_PERSON_SUCCESS, payload: results.data.results[0] })
+      dispatch({
+		  type: FETCHING_PERSON_SUCCESS,
+		  payload: results.data.results[0]
+		})
     })
     .catch(error => {
       dispatch({
