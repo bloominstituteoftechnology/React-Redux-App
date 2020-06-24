@@ -20,5 +20,7 @@ export const jokesReducer = (state = initialState, action) => {
                 joke: action.payload,
                 fetching: false
             };
+        default:
+            return state;
     }
 }
