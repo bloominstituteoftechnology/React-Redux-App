@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
 
-
-export default combineReducers({
-  replaceMe: () => 'dummy reducer'
-});
+export const dataReducer =(state=[], action) => {
+  switch (action.type) {
+    case 'FETCHING_DATA_SUCCESS':
+      return action.payload;
+      default:
+        return state;
+  }
+};

@@ -1,18 +1,43 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { getXkcd } from '../actions';
+import { getData } from '../actions';
 
 class DataList extends React.Component {
 
 componentDidMount () {
-  this.props.getXkcd();
+  this.props.getData();
+}
+
+renderSayings() {
+  return this.props.sayings.map(saying => {
+    return(
+      <div className='item' key={saying.id}>
+        <i className='large middle aligned icon user' />
+        <div className='content'>
+          <div className='description'>
+            <h3>{saying.en}</h3>
+            <p>{saying.author}</p>
+          </div>
+        </div>
+
+      </div>
+    )
+  })
 }
 
   render() {
+    console.log('props', this.props);
+    
     return (
-    <div>Data List</div>
+    <div className='ui relaxed divided list'>{this.renderSayings()}</div>
     )
   }
 };
 
-export default connect(null, { getXkcd })(DataList);
+const mapStateToProps = (state) => {
+  console.log('state', state);
+  return { sayings: state}
+  
+}
+
+export default connect(mapStateToProps, { getData })(DataList);
