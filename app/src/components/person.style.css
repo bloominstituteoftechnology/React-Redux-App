@@ -1,0 +1,63 @@
+.person-box {
+    background: linear-gradient(90deg, rgba(2, 0, 36, 0.9) 0%, rgba(121, 9, 75, 1) 100%, rgba(0, 212, 255, 1) 100%);
+    border: 3px solid red;
+    border-radius: 10px;
+    width: 450px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    color: rgba(60, 179, 114, 0.781);
+}
+
+.name-header {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.btn {
+    height: 30px;
+    width: 150px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.top-right {
+    flex-direction: column;
+    text-align: left;
+    height: 180px;
+    width: 240px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+.person-image {
+    height: 180px;
+    width: 180px;
+    border: 3px solid darkblue;
+    border-radius: 5px;
+}
+
+.bottom-section {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.address-box {
+    display: flex;
+}
+
+.address-right {
+    flex-direction: column;
+    text-align: left;
+    margin-left: 5px;
+}
+
+.no-person {
+    color: red;
+}
