@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+
 
 export const dataReducer =(state=[], action) => {
   switch (action.type) {
