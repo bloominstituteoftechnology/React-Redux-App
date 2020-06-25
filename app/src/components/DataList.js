@@ -12,7 +12,7 @@ renderSayings() {
   return this.props.sayings.map(saying => {
     return(
       <div className='item' key={saying.id}>
-        <i className='large middle aligned icon user' />
+        <i className='large middle aligned icon keyboard' />
         <div className='content'>
           <div className='description'>
             <h3>{saying.en}</h3>
