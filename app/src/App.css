@@ -1,0 +1,34 @@
+.app {
+    font-family: sans-serif;
+}
+
+.joke {
+    font-size: 2rem;
+    width: 60vw;
+    text-align: center;
+}
+
+.joke-container {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ececec;
+    border-radius: 8px;
+}
+
+.button:hover {
+    background-color: #d6d6d6;
+}
+
+.button:active {
+    background-color: #a1a1a1;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
