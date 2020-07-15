@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import PlayerList from './components/NbaList';
+import TeamList from './components/TeamList';
+
+
 function App() {
   return (
     <div className="App">
-      <h1>testing</h1>
-      <PlayerList /> 
+       <TeamList /> 
     </div>
   );
 }
