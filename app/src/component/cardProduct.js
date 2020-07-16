@@ -27,9 +27,15 @@ const CardProduct = props => {
                 <h3> {items.name} </h3>
                 <p> {items.product_type} </p>
                 <p>$ {items.price} </p>
+                
             </div>
             <div className="item-descrip">
                 <p> {items.description} </p>                
+            </div>
+            <div className="product-color">
+                {items.product_colors.map(color => (
+                  <p key={color.id} className="color"> Color: {color.colour_name} </p>
+                 ))} 
             </div>
         </div>
     )

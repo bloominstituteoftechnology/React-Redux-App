@@ -104,5 +104,13 @@
 .home-img{
   border-radius: 20px 20px;
   border: double 4px  rgb(247, 115, 115);
-  
+
+}
+.product-color{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.color{
+  width: 20%;
 }
