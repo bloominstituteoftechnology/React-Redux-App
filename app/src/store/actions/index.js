@@ -14,7 +14,8 @@ export const fetchTeams = () => {
       .get("https://www.balldontlie.io/api/v1/teams")
       .then(res => {
         // res.data
-        dispatch({ type: FETCH_TEAMS_SUCCESS, payload: res.data });
+        dispatch({ type: FETCH_TEAMS_SUCCESS, payload: res.data.data });
+        console.log('this is the teams data: ', res.data.data)
       })
       .catch(err => {
         dispatch({ type: FETCH_TEAMS_FAILURE, payload: err.message });
