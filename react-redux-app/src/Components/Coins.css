@@ -1,0 +1,15 @@
+.title-container {
+  border: 1px solid #191970;
+}
+.loading-text {
+  color: #191970;
+}
+.error-text {
+  color: #191970;
+}
+.coin-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
