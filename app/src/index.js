@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 
-import { weatherReducer } from './reducers';
+import { weatherReducer } from './reducers/weatherReducer';
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 //Register the store and apply the middleware
-const store = createStore(weatherReducer, applyMiddleware());
+const store = createStore(weatherReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
