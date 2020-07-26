@@ -7,7 +7,12 @@ export const FETCH_WEATHER_START = 'FETCH_WEATHER_START';
 export const fetchWeather = () => dispatch => {
     dispatch({ type: FETCH_WEATHER_START });
     axios
-        .get('https://www.metaweather.com/api/location/2487956/')
+        .get('https://www.metaweather.com/api/location/16505/',
+            {
+                method: 'GET',
+                mode: 'cors',
+                headers: new Headers({ 'Content-Type': 'application/json'})
+            })
         .then(resp => {
             dispatch({ type: FETCH_WEATHER_SUCCESS, payload: resp.data });
         })
