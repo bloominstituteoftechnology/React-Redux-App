@@ -24,6 +24,7 @@ const Weather = (props) => {
                     </section>
                     <section className='weather-conditions'>
                         <p>{props.weather['consolidated_weather'][0].weather_state_name}</p>
+                        <img src={`https://www.metaweather.com/static/img/weather/${props.weather['consolidated_weather'][0].weather_state_abbr}.svg`} />
                         <p className='temp'>
                             {Math.round(props.weather['consolidated_weather'][0].the_temp)}
                         </p>
