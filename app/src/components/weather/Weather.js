@@ -13,6 +13,11 @@ const Weather = (props) => {
 
     return (
         <div className='weather-container'>
+            {props.weather['consolidated_weather'] ? (
+                <pre>{props.weather['consolidated_weather'][0].the_temp}</pre>
+            ) : (
+                <h3>Loading...</h3>
+            )}
             <button
                 onClick={fetchWeather}
             >
