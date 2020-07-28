@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './App.css';
-import Selectbar from './components/Selectbar';
+import Searchbar from './components/Searchbar';
 import { fetchDogPictures } from './components/actions/actionIndex';
 
 
@@ -15,13 +15,15 @@ const App = props => {
   }
   return (
     <div className="App">
-      <Selectbar key={props.dogs} />
+      <Searchbar key={props.dogs} />
       <h1>I LOVE DOGS</h1>
       <button className='App-btn' onClick={props.fetchDogPictures}>Fetch Dog Pictures</button>
-      {props.dogs.map(dog => {
-        return <div key={dog.message}>{dog.message}</div>
-      })
-      }
+      <div className='dogs'>
+        {props.dogs.map(dog => {
+          return <img className='dogs-img' key={dog.key} src={dog} alt='' />
+        }
+        )}
+      </div>
 
     </div>
   );

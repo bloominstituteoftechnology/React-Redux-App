@@ -1,9 +1,8 @@
 .App {
   text-align: center;
-  width: 50%;
   margin: 0 auto;
   background-image: url('./animalFir.png');
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   color: whitesmoke;
   text-shadow: 2px 2px rgb(97, 53, 4);
 }
@@ -12,6 +11,19 @@
   text-align: center;
   color: whitesmoke;
   background-color:  rgb(97, 53, 4);
+}
+
+.dogs{
+  margin: 0 10%;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.dogs-img{
+  width: 20%;
+  height: 50%;
+  border: 2px ridge rgb(97, 53, 4);
 }
 
 .App-logo {
