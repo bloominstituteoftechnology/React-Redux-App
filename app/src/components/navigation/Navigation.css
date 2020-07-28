@@ -1,0 +1,16 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar .logo-container, .navbar .menu-container{
+    width: 50%;
+}
+
+.navbar .menu-container a{
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 1.2rem;
+    display: inline-block;
+}

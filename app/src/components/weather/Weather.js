@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { fetchWeather } from '../../actions/weatherActions';
 
+import * as MUI from '../../materialui/index';
+
 import './Weather.css';
 
 const Weather = (props) => {
@@ -13,16 +15,32 @@ const Weather = (props) => {
 
     return (
         <div className='weather-container'>
-            {props.weather['consolidated_weather'] ? (
-                <pre>{props.weather['consolidated_weather'][0].the_temp}</pre>
+            {!props.weather['consolidated_weather'] ? (
+                <h3>N/A</h3>
             ) : (
-                <h3>Loading...</h3>
+                <>
+                    <section className='location'>
+                        <p>Unknown, PA</p>
+                    </section>
+                    <section className='weather-conditions'>
+                        <p>{props.weather['consolidated_weather'][0].weather_state_name}</p>
+                        <p className='temp'>
+                            {Math.round(props.weather['consolidated_weather'][0].the_temp)}
+                        </p>
+                    </section>
+                </>
             )}
-            <button
-                onClick={fetchWeather}
-            >
-                Fetch Weather
-            </button>
+            {props.isFetching ? (
+                <MUI.CircularProgress />
+            ) : (
+                <MUI.Button
+                    color='primary'
+                    variant='contained'
+                    onClick={fetchWeather}
+                >
+                    Fetch Weather
+                </MUI.Button>
+            )}
         </div>
     );
 };
@@ -30,7 +48,8 @@ const Weather = (props) => {
 const mapStateToProps = state => {
     return {
         weather: state.weather,
-        error: state.error
+        error: state.error,
+        isFetching: state.isFetching
     };
 };
 
