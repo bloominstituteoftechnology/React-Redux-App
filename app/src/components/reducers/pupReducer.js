@@ -15,6 +15,7 @@ export const pupReducer = (state = initialState, action) => {
                 isFetching: true
             };
         case FETCH_DOGS_SUCCESS:
+            console.log('from reducer:FDS', state.dogs)
             return {
                 ...state,
                 isFetching: false,

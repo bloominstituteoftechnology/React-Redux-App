@@ -9,7 +9,7 @@ export const fetchDogPictures = () => dispatch => {
     axios.get('https://dog.ceo/api/breed/terrier/images')
         .then(res => {
             console.log('from actions: FDS success', res)
-            dispatch({ type: FETCH_DOGS_SUCCESS, payload: res.data.message['0_99'] })
+            dispatch({ type: FETCH_DOGS_SUCCESS, payload: res.data.message })
         })
         .catch(err => { console.log('from actions: FDS error', err) })
 }
