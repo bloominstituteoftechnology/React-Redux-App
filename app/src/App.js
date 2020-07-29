@@ -17,8 +17,8 @@ const App = props => {
     <div className="App">
       <Header />
       <div className='dogs'>
-        {props.dogs.map(dog => {
-          return <img className='dogs-img' key={dog.key} src={dog} alt='' />
+        {props.dogs.map((dog, index) => {
+          return <img className='dogs-img' key={index} src={dog} alt='' />
         }
         )}
       </div>

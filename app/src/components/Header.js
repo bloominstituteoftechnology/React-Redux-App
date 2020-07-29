@@ -8,15 +8,8 @@ const Header = props => {
 
     return (
         <div style={{ background: 'rgba(102,68,0,0.7)' }}>
-            <form>
-                <input
-                    type='text'
-                    name='dogs'
-                    placeholder='Search Breeds'
-                />
-                <button className='App-btn'>Search</button>
-            </form>
             <h1>I LOVE DOGS</h1>
+            <h3>(random terriers)</h3>
             <button className='App-btn' onClick={props.fetchDogPictures}>Fetch Dog Pictures</button>
 
         </div>
