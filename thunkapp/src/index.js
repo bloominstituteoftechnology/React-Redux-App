@@ -4,8 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {applyMiddleware, createStore} from 'redux';
-import logger from 'redux-logger'
-import rootReducer from './reducers/rootReducer'
+import logger from 'redux-logger';
+import {rootReducer} from './reducers/rootReducer';
+import thunk from 'redux-thunk';
+import {Provider} from 'react-redux';
+import {connect} from 'react-redux';
 
 const store = createStore(
   rootReducer,
@@ -14,9 +17,9 @@ const store = createStore(
 
 
 ReactDOM.render(
-  <React.StrictMode>
+    <Provider store={store}>
     <App />
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 
