@@ -5,7 +5,8 @@ FETCH_PICS_FAIL} from '../actions';
 
 
 const initialState = {
-    comic:'pics',
+    pics:[
+    ],
     err:'',
     isFetching:false
 }
@@ -14,16 +15,29 @@ export const rootReducer = ( state = initialState, action) => {
     switch(action.type){
 
         case FETCH_PICS_START:
+            console.log('fetchstart')
+
             return{
-                ...state
+                ...state,
+                
+                err:'',
+                isFetching:true
             };
         case FETCH_PICS_SUCCESS:
+            console.log('fetchsuccess')
+                        console.log('payload',action.payload)
             return{
-                ...state
+                ...state,
+                pics:[action.payload]
+,                err:'',
+                isFetching:false
             };
         case FETCH_PICS_FAIL:
+            console.log('fetchfail')
             return{
-                ...state
+                ...state,
+                err:'error',
+                isFetching:false
             }
 
     }
