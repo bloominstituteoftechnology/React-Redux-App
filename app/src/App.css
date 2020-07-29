@@ -6,7 +6,7 @@
   overflow: hidden;
   height: 100%;
   font-family: 'Noto Sans';
-  z-index: -1;
+  z-index: 100;
 }
 
 .App-logo {

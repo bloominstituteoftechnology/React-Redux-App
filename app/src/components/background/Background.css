@@ -2,5 +2,17 @@
     position: absolute;
     overflow: hidden;
     height: 100vh;
-    z-index: -1;
+    z-index: -100;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.color-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(193, 195, 196, 0.4);
+    width: 100%;
+    height: 100vh;
 }
