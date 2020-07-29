@@ -1,0 +1,6 @@
+.background{
+    position: absolute;
+    overflow: hidden;
+    height: 100vh;
+    z-index: -1;
+}
