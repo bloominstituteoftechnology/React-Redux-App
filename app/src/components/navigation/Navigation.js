@@ -9,7 +9,7 @@ const Navigation = (props) => {
                 <h1>LambdaWeather</h1>
             </section>
             <section className='menu-container'>
-                <a href='#'>Home</a>
+                <a href='/about'>About</a>
             </section>
         </div>
     );
