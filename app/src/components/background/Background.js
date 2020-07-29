@@ -1,6 +1,6 @@
 import React from 'react';
 
-import sky from '../../resources/sky.mp4';
+import sunset from '../../resources/sunset.mp4';
 
 import Header from '../header/Header';
 import Weather from '../weather/Weather';
@@ -14,7 +14,7 @@ const Background = props => {
         <div className='background'>
             <div className='color-overlay'></div>
             <video autoPlay loop muted>
-                <source src={sky} type="video/mp4" />
+                <source src={sunset} type="video/mp4" />
             </video>
         </div>
         <Header />
