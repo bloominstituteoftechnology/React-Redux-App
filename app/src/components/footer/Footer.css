@@ -1,0 +1,15 @@
+.site-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100px;
+}
+
+.site-footer p{
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.site-footer a{
+    text-decoration: none;
+}

@@ -1,0 +1,15 @@
+.weather-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.temp{
+    font-size: 1.8rem;
+}
+
+.temp:after{
+    content: "\00B0 F";
+}
