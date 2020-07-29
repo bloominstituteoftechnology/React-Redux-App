@@ -9,6 +9,7 @@ import {rootReducer} from './reducers/rootReducer';
 import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import {connect} from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const store = createStore(
   rootReducer,

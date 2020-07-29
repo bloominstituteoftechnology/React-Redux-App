@@ -3,9 +3,10 @@ import{connect} from 'react-redux'
 import './App.css';
 import {getPics} from './actions'
 import Comics from './Comics'
+import {Button} from 'reactstrap'
 
 const App=(props)=> {
-console.log(props)
+
 // const [search,setSearch] = useState('')
 
 // const handleChange= e =>{
@@ -24,10 +25,10 @@ const submitSearch = (e) => {
   return (
     <>
     <div>
-      <h1>Find a cute dog</h1>
-      <button onClick={submitSearch}>
-        submit
-      </button>
+      <h1>Brighten your day!</h1>
+      <Button color='primary' onClick={submitSearch}>
+        Add smile to face
+      </Button>
     </div>      
       {/* <label >
         <input name='search' onChange={ handleChange}>

@@ -1,12 +1,13 @@
 import React from 'react'
+import {Card, CardImg} from 'reactstrap'
 
 const Comic = props => {
     console.log('comic', props)
     return(
-        <>
-        {/* <h1>{props.pic.name}</h1> */}
-        <img src={props.pic}></img>
-        </>
+        <Card>
+
+        <CardImg width='100%' src={props.pic}></CardImg>
+        </Card>
     )
 }
 
