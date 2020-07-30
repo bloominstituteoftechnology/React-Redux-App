@@ -15,11 +15,9 @@ export const rootReducer = ( state = initialState, action) => {
     switch(action.type){
 
         case FETCH_PICS_START:
-            console.log('fetchstart')
-
+            // console.log('fetchstart')
             return{
                 ...state,
-                
                 err:'',
                 isFetching:true
             };

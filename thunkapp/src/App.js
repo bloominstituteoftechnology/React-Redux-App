@@ -7,16 +7,6 @@ import {Button} from 'reactstrap'
 
 const App=(props)=> {
 
-// const [search,setSearch] = useState('')
-
-// const handleChange= e =>{
-//   return(
-//     setSearch({
-//       [e.target.name]: e.target.value 
-//     })  
-//   )
-// }
-
 const submitSearch = (e) => {
   e.preventDefault()
   props.getPics()
@@ -30,6 +20,7 @@ const submitSearch = (e) => {
         Add smile to face
       </Button>
     </div>      
+  {props.isFetching && <p>loooooooading....</p>}
       {/* <label >
         <input name='search' onChange={ handleChange}>
         </input>
@@ -42,7 +33,8 @@ const submitSearch = (e) => {
 
 const mapStateToProps = state => ({
   pics: state.pics,
-  err: state.err
+  err: state.err,
+  isFetching: state.isFetching 
 })
 
 export default connect(

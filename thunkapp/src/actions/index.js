@@ -13,6 +13,7 @@ export const getPics = () => dispatch => {
             dispatch({ type: FETCH_PICS_SUCCESS, payload:resp.data.message})
         })
         .catch(err => {
+            console.log('error in fail',err)
             dispatch({ type: FETCH_PICS_FAIL, payload:err})
         })
 } 

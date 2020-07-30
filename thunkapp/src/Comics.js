@@ -7,12 +7,15 @@ import {Col} from 'reactstrap'
 const Comics = (props) => {
     console.log('comics' ,props)
     return(
-        <Col sm='5'>
-        {props.pics.map(pic=>
-        <Comic key={pic} pic={pic}/>    
-        )}
-        
-        </Col>
+        <>
+            <h2 style={{color:'red'}}>{props.err}</h2>
+            <Col sm='5'>
+                {props.pics.map(pic=>
+                <Comic key={pic} pic={pic}/>    
+                )}
+            
+            </Col>
+        </>
     )
 }
 const mapStateToProps = state => ({
