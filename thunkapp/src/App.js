@@ -6,30 +6,32 @@ import Comics from './Comics'
 import {Button} from 'reactstrap'
 
 const App=(props)=> {
+  const submitSearch = (e) => {
+    e.preventDefault()
+    props.getPics()
 
-const submitSearch = (e) => {
-  e.preventDefault()
-  props.getPics()
+  }
+    return (
+      <>
+        <div style={{paddingLeft:'20%', paddingTop:'10%'}}>
+          <div>
+          <h1 style={{}}>Brighten your day!</h1>
+          <Button style={{marginLeft:'13%'}} color='primary' onClick={submitSearch}>
+            Add smile to face
+          </Button>
+          </div>
+              
+        {props.isFetching && <p>loooooooading....</p>}
+          {/* <label >
+            <input name='search' onChange={ handleChange}>
+            </input>
+          </label> */}
 
-}
-  return (
-    <>
-    <div>
-      <h1>Brighten your day!</h1>
-      <Button color='primary' onClick={submitSearch}>
-        Add smile to face
-      </Button>
-    </div>      
-  {props.isFetching && <p>loooooooading....</p>}
-      {/* <label >
-        <input name='search' onChange={ handleChange}>
-        </input>
-      </label> */}
-
-      <Comics/>
-    </>
-  );
-}
+        <Comics/>
+       </div> 
+      </>
+    );
+  }
 
 const mapStateToProps = state => ({
   pics: state.pics,
