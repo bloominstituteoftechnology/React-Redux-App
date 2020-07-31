@@ -22,6 +22,14 @@ export const pupReducer = (state = initialState, action) => {
                 dogs: action.payload,
                 error: ''
             }
+        case FETCH_DOGS_ERROR:
+            console.log('from reducer:FDE', state.dogs)
+            return {
+                ...state,
+                isFetching: false,
+                error: console.log("Who didn't let the dogs out? Doggie data not Found")
+
+            }
         default:
             return state;
     }

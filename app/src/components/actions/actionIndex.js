@@ -11,5 +11,8 @@ export const fetchDogPictures = () => dispatch => {
             console.log('from actions: FDS success', res)
             dispatch({ type: FETCH_DOGS_SUCCESS, payload: res.data.message })
         })
-        .catch(err => { console.log('from actions: FDS error', err) })
+        .catch(err => {
+            console.log('from actions: FDS error', err)
+            dispatch({ type: FETCH_DOGS_ERROR, payload: err })
+        })
 }
