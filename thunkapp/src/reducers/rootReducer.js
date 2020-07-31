@@ -16,6 +16,7 @@ export const rootReducer = ( state = initialState, action) => {
 
         case FETCH_PICS_START:
             // console.log('fetchstart')
+            //clear pic on loading possibility, in reality i wouldnt have a loading symbol
             return{
                 ...state,
                 err:'',
