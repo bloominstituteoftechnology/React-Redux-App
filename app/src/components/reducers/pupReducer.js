@@ -27,7 +27,7 @@ export const pupReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: console.log("Who didn't let the dogs out? Doggie data not Found")
+                error: action.payload
 
             }
         default:
