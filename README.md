@@ -18,7 +18,7 @@ Commit your code regularly and meaningfully. This helps both you and your team l
 
 In this project you'll choose an api to consume. You will build an application from scratch that uses your chosen API and displays the data you are getting from it.
 
-## Instruction
+## Instructions
 
 ### Task 1: Project Set Up
 
