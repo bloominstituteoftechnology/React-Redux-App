@@ -19,7 +19,7 @@ const TriviaHolder = (props) => {
             {isLoading ? <h3>Your questions are loading...</h3> : null}
             {error ? <h3>Oh no, you don't get any questions <span>😞</span></h3> : null}
             {results.length > 0 ? (<div>{results.map((result) => 
-                (<TriviaCard />))}</div>) : null}
+                (<TriviaCard question={result.question}/>))}</div>) : null}
         </div>
     );
 };
