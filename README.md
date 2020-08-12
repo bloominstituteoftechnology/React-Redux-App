@@ -2,7 +2,11 @@
 
 This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored asyncronous action creators in Redux. In your project you will demonstrate proficiency of these subjects and principles by building an app from scratch that consumes and API of your choosing, and displays data fetched from that API.
 
-## Instructions
+## Introduction
+
+This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://github.com/public-apis/public-apis) has a lot of great ones - look for ones with `Auth: no` and `HTTPS: yes` - or just do a google search for `open apis`). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
+
+Once you have chosen an API to consume, build an app that makes sense for the data you will be retrieving. Have fun with this. You get to be the creative mind. You get to make all the decisions here. I'm excited to see what you build!
 
 **Read these instructions carefully. Understand exactly what is expected _before_ starting this project.**
 
@@ -14,7 +18,9 @@ Commit your code regularly and meaningfully. This helps both you and your team l
 
 In this project you'll choose an api to consume. You will build an application from scratch that uses your chosen API and displays the data you are getting from it.
 
-## Project Set Up
+## Instruction
+
+### Task 1: Project Set Up
 
 - [ ] Create a forked copy of this project.
 - [ ] Add your team lead as collaborator on Github.
@@ -27,14 +33,7 @@ In this project you'll choose an api to consume. You will build an application f
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
-Follow these steps for completing your project.
-
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your team lead as a reviewer on the pull-request
-- [ ] Your team lead will count the project as complete by merging the branch back into master.
-- [ ] Do your magic!
-
-## Minimum Viable Product
+### Task 2a: Minimum Viable Product
 
 - [ ] Build a React Redux app
 - [ ] Fetch data inside an async action creator from an API of your choosing
@@ -42,12 +41,16 @@ Follow these steps for completing your project.
 - [ ] Display the data from the store in a component
 - [ ] _Some_ styling must be applied. It can be basic, but the app must not only use browser default stylings
 
-## Directions
+### Task 2b: Exit Ticket 
 
-This is the chance to let your skills shine! You have learned _sooo_ much the last month, and now you get to put all of your hard-earned skills to work. Choose an open api ([this list](https://github.com/public-apis/public-apis) has a lot of great ones - look for ones with `Auth: no` and `HTTPS: yes` - or just do a google search for `open apis`). Protip - don't take too long choosing an API. Pick one that looks interesting, and get building.
+Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/LsYPZfuJtZMmcYg9a/fs3PghBeYnx3L8).
 
-Once you have chosen an API to consume, build an app that makes sense for the data you will be retrieving. Have fun with this. You get to be the creative mind. You get to make all the decisions here. I'm excited to see what you build!
+The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
 
-## Stretch Problems
+### Task 3: Stretch Problems
 
 Take the app as far as you can go! Styling, redux hooks, another API, an input to fetch data dynamically, etc. Work on it, improve it until the end of the day. If you find yourself finishing with time left to spare, jump on with your TL or fellow student to ask them what feature they think you should build next. Good luck!
+
+## Submission Format
+* [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+* [ ] Fill out your module retrospective form [here](https://forms.lambdaschool.com/module-retrospective) with a link to your PR
