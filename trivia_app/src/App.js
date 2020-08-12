@@ -1,13 +1,13 @@
 import React from 'react';
 
 import './App.css';
-import TriviaCard from './components/TriviaCard'; 
+import TriviaHolder from './components/TriviaHolder'; 
 
 function App() {
   return (
     <div className="App">
         <h1>Trivi-O-Matic</h1>
-        <TriviaCard /> 
+        <TriviaHolder /> 
     </div>
   );
 }

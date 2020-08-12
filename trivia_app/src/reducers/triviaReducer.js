@@ -1,4 +1,4 @@
-import { FETCH_TRIVIA_START } from '../actions/triviaActions'
+import { FETCH_TRIVIA_START, FETCH_TRIVIA_SUCCESS } from '../actions/triviaActions'
 
 const initialState = {
     results: [],
@@ -13,6 +13,12 @@ export const triviaReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: true,
                 error: ""
+            }
+        case FETCH_TRIVIA_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                results: action.payload
             }
         default: 
             return state; 
