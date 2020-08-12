@@ -1,12 +1,7 @@
 const initialState = {
-    question: {
-        category: "", 
-        question: "", 
-        answers: []
-    },
-    answer: {
-        correct_answer: ""
-    }
+    results: [],
+    isLoading: true,
+    error: "", 
 }
 
 export const triviaReducer = (state = initialState, action) => {

@@ -1,11 +1,13 @@
 import React from 'react';
 
 import './App.css';
+import TriviaCard from './components/TriviaCard'; 
 
 function App() {
   return (
     <div className="App">
-        hello world
+        <h1>Trivi-O-Matic</h1>
+        <TriviaCard /> 
     </div>
   );
 }
