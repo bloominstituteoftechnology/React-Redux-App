@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Quotes } from './components/Quotes'
 
-function App() {
+function App(props) {
+
   return (
     <div className="App">
-      
+      <Quotes />
     </div>
   );
 }
