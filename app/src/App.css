@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'Hebrew';
+  src: url('VarelaRound-Regular.ttf');
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0px;
+  background: #DBD8AE;
+  font-family: 'Lora', serif;
+}
+
+header {
+  display: flex;
+  background-color: #0E0041;
+  height: 230px;
+  justify-content: center;
+  margin-bottom: 0px;
+}
+
+#title-subtitle {
+  text-align: center;
+}
+
+  h1 {
+      color: #EAF4D3;
+      font-family: Hebrew;
+      font-size: 7rem;
+      margin-bottom: 5px;
+  }
+
+  h2 {
+    color: #0E0041;
+    font-family: Hebrew;
+    font-size: 4rem;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+
+  button {
+    margin-top: 15px;
+  }
+
+  h3 {
+      color: #CA907E;
+      font-family: Hebrew;
+      font-size: 4rem;
+      margin-top: 0px;
+  }
+
+nav {
+  background-color: #994636;
+  margin: 0px;
+  padding: 0px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  margin-left: 0px;
+}
+
+nav ul li {
+  font-size: 3rem;
+  color: #EAF4D3;
+  padding: 20px;
+  font-family: Hebrew;
+  margin-left: 0px;
+}
+
+nav ul li:first-child {
+  padding-left: 0px;
+}
+
+nav ul li a {
+  color: #EAF4D3;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #0E0041;
+  font-weight: bold;
+  
+}
+
+#about {
+  background-image: url(desertfull.jpg);
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about p {
+  margin: 0px;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  font-size: 2rem;
+  color: #0E0041;
+  text-shadow: 0px 0px 5px #ffffff, 0px 0px 5px #ffffff, 0px 0px 5px #ffffff;
+}
+
+.bible-text {
+  padding-top: 20px;
+  font-size: 1.8rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
