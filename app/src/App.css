@@ -118,3 +118,43 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
+@media (max-width: 700px) {
+
+  h1 {
+    color: #EAF4D3;
+    font-family: Hebrew;
+    font-size: 5rem;
+    margin-bottom: 5px;
+}
+
+  h2 {
+    color: #0E0041;
+    font-family: Hebrew;
+    font-size: 4rem;
+    margin-bottom: 5px;
+    margin-top: 8px;
+  }
+
+
+
+  h3 {
+      color: #CA907E;
+      font-family: Hebrew;
+      font-size: 2.5rem;
+      margin-top: 0px;
+  }
+
+  header {
+    display: flex;
+    background-color: #0E0041;
+    height: 180px;
+    justify-content: center;
+    margin-bottom: 0px;
+  }
+
+  nav ul li {
+    font-size: 2.2rem;
+  }
+
+}
+
