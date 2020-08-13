@@ -1,12 +1,14 @@
 import React from 'react';
 
 import './App.css';
+import NavBar from './components/NavBar'; 
 import TriviaHolder from './components/TriviaHolder'; 
+
 
 function App() {
   return (
     <div className="App">
-        <h1>Trivi-O-Matic</h1>
+        <NavBar /> 
         <TriviaHolder /> 
     </div>
   );
