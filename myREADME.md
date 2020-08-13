@@ -61,3 +61,14 @@
         }
     ]
 }
+2. Create store with redux, import Provider to wrap the App in, and provide it with the store 
+
+3. Create the structure of the page App will render => a header, and a trivia question from state 
+
+4. Connect the trivia card to the state using connect from react-redux
+
+5. create loading screen for trivia card using JSX in the return and make sure state is arriving to the component using that 
+
+6. Set up API call! Instantiate fetchTrivia in an actions folder and follow the flow 
+
+7. Once a response is received - set them into state

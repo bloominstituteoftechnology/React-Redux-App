@@ -8,20 +8,29 @@ import Typography from '@material-ui/core/Typography';
 const TriviaCard = (props) => {
     console.log(props)
     return(
-        <div>
+        <div className="showAll">
             {props.question ? (
-                <Card>
+                <Card style={{ height: '30vh', alignItems: 'center' }}>
                     <CardContent>
-                        <Typography gutterBottom variant="headline" component="h2">
+                        <Typography gutterBottom 
+                        variant="subtitle2" 
+                        component="h2"
+                        >
                             {props.question}
                         </Typography>
                             {props.answers.map(answer => (
-                                <Typography component="p">
+                                <Typography 
+                                variant="caption" 
+                                component="p"
+                                >
                                     {answer}
                                 </Typography>
                             ))}
-                        <Typography component="p">
-                                {props.correctAnswer}
+                        <Typography 
+                        variant="caption" 
+                        component="p"
+                        >
+                            {props.correctAnswer}
                         </Typography>
                     </CardContent>
                 </Card>

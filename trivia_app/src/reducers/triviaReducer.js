@@ -1,7 +1,8 @@
 import { FETCH_TRIVIA_START, FETCH_TRIVIA_SUCCESS } from '../actions/triviaActions'
+import { unsort } from 'array-unsort'; 
 
 const initialState = {
-    results: [],
+    questions: [],
     isLoading: false,
     error: "error", 
 }
@@ -18,9 +19,23 @@ export const triviaReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                results: action.payload
+                questions: action.payload.map(question => new Question(question))
             }
         default: 
             return state; 
     }
 }
+
+let lastid = 0; 
+
+class Question {
+    constructor(question){
+        this.question = question.question 
+        this.correctAnswer = question.correct_answer
+        const answers = [...question.incorrect_answers, question.correct_answer]
+        this.answers = unsort(answers);
+        this.id = lastid + 1;
+        lastid = this.id;
+    }
+};
+
