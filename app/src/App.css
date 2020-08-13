@@ -157,5 +157,9 @@ nav ul li a:hover {
     font-size: 2.2rem;
   }
 
+  #about {
+    height: 450px
+  }
+
 }
 
