@@ -60,7 +60,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
   <h2>Contact Greg</h2>
   <h4>Phone: 316-771-9721</h4>
   <h4><a href={`mailto:${'gjwilson7390@gmail.com'}`}>gjwilson7390@gmail.com</a></h4>
-  <br></br><br></br>
+  <br></br><br></br><br></br><br></br>
 </section>
 </Route>
 
