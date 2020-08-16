@@ -157,7 +157,7 @@ nav ul li a:hover {
   margin: 0 auto;
   font-size: 2rem;
   color: #0C012E;
-  text-shadow: 0px 0px 5px #ffffff, 0px 0px 5px #ffffff, 0px 0px 5px #ffffff;
+  
 }
 
 .bible-books-buttons {
@@ -240,6 +240,15 @@ nav ul li a:hover {
 
       #about {
         height: 450px
+      }
+
+      .gregpic {
+        width: 100%;
+        float: none;
+        margin: 0px;
+        margin-top: 25px;
+        border-radius: 10px;
+        border: 2px solid white;
       }
 
       .bible-chapters-buttons {
