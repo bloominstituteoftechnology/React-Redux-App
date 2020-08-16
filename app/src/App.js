@@ -171,11 +171,6 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <button className="bible-book-button"><h5>Revelation</h5></button>
 
       </div>
-
-
-      <button onClick={() => {props.getScripture()}}><h2>Click to Read John 1</h2></button>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.content}} />
-      <div>{props.error}</div>
       
 
     </div>
