@@ -169,7 +169,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <button className="bible-book-button"><h5>3 John</h5></button>
       <button className="bible-book-button"><h5>Jude</h5></button>
       <button className="bible-book-button"><h5>Revelation</h5></button>
-
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
       </div>
       
 
