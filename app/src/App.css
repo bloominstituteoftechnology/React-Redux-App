@@ -49,6 +49,7 @@ body {
   height: auto;
   margin-top: 50px;
   margin-bottom: 50px;
+  border: 2px solid #f1f1e8;
 }
 
 .random-dog-btn {
