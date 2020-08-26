@@ -1,4 +1,4 @@
-import { FETCHING_DOG_START, FETCHING_DOG_SUCCESS, FETCHING_DOG_FAILURE } from "../reducers/index";
+import { FETCHING_DOG_START, FETCHING_DOG_SUCCESS } from "../reducers/index";
 import axios from "axios";
 
 export const getDog = () => (dispatch) => {
