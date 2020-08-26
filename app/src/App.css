@@ -45,11 +45,12 @@ body {
 }
 
 .dog-img {
-  width: 500px;
-  height: auto;
+  width: auto;
+  height: 500px;
   margin-top: 50px;
   margin-bottom: 50px;
   border: 2px solid #f1f1e8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .random-dog-btn {
@@ -57,7 +58,13 @@ body {
   font-weight: bolder;
   font-size: 25px;
   border-radius: 10px;
-  background-color: #81b214;
+  background-color: #8bbe1c;
   color: #206a5d;
   border: 2px solid #206a5d;
+  cursor: pointer;
+  outline: none;
+}
+
+.random-dog-btn:hover {
+  background-color: #81b214;
 }
