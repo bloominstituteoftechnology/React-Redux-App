@@ -13,7 +13,7 @@ const Dog = ({ getDog, dog, isFetching }) => {
 
   return (
     <>
-      <h2>Dog: {dog}</h2>
+      <img src={dog} alt="Random Dog"/>
       <button onClick={getDog}>Get new dog</button>
     </>
   );
