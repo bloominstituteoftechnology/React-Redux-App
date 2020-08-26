@@ -13,8 +13,8 @@ const Dog = ({ getDog, dog, isFetching }) => {
 
   return (
     <>
-      <img src={dog} alt="Random Dog"/>
-      <button onClick={getDog}>Get new dog</button>
+      <img className="dog-img" src={dog} alt="Random Dog"/>
+      <button className="random-dog-btn" onClick={getDog}>Get new dog</button>
     </>
   );
 };
