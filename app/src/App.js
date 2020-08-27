@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {newsList} from "../src/components/newsList";
+import {NewsList} from "./components/NewsList";
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <newsList/>
+        <NewsList/>
       </header>
     </div>
   );
