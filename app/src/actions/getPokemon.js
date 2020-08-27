@@ -4,11 +4,11 @@ export const FETCH_SUCCESS='FETCH_SUCCESS';
 export const FETCH_FAIL='FETCH_FAIL';
 export const TOGGLE_EVOL_LINE='TOGGLE_EVOL_LINE';
 
-export function toggler(){
+export const toggler=()=>{
     return{type:TOGGLE_EVOL_LINE};
 }
 
-export const getPoke = ()=>(dispatch)=>{
+function getPoke(dispatch){
     dispatch({type: FETCHING_POKEMON});
     axios
         .get('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
@@ -23,3 +23,5 @@ export const getPoke = ()=>(dispatch)=>{
         })})
     
 }
+
+export default getPoke

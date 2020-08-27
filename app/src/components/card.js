@@ -1,19 +1,21 @@
 import React from 'react';
 import { connect } from "react-redux";
-import {getPoke} from '../actions/getPokemon';
-import axios from 'axios';
+import getPoke from '../actions/getPokemon';
+// import axios from 'axios';
 
 export const PokemonCard=(props)=>{
     const fetched=e=>{
         e.preventDefault()
         props.getPoke();
     }
-    console.log(props.pokemon)
+    console.log(props.isFetching)
     return (
         <div>
         {/* <p>data</p> */}
-    {/* <button onClick={fetched}>poke</button> */}
-    {props.pokemon.map((pokemon)=>{<p key={pokemon.url}>{pokemon.name}</p>})}
+    <div>
+    {/* {props.pokemon.map((pokemon)=>{<p key={pokemon.url}>{pokemon.name}</p>})} */}
+    </div>
+    <button onClick={fetched}>poke</button>
     </div>
     //     <div>
     //         <img src={pokeImg} alt={pokeName}/>
@@ -25,18 +27,19 @@ export const PokemonCard=(props)=>{
     )
 }
 
-function call(){
+// function call(){
     
-        axios
-          .get(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`)
-          .then((res)=>{console.log(res.data)
-            // .then(console.log(res.data.map(()=>{})));
-        }
-          )
-          .catch((err)=>{console.log(err);})
+//         axios
+//           .get(`https://pokeapi.co/api/v2/pokemon?limit=151&offset=0`)
+//           .then((res)=>{console.log(res.data)
+//             .then(()=>{return })
+//             // .then(console.log(res.data.map((poke)=>{<img src={poke.}/>})));
+//         }
+//           )
+//           .catch((err)=>{console.log(err);})
       
-}
-call();
+// }
+// call();
 
 const mapStateToProps = (state) => {
     return { 

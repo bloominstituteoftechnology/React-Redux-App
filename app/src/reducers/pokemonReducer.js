@@ -10,7 +10,8 @@ export const initialState={
 
 
 
-export const pokemonReducer=(state=initialState,action)=>{
+function pokemonReducer(state=initialState,action){
+    console.log('reducer',action);
     switch(action.type){
         case FETCHING_POKEMON:
             return{...state,
@@ -35,3 +36,5 @@ export const pokemonReducer=(state=initialState,action)=>{
             return state
     }
 }
+
+export default pokemonReducer;
