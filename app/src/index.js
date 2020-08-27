@@ -5,9 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import { appReducer } from "./reducers";
+import { newsListReducer } from "./reducers/newsListReducers";
 import thunk from "redux-thunk";
 
+let store = createStore(newsListReducer, applyMiddleware(thunk));
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   // Step 2: provide the store
