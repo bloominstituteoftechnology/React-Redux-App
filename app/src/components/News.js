@@ -1,26 +1,26 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getNews } from "../actions";
+import { getNews } from "../actions/newsActions";
 
-const News = ({ getNews, news, isFetching }) => {
+const News = (props) => {
   useEffect(() => {
-    getNews();
-  }, [getNews]);
+    props.getNews();
+  }, [props.getNews]);
 
-  if (isFetching) {
+  if (props.isFetching) {
     return <h2>Loading...</h2>;
   }
 
   return (
     <>
-      <h2>News: {news} </h2>
-      <button onClick={getNews}>Get the News</button>
+      <h2>News: {props.articleTitle} </h2>
+      <button onClick={props.getNews}>Get the News</button>
     </>
   );
 };
 
 const mapStateToProps = (state) => {
-  return { News: state.news };
+  return { articleTitle: state.articleTitle };
 };
 
 const mapDispatchToProps = { getNews };

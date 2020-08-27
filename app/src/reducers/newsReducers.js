@@ -1,33 +1,33 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import { titleReducer } from "./reducers";
-import thunk from "redux-thunk";
+const initialstate = {
+    articleTitle: "News",
+    isFetching: false,
+    error: ""
 
-import Title from "./components/Title";
-import News from "./components/News";
-// import "./styles.css";
+};
+export const FETCHING_NEWS_START = 'FETCHING_NEWS_START';
+export const FETCHING_NEWS_SUCCESS = 'FETCHING_NEWS_SUCCESS';
+export const FETCHING_NEWS_FAILURE = 'FETCHING_NEWS_FAILURE';
 
-// Step 1: create the store
-// let store = createStore(titleReducer, applyMiddleware(thunk));
 
-function App() {
-  return (
-    <div className="App">
-      <Title />
-      <News />
-    </div>
-  );
+export const reducer = (state = initialstate, action) => {
+    switch (action.type){
+        case FETCHING_NEWS_START:
+            return{
+                ...state, 
+                isFetching: true
+            };
+        case FETCHING_NEWS_SUCCESS:
+            return{
+                ...state,
+                articleTitle: action.payload.results[0].title,
+                isFetching: false
+            };
+        case FETCHING_NEWS_FAILURE:
+            return{
+                ...state,
+                isFetching: false
+            };
+        default:
+            return state;
+        }
 }
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(
-
-
-  // Step 2: provide the store
-//   <Provider store={store}>
-//     <App />
-//   </Provider>,
-//   rootElement
-);

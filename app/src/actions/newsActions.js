@@ -1,33 +1,24 @@
 import axios from "axios";
+import {FETCHING_NEWS_START, FETCHING_NEWS_SUCCESS, FETCHING_NEWS_FAILURE} from '../reducers/newsReducers';
 
 // Step 3: action creators
-import { UPDATE_TITLE, TOGGLE_EDITING } from "../reducers";
-export function toggleEditing() {
-  return { type: TOGGLE_EDITING };
-}
 
-export const updateTitle = (newTitle) => {
-  return { type: UPDATE_TITLE, payload: newTitle };
-};
 
-const headers = {
-  Accept: "application/json"
-};
 
 export const getNews = () => (dispatch) => {
   console.log("getNews action");
-  dispatch({ type: "FETCHING_NEWS_START" });
+  dispatch({ type: FETCHING_NEWS_START });
   axios
-    .get("https://api.nytimes.com/svc/topstories/v2/{section}.json/", { headers: headers })
+    .get("https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=Gn80fkvSuepT1vfNReuJY1RTac0hs0fO")
     .then((res) => {
-      dispatch({ type: "FETCHING_NEWS_SUCCESS", payload: res.data.news });
+      dispatch({ type: FETCHING_NEWS_SUCCESS, payload: res.data });
       console.log("API Response: ", res);
     })
     .catch((err) => {
       dispatch({
-        type: "FETCHING_NEWS_FAILURE",
-        payload: `${err.response.message} code: ${err.response.code}`
-      });
-      console.log(err);
-    });
-};
+        type: FETCHING_NEWS_FAILURE,
+       
+      })
+      console.log("Error Response: ", err)});
+    };
+

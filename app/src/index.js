@@ -5,21 +5,14 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import { titleReducer } from "./reducers";
+import { reducer } from "./reducers/newsReducers";
 import thunk from "redux-thunk";
 import News from "./components/News"
 
 
 
-let store = createStore(titleReducer, applyMiddleware(thunk));
+let store = createStore(reducer, applyMiddleware(thunk));
 
-function Index() {
-  return (
-    <div className= "Index">
-      <News />
-    </div>
-  )
-}
 
     
   
