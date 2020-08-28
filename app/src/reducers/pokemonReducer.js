@@ -1,6 +1,10 @@
-import { FETCHING_POKEMON, FETCH_SUCCESS, FETCH_FAIL, TOGGLE_EVOL_LINE } from "../actions/getPokemon"
+import { 
+    FETCHING_POKEMON, 
+    FETCH_SUCCESS, 
+    FETCH_FAIL, 
+    TOGGLE_EVOL_LINE } from "../actions/getPokemon"
 
-export const initialState={
+const initialState={
     pokemon:[],
     isFetching:false,
     toggled:false,
@@ -10,8 +14,8 @@ export const initialState={
 
 
 
-function pokemonReducer(state=initialState,action){
-    console.log('reducer',action);
+export const pokemonReducer=(state=initialState,action)=>{
+    console.log('reducer',action.payload);
     switch(action.type){
         case FETCHING_POKEMON:
             return{...state,
@@ -37,4 +41,3 @@ function pokemonReducer(state=initialState,action){
     }
 }
 
-export default pokemonReducer;

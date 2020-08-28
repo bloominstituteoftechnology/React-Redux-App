@@ -1,12 +1,12 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import { PokemonCard } from './components/card';
+import  PokemonCard  from './components/card';
 
 function App() {
   return (
     <div className="App">
-      we all live in a pokemon world
+      <h1>Pokemon Sizes</h1>
       <PokemonCard/>
       {/* <header className="App-header"> */}
         {/* <img src={logo} className="App-logo" alt="logo" />

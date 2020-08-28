@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from "react-redux";
-import getPoke from '../actions/getPokemon';
+import {getPoke} from '../actions/getPokemon';
+import PokemonDets from './pokemonDets'
 // import axios from 'axios';
 
-export const PokemonCard=(props)=>{
+const PokemonCard=(props)=>{
     const fetched=e=>{
-        e.preventDefault()
+        console.log(123)
         props.getPoke();
     }
-    console.log(props.isFetching)
+    console.log(props)
     return (
         <div>
         {/* <p>data</p> */}
     <div>
-    {/* {props.pokemon.map((pokemon)=>{<p key={pokemon.url}>{pokemon.name}</p>})} */}
+    {props.pokemon.map((poke)=>< PokemonDets data={poke} key={poke.url}/>)}
     </div>
     <button onClick={fetched}>poke</button>
     </div>
@@ -42,6 +43,8 @@ export const PokemonCard=(props)=>{
 // call();
 
 const mapStateToProps = (state) => {
+    console.log(state)
+    console.log(123)
     return { 
         pokemon:state.pokemon,
         isFetching:state.isFetching,

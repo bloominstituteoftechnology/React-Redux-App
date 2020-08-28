@@ -8,7 +8,7 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 // import logger from 'redux-logger';
 
-import pokemonReducer from './reducers/pokemonReducer';
+import {pokemonReducer} from './reducers/pokemonReducer';
 
 const store=createStore(pokemonReducer, applyMiddleware(thunk))
 
