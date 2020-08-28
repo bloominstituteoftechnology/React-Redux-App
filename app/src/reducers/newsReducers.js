@@ -22,6 +22,12 @@ export const reducer = (state = initialstate, action) => {
                 articleTitle: action.payload.results[0].title,
                 isFetching: false
             };
+        case FETCHING_NEWS_SUCCESS:
+            return{
+                ...state,
+                articleTitle: action.payload.results[1].title,
+                isFetching: false
+            };
         case FETCHING_NEWS_FAILURE:
             return{
                 ...state,
