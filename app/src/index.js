@@ -1,19 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, combineReducers, applyMiddleware} from "redux";
+import {createStore, applyMiddleware} from "redux";
 import {Provider} from "react-redux";
 import thunk from "redux-thunk";
-import reducer from "./reducers";
+import { appReducer } from "./reducers";
+import DogImages from "./components/DogImages";
 import './index.css';
-import App from './App';
 
-const rootReducer = combineReducers({dogList: reducer})
-const store = createStore(rootReducer, applyMiddleware(thunk))
+
+
+
+let store = createStore(appReducer, applyMiddleware(thunk));
+
+function App() {
+  return (
+    <div className="App">
+    <DogImages />
+    </div>
+  );
+}
+
+const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store = {store}><App /></Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  // Step 2: provide the store
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
 );
 
 // If you want your app to work offline and load faster, you can change
