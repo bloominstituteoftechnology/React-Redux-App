@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {NewsList} from "./components/NewsList";
+import NewsList from "./components/NewsList";
 
 
 
