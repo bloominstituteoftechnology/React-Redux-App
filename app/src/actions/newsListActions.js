@@ -15,12 +15,12 @@ dispatch(
         type:FETCHING_NEWS_START
     });
 axios
-.get("https://icanhazdadjoke.com/", { headers: headers })
+.get("http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=e1777d02ca51402db5eaf53c72cc0666", { headers: headers })
 .then((res)=>{
-    console.log("resukt",res.data.joke);
+    console.log("resukt",res.data.articles);
     dispatch({
         type:FETCHING_NEWS_SUCCESS,
-        payload:res.data.joke
+        payload:res.data.articles
     });
 })
 .catch((err)=>{

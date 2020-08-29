@@ -1,6 +1,6 @@
 import {FETCHING_NEWS_START,FETCHING_NEWS_SUCCESS,FETCHING_NEWS_ERROR} from "../actions/newsListActions";
 const initialState={
-    news:"",
+    news:[{author:"Author",title:"Title"}],
     isFetching:false,
     error:""
 }

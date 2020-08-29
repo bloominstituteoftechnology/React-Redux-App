@@ -17,8 +17,18 @@ const NewsList = (props) => {
     console.log("news",props);
     return (
         <>
-            <h2>Today Joke:{props.news}</h2>
-            <p></p>
+            <h2>Today Joke:</h2>
+            {
+                props.news.map((item)=>
+            <div key={item.id}>
+            <p >{item.author}</p>
+            <p>{item.title}</p>
+            </div>
+           
+           
+            
+                )
+            }
            
             <button onClick={props.getNews}>GeJOKE</button>
             
