@@ -1,2 +1,2 @@
 export { reducer } from './reducers'
-export { fetchCards, fetchNewCards } from './actions/cardActions'
+export { fetchCards, fetchNewCards, searchNewCard } from './actions/cardActions'

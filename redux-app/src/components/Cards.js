@@ -7,7 +7,6 @@ const Cards = (props) => {
 	}, [])
 	return (
 		<div>
-			<button onClick={() => props.fetchNewCards(props.page)}>Next Page</button>
 			<h1> Magic Cards </h1>
 			{props.isLoading ? <h4>Loading cards...</h4> : null}
 			{props.error ? (
@@ -26,6 +25,7 @@ const Cards = (props) => {
 					})}
 				</div>
 			) : null}
+			<button onClick={() => props.fetchNewCards(props.page)}>Next Page</button>
 		</div>
 	)
 }

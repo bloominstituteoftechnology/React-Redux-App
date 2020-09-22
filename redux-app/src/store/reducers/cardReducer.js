@@ -12,6 +12,7 @@ export const cardReducer = (state = initialState, action) => {
 		case FETCHING_CARDS_START:
 			return {
 				...state,
+				cards: [],
 				isLoading: true,
 				error: '',
 			}
