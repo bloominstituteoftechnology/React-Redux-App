@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchData } from "./actions/index";
+import "./App.css";
 
-function App() {
+const App = (props) => {
+  useEffect(() => {
+    props.fetchData();
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{props.pmData.title}</h1>
+      {props.is_loading_data ? (
+        <div className="load"> Loading... </div>
+      ) : props.error ? (
+        <div>{props.error}</div>
+      ) : (
+        <>
+          <p> By {props.pmData.director}</p>
+          <p>{props.pmData.description}</p>
+          <p>{props.pmData.release_date}</p>
+        </>
+      )}
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    pmData: state.pmData,
+    is_loading_data: state.is_loading_data,
+    error: state.error,
+  };
+};
+
+export default connect(mapStateToProps, { fetchData })(App);
