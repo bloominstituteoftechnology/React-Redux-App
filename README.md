@@ -33,7 +33,7 @@ In this project you'll choose an api to consume. You will build an application f
 - [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
-### Task 2a: Minimum Viable Product
+### Task 2: Minimum Viable Product
 
 - [ ] Build a React Redux app
 - [ ] Fetch data inside an async action creator from an API of your choosing
@@ -41,16 +41,9 @@ In this project you'll choose an api to consume. You will build an application f
 - [ ] Display the data from the store in a component
 - [ ] _Some_ styling must be applied. It can be basic, but the app must not only use browser default stylings
 
-### Task 2b: Exit Ticket 
-
-Once you begin, you will have 15 minutes to answer the questions [here](https://app.codesignal.com/public-test/LsYPZfuJtZMmcYg9a/fs3PghBeYnx3L8).
-
-The completion of these questions is mandatory for MVP. However, passing the quiz doesn't affect your standing as a Lambda School student whatsoever. This is Lambda School testing itself! Please answer honestly and to the best of your ability without using external references.
-
 ### Task 3: Stretch Problems
 
 Take the app as far as you can go! Styling, redux hooks, another API, an input to fetch data dynamically, etc. Work on it, improve it until the end of the day. If you find yourself finishing with time left to spare, jump on with your TL or fellow student to ask them what feature they think you should build next. Good luck!
 
 ## Submission Format
 * [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
-* [ ] Fill out your module retrospective form [here](https://forms.lambdaschool.com/module-retrospective) with a link to your PR
