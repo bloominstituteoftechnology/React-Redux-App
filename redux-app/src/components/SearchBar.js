@@ -17,7 +17,7 @@ function SearchBar(props) {
 				placeholder="Search for card..."
 				onChange={(e) => setSearch(e.target.value)}
 			/>
-			<input type="submit" value="Submit" />
+			<input type="submit" value="Search" />
 		</form>
 	)
 }
