@@ -12,7 +12,7 @@ const HistoryList = props => {
   return (
     <div className='article-list'>
       <h1 className='articles-title'>SpaceX News</h1>
-      {props.history.map(article => (
+      {props.history.reverse().map(article => (
         <History key={article.id} article={article}/>
       ))}
     </div>

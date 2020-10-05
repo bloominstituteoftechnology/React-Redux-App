@@ -37,38 +37,6 @@ nav {
   cursor: pointer;
 }
 
-.circle1 {
-  position: fixed;
-  width: 30%;
-  margin-left: 42%;
-  top: 80px;
-}
-
-.trail {
-  position: fixed;
-  width: 30%;
-  left: -3%;
-  bottom: -12%;
-  transform: rotate(-10deg);
-}
-
-.trail2 {
-  position: fixed;
-  width: 30%;
-  right: 5%;
-  bottom: -10%;
-  transform: rotate(10deg);
-}
-
-.ship {
-  width: 15%;
-  transform: rotate(19deg);
-  right: 2%;
-  bottom: 40%;
-  position: fixed;
-  filter: invert(45%) sepia(54%) saturate(7375%) hue-rotate(218deg) brightness(96%) contrast(83%);
-}
-
 .title {
   color: rgb(23,23,23);
   font-weight: bold;
@@ -76,6 +44,16 @@ nav {
   padding: 5% auto;
   font-size: 6rem;
   text-align: center;
+  animation-name: floating;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
 }
 
 .intro {
