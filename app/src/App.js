@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import WeatherCard from "./components/WeatherCard";
+import { connect } from "react-redux";
+import { fetchWeather } from "./store/actions/index";
 
-function App() {
+const App = (props) => {
+  const { fetchWeather } = props;
+  const [url, setUrl] = useState(
+    "https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2430683/"
+  );
+
+  useEffect(() => {
+    fetchWeather(props.woeid);
+  }, [fetchWeather, props.woeid]);
+  console.log(props);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {props.isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        props.weather.consolidated_weather.map((forecast) => {
+          return <WeatherCard key={forecast.id} forecast={forecast} />;
+        })
+      )}
     </div>
   );
-}
+};
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    weather: state.weather,
+    woeid: state.woeid,
+    isLoading: state.isLoading,
+  };
+};
+
+export default connect(mapStateToProps, { fetchWeather })(App);
