@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  box-sizing: border-box;
+  background-image: url('./images/grey-concrete-stair-inside-building-2422253.jpg');
+  height: 1000px;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.card{
+  height: 1500px;
+}
+
+ .imgDiv{
+  height: 1000px;
+  margin: 0 auto;
+} 
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+ol{
+  list-style-type: armenian;
+  font-weight: 600;
+}
