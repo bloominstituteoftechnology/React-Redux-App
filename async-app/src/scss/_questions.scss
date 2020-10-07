@@ -1,0 +1,19 @@
+.questions-cont{
+   font-size:1.8rem;
+   margin:2rem 0;
+   & p {
+       padding: 2rem 0;
+   } 
+   
+   & button{
+    background-color: #373737;
+    color:white;
+    border:none;
+    padding: 1rem 1.5rem;
+    &:hover {
+        cursor: pointer;
+    }
+
+   }
+   
+}
