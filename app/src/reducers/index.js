@@ -22,7 +22,7 @@ import {
       case FETCH_INSULT_SUCCESS:
         return {
           ...state,
-          pokemon: action.payload,
+          insult: action.payload,
           isFetching: false,
           error: ''
         };

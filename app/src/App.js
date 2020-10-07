@@ -1,19 +1,34 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { getInsult } from "./actions/index";
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+/* styles */
+  margin: 40px;
+  border: 10px white;
+  background: papayawhip;
+  color: #4f4f4f;
+  `;
+
+const Header = styled.h1`
+  font-size: 4rem;
+  text-align: center;
+  color: white;
+  `;
 
 export default function App(props) {
   const { getInsult } = props;
   
   return (
-    <div className ="App">
+    <Wrapper>
       {error ? props.error : null}
-      <h1>The Insults Continue</h1>
+      <Header>The Insults Continue</Header>
       <InsultList/>
       {props.insults.map((insult) => (
-        <h1 key={insult.number}>{insult.insult}</h1>
+        <Header key={insult.number}>{insult.insult}</Header>
       ))}
-    </div>
+    </Wrapper>
   );
 }
 
