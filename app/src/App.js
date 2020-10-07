@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux'
+
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(props) {
+  const { fetchComic } = props;
   return (
     <div className="App">
       <h1>Hi</h1>
@@ -10,4 +13,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, { fetchComic })(App);
