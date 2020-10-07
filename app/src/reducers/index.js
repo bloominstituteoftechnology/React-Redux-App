@@ -1,4 +1,4 @@
-import { FETCH_FOXES_START } from '../actions';
+import { FETCH_COMIC_START } from '../actions';
 
 const initialState = {
     fox: {},
@@ -8,8 +8,8 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case FETCH_FOXES_START:
-            console.log('running FETCH_FOXES_START')
+        case FETCH_COMIC_START:
+            console.log('running FETCH_COMIC_START')
             return{
                 ...state,
                 isLoading: true
