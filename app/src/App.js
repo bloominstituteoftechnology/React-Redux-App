@@ -18,6 +18,9 @@ const App = (props) => {
   console.log(props);
   return (
     <div className="App">
+      <h1>
+        {props.isLoading ? "Loading location" : <h1>{props.weather.title}</h1>}
+      </h1>
       <WeatherForm />
       {props.isLoading ? (
         <h1>Loading...</h1>
