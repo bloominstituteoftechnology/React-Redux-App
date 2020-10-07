@@ -1,7 +1,7 @@
-import { FETCH_COMIC_START } from '../actions';
+import { FETCH_COMIC_START, FETCH_COMIC_SUCCESS } from '../actions';
 
 const initialState = {
-    fox: {},
+    comic: {},
     isLoading: false,
     error: ""
 };
@@ -13,6 +13,13 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 isLoading: true
+            }
+        case FETCH_COMIC_SUCCESS:
+            console.log(" running FETCH_COMIC_SUCCESS")
+            return {
+                ...state,
+                isLoading: false,
+                comic: action.payload
             }
         default:
             return state;
