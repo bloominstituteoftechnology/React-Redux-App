@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  background-color: #AAB2BD
+}
+
+.prices-container{
+  margin: 0 auto;
+  max-width: 1080px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
+.price-card {
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.market-cap-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
