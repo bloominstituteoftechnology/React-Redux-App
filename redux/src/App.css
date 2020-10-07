@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color:#1f6032;
+}
+
+header {
+  background-color: #093009;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 2vh;
+}
+
+.characterimg {
+  width: 50vh;
+  height: 50vh;
+  background-size: cover;
+}
+
+.button {
+  width: 10%;
+  padding: 1vh;
+  font-size: 2vh;
+  border:none;
+  border-radius: .25vh;
+  background-color: #369947;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
