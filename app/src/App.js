@@ -8,7 +8,8 @@ import { fetchComic } from './actions';
 function App(props) {
   const { fetchComic } = props;
   //https://cors-anywhere.herokuapp.com/http://xkcd.com/info.0.json
-  const [url, setUrl] = useState("http://xkcd.com/info.0.json")
+  //"http://xkcd.com/info.0.json"
+  const [url, setUrl] = useState("https://cors-anywhere.herokuapp.com/http://xkcd.com/info.0.json")
   useEffect(() => {
     fetchComic(url);
   }, []);
