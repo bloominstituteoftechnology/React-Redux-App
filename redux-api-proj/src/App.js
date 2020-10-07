@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { fetchStockInfo } from "./actions/actions";
+import SearchForm from "./components/SearchForm";
+import "./App.css";
 
-function App() {
+function App(props) {
+  const { fetchStockInfo } = props;
+  const [url, setUrl] = useState(
+    `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&interval=5min&apikey=ZZERN3GSXZ5E1U0M`
+  );
+  useEffect(() => {
+    fetchStockInfo(url);
+  }, [fetchStockInfo, url]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Search Ticker:</h1>
+      <SearchForm setUrl={setUrl} />
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    stocks: state.stocks,
+  };
+};
+
+export default connect(mapStateToProps, { fetchStockInfo })(App);
