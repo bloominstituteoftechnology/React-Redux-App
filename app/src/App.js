@@ -4,6 +4,7 @@ import "./App.css";
 import WeatherCard from "./components/WeatherCard";
 import { connect } from "react-redux";
 import { fetchWeather } from "./store/actions/index";
+import WeatherForm from "./components/WeatherForm";
 
 const App = (props) => {
   const { fetchWeather } = props;
@@ -17,6 +18,7 @@ const App = (props) => {
   console.log(props);
   return (
     <div className="App">
+      <WeatherForm />
       {props.isLoading ? (
         <h1>Loading...</h1>
       ) : (
