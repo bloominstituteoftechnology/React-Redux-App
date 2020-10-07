@@ -1,0 +1,54 @@
+body{
+  background: url('cat2.jpg');
+  background-size: cover;
+
+}
+.App {
+  text-align: center;  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-content: center;
+  color:white;
+}
+.App h1{
+  font-size: 3.4rem;;
+}
+
+button{
+  margin:1%;
+  font-size: 1.8rem;
+  font-family: 'Montserrat';
+  color:white;
+  padding:2%;
+  border-radius: 50%;
+  border: lightgrey 2px solid;
+  background-color: #272727;
+}
+.content img{
+  max-height: 80vh;
+  border-radius: 5px;
+  border: 6px solid rgba(116, 116, 116, 0.67);
+}
+
+.content h2{
+  margin-top: 2%;
+  margin-left: 2%;
+  font-size: 2rem;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
