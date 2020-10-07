@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { getInsult } from "./actions/index";
 
-function App() {
+export default function App(props) {
+  const { getInsult } = props;
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className ="App">
+      {error ? props.error : null}
+      <h1>The Insults Continue</h1>
+      <InsultList/>
+      {props.insults.map((insult) => (
+        <h1 key={insult.number}>{insult.insult}</h1>
+      ))}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    insults: state.insults
+  };
+};
+
+export default connect(null, { getInsult })(App);
