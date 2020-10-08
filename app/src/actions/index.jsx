@@ -14,7 +14,6 @@ export const fetchActivity = () => {
       axios
         .get('https://aws.random.cat/meow')
         .then(res => {
-          //res.data ==> activity
           dispatch({type: CAT, payload: res.data.file});
         })
         .catch(err => {
