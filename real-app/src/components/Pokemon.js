@@ -59,11 +59,9 @@ console.log(props.pokemonList)
                return <PokemonCard key={eachPokemon.id} eachPokemon={eachPokemon}/>
             })
          }
-         <div className='none'>
-            {
-               props.pokemonList.length === 0 && <h2>No cards to display</h2>
-            }
-         </div>
+         {
+            props.pokemonList.length === 0 && <h2>No cards to display</h2>
+         }
          </div>
       </div>
    )
