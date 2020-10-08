@@ -106,3 +106,7 @@ h1 {
   background-color:#83B5D1;
   color: white;
 }
+
+a:visited {
+  background-color:#83B5D1;
+}
