@@ -1,0 +1,15 @@
+.pokemon > form {
+   display: flex;
+   align-items: flex-end;
+   justify-content: center;
+}
+
+.pokemon form button {
+   margin-left: 2%;
+}
+
+.pokemon__cards {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+}
