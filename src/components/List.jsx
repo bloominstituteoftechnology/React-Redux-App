@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
+import { connect } from "react-redux";
+import { fetchHolidays } from "../actions";
 
-const List = () => {
+const List = (props) => {
+  useEffect(() => {
+    props.fetchHolidays();
+  }, []);
+
   return (
     <div>
       <h2>this is the List</h2>
-      <Card />
+      {props.holidays.map((item) => (
+        <Card key={item.date} holiday={item} />
+      ))}
     </div>
   );
 };
 
-export default List;
+const mapStateToProps = (state) => {
+  return {
+    holidays: state.holidays,
+    isLoading: state.isLoading,
+    error: state.error,
+  };
+};
+
+export default connect(mapStateToProps, { fetchHolidays })(List);
