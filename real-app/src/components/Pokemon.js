@@ -24,7 +24,7 @@ function Pokemon(props) {
    const handleSubmit = e => {
       e.preventDefault()
       setUrl(`https://api.pokemontcg.io/v1/cards?name=${search}`)
-
+      setSearch('')
    }
 
    const handleChange = e => {
@@ -45,7 +45,7 @@ function Pokemon(props) {
       </>
       )
    }
-console.log(props.pokemonList)
+console.log(props)
    return (
       <div className='pokemon'>
          <form onSubmit={handleSubmit}>
@@ -60,7 +60,7 @@ console.log(props.pokemonList)
             })
          }
          {
-            props.pokemonList.length === 0 && <h2>No cards to display</h2>
+            (!props.isFetching && props.error) && <h2>{props.error}</h2>
          }
          </div>
       </div>
@@ -71,6 +71,7 @@ const mapStateToProps = state => {
    return {
       isFetching: state.isFetching,
       pokemonList: state.pokemonList ? state.pokemonList : [],
+      error: state.error,
    }
 }
 

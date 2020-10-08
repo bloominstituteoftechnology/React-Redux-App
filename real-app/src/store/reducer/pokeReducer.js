@@ -3,6 +3,7 @@ const initialState = {
 
    isFetching: false, // if true, loading image appear
    pokemonList: [],
+   error: '',
 
 }
 
@@ -21,6 +22,13 @@ export const pokeReducer = (state = initialState, action) => {
             ...state,
             isFetching: false,
             pokemonList: action.payload,
+         }
+      
+      case 'FETCH_JOBS_FAILED':
+         return {
+            ...state,
+            isFetching: false,
+            error: action.payload,
          }
       
       default: 

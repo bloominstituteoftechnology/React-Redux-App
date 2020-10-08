@@ -10,10 +10,16 @@ export const fetchJobs = (url) => {
          // Since we are fetching data from browser, it's blocking. 
          // So that herokuapp.com is fetching a data for us being a server for us.
          .then(res => {
-            
+            if(res.data.cards.length === 0){
+
+              dispatch({ type: 'FETCH_JOBS_FAILED', payload: 'Oops! Can\'t find your pokemon!'})
+            }
             dispatch({ type: 'FETCH_JOBS_SUCCESS', payload: res.data.cards })
          })
-         .catch(err => console.log(err))
+         .catch(err => {
+
+          dispatch({ type: 'FETCH_JOBS_FAILED', payload: ''})
+       })
    }
 }
 // action must be object but currently 'fetchJobs' returning a anonymous function
