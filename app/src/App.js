@@ -20,9 +20,10 @@ function App(props) {
   }, [fetchComic, url]);
   return (
     <div className="App">
-      <h1>XKCD Comic</h1>
+      {/* <h1>XKCD Comic</h1> */}
       <SearchForm setUrl = {setUrl}/>
       <Comic comicInfo = {props.comic}/>
+      <a href = "https://what-if.xkcd.com/" className = "whatIfLink"><p>Check out XKCD's "What if?" comics here!</p></a>
     </div>
   );
 }

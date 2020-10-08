@@ -4,14 +4,18 @@ import Loader from "react-loader-spinner";
 
 const Comic = (props) => {
     const {comicInfo} = props;
-    const { img, alt, safe_title, transcript } = comicInfo;
+    const { img, alt, safe_title, transcript, num, month, year, day } = comicInfo;
 
     const renderComic = () => {
         return (
             <>
                 {/* <h2>Title: {safe_title}</h2> */}
                 <div className = 'comicPanel'>
-                    <h2>Title: {safe_title}</h2>
+                    <div className = 'comicPanelText'>
+                        <h2>XKCD Comic #{num}</h2>
+                        <h2>Title: {safe_title}</h2>
+                        <p>Date: {month}/{day}/{year} </p>
+                    </div>
                     <img src = {img} alt = {alt} /> 
                 </div>
                 <div className = "transcript">
