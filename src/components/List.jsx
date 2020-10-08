@@ -4,9 +4,11 @@ import { connect } from "react-redux";
 import { fetchHolidays } from "../actions";
 
 const List = (props) => {
+  const { fetchHolidays, url } = props;
+
   useEffect(() => {
-    props.fetchHolidays();
-  }, []);
+    fetchHolidays(url);
+  }, [fetchHolidays, url]);
 
   return (
     <div>
