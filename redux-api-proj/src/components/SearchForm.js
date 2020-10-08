@@ -16,28 +16,20 @@ const SearchForm = (props) => {
   };
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          type="text"
-          value={searchTicker}
-          placeholder="TSLA"
-        />
-        <button>Search</button>
-      </form>
-
-      <p>
-        {props.stocks}
-        {props.date}
-      </p>
-    </>
+    <form onSubmit={onSubmit}>
+      <input
+        onChange={onChange}
+        type="text"
+        value={searchTicker}
+        placeholder="TSLA"
+      />
+      <button>Search</button>
+    </form>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    isLoading: state.isLoading,
     stocks: state.stocks,
     date: state.date,
   };

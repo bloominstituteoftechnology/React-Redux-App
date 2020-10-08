@@ -16,13 +16,17 @@ function App(props) {
     <div className="App">
       <h1>Search Ticker:</h1>
       <SearchForm setUrl={setUrl} />
+      <h2>Date: {props.date}</h2>
+      <h3>Stock Closing Price:{props.stocks}</h3>
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
   return {
+    isLoading: state.isLoading,
     stocks: state.stocks,
+    date: state.date,
   };
 };
 

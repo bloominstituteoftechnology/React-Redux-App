@@ -22,7 +22,7 @@ export const mainReducer = (state = initialState, action) => {
         isLoading: false,
         date: action.payload["Meta Data"]["3. Last Refreshed"],
         stocks: [
-          ...state.stocks,
+          //   ...state.stocks leaving this in would keep current state,
           action.payload["Time Series (Daily)"]["2020-10-06"]["4. close"],
         ],
       };
@@ -36,5 +36,3 @@ export const mainReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-// ["Time Series (Daily)"].date
