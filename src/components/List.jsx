@@ -14,7 +14,7 @@ const List = (props) => {
     <div>
       <h2>this is the List</h2>
       {props.holidays.map((item) => (
-        <Card key={item.date} holiday={item} />
+        <Card key={item.id} holiday={item} />
       ))}
     </div>
   );
