@@ -1,0 +1,64 @@
+body {
+  background: rgb(241, 237, 237);
+  margin: 0;
+  display: grid;
+  padding: 3em;
+  place-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.app {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  color:black;
+  font-family: 'Lobster', cursive;
+}
+.app h1{
+  font-size: 3rem;
+}
+.photo {
+  border-radius: 2%;
+  height: 80%;
+  width: 80%;
+}
+.kitty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+button {
+  max-width: 200px;
+  margin: 10px 0;
+  padding: 1rem 2rem;
+  border-style: none;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  font-family: 'Lobster', cursive;
+}
+
+/* 
+button {
+  background: rgb(219, 216, 218);
+  border: 1px solid transparent;
+  color: white;
+  margin-right: 1em;
+  padding: 1em 2em;
+  transition: all .25s ease-in;
+  &:hover {
+    background: white;
+    border: 1px solid hotpink;
+    color: #333;
+  }} */
