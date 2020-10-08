@@ -40,17 +40,17 @@ function Pokemon(props) {
            color='#00BFFF'
            height={100}
            width={100}
+           style={{display:'block', width:'100%'}}
          />
       </>
       )
    }
-
-   console.log(props)
+console.log(props.pokemonList)
    return (
       <div className='pokemon'>
          <form onSubmit={handleSubmit}>
             <TextField id="standard-basic" label="Pokemon Name" value={search} onChange={handleChange} />
-            <Button size='small' variant='contained' color='secondary'>Search</Button>
+            <Button type='submit' size='small' variant='contained' color='secondary'>Search</Button>
          </form>
          <div className='pokemon__cards'>
          {
@@ -59,6 +59,11 @@ function Pokemon(props) {
                return <PokemonCard key={eachPokemon.id} eachPokemon={eachPokemon}/>
             })
          }
+         <div className='none'>
+            {
+               props.pokemonList.length === 0 && <h2>No cards to display</h2>
+            }
+         </div>
          </div>
       </div>
    )
