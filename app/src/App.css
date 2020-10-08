@@ -1,3 +1,87 @@
+html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightslategray;
+  padding: none;
+  margin: none;
+}
 .App {
   text-align: center;
 }
+
+/* header styles */
+.Header{
+  background-image: url(https://images.unsplash.com/photo-1473163928189-364b2c4e1135?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 70%;
+  margin: 0, auto;
+  border: 5px solid oldlace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-text{
+  color:black;
+  opacity: 100%;
+  width: 40%;
+}
+
+select{
+  background-color: lightslategray;
+  color:black;
+  border: 2px solid black;
+}
+
+option{
+  color: black;
+}
+
+
+/* header styles end */
+
+
+/* card styles  */
+.CountryList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  border: 10px solid black;
+  border-radius: 25%;
+  background-color: oldlace;
+  width:20%;
+  margin-bottom: 2%;
+  transition: ease-in-out .5s;
+}
+.card:hover{
+  background-color: darkolivegreen;
+  transition: ease-in-out .5s;
+  color: white;
+}
+
+
+.info img{
+  margin-top: 4%;
+  height: 10vh;
+}
+
+.info h2{
+  text-decoration: underline;
+}
+
+.info p{
+  font-weight: bold;
+}
+
+
+/* card styles end */

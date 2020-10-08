@@ -1,12 +1,25 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect } from 'react';
+import { fetchCountry } from './actions'
+import { connect } from "react-redux"
+import Header from "./components/Header"
+import CountryList from './components/CountryList';
+import './app.css';
 
-function App() {
+
+function App(props) {
+  const { fetchCountry } = props
+
+  useEffect(() =>{
+    fetchCountry()
+  })
+
   return (
     <div className="App">
-      <h1>hello world</h1>
+      <Header />
+      <CountryList />
     </div>
   );
 }
 
-export default App;
+export default connect(null, { fetchCountry })(App);
+
