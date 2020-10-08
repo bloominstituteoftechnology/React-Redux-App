@@ -16,8 +16,20 @@ function App(props) {
     <div className="App">
       <h1>Search Ticker:</h1>
       <SearchForm setUrl={setUrl} />
-      <h2>Date: {props.date}</h2>
-      <h3>Stock Closing Price:{props.stocks}</h3>
+      <p>
+        Today's Date is {props.date}
+        {props.stocks
+          ? props.stocks.map((stock) => {
+              return (
+                <div>
+                  {stock["Meta Data"]["2. Symbol"]} Stock Close{" "}
+                  {stock["Time Series (Daily)"][props.date]["4. close"]} Stock
+                  Open {stock["Time Series (Daily)"][props.date]["1. open"]}{" "}
+                </div>
+              );
+            })
+          : "Nothing here yet"}{" "}
+      </p>
     </div>
   );
 }
