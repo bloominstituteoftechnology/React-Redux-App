@@ -24,9 +24,9 @@ function App(props) {
       <SearchForm setUrl = {setUrl}/>
       <Comic comicInfo = {props.comic}/>
       <a href = "https://what-if.xkcd.com/" className = "whatIfLink"><p>Check out XKCD's "What if?" comics here!</p></a>
-      <div className = "gitHubLink">
+      {/* <div className = "gitHubLink">
         <a href = "https://github.com/fatima-rizvi" ><p>Github: fatima-rizvi</p></a>
-      </div>
+      </div> */}
     </div>
   );
 }
