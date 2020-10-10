@@ -1,3 +1,9 @@
+import { 
+    FETCH_EXHIBIT_START, 
+    FETCH_EXHIBIT_SUCCESS, 
+    FETCH_EXHIBIT_FAIL 
+} from '../actions/actions';
+
 const initialState = {
     exhibits: [{
         "id": "18699569",
@@ -115,11 +121,30 @@ const initialState = {
         ],
         "woe:country_name": "United States",
         "is_loan_object": 0
-    }]
+    }],
+    error: '',
+    isFetching: false
 }
 
 export const exhibitReducer = (state = initialState, action) => {
     switch(action.type) {
+        case FETCH_EXHIBIT_START: 
+            return {
+                ...state,
+                isFetching: true,
+                error: ''
+            }
+        case FETCH_EXHIBIT_SUCCESS: 
+            return {
+                ...state, 
+                isFetching: false,
+                error: ''
+            }
+        case FETCH_EXHIBIT_FAIL:
+            return {
+                ...state,
+                error: action.payload
+            }
         default: 
             return state
     }

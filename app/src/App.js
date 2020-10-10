@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Exhibitions from './components/Exhibitions';
 import 'semantic-ui-css/semantic.min.css'
-import { Container, Header, Menu, Image, List, Grid, Divider, Segment } from 'semantic-ui-react'
+import { Container, Header, Menu, Image, List, Divider, Segment } from 'semantic-ui-react'
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     exhibitsAsProps: state.exhibits
   }

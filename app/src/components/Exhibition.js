@@ -3,8 +3,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { Grid, Image, Card } from 'semantic-ui-react'
 
 const Exhibition = (props) => {
-    console.log(props)
-    console.log(props.exhibit.images.map(img => ( img.b.url)))
+    //console.log(props.exhibit.images.map(img => ( img.b.url)))
     return (
         <div>
             <Grid divided>

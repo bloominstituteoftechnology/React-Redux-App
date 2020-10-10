@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { exhibitReducer } from './reducers/exhibitReducer';
+import thunk from 'redux-thunk';
+import { exhibitReducer } from './reducers/exhibitReducer.js';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -42,7 +43,10 @@ import * as serviceWorker from './serviceWorker';
 // 5. Pass mapStateToProps into connect: 
 // export default connect (mapStateToProps, {})(Component)
 
-const store = createStore(exhibitReducer)
+const store = createStore(
+  exhibitReducer,
+  applyMiddleware(thunk)
+  )
 
 ReactDOM.render(
     <Provider store={store}>
