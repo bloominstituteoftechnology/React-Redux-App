@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
-import reducers from './reducers';
+import { Provider } from 'react-redux';
+import { exhibitReducer } from './reducers/exhibitReducer';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -41,12 +42,12 @@ import * as serviceWorker from './serviceWorker';
 // 5. Pass mapStateToProps into connect: 
 // export default connect (mapStateToProps, {})(Component)
 
-const store = createStore(reducers)
+const store = createStore(exhibitReducer)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+      <App />
+    </Provider>,
   document.getElementById('root')
 );
 
