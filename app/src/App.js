@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Exhibitions from './components/Exhibitions';
 import 'semantic-ui-css/semantic.min.css'
 import { Container, Header, Menu, Image, List, Grid, Divider, Segment } from 'semantic-ui-react'
 
-function App() {
+const mapStateToProps = (state) => {
+  return {
+    exhibitsAsProps: state.exhibits
+  }
+}
+
+function App({ exhibitsAsProps }) {
   return (
     <div>
       <Menu fixed='top' inverted>
@@ -17,7 +24,7 @@ function App() {
       </Menu>
       <Container>
         <Header as='h1'>First Header</Header>
-        <Exhibitions />
+        <Exhibitions exhibits={exhibitsAsProps} />
       </Container>
 
       <Segment inverted vertical style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
@@ -40,11 +47,8 @@ function App() {
         </List>
       </Container>
     </Segment>
-
-
-
     </div>
   );
 }
 
-export default App;
+export default connect(mapStateToProps, {})(App);

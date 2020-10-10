@@ -1,23 +1,14 @@
 import React from 'react';
+import Exhibition from './components/Exhibition';
 import 'semantic-ui-css/semantic.min.css';
-import { Grid, Image } from 'semantic-ui-react'
 
-const Exhibitions = () => {
+const Exhibitions = (props) => {
+    console.log(props)
     return (
         <div>
-            <Grid columns={3} divided>
-            <Grid.Row>
-                <Grid.Column>
-                    <Image src='/images/wireframe/media-paragraph.png' />
-                </Grid.Column>
-                <Grid.Column>
-                    <Image src='/images/wireframe/media-paragraph.png' />
-                </Grid.Column>
-                <Grid.Column>
-                    <Image src='/images/wireframe/media-paragraph.png' />
-                </Grid.Column>
-                </Grid.Row>
-            </Grid>
+            {props.exhibits.map(item => (
+                <Exhibition key={item.id} exhibit={item} />
+            ))}
         </div>
     )
 }
