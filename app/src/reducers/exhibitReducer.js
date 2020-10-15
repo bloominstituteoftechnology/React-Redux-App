@@ -2,128 +2,12 @@ import {
     FETCH_EXHIBIT_START, 
     FETCH_EXHIBIT_SUCCESS, 
     FETCH_EXHIBIT_FAIL 
-} from '../actions/actions';
+} from '../actions/exhibitActions';
 
 const initialState = {
-    exhibits: [{
-        "id": "18699569",
-        "tms:id": "225404",
-        "accession_number": "2004-26-2",
-        "title": "Sidewall, Flexuous, 2002",
-        "title_raw": "Flexuous",
-        "url": "https://collection.cooperhewitt.org/objects/18699569/",
-        "has_no_known_copyright": null,
-        "department_id": "35347503",
-        "period_id": null,
-        "media_id": "35421475",
-        "type_id": "35256475",
-        "date": "2002",
-        "year_start": 2002,
-        "year_end": 2002,
-        "year_acquired": "2004",
-        "decade": "2000",
-        "woe:country_id": "23424977",
-        "medium": "screen printed on vinyl",
-        "markings": null,
-        "signed": null,
-        "inscribed": null,
-        "provenance": null,
-        "dimensions": "Overall: 289.6 x 141 cm (9 ft. 6 in. x 55 1/2 in.)",
-        "dimensions_raw": {
-            "height": [
-                "289.56",
-                "centimeters"
-            ],
-            "width": [
-                "140.97",
-                "centimeters"
-            ]
-        },
-        "creditline": "Gift of Wolf-Gordon",
-        "description": "All-over flowing pattern in interwoven lines, having a net-like appearance.  The over-all effect is that of a topographical map, with a 3-dimensional look.  This effect is repeated in eight bands across the width.  Printed in dark green on a light green background, in the \"Precious\" colorway.",
-        "justification": "Flexuous is part of the Digital Nature line of computer-generated wallcoverings designed by Karim Rashid. Rashid is an internationally-known industrial designer and less well-known sculptor—the Digital Nature line is Rashid’s first venture into the field of wallcoverings.  Rashid wanted to create complex, three-dimensional designs that would encourage the viewer’s eye to explore and find forms in the abstract patterns that relate to nature. \nThe museum holds works by Rashid, but Flexuous would be the first wallcovering by the designer to enter the collection.",
-        "gallery_text": null,
-        "label_text": null,
-        "videos": null,
-        "on_display": null,
-        "woe:country": "23424977",
-        "type": "Sidewall",
-        "images": [
-            {
-                "b": {
-                    "url": "https://images.collection.cooperhewitt.org/28146_9344719e5773f72b_b.jpg",
-                    "width": 1024,
-                    "height": 789,
-                    "is_primary": "1",
-                    "image_id": "28146"
-                },
-                "z": {
-                    "url": "https://images.collection.cooperhewitt.org/28146_9344719e5773f72b_z.jpg",
-                    "width": 640,
-                    "height": 493,
-                    "is_primary": "1",
-                    "image_id": "28146"
-                },
-                "n": {
-                    "url": "https://images.collection.cooperhewitt.org/28146_9344719e5773f72b_n.jpg",
-                    "width": 320,
-                    "height": 247,
-                    "is_primary": "1",
-                    "image_id": "28146"
-                },
-                "d": {
-                    "url": "https://images.collection.cooperhewitt.org/28146_9344719e5773f72b_d.gif",
-                    "width": 320,
-                    "height": 247,
-                    "is_primary": "1",
-                    "image_id": "28146"
-                },
-                "sq": {
-                    "url": "https://images.collection.cooperhewitt.org/28146_9344719e5773f72b_sq.jpg",
-                    "width": 300,
-                    "height": 300,
-                    "is_primary": "1",
-                    "image_id": "28146"
-                }
-            }
-        ],
-        "participants": [
-            {
-                "person_id": "18056461",
-                "role_id": "35236657",
-                "person_name": "Wolf-Gordon Inc.",
-                "person_date": "American",
-                "role_name": "Manufacturer",
-                "role_display_name": "Manufactured by",
-                "person_url": "https://collection.cooperhewitt.org/people/18056461/",
-                "role_url": "https://collection.cooperhewitt.org/roles/35236657/"
-            },
-            {
-                "person_id": "18050513",
-                "role_id": "35236655",
-                "person_name": "Karim Rashid",
-                "person_date": "Canadian, b. Egypt, 1960",
-                "role_name": "Designer",
-                "role_display_name": "Designed by",
-                "person_url": "https://collection.cooperhewitt.org/people/18050513/",
-                "role_url": "https://collection.cooperhewitt.org/roles/35236655/"
-            },
-            {
-                "person_id": "18056461",
-                "role_id": "35351535",
-                "person_name": "Wolf-Gordon Inc.",
-                "person_date": "American",
-                "role_name": "Donor",
-                "role_display_name": "Donated by",
-                "person_url": "https://collection.cooperhewitt.org/people/18056461/",
-                "role_url": "https://collection.cooperhewitt.org/roles/35351535/"
-            }
-        ],
-        "woe:country_name": "United States",
-        "is_loan_object": 0
-    }],
-    error: '',
-    isFetching: false
+    "data": "",
+    "error": "",
+    "isFetching": false
 }
 
 export const exhibitReducer = (state = initialState, action) => {
@@ -138,6 +22,7 @@ export const exhibitReducer = (state = initialState, action) => {
             return {
                 ...state, 
                 isFetching: false,
+                data: action.payload,
                 error: ''
             }
         case FETCH_EXHIBIT_FAIL:

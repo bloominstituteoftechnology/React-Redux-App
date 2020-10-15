@@ -1,20 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import Exhibitions from './components/Exhibitions';
+import Exhibition from './components/Exhibition';
+import { fetchData } from './actions/exhibitActions';
 import 'semantic-ui-css/semantic.min.css'
-import { Container, Header, Menu, Image, List, Divider, Segment } from 'semantic-ui-react'
+import { Container, Menu, Image, List, Divider, Segment, Message } from 'semantic-ui-react';
 
-const mapStateToProps = (state) => {
-  console.log(state)
-  return {
-    exhibitsAsProps: state.exhibits
-  }
-}
-
-function App({ exhibitsAsProps }) {
+function App(props) {
+  useEffect(() => {
+    props.fetchData();
+  }, [])
+  console.log(props)
+  
   return (
     <div>
-      <Menu fixed='top' inverted>
+        <Menu fixed='top' inverted>
         <Container>
           <Menu.Item as='a' header>
             <Image size='mini' src='/logo.svg' style={{ marginRight: '1.5em' }} />
@@ -23,11 +22,25 @@ function App({ exhibitsAsProps }) {
           <Menu.Item as='a'>Home</Menu.Item>
         </Container>
       </Menu>
-      <Container>
-        <Header as='h1'>First Header</Header>
-        <Exhibitions exhibits={exhibitsAsProps} />
+      <Container
+        style={{
+          marginTop: '5.5em'
+          }}
+      >
+      {console.log(props.exhibitsAsProps && props.exhibitsAsProps.map(item => item.images))}
+        {props.isFetching ? (
+          <Message>
+          <Message.Header>Fetching Exhibits</Message.Header>
+          <p>
+            ...this won't take long...
+          </p>
+        </Message>
+        ) : ( 
+          props.exhibitsAsProps && props.exhibitsAsProps.map(item => 
+            <Exhibition exhibit={item} />
+          )
+        )}
       </Container>
-
       <Segment inverted vertical style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
       <Container textAlign='center'>
         <Divider inverted section />
@@ -52,4 +65,12 @@ function App({ exhibitsAsProps }) {
   );
 }
 
-export default connect(mapStateToProps, {})(App);
+const mapStateToProps = (state) => {
+  return {
+    exhibitsAsProps: state.data,
+    isFetching: state.isFetching,
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps, {fetchData})(App);
