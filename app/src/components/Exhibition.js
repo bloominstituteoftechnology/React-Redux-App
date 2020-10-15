@@ -3,8 +3,8 @@ import 'semantic-ui-css/semantic.min.css';
 import { Container, Grid, Image, Card, Header } from 'semantic-ui-react'
 
 const Exhibition = (props) => {
-    console.log(props)
-    console.log(props.exhibit.images.map(img => ( img.b.url)))
+    //console.log(props)
+    console.log(props.exhibit.images.map((img, index) => ( index === 0 ? img.b.url : null )))
     return (
         <div>
             <Container
@@ -16,8 +16,8 @@ const Exhibition = (props) => {
                 <Grid.Row>
                     <Grid.Column>
                     <Card>
-                        {props.exhibit.images.map(img => (
-                            <Image key={img.b.image_id} src={img.b.url} wrapped ui={false} />
+                        {props.exhibit.images.map((img, index) => (
+                            <Image key={img.b.image_id} src={index === 0 ? img.b.url : null} wrapped ui={false} />
                         ))}
                         <Card.Content>
                         <Card.Header>{props.exhibit.title}</Card.Header>
