@@ -2,14 +2,14 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import Exhibition from './components/Exhibition';
 import { fetchData } from './actions/exhibitActions';
-import 'semantic-ui-css/semantic.min.css'
+import 'semantic-ui-css/semantic.min.css';
+import './App.css';
 import { Container, Menu, Image, List, Divider, Segment, Message } from 'semantic-ui-react';
 
 function App(props) {
   useEffect(() => {
     props.fetchData();
   }, [])
-  console.log(props)
   
   return (
     <div>
@@ -27,7 +27,7 @@ function App(props) {
           marginTop: '5.5em'
           }}
       >
-      {console.log(props.exhibitsAsProps && props.exhibitsAsProps.map(item => item.images))}
+      {/*console.log(props.exhibitsAsProps && props.exhibitsAsProps.map(item => item.images))*/}
         {props.isFetching ? (
           <Message>
           <Message.Header>Fetching Exhibits</Message.Header>
@@ -37,7 +37,7 @@ function App(props) {
         </Message>
         ) : ( 
           props.exhibitsAsProps && props.exhibitsAsProps.map(item => 
-            <Exhibition exhibit={item} />
+            <Exhibition key={item.id} exhibit={item} />
           )
         )}
       </Container>
