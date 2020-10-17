@@ -7,6 +7,7 @@ import './App.css';
 import { Container, Menu, Image, List, Divider, Segment, Message } from 'semantic-ui-react';
 
 function App(props) {
+  console.log(props)
   useEffect(() => {
     props.fetchData();
   }, [])
@@ -17,9 +18,8 @@ function App(props) {
         <Container>
           <Menu.Item as='a' header>
             <Image size='mini' src='/logo.svg' style={{ marginRight: '1.5em' }} />
-            Project Name
+            COOPER HEWITT EXHIBITS
           </Menu.Item>
-          <Menu.Item as='a'>Home</Menu.Item>
         </Container>
       </Menu>
       <Container

@@ -11,7 +11,7 @@ export const fetchData = () => dispatch => {
     dispatch({ type: FETCH_EXHIBIT_START });
     setTimeout(() => {
         axios
-        .get('https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=4f8a6b0377385afdd6d94d36e621d948&query=digital&year_start=2002')
+        .get('https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=4f8a6b0377385afdd6d94d36e621d948&query=digital')
         .then(res => {
             const data = res.data.objects
             /*

@@ -4,7 +4,7 @@ import { Container, Grid, Image, Header, Divider, List } from 'semantic-ui-react
 
 const Exhibition = (props) => {
     //console.log(props)
-    console.log(props.exhibit.images.map((img, index) => ( index === 0 ? img.b.url : null )))
+    //console.log(props.exhibit.images.map((img, index) => ( index === 0 ? img.b.url : null )))
     return (
         <div>
             <Container
@@ -26,14 +26,16 @@ const Exhibition = (props) => {
                         <p style={{ fontSize: '1.33em' }}>
 
                         </p>
-                        <p style={{ fontSize: '1.0em' }}>
-                        {props.exhibit.description}
+                        <p style={{ fontSize: '1.2em' }}>
+                        {props.exhibit.description ? props.exhibit.description : <span>No description provided.</span>}
                         </p>
                         <Divider />
                             <List>
-                                <List.Item><span className='date'>Acquired in {props.exhibit.year_acquired}</span></List.Item>
-                                <List.Item><span className='medium'>Medium is {props.exhibit.medium}</span></List.Item>
-                                <List.Item>{props.exhibit.["woe:country_name"] ? props.exhibit.["woe:country_name"] : <span>Not provided</span>}</List.Item>
+                                <List.Item><span className='date'>Acquired in {props.exhibit.year_acquired ? props.exhibit.year_acquired : <span>year not found</span>}</span></List.Item>
+                                <List.Item>{props.exhibit.creditline}</List.Item>
+                                <List.Item><span className='medium'>Medium is {props.exhibit.medium ? props.exhibit.medium : <span>not found</span>}</span></List.Item>
+                                <List.Item>{props.exhibit.dimensions}</List.Item>
+                                <List.Item>{props.exhibit.["woe:country_name"] ? props.exhibit.["woe:country_name"] : <span>Country Not provided</span>}</List.Item>
                             </List>
                         </Grid.Column>
                     </Grid.Row>
