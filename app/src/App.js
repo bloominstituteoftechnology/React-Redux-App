@@ -17,7 +17,6 @@ function App(props) {
         <Menu fixed='top' inverted>
         <Container>
           <Menu.Item as='a' header>
-            <Image size='mini' src='/logo.svg' style={{ marginRight: '1.5em' }} />
             COOPER HEWITT EXHIBITS
           </Menu.Item>
         </Container>
@@ -44,7 +43,6 @@ function App(props) {
       <Segment inverted vertical style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
       <Container textAlign='center'>
         <Divider inverted section />
-        <Image centered size='mini' src='/logo.png' />
         <List horizontal inverted divided link size='small'>
           <List.Item as='a' href='#'>
             Site Map
