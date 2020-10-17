@@ -43,8 +43,6 @@ import * as serviceWorker from './serviceWorker';
 // 5. Pass mapStateToProps into connect: 
 // export default connect (mapStateToProps, {})(Component)
 
-
-
 const store = createStore(
   exhibitReducer,
   applyMiddleware(thunk)
