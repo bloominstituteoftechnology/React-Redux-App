@@ -4,6 +4,7 @@ import Exhibition from './components/Exhibition';
 import { fetchData } from './actions/exhibitActions';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
+import CircleLoader from './CircleLoader';
 import { Container, Menu, Image, List, Divider, Segment, Message } from 'semantic-ui-react';
 
 function App(props) {
@@ -28,19 +29,14 @@ function App(props) {
       >
       {/*console.log(props.exhibitsAsProps && props.exhibitsAsProps.map(item => item.images))*/}
         {props.isFetching ? (
-          <Message>
-          <Message.Header>Fetching Exhibits</Message.Header>
-          <p>
-            ...this won't take long...
-          </p>
-        </Message>
+          <CircleLoader />
         ) : ( 
           props.exhibitsAsProps && props.exhibitsAsProps.map(item => 
             <Exhibition key={item.id} exhibit={item} />
           )
         )}
       </Container>
-      <Segment inverted vertical style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
+    <Segment inverted vertical style={{ margin: '5em 0em 0em', padding: '5em 0em' }}>
       <Container textAlign='center'>
         <Divider inverted section />
         <List horizontal inverted divided link size='small'>
