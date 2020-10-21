@@ -24,7 +24,7 @@ return(
             {props.details.map(detail=>       
             <div key={detail.id}>
                 <h2 className='pokeName'>You got {detail.name.toUpperCase()}!</h2>
-                <img src={detail.sprites.front_default} className='pokePic' alt='pokemon' />
+                <img src={detail.sprites.other.dream_world.front_default} className='pokePic' alt='pokemon' />
                 <div ><h3>Type/s:</h3> {detail.types.map(type=>
                     <h3 key={type.slot} className={`${type.type.name}`}>{type.type.name.toUpperCase()}</h3>)}
                 </div>
