@@ -1,0 +1,203 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(65, 75, 162);
+  background-image: url('https://wallpaperaccess.com/full/115083.jpg');
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pokePic{
+  width:300px;
+  height:300px;
+}
+
+.pokemonTitle{
+  text-shadow: 2px 2px#ff0000;
+}
+
+.pokeName{
+  /* color:white; */
+  text-shadow: 2px 2px#ff0000;
+
+}
+
+.normal{
+  background-color: rgb(193, 193, 156);
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+
+}
+
+.fire{
+  background-color: orange;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.fighting{
+  background-color: rgb(198, 62, 12);
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.water{
+  background-color: blue;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.flying{
+  background-color: rgb(186, 186, 225);
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.grass{
+  background-color: green;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.poison{
+  background-color: purple;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.electric{
+  background-color: rgba(255, 242, 0, 0.839);
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.ground{
+  background-color: burlywood;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.psychic{
+  background-color: rgb(231, 72, 151);
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.rock{
+  background-color: rgba(190, 173, 114, 0.771);
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.ice{
+  background-color: lightblue;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.bug{
+  background-color: rgb(169, 212, 78);
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.dragon{
+  background-color: darkblue;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.ghost{
+  background-color: mediumslateblue;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.dark{
+  background-color: black;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.steel{
+  background-color: slategray;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
+.fairy{
+  background-color: pink;
+  color: white;
+  width:275px;
+  border-radius:45%;
+  margin-left:180px;
+  
+}
