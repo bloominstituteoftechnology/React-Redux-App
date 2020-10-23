@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { connect } from "react-redux";
+import { getAdvice } from "./actions/AppActions";
 import './App.css';
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    props.getAdvice();
+        
+  }, [props.getAdvice]);
+
+  if (props.loading) {
+    return <h2>Fetching The Best Advice!</h2>
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <h1>The Best Advice Generator</h1>
+     <p>Better Than Therapy....</p>
+
+     <div className="adviceList">
+     <h2>Don't Cry Laugh! {props.advice}</h2>
+     <button className="getAdvice" 
+     onClick={props.getAdvice}>Seek Another Opinion</button>
+     </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    advice: state.advice,
+    loading: state.loading
+  }
+}
+
+export default connect(mapStateToProps, {getAdvice})  (App);
