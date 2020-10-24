@@ -7,14 +7,12 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk"
 import { AppReducer } from './reducers/AppReducers'
 import { Provider } from "react-redux";
-
-const logger = ({ getState }) => (next) => (action) => {
-  console.log("Dispatching action" , action);
-  next(action);
-}
+import { logger } from 'redux-logger'
 
 
-let store = createStore(AppReducer, applyMiddleware(logger,thunk))
+
+
+let store = createStore(AppReducer, applyMiddleware(thunk,logger))
 
 const rootElement = document.getElementById('root');
 

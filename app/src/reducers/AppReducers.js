@@ -1,37 +1,36 @@
-export const FETCHING_ADVICE_START = "FETCHING_ADVICE_START";
-export const FETCHING_ADVICE_SUCCESS = "FETCHING_ADVICE_SUCCESS";
-export const FETCHING_ADVICE_FAILURE = "FETCHING_ADVICE_FAILURE";
-export const TOGGLE_EDITING = "TOGGLE_EDITING";
-
+import { FETCHING_ADVICE_START } from '../actions/AppActions'
+import { FETCHING_ADVICE_SUCCESS } from '../actions/AppActions'
+import { FETCHING_ADVICE_FAILURE } from '../actions/AppActions'
 
 export const initialState = { 
-    editing: false, 
-    loading: false, 
-    advice: ''
+    title: "Advice Corner",
+    advice: [],
+    loading: true,
+    error: ''
 }
 
 
 export const AppReducer = (state = initialState, action) => {
+    console.log('reducer', action)
     switch(action.type) {
-        case TOGGLE_EDITING: 
-            return {
-                ...state, 
-                editing: !state.editing
-            }
         case FETCHING_ADVICE_START:
             return { 
                 ...state, 
-                loading: true };
+                loading: true,
+                error: ''
+            };
         case FETCHING_ADVICE_SUCCESS:
             return { 
                 ...state, 
-                insult: action.payload, 
-                loading: false };
+                advice: action.payload, 
+                loading: false,
+                error: ''
+             };
         case FETCHING_ADVICE_FAILURE:
             return { 
                 ...state, 
-                error: action.payload, 
-                loading: false };
+                error: action.payload
+                };
               default:
                 return state;
     }
