@@ -112,38 +112,47 @@ axios
         const response34 = responses[33].data.results;
 
         // use/access the results
-        console.log(response1, response2, response3, response4, response5, response6, response7, response8, response9, response10, response11, response12, response13, response14, response15, response16, response17, response18, response19, response20, response21, response22, response23, response24, response25, response26, response27, response28, response29, response30, response31, response32, response33, response34) ;
-        
-        // const response1 = () => {
-        //     const newArr = [];
-        //     responses[0].map((data) => newArr.push(data));
-        //     return console.log(newArr);
-        // };
+        const responseCombine = () => {
+            const newArr = [];
+            response1.map((data) => newArr.push(data));
+            response2.map((data) => newArr.push(data));
+            response3.map((data) => newArr.push(data));
+            response4.map((data) => newArr.push(data));
+            response5.map((data) => newArr.push(data));
+            response6.map((data) => newArr.push(data));
+            response7.map((data) => newArr.push(data));
+            response8.map((data) => newArr.push(data));
+            response9.map((data) => newArr.push(data));
+            response10.map((data) => newArr.push(data));
+            response11.map((data) => newArr.push(data));
+            response12.map((data) => newArr.push(data));
+            response13.map((data) => newArr.push(data));
+            response14.map((data) => newArr.push(data));
+            response15.map((data) => newArr.push(data));
+            response16.map((data) => newArr.push(data));
+            response17.map((data) => newArr.push(data));
+            response18.map((data) => newArr.push(data));
+            response19.map((data) => newArr.push(data));
+            response20.map((data) => newArr.push(data));
+            response21.map((data) => newArr.push(data));
+            response22.map((data) => newArr.push(data));
+            response23.map((data) => newArr.push(data));
+            response24.map((data) => newArr.push(data));
+            response25.map((data) => newArr.push(data));
+            response26.map((data) => newArr.push(data));
+            response27.map((data) => newArr.push(data));
+            response28.map((data) => newArr.push(data));
+            response29.map((data) => newArr.push(data));
+            response30.map((data) => newArr.push(data));
+            response31.map((data) => newArr.push(data));
+            response32.map((data) => newArr.push(data));
+            response33.map((data) => newArr.push(data));
+            response34.map((data) => newArr.push(data));
+            return newArr;
+        };
 
-        const charArr = [{
-        id: null,
-        name: "",
-        status: "",
-        species: "",
-        type: "",
-        gender: "",
-        origin: {
-            name: "",
-            url: ""
-        },
-        location: {
-            name: "",
-            url: ""
-        },
-        image: "",
-        episode: [
-            ""
-        ],
-        url: "",
-        created: ""
-        }];
-
-        console.log("Character Array: ", charArr)
+        let combinedArray = responseCombine();
+        console.log("Character Array: ", combinedArray)
     })
   )
   .catch(errors => {
