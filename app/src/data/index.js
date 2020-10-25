@@ -153,6 +153,7 @@ axios
 
         let combinedArray = responseCombine();
         console.log("Character Array: ", combinedArray)
+        
     })
   )
   .catch(errors => {

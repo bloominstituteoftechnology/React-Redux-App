@@ -5,8 +5,7 @@ import '../App.css';
 import { connect } from 'react-redux';
 
 const Characters = props => {
-    // console.log(props);
-    
+    console.log(props)
     return(
         <div className="characters">
             <button onClick={CharacterArray}>Get Character List</button>
