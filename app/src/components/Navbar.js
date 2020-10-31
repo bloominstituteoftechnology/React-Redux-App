@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../images/spacex-logo.svg';
-import '../App.css';
 
 const Navbar = () => {
   return (

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { fetchHistory } from '../actions/fetchHistory';
 import History from './History';
-import '../App.css';
 
 const HistoryList = props => {
   useEffect(() => {

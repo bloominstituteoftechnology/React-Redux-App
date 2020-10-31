@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { fetchMissions } from '../actions/fetchMissions';
-import '../App.css';
 import twitter from '../images/twitter.svg';
 
 const MissionList = props => {

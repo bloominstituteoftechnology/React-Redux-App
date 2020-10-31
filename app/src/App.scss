@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* THE MAIN STYLES */
-body {
-  color: #999;
-  text-align: center;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
-  font-family: 'Space Mono', monospace;
+/* GLOBAL STYLES */
+a {
+  text-decoration: none;
+}
+
+p {
+  line-height: 1.5;
 }
 
 /* THE NAVBAR */
@@ -13,7 +15,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5rem;
+  padding: 0 4rem;
+  height: 10vh;
 }
 
 .logo {
@@ -37,13 +40,22 @@ nav {
   cursor: pointer;
 }
 
+/* WELCOME */
+.home {
+  width: 100%;
+  height: 90vh;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .title {
   color: rgb(23,23,23);
   font-weight: bold;
-  margin: 6% auto 0;
-  padding: 5% auto;
   font-size: 6rem;
-  text-align: center;
   animation-name: floating;
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
@@ -59,38 +71,27 @@ nav {
 .intro {
   font-size: 1.8rem;
   color: rgb(23,23,23);
-  width: 30%;
-  margin: 1rem auto;
+  margin: 4rem 0;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  p {
+    margin-bottom: 2rem;
+  }
 }
 
 .api {
   text-decoration: none;
-  color: royalblue;
+  color: #005288;
   font-weight: bold;
 }
 
 .api:hover {
   background: rgb(23,23,23);
   color: #ffffff;
-}
-
-.home button {
-  border: none;
-  padding: .8rem 1.4rem;
-  margin-top: 1.2rem;
-  border: 5px solid rgb(23,23,23);
-  background: rgb(23,23,23);
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.home button:hover {
-  cursor: pointer;
-  background: none;
-  box-sizing: border-box;
-  border: 5px solid rgb(23,23,23);
-  color: rgb(23,23,23);
 }
 
 /* THE CORE */
@@ -223,7 +224,7 @@ nav {
 
 /* THE MISSION LIST */
 .mission {
-  background: rgb(23,23,23, 0.15);
+  // background: rgb(23,23,23, 0.15);
   display: inline-block;
   margin: 1rem;
   width: 40%;

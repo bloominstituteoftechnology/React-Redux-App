@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { fetchInfo } from '../actions/fetchInfo';
-import '../App.css';
 import hq from '../images/hq.jpg';
 
 const Core = props => {

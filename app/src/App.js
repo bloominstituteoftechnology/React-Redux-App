@@ -6,7 +6,7 @@ import HistoryList from './components/HistoryList';
 import MissionList from './components/MissionList';
 import RocketsList from './components/RocketsList';
 import { Route } from 'react-router-dom';
-import './App.css';
+import "./App.scss";
 
 export default function App() {
   return (

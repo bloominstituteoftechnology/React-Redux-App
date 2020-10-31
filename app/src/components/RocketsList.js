@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from "react-redux";
 import { fetchRockets } from '../actions/fetchRockets';
-import '../App.css';
 import Rocket from './Rocket';
 
 const RocketsList = props => {

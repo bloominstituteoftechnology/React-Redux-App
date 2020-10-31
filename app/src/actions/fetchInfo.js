@@ -7,7 +7,7 @@ export const INFO_FAILURE = 'INFO_FAILURE';
 export const fetchInfo = () => dispatch => {
   dispatch({ type: INFO_START })
   axios
-    .get('https://api.spacexdata.com/v3/info')
+    .get('https://api.spacexdata.com/v4/company')
     .then(res => {
       dispatch({ type: INFO_SUCCESS, payload: res.data })
     })
