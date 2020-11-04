@@ -1,10 +1,13 @@
-import {FETCH_POKEMON_START, FETCH_POKEMON_SUCCESS, FETCH_POKEMON_FAIL} from '../actions'
+import {FETCH_POKEMON_START, 
+    FETCH_POKEMON_SUCCESS, 
+    FETCH_POKEMON_FAIL } from '../actions'
 
 const initialState = {
     isLoading: false,
     pokemonData: [],
     error:""
 }
+
 
 export const pokemonReducer = (state = initialState, action) => {
     switch(action.type) {

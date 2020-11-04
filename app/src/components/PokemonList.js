@@ -15,7 +15,7 @@ const PokemonList = (props) => {
             {props.isLoading ? <p>Loading Pokemon List...</p> : null}
             {props.error ? <p style={{color:"red"}}>{props.error}</p> : null}
             {props.pokemonData.map(pokemon => {
-                <PokemonCard />
+                return <PokemonCard key={pokemon.name} pokemonName={pokemon.name} pokemonUrl={pokemon.url}/>
             })}
         </div>
     )

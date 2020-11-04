@@ -6,7 +6,7 @@ import thunk from 'redux-thunk'
 import "./index.css";
 
 import App from "./App";
-import { pokemonReducer } from "./store/reducers";
+import { pokemonReducer, displayPokemonReducer } from "./store/reducers";
 import reportWebVitals from "./reportWebVitals";
 
 const store = createStore(pokemonReducer, applyMiddleware(thunk));
