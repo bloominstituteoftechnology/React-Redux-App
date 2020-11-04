@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PokemonCard from './PokemonCard'
+import { fetchPokemon } from '../store/actions'
 
 const PokemonList = (props) => {
+
+    useEffect(() => {
+        props.fetchPokemon()
+    }, [])
 
     return (
         <div>
@@ -24,4 +29,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {} )(PokemonList);
+export default connect(mapStateToProps, {fetchPokemon} )(PokemonList);
