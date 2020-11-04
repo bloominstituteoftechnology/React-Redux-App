@@ -19,8 +19,8 @@ export const fetchPokemon = () => {
         axios
         .get(pokemonAPI)
         .then(res => {
-            console.log(res.data)
-            console.log(res.data.results)
+            // console.log(res.data)
+            // console.log(res.data.results)
             dispatch({type: FETCH_POKEMON_SUCCESS, payload:res.data.results})
         })
         .catch(err => {
