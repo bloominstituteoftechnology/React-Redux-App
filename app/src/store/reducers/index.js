@@ -40,13 +40,23 @@ const pokemonReducer = (state = initialState, action) => {
     }
 }
 
+// sorts by lowest id to highest id
+const compare = (a, b) => {
+    if (a.id < b.id)
+    {return -1}
+    if (a.id > b.id)
+    {return 1}
+
+    return 0
+}
+
 const pokemonCardReducer = (state = iniPokemon, action) => {
     switch(action.type) {
         case DISPLAY_POKE_START:
             return state
         case DISPLAY_POKE_SUCCESS:
             // if state already exists do not overwrite
-            return [...state, (state.some(state => state.id === action.payload.id) ? null : action.payload)]
+            return [...state, (state.some(state => state.id === action.payload.id) ? null : action.payload)].sort(compare)
         case DISPLAY_POKE_FAIL:
             return state
         default:
