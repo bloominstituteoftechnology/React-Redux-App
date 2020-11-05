@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import axios from 'axios'
 import styled from 'styled-components'
+
+import { displayPokemon } from '../store/actions'
 
 const StyledDiv = styled.div`
 border-radius: .3rem;
@@ -16,40 +17,20 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 
 const PokemonCard = (props) => {
-
-    const [thisPokemon, setThisPokemon] = useState([])
-
-    useEffect(() => {
-        axios.get(props.pokemonUrl)
-        .then(res => {
-            // console.log(res.data)
-            setThisPokemon(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    },[])
-
-    
+    const { pokemonInfo } = props
 
     return (
         <StyledDiv>
-            <p>{capitalize(props.pokemonName)}</p>
-            {thisPokemon 
+            <p>{capitalize(pokemonInfo.name)}</p>
+            {pokemonInfo 
             ? <div>
-            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${thisPokemon.id}.png`}/>
-            <p>{`Weight: ${thisPokemon.weight}`}</p>
-            <p>{`Height: ${thisPokemon.height}`}</p>
+            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonInfo.id}.png`}/>
+            <p>{`Weight: ${pokemonInfo.weight}`}</p>
+            <p>{`Height: ${pokemonInfo.height}`}</p>
             </div>
             : <p>Loading Pokemon...</p>}
         </StyledDiv>
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        pokemonData:state.pokemonData,
-    }
-}
-
-export default connect(mapStateToProps, {})(PokemonCard)
+export default PokemonCard

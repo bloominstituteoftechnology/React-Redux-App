@@ -6,10 +6,12 @@ import thunk from 'redux-thunk'
 import "./index.css";
 
 import App from "./App";
-import { pokemonReducer, displayPokemonReducer } from "./store/reducers";
+import reducer from "./store/reducers";
 import reportWebVitals from "./reportWebVitals";
 
-const store = createStore(pokemonReducer, applyMiddleware(thunk));
+const store = createStore(reducer, applyMiddleware(thunk));
+
+console.log(store.getState())
 
 ReactDOM.render(
   <Provider store={store}>

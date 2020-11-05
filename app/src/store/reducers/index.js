@@ -1,6 +1,11 @@
+import { combineReducers } from 'redux'
+
 import {FETCH_POKEMON_START, 
     FETCH_POKEMON_SUCCESS, 
-    FETCH_POKEMON_FAIL } from '../actions'
+    FETCH_POKEMON_FAIL,
+    DISPLAY_POKE_START,
+    DISPLAY_POKE_SUCCESS,
+    DISPLAY_POKE_FAIL } from '../actions'
 
 const initialState = {
     isLoading: false,
@@ -8,8 +13,9 @@ const initialState = {
     error:""
 }
 
+const iniPokemon = []
 
-export const pokemonReducer = (state = initialState, action) => {
+const pokemonReducer = (state = initialState, action) => {
     switch(action.type) {
         case FETCH_POKEMON_START:
             return {
@@ -33,3 +39,22 @@ export const pokemonReducer = (state = initialState, action) => {
             return state
     }
 }
+
+const pokemonCardReducer = (state = iniPokemon, action) => {
+    switch(action.type) {
+        case DISPLAY_POKE_START:
+            return state
+        case DISPLAY_POKE_SUCCESS:
+            // if state already exists do not overwrite
+            return [...state, (state.some(state => state.id === action.payload.id) ? null : action.payload)]
+        case DISPLAY_POKE_FAIL:
+            return state
+        default:
+            return state
+    }
+}
+
+export default combineReducers({
+    pokemonReducer,
+    pokemonCardReducer
+})

@@ -19,8 +19,6 @@ export const fetchPokemon = () => {
         axios
         .get(pokemonAPI)
         .then(res => {
-            // console.log(res.data)
-            // console.log(res.data.results)
             dispatch({type: FETCH_POKEMON_SUCCESS, payload:res.data.results})
         })
         .catch(err => {
@@ -35,7 +33,7 @@ export const displayPokemon = (api) => {
         // dispatch({type:DISPLAY_POKE_START})
         axios.get(api)
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             dispatch({type:DISPLAY_POKE_SUCCESS, payload:res.data})
         })
         .catch(err => 

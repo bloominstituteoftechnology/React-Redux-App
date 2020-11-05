@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import PokemonCard from './PokemonCard'
-import { fetchPokemon } from '../store/actions'
+import { fetchPokemon, displayPokemon } from '../store/actions'
 import styled from 'styled-components'
 
 const StyledHeader = styled.div`
@@ -22,7 +22,11 @@ const PokemonList = (props) => {
 
     useEffect(() => {
         props.fetchPokemon()
+        
     }, [])
+    useEffect(() => {
+        props.pokemonData.forEach(pokemon => props.displayPokemon(pokemon.url))
+    },[props.pokemonData])
 
     return (
         <div>
@@ -32,8 +36,8 @@ const PokemonList = (props) => {
             {props.isLoading ? <p>Loading Pokemon List...</p> : null}
             {props.error ? <p style={{color:"red"}}>{props.error}</p> : null}
             <StyledCardContainer>
-            {props.pokemonData.map(pokemon => {
-                return <PokemonCard key={pokemon.name} pokemonName={pokemon.name} pokemonUrl={pokemon.url}/>
+            {props.pokemonCardData.map(pokemon => {
+                return <PokemonCard key={pokemon.id} pokemonInfo={pokemon}/>
             })}
             </StyledCardContainer>
         </div>
@@ -42,10 +46,11 @@ const PokemonList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isLoading: state.isLoading,
-        pokemonData: state.pokemonData,
-        error: state.error
+        isLoading: state.pokemonReducer.isLoading,
+        pokemonData: state.pokemonReducer.pokemonData,
+        pokemonCardData: state.pokemonCardReducer,
+        error: state.pokemonReducer.error
     }
 }
 
-export default connect(mapStateToProps, {fetchPokemon} )(PokemonList);
+export default connect(mapStateToProps, {fetchPokemon, displayPokemon} )(PokemonList);
