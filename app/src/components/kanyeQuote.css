@@ -1,0 +1,15 @@
+.button {
+    border: none;
+    background: none;
+
+    }
+
+    .image {
+        width:100px;
+    }
+
+    .quote {
+        margin-top:100px;
+        margin-bottom:100px;
+        color:red;
+    }

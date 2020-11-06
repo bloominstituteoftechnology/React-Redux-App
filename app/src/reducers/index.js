@@ -1,25 +1,10 @@
-import { FETCH_GOT_DATA, FETCH_GOT_SUCCESS } from '../actions/index'
+import { combineReducers } from 'redux';
+import { reducer } from './reducer';
 
-const initialState = {
-    isLoading: false,
-    gameOfThronesData: [],
-    error: ""
-};
+export default combineReducers({
+    reducer
+})
 
-export const gameOfThronesReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case FETCH_GOT_DATA:
-            return {
-                ...state,
-                isLoading: true,
-                error: ""
-            };
-        case FETCH_GOT_SUCCESS:
-            return {
-                isLoading: false,
-                gameOfThronesData: action.payload
-            };
-        default:
-            return state;
-    }
-};
+
+    //calls a function to  evaluate down to whatver the function returns
+    //we pass in an object with all of our reducer, it will evaluate down to a single reducer

@@ -1,23 +1,21 @@
 import axios from 'axios'
 
 //action types
-export const FETCH_GOT_DATA = "FETCH_GOT_DATA";
-export const FETCH_GOT_SUCCESS = "FETCH_GOT_SUCCESS";
-export const FETCH_GOT_FAILURE = "FETCH_GOT_FAILURE";
+export const FETCH_QUOTE_START = "FETCH_QUOTE_START";
+export const FETCH_QUOTE_SUCCESS = "FETCH_QUOTE_SUCCESS";
+export const FETCH_QUOTE_FAILURE = "FETCH_QUOTE_FAILURE";
 
 // action creators (async)
-export const getGameOfThronesData = () => {
-    return (dispatch) => {
+export const fetchQuote = () => {
+    return dispatch => {
     // do async action here
-    dispatch({ type: FETCH_GOT_DATA });
+    dispatch({ type: FETCH_QUOTE_START });
 
-    axios
-        .get("https://anapioficeandfire.com/api/characters/583")
-        .then((res) => {
-            dispatch({ FETCH_GOT_SUCCESS, payload: res.data });
+    axios.get("https://api.kanye.rest/")
+        .then(res => {
+            dispatch({type: FETCH_QUOTE_SUCCESS, payload: res.data.quote });
     })
-        .catch((err) => {
-            dispatch({ type: FETCH_GOT_FAILURE, payload: err.message })
-        });
+        .catch(err => console.log(err.response));
+
     };
 };

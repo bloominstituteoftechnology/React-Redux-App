@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'
 import logger from 'redux-logger'
 
-import { gameOfThronesReducer } from './reducers/index'
+import { quoteReducer } from './reducers/reducer'
 
 import App from './App';
 
 import './index.css';
 
-const store = createStore(gameOfThronesReducer, applyMiddleware(thunk, logger));
+const store = createStore(quoteReducer, applyMiddleware(thunk, logger));
 
 
 

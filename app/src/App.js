@@ -1,11 +1,11 @@
 import React from 'react';
-import GameOfThronesList from './components/GameOfThronesList'
+import Quote from './components/Quote'
 import './index.css'
 
 export default function App() {
   return (
     <div className="App">
-      <GameOfThronesList />
+      <Quote />
     </div>
   );
 }
