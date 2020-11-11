@@ -1,0 +1,20 @@
+.card-container{
+    margin: 5vh;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+
+}
+
+.card {
+    margin: 3vh;
+    padding: 2vh;
+    background:white;
+    color:black;
+    width: 25vh;
+}
+
+.team-logo{
+    height: 10vh;
+    
+}
