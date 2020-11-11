@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background: url(https://www.designboom.com/wp-content/uploads/2019/04/spacex-falcon-heavy-landing-designboom-1.gif);
+  background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+}  
