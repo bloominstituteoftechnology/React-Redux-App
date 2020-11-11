@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+.header {
+  color: red;
+}
+
+.Hero {
+  border: 1px solid black;
+  height: 150px;
+  width: 200px;
+  /* display: flex;
+  flex-direction: column; */
+  margin: 2%;
+  font-size: 14px;
+}
+
+.HeroList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.primary_attr-str {
+  color: red;
+}
+.primary_attr-agi {
+  color: green;
+}
+.primary_attr-int {
+  color: blue;
+}
+
+.attackType {
+  width: 100%;
+  height: 100%;
+}
