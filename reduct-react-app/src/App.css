@@ -1,0 +1,59 @@
+.App {
+  text-align: center;
+  margin: 25px;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 79px;
+  font-weight: 900;
+  border: solid 5px;
+  color: darkmagenta;
+  background-color: salmon;
+  width: 50%;
+  margin:  auto;
+}
+
+p {
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.Dare {
+  background: darkgray;
+  width: 35%;
+  height: 100px;
+  font-size: 28px;
+}
+
+.Dare:hover {
+  background: darkmagenta;
+  cursor: pointer;
+}
+
+form {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+input {
+  width: 25%;
+  height: 50px;
+  border: solid darkmagenta;
+}
+.enter {
+  margin: 20px;
+  width: 150px;
+  height: 45px;
+}
+
+.enter:hover {
+  background: darkmagenta;
+  cursor: pointer;
+}
+  
