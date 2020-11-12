@@ -20,8 +20,9 @@ const PokemonCard = (props) => {
     const { pokemonInfo } = props
 
     return (
-        <StyledDiv>
-            <p>{capitalize(pokemonInfo.name)}</p>
+        pokemonInfo.name ? 
+        (<StyledDiv className="pokemon-card">
+            <p>{pokemonInfo.name && capitalize(pokemonInfo.name)}</p>
             {pokemonInfo 
             ? <div>
             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonInfo.id}.png`}/>
@@ -29,7 +30,9 @@ const PokemonCard = (props) => {
             <p>{`Height: ${pokemonInfo.height}`}</p>
             </div>
             : <p>Loading Pokemon...</p>}
-        </StyledDiv>
+        </StyledDiv>) 
+        : null
+
     )
 }
 

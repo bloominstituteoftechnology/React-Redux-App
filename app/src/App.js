@@ -1,14 +1,16 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
+import PokemonList from "./components/PokemonList";
 
-import PokemonList from './components/PokemonList'
-
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <PokemonList />
+      <Router>
+        <PokemonList />
+      </Router>
     </div>
   );
 }
