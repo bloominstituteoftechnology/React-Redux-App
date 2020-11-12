@@ -22,8 +22,7 @@ const KanyeQuote = (props) => {
                 width={100}
             />
             )}
-            {props.quote && <h3 className="quote">"{props.quote}"</h3>}
-            {props.error && <p>{props.error}</p>}
+            <h3 className="quote">"{props.quote}"</h3>}
             <button className="button" onClick={props.fetchQuote}><img className="image" src={kw} alt = 'Kanye West'/></button>
         </div>
     )

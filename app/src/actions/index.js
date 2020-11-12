@@ -15,7 +15,7 @@ export const fetchQuote = () => {
         .then(res => {
             dispatch({type: FETCH_QUOTE_SUCCESS, payload: res.data.quote });
     })
-        .catch(err => console.log(err.response));
+        .catch(err => console.log(err.res));
 
     };
 };
