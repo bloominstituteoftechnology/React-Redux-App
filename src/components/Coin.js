@@ -16,9 +16,9 @@ const Coin = props => {
                 <span> </span>
                 <div className='data-container'>
                     <div className='current'>
-                        <h3>Current Price: <span className='data'>${nf.format(props.coin.current_price)}</span></h3>
+                        {props.coin.current_price && <h3>Current Price: <span className='data'>${nf.format(props.coin.current_price)}</span></h3>}
                         <span> </span>
-                        <h3>Market Capitalization: <span className='data'>${nf.format(props.coin.market_cap)}</span></h3>
+                        {props.coin.market_cap && <h3>Market Capitalization: <span className='data'>${nf.format(props.coin.market_cap)}</span></h3>}
                     </div>
                     <div className='24h'>
                         {props.coin.price_change_percentage_24h && <h3>24h Percent Change: <span className='data'>{(props.coin.price_change_percentage_24h).toFixed(2)}%</span></h3>}
