@@ -2,9 +2,9 @@ import React from 'react';
 import './App.css';
 import { createStore, applyMiddleware } from "redux";
 import {Provider} from 'react-redux';
-import {reducer} from "./reducers";
+import rootReducer from "./reducers"
 
-const store  = createStore(reducer, applyMiddleware())
+const store  = createStore(rootReducer, applyMiddleware())
 
 function App() {
   return (
