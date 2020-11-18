@@ -1,28 +1,18 @@
 import React, {useState} from 'react'
-import {loadAoeData} from '../reducers/index';
+import {loadAoeData} from '../actions/index';
+import {connect} from 'react-redux'
 
 const SearchForm = (props) => {
-
-    const [civName,setCivName] = useState("")
-    const handleChange = (e) =>{
-        setCivName(e.target.value)
+    console.log(props)
+    const handleClick = (e)=>{
+        e.preventDefault();
+        props.loadAoeData()
     }
     return (
         <div>
-            <form>
-                <label htmlFor="civName">Civilization Name: 
-                    {' '}<input 
-                        type="text"
-                        name="civName"
-                        id="civName"
-                        onChange={handleChange} //change
-                        placeholder="Enter Civilization Name"
-                        value={civName} //change
-                    />
-                </label>
-            </form>
+                <button onClick={handleClick}>Load Jokes</button>
         </div>
     )
 }
 
-export default SearchForm
+export default connect(()=>{return {}},{loadAoeData})(SearchForm);

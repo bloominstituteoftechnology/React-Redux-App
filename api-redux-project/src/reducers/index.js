@@ -1,7 +1,7 @@
 import {IS_LOADING,DATA_LOADED,DATA_ERROR} from '../actions/index'
 
 const initialState = {
-    civilizations: [],
+    jokes: [],
     isLoading: false,
     error: ""
 }
@@ -15,6 +15,16 @@ const Reducer = (state=initialState,action) =>{
         case IS_LOADING:
             return {
                 isLoading:true,
+            }
+        case DATA_LOADED:
+            return {
+                jokes: action.payload,
+                isLoading:false,
+            }
+        case DATA_ERROR:
+            return {
+                isLoading:false,
+                error:action.payload
             }
         default:
             return state
