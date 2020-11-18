@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {Provider} from 'react-redux';
-import {reducer} from '../src/reducers/index'
+import Reducer from '../src/reducers/index'
 import {createStore,applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const store = createStore(reducer,applyMiddleware(thunk))
+const store = createStore(Reducer,applyMiddleware(thunk))
 
 ReactDOM.render(
   <React.StrictMode>
