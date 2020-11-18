@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 import Exhibition from './components/Exhibition';
 import { fetchData } from './actions/exhibitActions';
 import 'semantic-ui-css/semantic.min.css';
-import './App.css';
 import CircleLoader from './CircleLoader';
-import { Container, Menu, Image, List, Divider, Segment, Message } from 'semantic-ui-react';
+import { Container, Menu, List, Divider, Segment } from 'semantic-ui-react';
 
 function App(props) {
-  console.log(props)
   useEffect(() => {
     props.fetchData();
   }, [])
@@ -27,7 +25,7 @@ function App(props) {
           marginTop: '5.5em'
           }}
       >
-      {/*console.log(props.exhibitsAsProps && props.exhibitsAsProps.map(item => item.images))*/}
+
         {props.isFetching ? (
           <CircleLoader />
         ) : ( 

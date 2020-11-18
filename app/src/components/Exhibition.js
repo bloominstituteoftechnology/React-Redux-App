@@ -1,9 +1,8 @@
 import React from 'react';
 import 'semantic-ui-css/semantic.min.css';
-import { Container, Grid, Image, Header, Divider, List, ItemMeta } from 'semantic-ui-react'
+import { Container, Grid, Image, Header, Divider, List } from 'semantic-ui-react'
 
 const Exhibition = (props) => {
-    //console.log(props)
     //console.log(props.exhibit.images.map((img, index) => ( index === 0 ? img.b.url : null )))
     return (
         <div>
@@ -16,7 +15,7 @@ const Exhibition = (props) => {
                     <Grid.Row>
                         <Grid.Column mobile={16} tablet={6} computer={6}>
                             {props.exhibit.images.map((img, index) => (
-                                <Image size='medium' key={img.b.image_id} src={index === 0 ? img.b.url : null} ui={false} alt={img.type}/>
+                                <Image size='medium' key={img.b.image_id} src={index === 0 ? img.b.url : null} ui={false} alt={img.type} />
                             ))}
                         </Grid.Column>
                         <Grid.Column mobile={16} tablet={10} computer={10}>
@@ -27,10 +26,10 @@ const Exhibition = (props) => {
 
                         </p>
                         <p style={{ fontSize: '1.2em' }}>
-                        {props.exhibit.description ? props.exhibit.description : <span>No description provided.</span>}
+                        {props.exhibit.description ? props.exhibit.description : null}
                         </p>
                         <p>
-                        {props.exhibit.label_text ? props.exhibit.label_text : <span>No label content provided.</span>}
+                        {props.exhibit.label_text ? props.exhibit.label_text : null}
                         </p>
                         <Divider />
                             <List>
