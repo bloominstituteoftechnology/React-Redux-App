@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 
 const DrinkList = (props) => {
-    console.log("This is props.drinklist", props.drinklist.drinks)
+    console.log("This is props.drinklist", props.drinklist)
     return (
     <div>
         <div>
