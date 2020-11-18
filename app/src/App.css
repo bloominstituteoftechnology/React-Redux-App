@@ -1,0 +1,114 @@
+body{
+  background-image: url(https://gaycities-featured-images-production.s3.amazonaws.com/events/originals/fb_10474864_668115576598989_3767163647369364153_n.jpg);
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: black;
+}
+
+.App {
+  text-align: center;
+
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  background-color: pink;
+  width: 400px;
+  border-radius: 5%;
+  opacity: 85%;
+  box-shadow: 5px 5px 5px #0000ff;
+  border: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.container {
+  display: inline-flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 10px;
+}
+img{
+  border-radius: 5%;
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px black;
+}
+
+h1{
+  font-family: 'Yellowtail', cursive;
+  color: Pink;
+  font-size: 70px;
+  text-shadow: 5px 5px 5px #0000ff;
+}
+
+.name {
+  font-family: 'Yellowtail', cursive;
+  font-size: 30px;
+  text-shadow: 3px 3px 3px #0000ff;
+  color: #E75480;
+}
+
+input {
+  width: 20%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 25px;
+  box-shadow: 3px 3px 3px #0000ff;
+  color: #0000ff;
+  font-style: italic;
+  font-size: 20px;
+  margin-right: 25px;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  background-color: #f535aa;
+  border-radius: 15%;
+  margin: 12px 20px;
+  box-sizing: border-box;
+  color: Pink;
+  font-size: 20px;
+  box-shadow: 3px 3px 3px #0000ff;
+}
+
+button:hover{
+  background-color: #0000ff;
+}
