@@ -2,14 +2,26 @@ import React from "react";
 import {connect} from "react-redux"
 
 const Title = (props) => {
-    return(
-        <h1>NASA Photos</h1>
-    )
-}
+    return(<div>Working</div>)}
+//         <>
+//         {
+//             props.isFetching ? (
+//                 <div>Fetching Data</div>
+//             ) : props.error ? (
+//                 <div>{props.error}</div>
+//             ) : (
+//                 props.items.map((photo) => {
+//                 return <div>{photo.url}</div>
+//                 })
+//             )
+//         }
+//         </>
+//     )
+// }
 
 const mapStateToProps = (state) => {
     return {
-        is_fetching: state.is_fetching,
+        isFetching: state.is_fetching,
         items: state.item,
         error: state.error
 

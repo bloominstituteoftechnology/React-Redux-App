@@ -1,3 +1,4 @@
+import {IS_LOADING,DATA_LOAD_SUCCESS,DATA_LOAD_ERROR} from "../actions"
 
 
 const initialState = {
