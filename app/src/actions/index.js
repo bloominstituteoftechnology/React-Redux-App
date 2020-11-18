@@ -14,7 +14,7 @@ export const loadData = (date) => (dispatch) => {
     .get(apiURL, {headers: {"X-Requested-With": "XMLHttpRequest"}} )
     .then((res) =>{
         console.log(
-            res
+            res.data
           );
         dispatch({
             type: DATA_LOAD_SUCCESS, 
@@ -22,7 +22,7 @@ export const loadData = (date) => (dispatch) => {
     })
     .catch((err) => {
         dispatch({type: DATA_LOAD_ERROR,
-        payload: 'erorr fetching data' })
+        payload: 'erorr fetching data'})
     })
 
 
