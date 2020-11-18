@@ -13,6 +13,9 @@ export const loadData = (date) => (dispatch) => {
     axios
     .get(apiURL, {headers: {"X-Requested-With": "XMLHttpRequest"}} )
     .then((res) =>{
+        console.log(
+            res
+          );
         dispatch({
             type: DATA_LOAD_SUCCESS, 
             payload: res.data })

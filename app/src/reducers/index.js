@@ -8,7 +8,31 @@ const initialState = {
 }
 
 const reducer = (state=initialState, action) => {
-    return state
+    switch (action.type) {
+        case IS_LOADING:
+            return {
+                ...state,
+                is_fetching: true
+            }
+            case DATA_LOAD_SUCCESS: {
+                return {
+                    ...state, 
+                    is_fetching: false,
+                    items: action.payload
+                }
+            }
+            case DATA_LOAD_ERROR: {
+                return {
+                    ...state,
+                    is_fetching: false,
+                    error: action.payload
+
+                }
+            }
+            default: 
+            return state
+            
+    }
 }
 
 
