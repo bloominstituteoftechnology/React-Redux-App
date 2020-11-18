@@ -1,23 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+
 const DrinkList = (props) => {
+    console.log("This is props.drinklist", props.drinklist.drinks)
     return (
-    <>        
-        {
-            props.isFetching ? (    
-            <div>***FETCHING DATA***</div>
-            ) : props.error ? 
-            ( <div style={{color:'red'}}>{props.error}</div>
+    <div>
+        <div>
+            {
+            props.isFetching ? (
+            <h4>Data is loading</h4>
+            ) : props.error ? (
+                <div>{props.error}</div>
             ) : (
-            props.drinklist.map((drink) => {
-            return <div>{drink.strDrink}</div>
-            })
+                props.drinklist.drinks !== undefined && props.drinklist.drinks.map((drink) => {
+                    return  <div className="container">
+                                <div className="card">
+                                    <div className="name">
+                                        {drink.strDrink}
+                                    </div>
+                                    <div>
+                                        <img src={drink.strDrinkThumb} alt="" width="150px"></img>
+                                    </div>
+                                </div>
+                            </div>
+                })
             )
-        }
-    </>
+            }  
+        </div>
+        <div>
+        </div>        
+
+    </div>
     );
-}
+};
 
 const mapStateToProps = state => {
     return {

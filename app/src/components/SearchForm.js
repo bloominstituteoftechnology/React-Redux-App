@@ -17,7 +17,7 @@ const SearchForm = props => {
 
     return (
         <div>
-            <input value={searchLiquor} onChange={handleChange} />
+            <input value="Pick Your Poison" onChange={handleChange} />
             <button onClick={handleClick}>Search</button>
         </div>
     )
