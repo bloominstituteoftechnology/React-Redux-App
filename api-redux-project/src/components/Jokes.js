@@ -1,15 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
+import {Card,CardHeader,Col,Row,Container} from 'reactstrap'
 const Jokes = (props) => {
     console.log(props)
     return (
         <div>
             {props.jokes.map((joke)=>{
-                return (
-                    <div>
-                        {joke.setup}
-                    </div>
+                return(
+                    <Container>
+                        <Col>
+                            <Card className="mb-3">
+                                {joke.setup}
+                            </Card>
+                        </Col>
+                    </Container>
                 )
             })}
         </div>
