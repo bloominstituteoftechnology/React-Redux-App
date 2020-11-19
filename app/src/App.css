@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 2rem;
+  color:white;
+}
+input {
+  width: 210px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  /* background-image: url('searchicon.png'); */
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+button{
+  box-shadow: 0px 2px 0px 0px #f0f7fa;
+	background-color:transparent;
+	border-radius:4px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:11px 36px;
+	text-decoration:none;
+  text-shadow:0px -1px 0px #5b6178;
+  margin-left: 2rem;
+  }
+  button:hover{
+  color:white;
+  background-color:#057fd0 ;
+  
+  }
+  

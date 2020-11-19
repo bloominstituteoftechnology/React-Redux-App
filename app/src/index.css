@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://cdn.vox-cdn.com/thumbor/1aY3dYYrBy5sSyimWIj2RVaIduU=/0x0:6000x4800/1200x800/filters:focal(3818x1875:4778x2835)/cdn.vox-cdn.com/uploads/chorus_image/image/66840504/Studio_Ghibli_Logo.0.jpg");
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
