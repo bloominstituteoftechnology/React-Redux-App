@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://cdn.vox-cdn.com/thumbor/1aY3dYYrBy5sSyimWIj2RVaIduU=/0x0:6000x4800/1200x800/filters:focal(3818x1875:4778x2835)/cdn.vox-cdn.com/uploads/chorus_image/image/66840504/Studio_Ghibli_Logo.0.jpg");
 }
 
 code {

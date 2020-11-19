@@ -1,24 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import AnimeList from './components/AnimeList'
+import SearchForm from './components/SearchForm'
+import animeReducer from './reducer/index'
+import thunk from "redux-thunk"
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux'
+const store = createStore(animeReducer, applyMiddleware(thunk))
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Ghibli-pi</h1>
+      <SearchForm />
+      <AnimeList />
+
     </div>
+    </Provider>
   );
 }
 
