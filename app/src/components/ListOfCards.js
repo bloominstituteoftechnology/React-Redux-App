@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Container } from "@material-ui/core";
 
 const ListOfCards = (props) => {
   return (
@@ -9,9 +10,17 @@ const ListOfCards = (props) => {
       ) : props.err ? (
         <p>{props.err}</p>
       ) : (
-        props.cards.map((card) => {
-          return <li key={card.multiverseid}>{card.name}</li>;
-        })
+        <Container>
+          {props.cards.map((card) => {
+            return (
+              <img
+                key={card.multiverseid}
+                src={card.imageUrl}
+                style={{ margin: "5px" }}
+              />
+            );
+          })}
+        </Container>
       )}
     </div>
   );

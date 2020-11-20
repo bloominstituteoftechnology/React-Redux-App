@@ -7,6 +7,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  console.log(state.cards);
   switch (action.type) {
     case LOADING:
       return {
