@@ -11,8 +11,10 @@ const Title = (props) => {
                 <div>{props.error}</div>
             ) : (
                 <div>
+            <div>
+            <img src={props.items.url} alt="Space Image" width = "600" height = "500"></img>
+            </div>
             <div>{props.items.explanation}</div>
-            <div>{props.items.url}</div>
             </div>
         
             )

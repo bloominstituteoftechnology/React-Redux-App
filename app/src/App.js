@@ -6,7 +6,7 @@ import rootReducer from "./reducers"
 import Title from "./components/Title"
 import Search from "./components/Search";
 import thunk from "redux-thunk";
-import axios from "axios";
+// import axios from "axios";
 
 
 
@@ -15,17 +15,17 @@ const store  = createStore(rootReducer, applyMiddleware(thunk))
 
 function App() {
 
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
 
-  useEffect(() => {
-    axios
-    .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-08-27")
-    .then(( response => {
-      setData(response.data)
-      console.log(response)
-    }))
-    .catch((error) => console.log(error));
-  }, [])
+  // useEffect(() => {
+  //   axios
+  //   .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2020-08-27")
+  //   .then(( response => {
+  //     setData(response.data)
+  //     console.log(response)
+  //   }))
+  //   .catch((error) => console.log(error));
+  // }, [])
 
 
 
@@ -34,8 +34,8 @@ function App() {
     <Provider store={store}>
     <div>
       <h1>Nasa Photos</h1>
-      <Title/>
       <Search/>
+      <Title/>
     </div>
     </Provider>
   );
