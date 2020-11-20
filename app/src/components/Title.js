@@ -10,10 +10,13 @@ const Title = (props) => {
             ) : props.error ? (
                 <div>{props.error}</div>
             ) : (
-                props.items.map((text) => {
-                return <div>{text.explanation}</div>
-                })
+                <div>
+            <div>{props.items.explanation}</div>
+            <div>{props.items.url}</div>
+            </div>
+        
             )
+            
         }
         </>
     )
