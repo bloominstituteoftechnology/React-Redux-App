@@ -35,19 +35,19 @@ export const dealCards = (deckID) => dispatch => {
 }
 
 
-export const FETCHING_CARD_START = "FETCHING_CARD_START";
-export const FETCHING_CARD_SUCCESS = "FETCHING_CARD_SUCCESS";
-export const FETCHING_CARD_FAIL = "FETCHING_CARD_FAIL";
+export const FETCHING_PLAYER_CARD_START = "FETCHING_PLAYER_CARD_START";
+export const FETCHING_PLAYER_CARD_SUCCESS = "FETCHING_PLAYER_CARD_SUCCESS";
+export const FETCHING_PLAYER_CARD_FAIL = "FETCHING_PLAYER_CARD_FAIL";
 
-export const getCard = () => dispatch => {
-    dispatch({type: FETCHING_CARD_START});
+export const getPlayerCard = (deckID) => dispatch => {
+    dispatch({type: FETCHING_PLAYER_CARD_START});
     axios
-        .get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=6")
+        .get(`https://deckofcardsapi.com/api/deck/${deckID}/draw/?count=1`)
         .then(res => {
             console.log(res)
-            dispatch({type: FETCHING_CARD_SUCCESS, payload: res.data});
+            dispatch({type: FETCHING_PLAYER_CARD_SUCCESS, payload: res.data.cards});
         })
         .catch(err => {
-            dispatch({type: FETCHING_CARD_FAIL, payload: err});
+            dispatch({type: FETCHING_PLAYER_CARD_FAIL, payload: err});
         })
 }

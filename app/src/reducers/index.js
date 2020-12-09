@@ -5,9 +5,9 @@ import {
     DEALING_CARDS_START,
     DEALING_CARDS_SUCCESS,
     DEALING_CARDS_FAIL,
-  FETCHING_CARD_START,
-  FETCHING_CARD_SUCCESS,
-  FETCHING_CARD_FAIL,
+    FETCHING_PLAYER_CARD_START,
+    FETCHING_PLAYER_CARD_SUCCESS,
+    FETCHING_PLAYER_CARD_FAIL,
 } from "./../actions";
 
 const initialState = {
@@ -19,6 +19,8 @@ const initialState = {
   dealerCards: null,
   isFetchingCard: false,
   error: "",
+  playerTotal: null,
+  dealerTotal: null,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -64,20 +66,20 @@ export const reducer = (state = initialState, action) => {
         error: action.payload,
       };
 
-    case FETCHING_CARD_START:
+    case FETCHING_PLAYER_CARD_START:
       return {
         ...state,
         isFetchingCard: true,
         error: "",
       };
-    case FETCHING_CARD_SUCCESS:
+    case FETCHING_PLAYER_CARD_SUCCESS:
       return {
         ...state,
-        playerCards: action.payload,
-        dealerCards: action.payload,
+        cardsRemaining: state.cardsRemaining-1,
+        playerCards: [...state.playerCards, action.payload[0]],
         isFetchingCard: false,
       };
-    case FETCHING_CARD_FAIL:
+    case FETCHING_PLAYER_CARD_FAIL:
       return {
         ...state,
         error: action.payload,

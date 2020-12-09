@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Player from "./Player";
 import Dealer from "./Dealer";
 
-import { getCard, getDeck, dealCards } from "../actions";
+import { getPlayerCard, getDeck, dealCards } from "../actions";
 
 const Card = ({
   deckID,
@@ -14,7 +14,9 @@ const Card = ({
   dealerCards,
   isFetchingCard,
   error,
-  getCard,
+  playerTotal,
+  dealerTotal,
+  getPlayerCard,
   getDeck,
   dealCards,
 }) => {
@@ -22,14 +24,14 @@ const Card = ({
     return <h2>We got an error: {error}</h2>;
   }
   if (isShuffling) {
-      return <h2>Shuffling deck</h2>
+      return <h2>Shuffling deck...</h2>
   }
   if (isDealing) {
-      return <h2>Dealing cards</h2>
+      return <h2>Dealing cards...</h2>
   }
-  if (isFetchingCard) {
-    return <h2>Fetching card</h2>;
-  }
+//   if (isFetchingCard) {
+//     return <h2>Hitting...</h2>;
+//   }
 
   const handleGetDeck = () => {
     getDeck();
@@ -37,21 +39,27 @@ const Card = ({
   const handleDealCards = () => {
     dealCards(deckID);
   };
-  const handleGetCard = () => {
-    getCard();
+  const handlePlayerHit = () => {
+    getPlayerCard(deckID);
+  };
+  const handleDealerHit = () => {
+    getPlayerCard(deckID);
   };
 
   return (
     <div>
-      {deckID ? <button onClick={handleDealCards}>Play</button> : <button onClick={handleGetDeck}>Get New Deck</button>}
-      {playerCards ? <button onClick={handleGetCard}>Hit</button> : ""}
+        {isFetchingCard ? <h2>Hitting...</h2> : null}
       <div className="dealer-cards">
           {dealerCards ? <Dealer cards={dealerCards} /> : null}
       </div>
       <div className="player-cards">
           {playerCards ? <Player cards={playerCards} /> : null}
       </div>
-      Cards remaining in deck: {cardsRemaining}
+      <p>Cards remaining in deck: {cardsRemaining}</p>
+      {playerCards ? <button onClick={handlePlayerHit}>Hit</button> : null}
+      {playerCards ? <button onClick={handleDealerHit}>Stay</button> : null}
+      {deckID ? null : <button onClick={handleGetDeck}>Get New Deck</button>}
+      {deckID && !playerCards ? <button onClick={handleDealCards}>Play</button> : null}
     </div>
   );
 };
@@ -67,7 +75,9 @@ const mapStateToProps = (state) => {
     dealerCards: state.dealerCards,
     isFetchingCard: state.isFetchingCard,
     error: state.error,
+    playerTotal: state.playerTotal,
+    dealerTotal: state.dealerTotal,
   };
 };
 
-export default connect(mapStateToProps, { getCard, getDeck, dealCards })(Card);
+export default connect(mapStateToProps, { getPlayerCard, getDeck, dealCards })(Card);
