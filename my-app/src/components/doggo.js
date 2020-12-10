@@ -28,13 +28,17 @@ const StyledCards = styled.div`
 `
 
 const Doggo = props => {
-    console.log(props);
+    console.log(props.dogImage);
 
-    const [input, setInput] = useState('');
+    if (props.dogImage === null){
+        return (
+        <div className='doggo'>
+            <button onClick={props.fetchDog}>Fetch some dogs</button>
+        </div>
+        )
+    }
 
-    useEffect(() => {
-        fetchDog();
-    }, []);
+    const [input, setInput] = useState();
 
     const onChange = event => {
         setInput(event.target.value);
