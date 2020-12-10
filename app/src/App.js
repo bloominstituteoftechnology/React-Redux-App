@@ -1,10 +1,12 @@
 import './App.css';
 
+import Quotes from './components/Quotes';
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Giphy App</h1>
+        <Quotes />
       </header>
     </div>
   );
