@@ -10,7 +10,7 @@ export const getCards = () => {
     axios
         .get('https://api.magicthegathering.io/v1/cards?')
         .then(res => {
-            dispatch({type: FETCHING_CARD_SUCCESS, payload: res.data})
+            dispatch({type: FETCHING_CARD_SUCCESS, payload: res.data.cards})
             console.log(res.data)
         })
         .catch(err => {
@@ -19,14 +19,14 @@ export const getCards = () => {
     })
 }
 
-const setFetchStart = (name) => {
-    return({type:FETCHING_CARD_START})
-}
+// const setFetchStart = (name) => {
+//     return({type:FETCHING_CARD_START})
+// }
 
-const setFetchSuccess = (name) => {
-    return({type:FETCHING_CARD_SUCCESS})
-}
+// const setFetchSuccess = (name) => {
+//     return({type:FETCHING_CARD_SUCCESS})
+// }
 
-const setFetchFailure = (name) => {
-    return({type:FETCHING_CARD_FAILURE})
-}
+// const setFetchFailure = (name) => {
+//     return({type:FETCHING_CARD_FAILURE})
+// }

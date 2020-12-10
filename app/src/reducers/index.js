@@ -2,6 +2,7 @@ import { FETCHING_CARD_SUCCESS, FETCHING_CARD_FAILURE, FETCHING_CARD_START } fro
 
 const initialState = {
     card: '',
+    cardName: 'Untapping Cards...',
     isFetching: false,
     error: ''
 }

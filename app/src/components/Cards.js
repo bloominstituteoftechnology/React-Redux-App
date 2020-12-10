@@ -4,9 +4,8 @@ import { getCards } from '../actions'
 
 const Cards = ({ card, isFetching, err, getCards }) => {
     useEffect(() => {
-        getCards()
-        }, [])
-    console.log(card)
+    getCards()
+        }, [getCards])
     if(err) {
         return <h2>ERROR: {err}</h2>
     }
@@ -20,7 +19,7 @@ const Cards = ({ card, isFetching, err, getCards }) => {
 
     return(
         <div key={card.id}>
-            {card}
+            <h2>{card.name}</h2>
         <button onClick={handleClick}>Get More Cards</button>
         </div>
     )
