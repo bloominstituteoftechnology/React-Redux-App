@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
+import { createStore,applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-
-
 import AskForm from "./components/AskForm";
-import AnswerList from "./components/AnswerList";
 import { answerReducer } from './reducers/answerReducer';
 
-const store = createStore(answerReducer);
+const store = createStore(answerReducer, applyMiddleware(thunk));
 
 
 function App() {
@@ -17,7 +15,6 @@ function App() {
     <div>
       <h1>ASK ME A YES OR NO QUESTION</h1>
       <AskForm />
-      <AnswerList />
     </div>
   )
 }
