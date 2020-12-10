@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect} from 'react'
 import { connect } from 'react-redux'
-import { getCards } from '../actions'
+import { getCards } from '../actions/index'
 
 const Cards = ({ card, isFetching, err, getCards }) => {
     useEffect(() => {
@@ -16,29 +16,28 @@ const Cards = ({ card, isFetching, err, getCards }) => {
     const handleClick = () => {
         getCards()
     }
-
-    return(
-        <div key={card.id}>
-            <h2>{card.name}</h2>
-        <button onClick={handleClick}>Get More Cards</button>
-        </div>
-    )
-}
+ 
+ if (!this.state.cards === undefined) {
+     <h2>Untapping your cards...</h2>
+ }
+ return this.state.cards.map(card => {
+     return(
+                <div key={card.id}>
+                <h3>{card.name}</h3>
+                <img src={card.imgURL} alt='magic card'/>
+                <button onClick={handleClick}>Get More Cards</button>
+            </div>
+ )}
+ )}
 
 
 const mapStateToProps = state => {
     return {
-        card: state.card,
-        cardName: state.card.name,
-        cardCost: state.card.ManaCost,
-        cardColor: state.card.colors,
-        cardType: state.card.types,
-        cardSet: state.card.set,
-        cardArt: state.card.imageURL,
-        cardID: state.card.id,
+        cards: state.card.cards,
         isFetching: state.isFetching,
         error: state.error
-        }
+    }
 }
 
-export default connect(mapStateToProps, {getCards})(Cards)
+
+export default connect(mapStateToProps, { getCards })(Cards)
