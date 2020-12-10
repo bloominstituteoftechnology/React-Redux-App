@@ -1,7 +1,7 @@
 import { FETCH_DOG_START, FETCH_DOG_SUCCESS, FETCH_DOG_ERROR } from '../actions';
 
 export const initialState = {
-    dogImage: null,
+    dogs: [],
     isLoading: false,
     error: ''
 };
@@ -21,7 +21,7 @@ export const doggoReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: false,
-                dogImage: action.payload
+                dogs: action.payload
             }
         case FETCH_DOG_ERROR:
             return {

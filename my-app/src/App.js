@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import Doggo from './components/doggo';
+import Doggo from './components/Doggo';
 
 function App() {
   return (
