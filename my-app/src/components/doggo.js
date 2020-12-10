@@ -30,14 +30,6 @@ const StyledCards = styled.div`
 const Doggo = props => {
     console.log(props.dogImage);
 
-    if (props.dogImage === null){
-        return (
-        <div className='doggo'>
-            <button onClick={props.fetchDog}>Fetch some dogs</button>
-        </div>
-        )
-    }
-
     const [input, setInput] = useState();
 
     const onChange = event => {
