@@ -7,17 +7,26 @@ import Loader from 'react-loader-spinner';
 import '../App.css';
 
 const Doggo = props => {
-    console.log(props);
+    console.log(props.dogImage);
+
+    if (props.dogImage === null){
+        return (
+        <div className='doggo'>
+            <button onClick={props.fetchDog}>Fetch some dogs</button>
+        </div>
+        )
+    }
 
     return (
         <div className='doggo'>
-            <img className='photo' src={props.dogImage.message} alt='doggo' />
+            
+            {props.dogImage && !props.isLoading && <img className='photo' src={props.dogImage} alt='doggo' />}
 
             {!props.dogImage && !props.isLoading && (<p>Fetching good dogs...</p>)}
 
             {props.isLoading && (<Loader type="Circles" color="#00BFFF" height={80} width={80}/>)}
 
-            {props.dogImage && !props.isLoading && <p>{props.dogImage.activity}</p>}
+            <br /><br />
 
             <button onClick={props.fetchDog}>Fetch some dogs</button>
         </div>
