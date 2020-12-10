@@ -1,7 +1,7 @@
 import react from 'react';
 import { connect } from 'react-redux';
-
 import { getAnswer } from '../actions/askAction'; 
+import '../styles.css'
 
 
 const AskForm = ({ answer, isFetching, error, getAnswer }) => {
@@ -28,8 +28,13 @@ const AskForm = ({ answer, isFetching, error, getAnswer }) => {
                 <button onClick={handleClick}>Ask!</button>
              </div>
 
+             <br/>
+             <br/>
+             <br/>
+
             <div className="answer">
-                <h2>THE ANSWER IS: {answer}</h2>
+                <h2>THE ANSWER IS:<br/>
+                 <span className="answer">{answer}</span></h2><br/>
             </div>
         </div>
 
