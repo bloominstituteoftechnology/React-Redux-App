@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
 import {getPicture} from '../actions/index';
+import styled from 'styled-components';
+const StyledFoodPhoto = styled.div`
+
+img{
+    width:20rem;
+    height:20rem;
+}
+
+display:flex;
+justify-content:center;
+
+`
 function FoodPhoto(props){
    
+        useEffect(()=>{
+            props.getPicture()
+        },[])
     if(props.error){
         return <h2>Error finding image...</h2>
     }
@@ -13,12 +28,12 @@ function FoodPhoto(props){
   const handleClick = () => {
       props.getPicture()
   }
-  
+
     return (
-        <div>
+        <StyledFoodPhoto>
             <img src={props.picture} alt='test'/>
             <button onClick={handleClick}>New Picture</button>
-        </div>
+        </StyledFoodPhoto>
     )
 }
 const mapStateToProps = state => {
