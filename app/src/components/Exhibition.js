@@ -3,7 +3,6 @@ import 'semantic-ui-css/semantic.min.css';
 import { Container, Grid, Image, Header, Divider, List } from 'semantic-ui-react'
 
 const Exhibition = (props) => {
-    //console.log(props.exhibit.images.map((img, index) => ( index === 0 ? img.b.url : null )))
     return (
         <div>
             <Container
