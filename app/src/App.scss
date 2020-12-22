@@ -56,17 +56,17 @@ nav {
   color: rgb(23,23,23);
   font-weight: bold;
   font-size: 6rem;
-  animation-name: floating;
-  animation-duration: 1.8s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  // animation-name: floating;
+  // animation-duration: 1.8s;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: ease-in-out;
 }
 
-@keyframes floating {
-  from { transform: translate(0,  0px); }
-  65%  { transform: translate(0, 15px); }
-  to   { transform: translate(0, -0px); }    
-}
+// @keyframes floating {
+//   from { transform: translate(0,  0px); }
+//   65%  { transform: translate(0, 15px); }
+//   to   { transform: translate(0, -0px); }    
+// }
 
 .intro {
   font-size: 1.8rem;
