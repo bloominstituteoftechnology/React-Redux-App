@@ -7,7 +7,7 @@ export const ROCKETS_FAILURE = 'ROCKETS_FAILURE';
 export const fetchRockets = () => dispatch => {
   dispatch({ type: ROCKETS_START })
   axios
-    .get('https://api.spacexdata.com/v3/rockets')
+    .get('https://api.spacexdata.com/v4/rockets')
     .then(res => {
       dispatch({ type: ROCKETS_SUCCESS, payload: res.data })
     })
