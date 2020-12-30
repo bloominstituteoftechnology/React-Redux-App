@@ -4,6 +4,8 @@ export const MISSIONS_START = 'MISSIONS_START';
 export const MISSIONS_SUCCESS = 'MISSIONS_SUCCESS';
 export const MISSIONS_FAILURE = 'MISSIONS_FAILURE';
 
+// SpaceX APi v.4 does not support a missions endpoint, sp still refers to v.3
+// will update content to display "launches", which is supported in the API v.4
 export const fetchMissions = () => dispatch => {
   dispatch({ type: MISSIONS_START })
   axios
