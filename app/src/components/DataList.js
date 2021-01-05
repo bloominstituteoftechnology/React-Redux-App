@@ -15,7 +15,7 @@ renderSayings() {
         <i className='large middle aligned icon keyboard' />
         <div className='content'>
           <div className='description'>
-            <h3>{saying.en}</h3>
+            <h3>{saying.quote}</h3>
             <p>{saying.author}</p>
           </div>
         </div>

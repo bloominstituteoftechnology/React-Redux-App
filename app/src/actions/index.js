@@ -7,7 +7,7 @@ export const FETCHING_DATA_FAILURE = 'FETCHING_DATA_FAILURE';
 export const getData = () => dispatch => {
   // dispatch({ type: FETCHING_DATA_START });
   axios
-  .get('https://programming-quotes-api.herokuapp.com/quotes/lang/en')
+  .get('http://quotes.stormconsultancy.co.uk/popular.json')
   .then(res => {
     console.log(res.data);
     dispatch({ type: FETCHING_DATA_SUCCESS, payload: res.data});
