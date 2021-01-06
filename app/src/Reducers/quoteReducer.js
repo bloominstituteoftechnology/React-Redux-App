@@ -12,7 +12,7 @@ export const quoteReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: true
             }
-        case "FETCHING_QUOTE_START":
+        case "FETCHING_QUOTE_SUCCESS":
             return {
                 ...state,
                 isFetching: false,
