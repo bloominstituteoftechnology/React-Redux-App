@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import Card from "./components/card";
-import CardList from "./components/cardList";
+import Card from "./components/Card";
+import CardList from "./components/CardList";
 
 function App() {
   return (

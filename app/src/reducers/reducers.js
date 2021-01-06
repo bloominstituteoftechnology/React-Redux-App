@@ -33,4 +33,4 @@ export const pokemonReducer = (state = initialState, action) => {
     }
 
 
-} 
+}

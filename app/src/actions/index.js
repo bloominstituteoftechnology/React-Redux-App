@@ -15,4 +15,4 @@ export const getData = () => dispatch => {
             console.error("Error: ", err)
             dispatch({ type: SET_ERROR, payload: `Error: ${err}`  })
     })
-}
+}  
