@@ -22,11 +22,11 @@ In this project you'll choose an api to consume. You will build an application f
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your team lead as collaborator on Github.
-- [ ] Clone your OWN version of the repository in your terminal.
-- [ ] CD into the project base directory `cd React-Redux-App`.
-- [ ] Run `npx create-react-app app --use-npm` to make a CRA app.
+- [X] Create a forked copy of this project.
+- [X] Add your team lead as collaborator on Github.
+- [X] Clone your OWN version of the repository in your terminal.
+- [X] CD into the project base directory `cd React-Redux-App`.
+- [X] Run `npx create-react-app app --use-npm` to make a CRA app.
 - [ ] CD into the react app `cd app`.
 - [ ] Start up the app using `npm start`.
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.

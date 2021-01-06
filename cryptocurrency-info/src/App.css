@@ -1,0 +1,228 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  font-size: 62.5%;
+}
+
+.App {
+  background: #232323;
+  min-height: 100%;
+  height: 100%;
+  min-width: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app__heading__text {
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  color: rgb(221, 219, 219);
+  width: 100%;
+  margin: 2rem;
+}
+
+.app__heading__text h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  padding-bottom: 0.5rem;
+}
+
+.app__heading__text h3 {
+  font-size: 1.5rem;
+  margin: 2.5rem;
+}
+
+.app__heading__input__box {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 5rem;
+}
+
+.app__heading__input__box input {
+  padding: 0.5rem;
+  width: 20rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.app__heading__input__box button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #f2a900;
+  border: none;
+}
+
+.cryptocurrency__info {
+  width: 100%;
+  min-width: 100%;
+}
+
+.cryptocurrency__info__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1d1d1d;
+  color: rgb(238, 234, 234);
+  margin: 3rem;
+  height: auto;
+  border-radius: 10px;
+}
+
+.cryptocurrency__info__container_header {
+  display: flex;
+  width: 90%;
+  height: 260px;
+  justify-content: flex-start;
+  margin: 2rem;
+  margin-bottom: 0;
+  align-items: flex-start;
+  border-bottom: solid 2px white;
+}
+
+.cryptocurrency__info__container_header__info {
+  display: flex;
+  height: 100%;
+  margin-left: 16%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.cryptocurrency__info__container_header__info h1 {
+  font-size: 4rem;
+}
+
+.cryptocurrency__info__container__banner {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border-bottom: 2px solid white;
+  margin-bottom: 2rem;
+}
+
+.cryptocurrency__info__container__banner__prices {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.cryptocurrency__info__container__boxes {
+  display: flex;
+  width: 90%;
+  height: 300px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cryptocurrency__info__container__boxes h2 {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 2.3rem;
+}
+
+.cryptocurrency__info__container__boxes h4 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cryptocurrency__info__container__boxes h3 {
+  font-size: 1.2rem;
+}
+
+.green {
+  color: rgb(3, 139, 3);
+}
+
+.red {
+  color: rgb(247, 9, 9);
+}
+
+.cryptocurrency__info__container__boxes_ath {
+  width: 45%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #161616;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.cryptocurrency__info__container__boxes_atl {
+  width: 45%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #161616;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.cryptocurrency__info__container__description {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  background-color: rgb(216, 213, 213);
+  color: black;
+  padding: 1rem;
+  margin: 1rem;
+}
