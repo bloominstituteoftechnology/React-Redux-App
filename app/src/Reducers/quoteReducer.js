@@ -1,13 +1,14 @@
 const initialState = {
-    title: 'Kanye Quotes',
+    title: 'Dad Jokes',
     isFetching: false,
-    quote: '',
+    joke: '',
     error: ''
 }
 
 export const quoteReducer = (state = initialState, action) => {
     switch (action.type) {
         case "FETCHING_QUOTE_START":
+            console.log('fetching new joke');
             return {
                 ...state,
                 isFetching: true
@@ -17,7 +18,7 @@ export const quoteReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 error: '',
-                quote: action.payload
+                joke: action.payload
             }
         case "FETCHING_QUOTE_ERROR":
             return {

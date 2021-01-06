@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchQuote } from '../Actions/actions';
 
-const Quote = ({ title, quote, isFetching, error }) => {
+const Quote = ({ title, joke, isFetching, error }) => {
     return (
         <div>
             <h1>{title}</h1>
-            <h2>Kanye says...</h2>
-            <button>Get New Quote</button>
+            <h2>Dad says...</h2>
         </div>
     );
 };
@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
         joke: state.joke,
         title: state.title,
         isFetching: state.isFetching,
-        error: error
+        error: state.error
     }
 }
 
