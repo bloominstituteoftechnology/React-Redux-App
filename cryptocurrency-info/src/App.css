@@ -95,6 +95,7 @@ table {
   font-size: 2rem;
   font-weight: bold;
   margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .app__heading__input__box button {
@@ -103,4 +104,90 @@ table {
   font-weight: bold;
   background-color: #f2a900;
   border: none;
+}
+
+.cryptocurrency__info {
+  width: 100%;
+  min-width: 100%;
+}
+
+.cryptocurrency__info__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1d1d1d;
+  color: rgb(238, 234, 234);
+  margin: 3rem;
+  height: auto;
+  border-radius: 10px;
+}
+
+.cryptocurrency__info__container_header {
+  display: flex;
+  width: 90%;
+  height: 260px;
+  justify-content: space-between;
+  margin: 2rem;
+  margin-bottom: 0;
+  align-items: flex-start;
+  border-bottom: solid 2px white;
+}
+
+.cryptocurrency__info__container_header__info {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.cryptocurrency__info__container_header__info h1 {
+  font-size: 3.5rem;
+}
+
+.cryptocurrency__info__container__banner {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border-bottom: 2px solid white;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.cryptocurrency__info__container__boxes {
+  display: flex;
+  width: 90%;
+  height: 300px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cryptocurrency__info__container__boxes_ath {
+  width: 45%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #161616;
+  border-radius: 10px;
+}
+
+.cryptocurrency__info__container__boxes_atl {
+  width: 45%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #161616;
+  border-radius: 10px;
+}
+
+.cryptocurrency__info__container__description {
+  width: 90%;
+  height: auto;
+  border-radius: 10px;
+  background-color: rgb(216, 213, 213);
+  color: black;
+  padding: 1rem;
+  margin: 1rem;
 }

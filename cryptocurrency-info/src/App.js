@@ -32,9 +32,10 @@ function App(state) {
         <form>
           <input required placeholder="bitcoin" onChange={(e) => setCoin(e.target.value.toLowerCase())}/>
           <button type="submit" onClick={handleSubmit}>Search</button>
-          <CryptocurrencyInfo coinInfo={state}/>
+          
         </form>
       </div>
+      <CryptocurrencyInfo coinInfo={state}/>
     </div>
   );
 }
