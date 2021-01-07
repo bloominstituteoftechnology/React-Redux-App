@@ -1,11 +1,11 @@
 const initialState = {
-    title: 'Dad Jokes',
+    title: 'Chuck Norris quotes',
     isFetching: false,
-    joke: '',
+    quote: '',
     error: ''
 }
 
-export const quoteReducer = (state = initialState, action) => {
+const appReducer = (state = initialState, action) => {
     switch (action.type) {
         case "FETCHING_QUOTE_START":
             console.log('fetching new joke');
@@ -18,7 +18,7 @@ export const quoteReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 error: '',
-                joke: action.payload
+                quote: action.payload
             }
         case "FETCHING_QUOTE_ERROR":
             return {
@@ -29,4 +29,6 @@ export const quoteReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
+
+export default appReducer;

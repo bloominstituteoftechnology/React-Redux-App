@@ -7,21 +7,20 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import App from './App';
-import { quoteReducer } from './Reducers/quoteReducer';
+import appReducer from './Reducers/quoteReducer';
 
 
-const store = createStore(quoteReducer, applyMiddleware(logger, thunk));
-
-const rootElement = document.getElementById('root');
+const store = createStore(appReducer, applyMiddleware(logger, thunk));
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store = {store}>
+  <Provider store={store}>
+    <React.StrictMode>
       <App />
-    </Provider>
-  </React.StrictMode>,
-  rootElement
+    </React.StrictMode>
+  </Provider>,
+document.getElementById('root') 
+
 );
 
 // If you want to start measuring performance in your app, pass a function
