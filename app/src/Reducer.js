@@ -1,13 +1,11 @@
 import { 
-    GET_GENESIS1,
-    GET_GENESIS2, 
+    GET_CHAPTER,
     GET_SCRIPTURE_FAILURE 
 
 } from "./Actions"
 
 const initialState = {
-    genesis1: '',
-    genesis2: '',
+    chapter: '',
     error: ''
 }
 
@@ -15,17 +13,12 @@ export const reducer = (state = initialState, action) => {
 
     switch (action.type) {
 
-        case GET_GENESIS1:
+        case GET_CHAPTER:
             return {
                 ...state,
-                genesis1: action.payload
+                chapter: action.payload
             }
         
-        case GET_GENESIS2:
-            return {
-                ...state,
-                genesis2: action.payload
-            }
 
         case GET_SCRIPTURE_FAILURE:
             return {
