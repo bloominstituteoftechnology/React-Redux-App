@@ -1,4 +1,4 @@
-import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_SUCCESS, ADD_ITEM_TOCART} from '../action'
+import { FETCH_PRODUCTS_START, FETCH_PRODUCTS_SUCCESS} from '../action'
 
 
 const initialState = {

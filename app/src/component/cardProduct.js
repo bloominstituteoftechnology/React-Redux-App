@@ -10,7 +10,7 @@ const CardProduct = props => {
     
     const items = props.product.find(item =>{
         console.log(item)
-        return item.id == itemId
+        return item.id === itemId
     })
  
     console.log(items)
@@ -21,7 +21,7 @@ const CardProduct = props => {
     return (
         <div className="product-info">
            <div className="product-image">
-               <img src={items.image_link} width="200px"/>
+               <img src={items.image_link} width="200px"  alt="product"/>
            </div>
            <div className="info">
                 <h3> {items.name} </h3>

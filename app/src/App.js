@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
-import {Route, Router, Switch, NavLink} from 'react-router-dom'
+import {Route, Switch, NavLink} from 'react-router-dom'
 import ProductsList from './component/products'
 import './App.css';
 import CardProduct from './component/cardProduct';
 import { connect } from 'react-redux'
-import { fetchProducts, addToCart } from './action/index'
+import { fetchProducts } from './action/index'
 import Home from './component/home'
 import MaybelineProduct from './component/Maybeline'
 

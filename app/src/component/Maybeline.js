@@ -1,5 +1,5 @@
 import React from 'react';
-import {useRouteMatch, NavLink, Link} from 'react-router-dom'
+import {useRouteMatch, NavLink} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { fetchProducts } from '../action'
 
