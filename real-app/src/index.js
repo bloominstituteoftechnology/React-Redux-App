@@ -12,6 +12,7 @@ import { pokeReducer } from './store/reducer/pokeReducer' // reducer folder ì•ˆì
 
 const store = createStore( pokeReducer, applyMiddleware(thunk) )
 
+console.log(applyMiddleware(thunk))
 // thunk make synchronous action into asynchronous.
 // FOR a TIP, when you call 'thunk' and 'logger' together, 'logger' must go as second argument.
 /*
