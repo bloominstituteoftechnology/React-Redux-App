@@ -1,0 +1,8 @@
+.pokemon__card {
+   margin: 4% 2%;
+   width: 28%;
+}
+
+.pokemon__card > img {
+   width: 100%;
+}
