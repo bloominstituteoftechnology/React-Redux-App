@@ -1,0 +1,116 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: calc(10px + 2vmin);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 2%;
+
+}
+.app-header-child{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 2%;
+}
+
+.rainbow-text {
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red); 
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.header{
+  width: 100%;
+  font-size: 2rem;
+}
+
+
+.home{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: white;
+}
+.name{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-div{
+  width: 100%; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  border: solid;
+}
+.product-list{
+  width: 40%;
+  margin: 1.5% 0;
+  border:  4px solid pink;
+  box-shadow: 10px 25px 35px rgb(247, 135, 247);
+}
+.product{
+  width:90%;
+  margin: 0 5%;
+}
+.product-info{
+  margin: 2% 0;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.product-image{
+  width: 45%;
+  box-shadow: 10px 20px 30px #282c34;
+  border: 2px double pink;
+}
+.info{
+  width: 45%;
+}
+.item-descrip{
+  width:70%;
+  margin: 3%;
+}
+.home-store{
+  width: 100%;
+  margin: 3% 0;
+}
+.btn-detail{
+  font-size: 1.3rem;
+  padding: 1% 1.5%;
+  border-radius: 20px 20px;
+  border: double blue;
+  background-image: linear-gradient(to bottom, rgb(253, 177, 215), rgb(247, 113, 169), hotpink, purple);
+}
+.home-img{
+  border-radius: 20px 20px;
+  border: double 4px  rgb(247, 115, 115);
+
+}
+.product-color{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.color{
+  width: 20%;
+}
