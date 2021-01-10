@@ -15,19 +15,20 @@ const MaybelineProduct = props =>{
             
                 <div className="product-div">  
                     {
-                        props.product.map(item => {
-                            if(item.brand === "maybelline"){
+                        props.product.brand.map((item ) => {
+                            // if(item.brand === "maybelline"){
                                 return (
-                                <div key={item.id} className="product-list">
-                                    <NavLink className="name" to={`${url}/${item.id}`}>
-                                        <div className="product">
-                                            <img  src={item.image_link} alt={item.name} width="150px" />
-                                            <p> {item.name} </p>
-                                            <p> ${item.price} </p>
-                                        </div>   
-                                    </NavLink>
-                          </div>)
-                            }
+                                    <div key={item.id} className="product-list">
+                                        <NavLink className="name" to={`${url}/${item.id}`}>
+                                            <div className="product">
+                                                <img  src={item.image_link} alt={item.name} width="150px" />
+                                                <p> {item.name} </p>
+                                                <p> ${item.price} </p>
+                                            </div>   
+                                        </NavLink>
+                                    </div>
+                                )
+                            // }
                         }
                         
                         )
