@@ -6,7 +6,11 @@ import {connect} from 'react-redux'
 import {getChapter} from './Actions'
 import greg from './gregtallit.jpg'
 
-import Genesis from './Genesis'
+import Genesis from './Components/Genesis'
+import Login from './Components/Login'
+import Register from './Components/Register'
+import Commentary from './Components/Commentary';
+import Dashboard from './Components/Dashboard';
 
 
 function App(props) {
@@ -24,6 +28,7 @@ function App(props) {
     <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/bible'>Read</Link></li>
+        <li><Link to='/login'>Login</Link></li>
     </ul>
 </nav>
 <Route exact path='/'>
@@ -177,6 +182,18 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
 
 </Route>
 
+<Route path='/login'>
+    <Login />
+</Route>
+
+<Route path='/register'>
+    <Register />
+</Route>
+
+<Route path='/dashboard'>
+    <Dashboard />
+</Route>
+
 {/* Bible Book Routes--------------------------------------- */}
 
 <Route path='/genesis'>
@@ -192,6 +209,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 1</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -201,6 +219,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 2</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -210,6 +229,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 3</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -219,6 +239,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 4</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -228,6 +249,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 5</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -237,6 +259,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 6</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -246,6 +269,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 7</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -255,6 +279,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 8</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -264,6 +289,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 9</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -273,6 +299,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 10</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -282,6 +309,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 11</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -291,6 +319,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 12</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -300,6 +329,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 13</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -309,6 +339,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 14</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -318,6 +349,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 15</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -327,6 +359,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 16</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -336,6 +369,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 17</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -345,6 +379,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 18</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -354,6 +389,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 19</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -363,6 +399,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 20</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -372,6 +409,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 21</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -381,6 +419,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 22</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -390,6 +429,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 23</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -399,6 +439,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 24</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -408,6 +449,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 25</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -417,6 +459,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 26</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -426,6 +469,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 27</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -435,6 +479,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 28</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -444,6 +489,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 29</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -453,6 +499,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 30</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -462,6 +509,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 31</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -471,6 +519,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 32</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -480,6 +529,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 33</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -489,6 +539,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 34</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -498,6 +549,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 35</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -507,6 +559,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 36</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -516,6 +569,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 37</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -525,6 +579,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 38</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -534,6 +589,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 39</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -543,6 +599,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 40</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -552,6 +609,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 41</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -561,6 +619,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 42</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -570,6 +629,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 43</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -579,6 +639,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 44</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -588,6 +649,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 45</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -597,6 +659,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 46</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -606,6 +669,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 47</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -615,6 +679,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 48</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -624,6 +689,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 49</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 
@@ -633,6 +699,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Genesis 50</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
+      <Commentary />
     </div>
 </Route>
 

@@ -1,17 +1,28 @@
 import { 
     GET_CHAPTER,
+    GET_NAME,
     GET_SCRIPTURE_FAILURE 
 
 } from "./Actions"
 
 const initialState = {
     chapter: '',
-    error: ''
+    error: '',
+    first_name: '',
+    last_name: ''
 }
 
 export const reducer = (state = initialState, action) => {
 
     switch (action.type) {
+
+        case GET_NAME:
+            return {
+                ...state,
+                first_name: action.payload.first_name,
+                last_name: action.payload.last_name
+                
+            }
 
         case GET_CHAPTER:
             return {

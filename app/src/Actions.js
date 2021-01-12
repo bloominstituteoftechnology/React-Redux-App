@@ -1,10 +1,29 @@
 import axios from 'axios';
+import {axiosWithAuth} from './axiosWithAuth'
 
 
 export const GET_CHAPTER = 'GET_CHAPTER';
-export const GET_SCRIPTURE_FAILURE = 'GET_SCRIPTURE_FAILURE'
+export const GET_SCRIPTURE_FAILURE = 'GET_SCRIPTURE_FAILURE';
+export const GET_NAME = 'GET_NAME';
+export const GET_NAME_FAILURE = 'GET_NAME_FAILURE'
 
- 
+
+export const getName = () => dispatch => {
+
+    axiosWithAuth() 
+        .get('https://chaqar-data.herokuapp.com/api/auth')
+        .then(res => {
+            console.log(res.data)
+            dispatch({
+                type: GET_NAME, payload: res.data})
+        })
+        .catch(err => {
+            dispatch({
+                type: GET_NAME_FAILURE,
+                payload: 'Could not load articles.'
+            })
+        })
+}
 
 export const getChapter = (book, chapter) => dispatch => {
     axios 
