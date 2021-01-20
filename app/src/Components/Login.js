@@ -30,8 +30,9 @@ function Login () {
         axios
           .post("https://chaqar-data.herokuapp.com/api/auth/login", user)
           .then((res) => {
-            console.log(res);
+            console.log(res.data.user_id);
             localStorage.setItem("token", JSON.stringify(res.data.token));
+            localStorage.setItem("user_id", res.data.user_id)
             history.push("/dashboard");
           })
           .catch((err) => console.log(err));

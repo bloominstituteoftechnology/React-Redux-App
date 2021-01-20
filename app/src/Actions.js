@@ -8,12 +8,13 @@ export const GET_NAME = 'GET_NAME';
 export const GET_NAME_FAILURE = 'GET_NAME_FAILURE'
 
 
-export const getName = () => dispatch => {
+export const getName = (userId) => dispatch => {
 
+    
     axiosWithAuth() 
-        .get('https://chaqar-data.herokuapp.com/api/auth')
+        .get(`https://chaqar-data.herokuapp.com/api/auth/${userId}`)
         .then(res => {
-            console.log(res.data)
+            console.log(res.data, "hello")
             dispatch({
                 type: GET_NAME, payload: res.data})
         })
