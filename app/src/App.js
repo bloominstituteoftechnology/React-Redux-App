@@ -1,11 +1,15 @@
-import logo from './logo.svg';
+import Poke from './components/Poke'
+import PokeCards from './components/PokeCards'
 import './App.css';
+import PokeCard from './components/PokeCards';
 
 function App() {
   return (
     <div className="App">
-      Hey
+     <h1>Pokemon</h1>
+    <PokeCards />
     </div>
+  
   );
 }
 
