@@ -1,0 +1,36 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Patua One", cursive;
+  background-image: url("https://img.jakpost.net/c/2016/09/29/2016_09_29_12990_1475116504._large.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h5 {
+  color: whitesmoke;
+  padding: 5px;
+  border-radius: 8px;
+  text-shadow: 3px 3px 2px rgba(150, 150, 150, 1);
+}
+
+h5 {
+  margin-top: -20px;
+  margin-bottom: 80px;
+  font-size: 1.5em;
+}
+
+section {
+  width: 400px;
+  height: 500px;
+  background: rgba(233, 210, 9, 0.5);
+  transform: translateY(550px);
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 10px 36px 32px 11px rgba(189, 189, 189, 0.66);
+}
