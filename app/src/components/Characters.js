@@ -2,6 +2,21 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { getCharacters } from '../actions';
+import styled from 'styled-components';
+
+const CharactersWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+ `;   
+
+const CharacterWrap = styled.div`
+    margin: 2% 5%;
+    background-color:black;
+    color: yellow;
+    padding: 1vw;
+
+`;
 
 
 const Characters = ({ characters, isFetching, error, getCharacters }) =>{
@@ -25,21 +40,21 @@ const Characters = ({ characters, isFetching, error, getCharacters }) =>{
     return(
         <div>
             <button onClick={handleClick}>Get Characters</button>
-            <div>
+            <CharactersWrapper>
                 {characters.map((character) =>{
                     return(
-                        <div>
-                        <h3>Name:{character.name}</h3>
+                        <CharacterWrap>
+                        <h3>{character.name}</h3>
                         <p>Height: {character.height} cm</p>
                         <p>Hair Color: {character.hair_color} </p>
                         <p>Eye Color: {character.height} cm</p>
                         <p>skin Color: {character.height} cm</p>
                         <p>Birth Year: {character.height} cm</p>
                         <p>Gender: {character.height} cm</p>
-                        </div>
+                        </CharacterWrap>
                     )
                 })}
-            </div>
+            </CharactersWrapper>
             
         </div>
     )
