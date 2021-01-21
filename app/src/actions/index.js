@@ -8,7 +8,7 @@ export const FETCH_DATA_FAIL = 'FETCH_DATA_FAIL';
 export const getShoes = () => dispatch => {
   dispatch({ type: FETCH_DATA_START })
   axios
-    .get('https://api.thesneakerdatabase.com/v1/sneakers?limit=20&brand=jordan')
+    .get('https://api.thesneakerdatabase.com/v1/sneakers?limit=70&brand=jordan')
     .then(res => {
       console.log(res.data.results);
       dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data.results})

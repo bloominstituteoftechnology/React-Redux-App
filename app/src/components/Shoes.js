@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux"
 import { getShoes } from "../actions";
 
@@ -25,19 +25,22 @@ console.log(shoes)
       <h2> Which Shoe will you wear today? </h2>
       
       {
-        shoes.map(shoe => {
-          if (shoe.media.smallImageUrl !== "https://stockx-assets.imgix.net/media/New-Product-Placeholder-Default.jpg?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=0") {
-            return <div>
-              <img alt={shoe.name} src={shoe.media.smallImageUrl} />
-              <p>{shoe.name}</p>
-              <p>{shoe.releaseDate}</p>
-              <p>{shoe.price}</p>
+        shoes ?
+          shoes.map(shoe => {
+            if (shoe.media.smallImageUrl !== "https://stockx-assets.imgix.net/media/New-Product-Placeholder-Default.jpg?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=0" || shoe.media.smallImageUrl !== "https://stockx-assets.imgix.net/media/New-Product-Placeholder-Default.jpg?fit=fill&bg=FFFFFF&w=300&h=214&auto=format,compress&trim=color&q=90&dpr=2&updated_at=0" || shoe.media.smallImageUrl !== "null" || shoe.gender !== "toddler"){
+            return <div className="shoeData">
+              <img className="img" alt={shoe.title} src={shoe.media.smallImageUrl} />
+              <h3>{shoe.title}</h3>
+              <p>Release Date: {shoe.releaseDate}</p>
+              <p>Retail:<span> ${shoe.retailPrice}.00</span></p>
               </div>
           }
         })
+      : ''
       }
+      
+<button onClick={handleClick}>Get New Shoes!</button>
 
-      <button onClick={handleClick}>Get new Pair!</button>
       </>
   )
 }

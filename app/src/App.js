@@ -14,7 +14,7 @@ return (
       <h1>All the Shoes!</h1>
     </header>
     <div>
-      <Shoes/>
+      <Shoes />
     </div>
     
     </div>

@@ -2,20 +2,9 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,11 +17,20 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.shoeData{
+  display: block;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  align-content: space-around;
+  margin-bottom: 30px;
+}
+
+  img {
+    width: 300px;
+    border: 1px #282c34 solid;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+span{
+  color: red;
+  font-weight:bold;
 }

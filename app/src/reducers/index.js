@@ -1,11 +1,11 @@
 import {FETCH_DATA_FAIL, FETCH_DATA_START, FETCH_DATA_SUCCESS} from "./../actions"
 
 const initialState = {
-  shoes: '',
+  shoes: [],
+  //empty array for the shoes.
   isFetching: false,
   error: '',
 }
-
 
 export function reducer(state = initialState, action) {
   console.log('reducer', action);
