@@ -6,10 +6,6 @@ import CoinList from './components/CoinList'
 function App(props) {
   const { fetcher } = props
 
-  useEffect(() => {
-    fetcher()
-  })
-
   return (
     <div className="App">
       <CoinList />
@@ -17,4 +13,4 @@ function App(props) {
   )
 }
 
-export default connect(null, { fetcher })(App)
+export default App

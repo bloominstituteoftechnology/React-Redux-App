@@ -1,8 +1,12 @@
-import react from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
+import { fetcher } from '../acitons/index'
 
-function CoinCard(props) {
-    const { name, price, percentChange } = props.item
+export const CoinCard = ({  }) => {
+    
+    useEffect(() => {
+        fetcher()
+      }, [])
 
     return (
         <div 
@@ -12,17 +16,25 @@ function CoinCard(props) {
                 className="coinData"
             >
                 <h2>
-                    {name}
+                    name: Bitcoin
                 </h2>
                 <p>
-                    Price: {price}
+                    Price {this.state.price}
                 </p>
                 <p>
-                    Percent Change: {percentChange}
+                    Percent Change: infinity
                 </p>
             </div>
         </div>
     )
 }
 
-export default connect(null, {})(CoinCard)
+const mapStateToProps = state => {
+    return {
+        isSelected: true,
+        price: state.price
+    }
+}
+
+
+export default connect(mapStateToProps, {})(CoinCard)

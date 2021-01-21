@@ -1,26 +1,39 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import CoinCard from './CoinCard'
+import { fetcher } from '../acitons/index'
+import { CoinCard } from './CoinCard'
 
-function CoinList(props) {
-    
-    return(
-        <div 
-            className="coins"
-        >
-            {props.xxxxxx.map((item) => (
-                <CoinCard 
-                    key={item.id} 
-                    item={item} 
-                />
-            ))}    
-        </div>
-    )
+const  CoinList = ({  }) => {
+    useEffect(() => {
+        fetcher()
+    }, [])
+
+    const handleClick = () => {
+        
+        return (
+            CoinCard()
+        )
+    }
+
+        return( 
+            
+            <div 
+                className="coins"
+            >
+                <button 
+                    onClick={handleClick}
+                >
+                    See More: 
+                </button>
+            </div>
+        )
 }
+
 
 const mapStateToProps = state => {
     return {
-        name: state.name
+        price: state.price,
+        isSelected: true,
     }
 }
 

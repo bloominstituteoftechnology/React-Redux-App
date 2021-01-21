@@ -1,20 +1,22 @@
-import { FETCH } from '../acitons/index'
+import { FETCH_PRICE_BTC } from '../acitons/index'
 
 const initialState = {
-    name: '',
-    price: '',
+    name: 'Bitcoin',
+    price: [],
     percentChange: '',
     isSelected: false,
 }
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH:
+        case FETCH_PRICE_BTC:
             return {
                 ...state,
-                isSelected: true,
+                price: [],
+                percentChange: '',
+                isSelected: false,
             }
         default:
-            return console.log(state)
+            return state
     }
 }
