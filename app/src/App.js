@@ -1,8 +1,22 @@
 import './App.css';
 import React, { useEffect } from 'react';
 import  {getCharacter} from './actions/actions'
-import Card from './components/Card'
+import CharCard from './components/CharCard'
 import {connect} from 'react-redux';
+import styled from 'styled-components'
+
+const StyledHeader = styled.h1`
+@import url("./index_files/get-shwifty.ttf");
+
+    @font-face{
+    font-family: Get Schwifty;
+    src:'./index_files/get-shwifty.ttf';
+
+    h1 {
+      font-family: Get Schwifty;
+    }
+
+`
 
 function App(props) {
   useEffect(() => {
@@ -13,8 +27,8 @@ console.log(props.characters);
   return (
     <div className="App">
       <header className="App-header">
-          <h1>Rick and Morty Characters</h1>
-          {props.characters.map(character => <Card key={character.id} {...character}/>)}
+          <StyledHeader>Rick and Morty Characters</StyledHeader>
+          {props.characters.map(character => <CharCard key={character.id} {...character}/>)}
       </header>
     </div>
   );
