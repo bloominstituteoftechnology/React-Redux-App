@@ -56,6 +56,20 @@ header {
       margin-top: 0px;
   }
 
+  .my-commentary-title {
+      color: #CA907E;
+      font-family: Hebrew;
+      font-size: 4rem;
+      margin-top: 0px;
+      margin-bottom: 15px;
+  }
+
+  .commentary-text {
+    font-family: Hebrew;
+    font-size: 1.8rem;
+    color: #0E0041;
+  }
+
   h4 {
     color: #af5f46;
     font-family: Hebrew;
@@ -214,6 +228,15 @@ input {
   padding: 7px;
 }
 
+#save {
+  height: auto;
+  width: auto;
+  font-size: 18px;
+  padding: 7px;
+  margin-bottom: 20px;
+}
+
+
 #noaccount {
   font-family: Hebrew;
   font-size: 2rem;
@@ -226,6 +249,8 @@ textarea {
   font-family: Hebrew;
   font-size: 1.6rem;
   margin-bottom: 30px;
+  display: block;
+  margin: 0 auto;
 }
 
 @media (max-width: 700px) {
