@@ -1,4 +1,5 @@
 import React from 'react'
+import '../components/Dog.css'
 
 
 const Dog = (props) => {

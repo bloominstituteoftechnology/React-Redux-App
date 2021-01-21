@@ -1,0 +1,9 @@
+img {
+    width: 500;
+    height: 600;
+    position: relative;
+}
+
+p {
+    text-decoration: line-through;
+}
