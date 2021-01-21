@@ -5,6 +5,7 @@ import { getCharacters } from '../actions';
 
 
 const Characters = ({ characters, isFetching, error, getCharacters }) =>{
+    console.log(characters)
     useEffect(() =>{
         getCharacters();
     }, []);
