@@ -1,23 +1,28 @@
-
-const intitialValues = {
-  currency: '',
-  convertCurrency: '',
-  valueCurrency: ''
+export const initialState = {
+  currentCrypto: '',
+  exchangeCrypto: '',
+  cryptoValue: '',
+  listOfCrypto: [],
 }
 
-export const reducer = (state = intitialValues, action) => {
+const reducer = (state,action) => {
   switch(action.type){
-    case('FETCH_CRYPTO_V1'):
+    case("GET_EXCHANGE_VALUE"):
+      console.log(state)
+      console.log(action)
       return({
         ...state,
-        convertCurrency: action.payload,
+        listOfCrypto: action.payload
       })
-    case('FETCH_CRYPTO_V2'):
+
+    case("ADD_VALUES"):
       return({
         ...state,
-        valueCurrency: action.payload
+        [action.payload]: action.value
       })
     default:
-      return
+      return state;
   }
 }
+
+export default reducer

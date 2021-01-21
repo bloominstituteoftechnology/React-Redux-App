@@ -5,9 +5,10 @@ import { Provider } from 'react-redux'
 
 import './index.css';
 import App from './App';
-import { reducer } from './reducers/index'
+import thunk from 'redux-thunk'
+import reducer  from './reducers/index'
 
-const store = createStore(reducer)
+const store = createStore(reducer,applyMiddleware(thunk))
 
 
 ReactDOM.render(
