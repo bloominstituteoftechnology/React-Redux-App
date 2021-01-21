@@ -7,6 +7,8 @@ import {getChapter} from './Actions'
 import greg from './gregtallit.jpg'
 
 import Genesis from './Components/Genesis'
+import Exodus from './Components/Exodus'
+
 import Login from './Components/Login'
 import Register from './Components/Register'
 import Commentary from './Components/Commentary';
@@ -14,6 +16,10 @@ import Dashboard from './Components/Dashboard';
 
 
 function App(props) {
+
+  const genesischapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50] 
+
+  const exoduschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
 
 
   return (
@@ -84,7 +90,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <div className="bible-books-buttons">
 
       <button className="bible-book-button"><Link className="link" to='/genesis'><h5>Genesis</h5></Link></button>
-      <button className="bible-book-button"><h5>Exodus</h5></button>
+      <button className="bible-book-button"><Link className="link" to='/exodus'><h5>Exodus</h5></Link></button>
       <button className="bible-book-button"><h5>Leviticus</h5></button>
       <button className="bible-book-button"><h5>Numbers</h5></button>
       <button className="bible-book-button"><h5>Deuteronomy</h5></button>
@@ -200,510 +206,41 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <Genesis /> 
 </Route>
 
+<Route path='/exodus'>
+      <Exodus /> 
+</Route>
+
+
 
 {/* Bible Chapter Routes--------------------------------------- */}
 
-<Route path='/genesis1'>
+{genesischapters.map(chapter =>
+
+<Route path={`/genesis${chapter}`}>
     <div>
       <br></br><br></br><br></br>
-      <h2>Genesis 1</h2>
+      <h2>Genesis {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary />
     </div>
 </Route>
 
-<Route path='/genesis2'>
+)}
+
+{exoduschapters.map(chapter =>
+
+<Route path={`/exodus${chapter}`}>
     <div>
       <br></br><br></br><br></br>
-      <h2>Genesis 2</h2>
+      <h2>Exodus {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary />
     </div>
 </Route>
 
-<Route path='/genesis3'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 3</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis4'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 4</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis5'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 5</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis6'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 6</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis7'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 7</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis8'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 8</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis9'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 9</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis10'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 10</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis11'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 11</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis12'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 12</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis13'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 13</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis14'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 14</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis15'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 15</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis16'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 16</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis17'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 17</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis18'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 18</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis19'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 19</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis20'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 20</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis21'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 21</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis22'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 22</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis23'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 23</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis24'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 24</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis25'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 25</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis26'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 26</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis27'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 27</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis28'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 28</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis29'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 29</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis30'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 30</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis31'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 31</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis32'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 32</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis33'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 33</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis34'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 34</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis35'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 35</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis36'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 36</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis37'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 37</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis38'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 38</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis39'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 39</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis40'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 40</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis41'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 41</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis42'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 42</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis43'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 43</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis44'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 44</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis45'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 45</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis46'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 46</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis47'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 47</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis48'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 48</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis49'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 49</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-<Route path='/genesis50'>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis 50</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
-      <div>{props.error}</div>
-      <Commentary />
-    </div>
-</Route>
-
-
+)}
 
     </div>
   );
