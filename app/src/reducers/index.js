@@ -1,8 +1,7 @@
-import thunk from "redux-thunk"
-import {FETCH_DATA_FAIL, FETCH_DATA_START, FETCH_DATA_SUCCSESS} from "./../actions"
+import {FETCH_DATA_FAIL, FETCH_DATA_START, FETCH_DATA_SUCCESS} from "./../actions"
 
 const initialState = {
-  shoe: '',
+  shoes: '',
   isFetching: false,
   error: '',
 }
@@ -16,14 +15,14 @@ export function reducer(state = initialState, action) {
         ...state,
         error: '',
         isFetching: true,
-        shoe: '',
+        shoes: '',
       };
-    case FETCH_DATA_SUCCSESS:
+    case FETCH_DATA_SUCCESS:
       return {
         ...state,
         error: '',
         isFetching: false,
-        shoe: action.payload
+        shoes: action.payload
       }
     case FETCH_DATA_FAIL:
       return {
