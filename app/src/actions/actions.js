@@ -8,7 +8,7 @@ export const getDogData = () =>dispatch=>{
 
     dispatch({type:FETCH_DOGS_START})
         console.log(FETCH_DOGS_START)
-   axios.get('https://dog.ceo/api/breeds/image/random/12')
+   axios.get('https://dog.ceo/api/breeds/image/random/15')
       .then((res)=>{
         //   console.log(res.data)
           dispatch({type:FETCH_DOGS_SUCCESS, payload:res.data.message})
