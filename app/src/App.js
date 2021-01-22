@@ -1,21 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import LyricsForm from './components/LyricsForm';
+import Lyrics from './components/Lyrics';
 
 function App() {
-  const [lyrics, setLyrics] = useState('');
-  useEffect(() => {
-    axios
-      .get('https://api.lyrics.ovh/v1/Michael-Jackson/Thriller')
-      .then((resp) => {
-        console.log(resp);
-        setLyrics(resp.data.lyrics);
-      });
-  }, []);
   return (
     <div className='App'>
       <LyricsForm />
-      <p>{lyrics}</p>
+      <Lyrics />
     </div>
   );
 }
