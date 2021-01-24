@@ -236,7 +236,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <h2>Exodus {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
-      <Commentary />
+      <Commentary book='exodus' chapter={chapter} />
     </div>
 </Route>
 

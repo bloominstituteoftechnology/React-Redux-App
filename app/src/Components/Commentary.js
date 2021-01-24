@@ -49,20 +49,30 @@ function Commentary (props) {
 
     useEffect( () => {
 
-        axiosWithAuth()
-            .get('https://chaqar-data.herokuapp.com/commentary')
+        const timer = setTimeout(() => {
+
+            axiosWithAuth()
+            .get(`https://chaqar-data.herokuapp.com/api/auth/${userId}/commentary`)
             .then((res) => {
                 setVisibleCommentary(res.data)
                 console.log(res.data)
             })
 
+        }, 2000)
+
+        return () => clearTimeout(timer) 
+
     }, [theCommentary]) 
+
+    const filteredCommentary = visibleCommentary.filter(commentary => 
+        commentary.book === props.book && commentary.chapter === props.chapter
+        )
 
     return (
         <div>
             <br></br>
             <h3 className="my-commentary-title">My Commentary:</h3>
-            <div>{visibleCommentary.map(commentary => 
+            <div>{filteredCommentary.map(commentary => 
                 <p className="commentary-text">{commentary.commentary}</p>
             )}</div>
             <form onSubmit={postCommentary} id="commentary">
