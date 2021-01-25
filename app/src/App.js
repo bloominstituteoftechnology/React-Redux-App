@@ -8,6 +8,9 @@ import greg from './gregtallit.jpg'
 
 import Genesis from './Components/Genesis'
 import Exodus from './Components/Exodus'
+import Leviticus from './Components/Leviticus'
+import Numbers from './Components/Numbers'
+import Deuteronomy from './Components/Deuteronomy'
 
 import Login from './Components/Login'
 import Register from './Components/Register'
@@ -20,6 +23,13 @@ function App(props) {
   const genesischapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50] 
 
   const exoduschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
+
+  const leviticuschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
+
+  const numberschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
+
+  const deuteronomychapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
+
 
 
   return (
@@ -91,9 +101,9 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
 
       <button className="bible-book-button"><Link className="link" to='/genesis'><h5>Genesis</h5></Link></button>
       <button className="bible-book-button"><Link className="link" to='/exodus'><h5>Exodus</h5></Link></button>
-      <button className="bible-book-button"><h5>Leviticus</h5></button>
-      <button className="bible-book-button"><h5>Numbers</h5></button>
-      <button className="bible-book-button"><h5>Deuteronomy</h5></button>
+      <button className="bible-book-button"><Link className="link" to='/leviticus'><h5>Leviticus</h5></Link></button>
+      <button className="bible-book-button"><Link className="link" to='/numbers'><h5>Numbers</h5></Link></button>
+      <button className="bible-book-button"><Link className="link" to='/deuteronomy'><h5>Deuteronomy</h5></Link></button>
 
       </div>
 
@@ -210,6 +220,18 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <Exodus /> 
 </Route>
 
+<Route path='/leviticus'>
+      <Leviticus /> 
+</Route>
+
+<Route path='/numbers'>
+      <Numbers /> 
+</Route>
+
+<Route path='/deuteronomy'>
+      <Deuteronomy /> 
+</Route>
+
 
 
 {/* Bible Chapter Routes--------------------------------------- */}
@@ -237,6 +259,48 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary book='exodus' chapter={chapter} />
+    </div>
+</Route>
+
+)}
+
+{leviticuschapters.map(chapter =>
+
+<Route path={`/leviticus${chapter}`}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Leviticus {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div>{props.error}</div>
+      <Commentary book='leviticus' chapter={chapter} />
+    </div>
+</Route>
+
+)}
+
+{numberschapters.map(chapter =>
+
+<Route path={`/numbers${chapter}`}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Numbers {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div>{props.error}</div>
+      <Commentary book='numbers' chapter={chapter} />
+    </div>
+</Route>
+
+)}
+
+{deuteronomychapters.map(chapter =>
+
+<Route path={`/deuteronomy${chapter}`}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Deuteronomy {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div>{props.error}</div>
+      <Commentary book='deuteronomy' chapter={chapter} />
     </div>
 </Route>
 
