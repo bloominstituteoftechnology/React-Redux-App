@@ -82,8 +82,8 @@ function Commentary (props) {
                     value={theCommentary.commentary}
                     onChange={handleChange}>
                 </textarea>
-                <button id="save" type="submit">Save My Commentary</button>
-                <br></br>
+                <button id="bigbutton" type="submit">Save My Commentary</button>
+                
             </form>
         </div>
     )

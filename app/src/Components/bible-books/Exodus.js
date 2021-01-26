@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {
     getChapter
 
-} from '../Actions'
+} from '../../Actions'
 
 
 function Exodus (props) {

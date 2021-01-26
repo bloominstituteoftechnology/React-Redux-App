@@ -228,12 +228,21 @@ input {
   padding: 7px;
 }
 
-#save {
+#bigbutton {
   height: auto;
   width: auto;
   font-size: 18px;
   padding: 7px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
+  border-radius: 30px;
+}
+
+.roundedbox {
+  background: #EAF4D3;
+  border-radius: 10px;
+  padding: 5px;
+  width: 25%;
+  margin: 8px auto;
 }
 
 
@@ -323,6 +332,10 @@ textarea {
       textarea {
         width: 80%;
         height: 200px;
+      }
+
+      .roundedbox {
+        width: 90%;
       }
 
 }

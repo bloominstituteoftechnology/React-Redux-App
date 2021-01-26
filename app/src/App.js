@@ -6,16 +6,17 @@ import {connect} from 'react-redux'
 import {getChapter} from './Actions'
 import greg from './gregtallit.jpg'
 
-import Genesis from './Components/Genesis'
-import Exodus from './Components/Exodus'
-import Leviticus from './Components/Leviticus'
-import Numbers from './Components/Numbers'
-import Deuteronomy from './Components/Deuteronomy'
+import Genesis from './Components/bible-books/Genesis'
+import Exodus from './Components/bible-books/Exodus'
+import Leviticus from './Components/bible-books/Leviticus'
+import Numbers from './Components/bible-books/Numbers'
+import Deuteronomy from './Components/bible-books/Deuteronomy'
 
 import Login from './Components/Login'
 import Register from './Components/Register'
 import Commentary from './Components/Commentary';
 import Dashboard from './Components/Dashboard';
+import OthersCommentary from './Components/OthersCommentary';
 
 
 function App(props) {
@@ -245,6 +246,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary book='genesis' chapter={chapter} />
+      <OthersCommentary book='genesis' chapter={chapter} />
     </div>
 </Route>
 
@@ -259,6 +261,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary book='exodus' chapter={chapter} />
+      <OthersCommentary book='exodus' chapter={chapter} />
     </div>
 </Route>
 
@@ -273,6 +276,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary book='leviticus' chapter={chapter} />
+      <OthersCommentary book='leviticus' chapter={chapter} />
     </div>
 </Route>
 
@@ -287,6 +291,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary book='numbers' chapter={chapter} />
+      <OthersCommentary book='numbers' chapter={chapter} />
     </div>
 </Route>
 
@@ -301,6 +306,7 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary book='deuteronomy' chapter={chapter} />
+      <OthersCommentary book='deuteronomy' chapter={chapter} />
     </div>
 </Route>
 
