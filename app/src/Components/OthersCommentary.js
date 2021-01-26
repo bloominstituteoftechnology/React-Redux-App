@@ -40,9 +40,13 @@ function OthersCommentary (props) {
     return (
         <div>
             
-            <button id="bigbutton" onClick={() => {setShowCommentary(!showCommentary)}}>See What Others Are Saying</button>
             
-            <div>{showCommentary ? filteredCommentary.map(commentary => 
+            
+            <div>{showCommentary ? 
+                <div>
+                <button id="bigbutton" onClick={() => {setShowCommentary(!showCommentary)}}>Hide What Others Are Saying</button>
+                
+                {filteredCommentary.map(commentary => 
                 users.map(user => {
                     if (user.id === commentary.user_id) { 
                         return ( <div className="roundedbox"><p className="commentary-text">
@@ -54,8 +58,9 @@ function OthersCommentary (props) {
                         }
                     }),
                     
-                ) : null}</div>
+                )}</div> : <button id="bigbutton" onClick={() => {setShowCommentary(!showCommentary)}}>See What Others Are Saying</button>}</div>
             <br></br><br></br><br></br>
+                
         </div>
     )
 }
