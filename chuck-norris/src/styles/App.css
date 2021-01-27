@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  min-width: 100vh;
+  background-color: white;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.container {
+  height: 100%;
+  width: 1500px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: white;
+}
+.hero {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/chucknorris.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 60vh;
+  min-height: 280px;
+  max-height: 100vh;
+  color: white;
+}
+.hero-text {
+  height: 100%;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero h2 {
+  font-size: 36px;
+  line-height: 2em;
+  padding: 20px 0;
+  font-style: italic;
+}
+.hero h4 {
+  font-size: 24px;
+  padding: 20px 0;
+}
+h1 {
+  font-size: 30px;
+}
+.joke {
+  padding: 30px;
+  min-height: 40vh;
+}
+.joke p {
+  padding: 7% 0;
+  font-size: 20px;
+  line-height: 100%;
+}
+.attribution {
+  display: none;
+  color: transparent;
+}
+button {
+  background-color: rgb(211, 12, 66);
+  padding: 1% 2%;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+button:focus {
+  outline: 0;
+  border: none;
+}
+button:hover {
+  background-color: rgb(211, 12, 66, .9);
+  transform: scale(1.1);
+}
