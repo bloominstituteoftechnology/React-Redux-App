@@ -32,8 +32,8 @@ function Register () {
         axios
           .post("https://chaqar-data.herokuapp.com/api/auth/register", newUser)
           .then((res) => {
-            console.log(res);
-            localStorage.setItem("token", JSON.stringify(res.data.token));
+            localStorage.setItem("token", JSON.stringify(res.data.token))
+            localStorage.setItem("user_id", res.data.user_id)
             history.push("/dashboard");
           })
           .catch((err) => console.log(err));
