@@ -68,6 +68,12 @@ header {
     font-family: Hebrew;
     font-size: 1.8rem;
     color: #0E0041;
+    margin-bottom: 5px;
+  }
+
+  .edittext {
+    width: 90%;
+    margin: 0 auto;
   }
 
   h4 {

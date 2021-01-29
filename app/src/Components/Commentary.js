@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 // import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 import { axiosWithAuth } from '../axiosWithAuth'
+import EditCommentary from './EditCommentary'
 
 
 
@@ -16,9 +17,13 @@ function Commentary (props) {
         commentary: ''
     }
 
+    
+
 
     const [theCommentary, setTheCommentary] = useState(initialCommentary)
     const [visibleCommentary, setVisibleCommentary] = useState([])
+    
+    const [showEditForm, setShowEditForm] = useState(false)
 
     // const history = useHistory()
 
@@ -29,6 +34,8 @@ function Commentary (props) {
             [e.target.name]: e.target.value,
         })
     }
+
+    
 
     const postCommentary = (e) => {
         e.preventDefault();
@@ -55,25 +62,47 @@ function Commentary (props) {
             .get(`https://chaqar-data.herokuapp.com/api/auth/${userId}/commentary`)
             .then((res) => {
                 setVisibleCommentary(res.data)
-                console.log(res.data)
+                
             })
 
         }, 2000)
 
         return () => clearTimeout(timer) 
 
-    }, [theCommentary]) 
+    }, [theCommentary, deleteCommentary]) 
 
     const filteredCommentary = visibleCommentary.filter(commentary => 
         commentary.book === props.book && commentary.chapter === props.chapter
         )
+    
+    
+    
+    function deleteCommentary (id) {
+
+        axiosWithAuth() 
+        .delete(`https://chaqar-data.herokuapp.com/commentary/${id}`)
+        .then(res => {
+            console.log(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+    }
 
     return (
         <div>
             <br></br>
             <h3 className="my-commentary-title">My Commentary:</h3>
             <div>{filteredCommentary.map(commentary => 
+                
+                showEditForm ? 
+                <EditCommentary commentary={commentary.commentary} id={commentary.id} book={props.book} chapter={props.chapter} /> : 
+                <div className="roundedbox"> 
                 <p className="commentary-text">{commentary.commentary}</p>
+                <button onClick={() => setShowEditForm(true)}>Edit</button>
+                <button onClick={() => deleteCommentary(commentary.id)}>Delete</button>
+                </div>
             )}</div>
             <form onSubmit={postCommentary} id="commentary">
                 <textarea 
