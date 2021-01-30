@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 import { axiosWithAuth } from '../axiosWithAuth'
+
+import {connect} from 'react-redux'
+import {getChapter} from '../Actions'
 
 
 
@@ -28,18 +31,27 @@ function EditCommentary (props) {
         })
     }
 
-    function editCommentary () {
+
+    function editCommentary (e) {
+
+        e.preventDefault()
+
+        props.getChapter(props.apibook, props.chapter)
 
         axiosWithAuth() 
-        .put(`https://chaqar-data.herokuapp.com/commentary/${props.id}`, editedCommentary)
+        .put(`https://chaqar-data.herokuapp.com/commentary/${props.commId}`, editedCommentary)
         .then(res => {
             console.log(res)
         })
         .catch(err => {
-           console.log(err)
+        console.log(err)
         })
 
-        history.push(`/${props.book}${props.chapter}`)
+        console.log('Edit Commentary Function is working')
+
+        props.setShowEditForm(false)
+
+        history.push(`${props.book}${props.chapter}`);
 
     }
 
@@ -61,4 +73,14 @@ function EditCommentary (props) {
 
 }
 
-export default EditCommentary
+
+const mapStateToProps = state => {
+
+    return {
+      first_name: state.first_name,
+      last_name: state.last_name
+    }
+  
+}
+
+export default connect(mapStateToProps, {getChapter})(EditCommentary)

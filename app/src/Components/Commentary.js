@@ -97,7 +97,8 @@ function Commentary (props) {
             <div>{filteredCommentary.map(commentary => 
                 
                 showEditForm ? 
-                <EditCommentary commentary={commentary.commentary} id={commentary.id} book={props.book} chapter={props.chapter} /> : 
+                <EditCommentary setShowEditForm={setShowEditForm} key={commentary.id} commentary={commentary.commentary} commId={commentary.id} book={props.book} apibook={props.apibook} chapter={props.chapter} /> 
+                : 
                 <div className="roundedbox"> 
                 <p className="commentary-text">{commentary.commentary}</p>
                 <button onClick={() => setShowEditForm(true)}>Edit</button>

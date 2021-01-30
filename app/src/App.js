@@ -239,13 +239,13 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
 
 {genesischapters.map(chapter =>
 
-<Route path={`/genesis${chapter}`}>
+<Route path={`/genesis${chapter}`} key={chapter}>
     <div>
       <br></br><br></br><br></br>
       <h2>Genesis {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
-      <Commentary book='genesis' chapter={chapter} />
+      <Commentary book='genesis' chapter={chapter} apibook='gen' />
       <OthersCommentary book='genesis' chapter={chapter} />
     </div>
 </Route>
@@ -254,13 +254,13 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
 
 {exoduschapters.map(chapter =>
 
-<Route path={`/exodus${chapter}`}>
+<Route path={`/exodus${chapter}`} key={chapter}>
     <div>
       <br></br><br></br><br></br>
       <h2>Exodus {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
-      <Commentary book='exodus' chapter={chapter} />
+      <Commentary book='exodus' chapter={chapter} apibook='exo' />
       <OthersCommentary book='exodus' chapter={chapter} />
     </div>
 </Route>
@@ -269,13 +269,13 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
 
 {leviticuschapters.map(chapter =>
 
-<Route path={`/leviticus${chapter}`}>
+<Route path={`/leviticus${chapter}`} key={chapter}>
     <div>
       <br></br><br></br><br></br>
       <h2>Leviticus {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
-      <Commentary book='leviticus' chapter={chapter} />
+      <Commentary book='leviticus' chapter={chapter} apibook='lev' />
       <OthersCommentary book='leviticus' chapter={chapter} />
     </div>
 </Route>
@@ -284,13 +284,13 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
 
 {numberschapters.map(chapter =>
 
-<Route path={`/numbers${chapter}`}>
+<Route path={`/numbers${chapter}`} key={chapter}>
     <div>
       <br></br><br></br><br></br>
       <h2>Numbers {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
-      <Commentary book='numbers' chapter={chapter} />
+      <Commentary book='numbers' chapter={chapter} apibook='num' />
       <OthersCommentary book='numbers' chapter={chapter} />
     </div>
 </Route>
@@ -299,14 +299,14 @@ you can meditate on all this and write your prayerful thoughts down to be saved 
 
 {deuteronomychapters.map(chapter =>
 
-<Route path={`/deuteronomy${chapter}`}>
+<Route path={`/deuteronomy${chapter}`} key={chapter}>
     <div>
       <br></br><br></br><br></br>
       <h2>Deuteronomy {chapter}</h2>
       <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
       <div>{props.error}</div>
       <Commentary book='deuteronomy' chapter={chapter} />
-      <OthersCommentary book='deuteronomy' chapter={chapter} />
+      <OthersCommentary book='deuteronomy' chapter={chapter} apibook='deu' />
     </div>
 </Route>
 
