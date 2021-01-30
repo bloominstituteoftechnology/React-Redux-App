@@ -140,7 +140,8 @@ nav ul li a:hover {
 #loggedInMenu {
   background-color: #EAF4D3;
   margin: 0px;
-  padding: 0px;
+  padding: 10px;
+  width: 100%;
 }
 
 #loggedInMenu ul {
@@ -169,7 +170,7 @@ nav ul li a:hover {
   text-decoration: none; 
 }
 
-nav ul li a:hover {
+#loggedInMenu ul li a:hover {
   color: #0E0041;
   font-weight: bold; 
 }
@@ -345,6 +346,15 @@ textarea {
 
       nav ul li {
         font-size: 2.2rem;
+      }
+
+      #loggedInMenu ul {
+        flex-direction: column;
+      }
+
+      #loggedInMenu ul li {
+        font-size: 2.2rem;
+        padding: 10px;
       }
 
       #about {
