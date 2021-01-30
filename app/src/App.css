@@ -171,6 +171,10 @@ nav ul li a:hover {
   border: 2px solid white;
 }
 
+#genericProfilePic {
+  width: 200px;
+}
+
 .about-greg-box {
   width: 80%;
   text-align: left;
