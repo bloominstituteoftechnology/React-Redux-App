@@ -137,6 +137,43 @@ nav ul li a:hover {
   font-weight: bold; 
 }
 
+#loggedInMenu {
+  background-color: #EAF4D3;
+  margin: 0px;
+  padding: 0px;
+}
+
+#loggedInMenu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+#loggedInMenu ul li {
+  font-size: 3rem;
+  color: #994636;
+  padding: 20px;
+  font-family: Hebrew;
+  margin-left: 0px;
+}
+
+#loggedInMenu ul li:first-child {
+  padding-left: 0px;
+}
+
+#loggedInMenu ul li a {
+  color: #994636;
+  text-decoration: none; 
+}
+
+nav ul li a:hover {
+  color: #0E0041;
+  font-weight: bold; 
+}
+
 #about {
   background-image: url(desertfull.jpg);
   background-size: cover;

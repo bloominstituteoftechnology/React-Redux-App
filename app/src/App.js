@@ -21,6 +21,8 @@ import OthersCommentary from './Components/OthersCommentary';
 
 function App(props) {
 
+  const userId = localStorage.getItem("user_id")
+
   const genesischapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50] 
 
   const exoduschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
@@ -48,6 +50,15 @@ function App(props) {
         <li><Link to='/login'>Login</Link></li>
     </ul>
 </nav>
+{userId ? 
+    <div id="loggedInMenu">
+      <ul>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
+        <li><Link to='/profile'>My Profile</Link></li>
+        <li><Link to='/forum'>The Forum</Link></li>
+      </ul>
+    </div> :
+    null}
 <Route exact path='/'>
 <section id="about">
     <p>Welcome to <b>Chaqar</b>: a Bible app for studying and more!  Here you can search the scriptures
