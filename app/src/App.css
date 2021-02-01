@@ -177,7 +177,7 @@ nav ul li a:hover {
 #about {
   background-image: url(desertfull.jpg);
   background-size: cover;
-  height: 300px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -357,7 +357,7 @@ textarea {
       }
 
       #about {
-        height: 450px
+        height: auto
       }
 
       .gregpic {
