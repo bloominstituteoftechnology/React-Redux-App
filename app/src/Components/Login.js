@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import axios from 'axios'
+import { setLoggedIn } from '../Actions'
+import { connect } from 'react-redux'
 
 const initialLogin = {
     email: '',
@@ -9,7 +11,7 @@ const initialLogin = {
 
 
 
-function Login () {
+function Login (props) {
 
     const [user, setUser] = useState(initialLogin)
 
@@ -25,14 +27,15 @@ function Login () {
     }
 
 
-    const login = (e) => {
+    function login (e)  {
         e.preventDefault();
         axios
           .post("https://chaqar-data.herokuapp.com/api/auth/login", user)
           .then((res) => {
-            console.log(res.data.user_id);
+            
             localStorage.setItem("token", JSON.stringify(res.data.token));
             localStorage.setItem("user_id", res.data.user_id)
+            props.setLoggedIn()
             history.push("/dashboard");
           })
           .catch((err) => console.log(err));
@@ -80,4 +83,14 @@ function Login () {
     )
 }
 
-export default Login
+const mapStateToProps = state => {
+
+    return {
+      first_name: state.first_name,
+      last_name: state.last_name,
+      loggedIn: state.loggedIn
+    }
+  
+  }
+  
+  export default connect(mapStateToProps, {setLoggedIn})(Login)

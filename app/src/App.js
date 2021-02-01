@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Link, Route } from 'react-router-dom'
+import { Link, Route, useHistory } from 'react-router-dom'
 // import { BrowserRouter as Router} from 'react-router-dom';
 import {connect} from 'react-redux'
 import {getChapter} from './Actions'
 import greg from './gregtallit.jpg'
+
+import Menus from './Components/Menus'
 
 import Genesis from './Components/bible-books/Genesis'
 import Exodus from './Components/bible-books/Exodus'
@@ -21,7 +23,16 @@ import OthersCommentary from './Components/OthersCommentary';
 
 function App(props) {
 
+  const history = useHistory()
+
   const userId = localStorage.getItem("user_id")
+  const token = localStorage.getItem("token")
+
+  const logout = () => {
+    localStorage.clear('token');
+    history.push('/')
+  }
+
 
   const genesischapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50] 
 
@@ -43,22 +54,30 @@ function App(props) {
         <h3>Search, Study, Meditate</h3>
     </div>
 </header>
-<nav>
+<Menus token={token}/>
+{/* <nav>
     <ul>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/bible'>Read</Link></li>
+        {token === null ?
         <li><Link to='/login'>Login</Link></li>
+        :
+        <li><button onClick={logout}>Logout</button></li>
+        }
     </ul>
 </nav>
-{userId ? 
+{token === null ? 
+    null
+    :
     <div id="loggedInMenu">
       <ul>
         <li><Link to='/dashboard'>Dashboard</Link></li>
         <li><Link to='/profile'>My Profile</Link></li>
         <li><Link to='/forum'>The Forum</Link></li>
       </ul>
-    </div> :
-    null}
+    </div>
+    
+} */}
 <Route exact path='/'>
 <section id="about">
     <p>Welcome to <b>Chaqar</b>: a Bible app for studying and more!  Here you can search the scriptures

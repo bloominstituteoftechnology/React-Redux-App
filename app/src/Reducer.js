@@ -1,15 +1,26 @@
 import { 
     GET_CHAPTER,
     GET_NAME,
-    GET_SCRIPTURE_FAILURE 
+    GET_SCRIPTURE_FAILURE, 
+    SET_LOGGED_IN,
 
 } from "./Actions"
+
+// import { combineReducers } from 'redux'
+
+// combineReducers({
+//     reducer,
+//     logout
+// })
+
+
 
 const initialState = {
     chapter: '',
     error: '',
     first_name: '',
-    last_name: ''
+    last_name: '',
+    loggedIn: false,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -36,6 +47,13 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload
             }
+        
+        case SET_LOGGED_IN:
+            return {
+                ...state,
+                loggedIn: !state.loggedIn
+            }
+        
         
         default:
             return state;

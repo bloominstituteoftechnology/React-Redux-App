@@ -24,7 +24,7 @@ function Dashboard (props) {
     useEffect( () => {
 
         const userId = localStorage.getItem("user_id")
-        console.log(userId)
+        
         props.getName(userId)
 
     }) 
