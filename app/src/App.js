@@ -80,10 +80,15 @@ function App(props) {
 } */}
 <Route exact path='/'>
 <section id="about">
-    <p>Welcome to <b>Chaqar</b>: a Bible app for studying and more!  Here you can search the scriptures
-    for particular words or phrases, and then once you've found what you're interested in, you can call up
+    <p>Welcome to <b>Chaqar</b>: a Bible app for studying and more!  Here you will be able to search the scriptures
+    for particular words or phrases, and then once you've found what you're interested in, you will be able to call up
     resources like word studies and commentaries to help you understand the scripture even better!  And then,
-you can meditate on all this and write your prayerful thoughts down to be saved in the web app under your account.</p>
+you can meditate on all this and write down your prayerful thoughts and commentary of Scripture to be saved under the corresponding chapter
+you were reading in the web app under your account, saved for whenever you want to go back and see your thoughts on that chapter.
+Also, you can see commentary on the same chapter from other users who are using the app, making <b>Chaqar</b> a cross between
+bible study and social media.  To come later as well will be <b>The Forum</b> which will function like a Facebook type feed to see other people's
+devotional thoughts, and where you will be able to comment on those thoughts.  You will also have a personal profile with profile pic and other
+generic information, should you choose to share it. I pray you are blessed by this endeavor.</p>
 </section>
 <section id="about-greg">
   <h2>Meet the Maker</h2>
