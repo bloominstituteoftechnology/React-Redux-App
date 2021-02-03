@@ -1,9 +1,9 @@
-import { CLEAR_ERROR, FETCH_FILM } from '../actions';
+import { CLEAR_ERROR, FETCH_FILM, FILM_RECIEVED, FETCH_FAILED } from '../actions';
 
 const intitialState = {
-    film: null,
+    films: null,
     isFetching: false,
-    error: "Error"
+    error: ""
 };
 
 export const reducer = (state = intitialState, action) => {
@@ -17,6 +17,20 @@ export const reducer = (state = intitialState, action) => {
             return {
                 ...state, isFetching: true, error: ''
             };
+        }
+        case FILM_RECIEVED: {
+            return {
+                ...state,
+                films: action.payload,
+                isFetching: false
+            }
+        }
+        case FETCH_FAILED: {
+            return{
+                ...state,
+                error: action.payload,
+                isFetching: false
+            }
         }
         default:
             return state;

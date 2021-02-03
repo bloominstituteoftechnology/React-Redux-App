@@ -1,38 +1,34 @@
+body {
+  background-color: paleturquoise;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.filmsList {
+  border: solid whitesmoke 5px;
+  margin: 80px;
+  padding: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.film {
+  text-align: center;
+  border: black 2px dotted;
+  margin: 10px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+button {
+  margin: 0 45%;
+  margin-bottom: 15%
+};
 
-.App-link {
-  color: #61dafb;
-}
+.fetching {
+  text-align: center;
+};
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
