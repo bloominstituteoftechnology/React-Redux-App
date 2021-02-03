@@ -1,4 +1,5 @@
 import React from 'react';
+import DOMPurify from 'dompurify'
 import './App.css';
 import { Link, Route, useHistory } from 'react-router-dom'
 // import { BrowserRouter as Router} from 'react-router-dom';
@@ -278,7 +279,7 @@ generic information, should you choose to share it. I pray you are blessed by th
     <div>
       <br></br><br></br><br></br>
       <h2>Genesis {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
       <div>{props.error}</div>
       <Commentary book='genesis' chapter={chapter} apibook='gen' />
       <OthersCommentary book='genesis' chapter={chapter} />
@@ -293,7 +294,7 @@ generic information, should you choose to share it. I pray you are blessed by th
     <div>
       <br></br><br></br><br></br>
       <h2>Exodus {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
       <div>{props.error}</div>
       <Commentary book='exodus' chapter={chapter} apibook='exo' />
       <OthersCommentary book='exodus' chapter={chapter} />
@@ -308,7 +309,7 @@ generic information, should you choose to share it. I pray you are blessed by th
     <div>
       <br></br><br></br><br></br>
       <h2>Leviticus {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
       <div>{props.error}</div>
       <Commentary book='leviticus' chapter={chapter} apibook='lev' />
       <OthersCommentary book='leviticus' chapter={chapter} />
@@ -323,7 +324,7 @@ generic information, should you choose to share it. I pray you are blessed by th
     <div>
       <br></br><br></br><br></br>
       <h2>Numbers {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
       <div>{props.error}</div>
       <Commentary book='numbers' chapter={chapter} apibook='num' />
       <OthersCommentary book='numbers' chapter={chapter} />
@@ -338,7 +339,7 @@ generic information, should you choose to share it. I pray you are blessed by th
     <div>
       <br></br><br></br><br></br>
       <h2>Deuteronomy {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: props.chapter}} />
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
       <div>{props.error}</div>
       <Commentary book='deuteronomy' chapter={chapter} />
       <OthersCommentary book='deuteronomy' chapter={chapter} apibook='deu' />

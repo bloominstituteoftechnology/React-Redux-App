@@ -10,6 +10,7 @@ export const SET_LOGGED_IN = 'SET_LOGGED_IN'
 export const SET_LOGGED_OUT = 'SET_LOGGED_OUT'
 
 
+
 export const getName = (userId) => dispatch => {
  
     axiosWithAuth() 
@@ -51,6 +52,8 @@ export const setLoggedIn = () => dispatch => {
     dispatch({type: SET_LOGGED_IN})
 
 }
+
+
 
 
 

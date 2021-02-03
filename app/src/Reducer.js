@@ -6,6 +6,8 @@ import {
 
 } from "./Actions"
 
+import {SET_PROFILE_PIC} from "./Components/Dashboard" 
+
 // import { combineReducers } from 'redux'
 
 // combineReducers({
@@ -21,6 +23,8 @@ const initialState = {
     first_name: '',
     last_name: '',
     loggedIn: false,
+    profile_pic_url: '',
+    profile_pic_alt: ''
 }
 
 export const reducer = (state = initialState, action) => {
@@ -52,6 +56,12 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loggedIn: !state.loggedIn
+            }
+        
+        case SET_PROFILE_PIC:
+            return {
+                ...state,
+                profile_pic_url: action.payload
             }
         
         

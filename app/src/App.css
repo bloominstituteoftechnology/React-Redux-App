@@ -311,6 +311,11 @@ textarea {
   margin: 0 auto;
 }
 
+.profilepic {
+  width: 300px;
+  border-radius: 50%;
+}
+
 @media (max-width: 700px) {
 
       h1 {
