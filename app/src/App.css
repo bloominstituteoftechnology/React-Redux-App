@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.shoeData{
+  display: block;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  align-content: space-around;
+  margin-bottom: 30px;
+}
+
+  img {
+    width: 300px;
+    border: 1px #282c34 solid;
+  }
+
+span{
+  color: red;
+  font-weight:bold;
+}
