@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+*{
+  background-color: black
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight:1200;
+}
+
+h2 {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+button {
+  padding: 1%;
+  background-color: rgba(108, 0, 248, 0.678);
+  color: silver;
+} 
