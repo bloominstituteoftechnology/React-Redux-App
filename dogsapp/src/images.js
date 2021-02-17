@@ -4,8 +4,8 @@ import { getImages} from "./actions/actions"
 
 const Images = (props) =>{
 
-    const {images,isFetching,error,fetchImagesLoading} = props;
-
+    const {images,isFetching,error,getImages} = props;
+    console.log(props)
 
     const onClick =() =>{
         props.getImages()
@@ -25,12 +25,22 @@ const Images = (props) =>{
 
 
 return (
-    
+    <>
     <div>
         <button onClick={onClick}>
-
         </button>
-    </div>
+     </div>
+         {
+             props.images.map(image => (
+             
+            
+             <div>
+              <img src={image}/>
+             </div>
+             
+         ))
+         }
+    </>    
 )
 
 

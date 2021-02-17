@@ -17,7 +17,7 @@ export const reducer = (state = initialState, action) => {
     case(FETCH_IMAGES_SUCCESS):
       return({
         ...state,
-        quote: action.payload,
+        images: action.payload,
         isFetching: false
       });
 
