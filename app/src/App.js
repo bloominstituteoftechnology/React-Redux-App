@@ -5,7 +5,7 @@ import ApiResults from './components/ApiResults'
 function App() {
   return (
     <div className="App">
-      <h1>API STUFF</h1>
+      <h1>Let's hear some jokes</h1>
       <ApiResults />
     </div>
   );
