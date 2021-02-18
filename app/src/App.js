@@ -5,7 +5,7 @@ import Dog from './components/dog';
 function App() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <h1>Random Dog Generator!</h1>
       <Dog />
     </div>
   );
