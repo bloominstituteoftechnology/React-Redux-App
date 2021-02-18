@@ -5,17 +5,17 @@ export const FETCH_BREWERY_SUCCESS = "FETCH_BREWERY_SUCCESS";
 export const FETCH_BREWERY_FAIL = "FETCH_BREWERY_FAIL";
 
 export const getBrewery = () => dispatch => {
-    dispatch(FETCH_BREWERY_LOADING());
+    dispatch(fetchBreweryLoading());
 
     axios
     .get('https://api.openbrewerydb.org/breweries?by_type=micro')
     .then(res => {
         console.log(res.data)
-        dispatch(FETCH_BREWERY_LOADING(res.data))
+        dispatch(fetchBrewerySuccess(res.data))
     })
     .catch(err => {
         console.log(err)
-        dispatch(FETCH_BREWERY_FAIL(err.Response.code))
+        dispatch(fetchBreweryFail(err.Response.code))
     })
 };
 
@@ -23,10 +23,10 @@ export const fetchBreweryLoading = () => {
     return ({ type: FETCH_BREWERY_LOADING})
 }
 
-export const fetchBrewerySuccess = () => {
-    return ({ type: FETCH_BREWERY_SUCCESS})
+export const fetchBrewerySuccess = (breweries) => {
+    return ({ type: FETCH_BREWERY_SUCCESS, payload: breweries})
 }
 
-export const fetchBreweryFail = () => {
-    return ({ type: FETCH_BREWERY_FAIL})
+export const fetchBreweryFail = (err) => {
+    return ({ type: FETCH_BREWERY_FAIL, payload: err})
 }

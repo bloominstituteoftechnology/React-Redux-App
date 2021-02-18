@@ -3,7 +3,8 @@ import { FETCH_BREWERY_LOADING, FETCH_BREWERY_SUCCESS, FETCH_BREWERY_FAIL } from
 const initialState = {
     breweries: [],
     error: '',
-    isFetching: false
+    isFetching: false,
+    count: 0
 };
 
 export const reducer = (state=initialState, action) => {
@@ -11,13 +12,16 @@ export const reducer = (state=initialState, action) => {
         case(FETCH_BREWERY_LOADING):
         return({
             ...state,
-            isFetching: true
+            isFetching: true,
         })
         case(FETCH_BREWERY_SUCCESS):
         return({
             ...state,
-            breweries: action.payload,
-            isFetching: false
+            breweries: action.payload.map(brewery => {
+                return brewery.name
+            }),
+            isFetching: false,
+            count: state.count + 1
         })
         case(FETCH_BREWERY_FAIL):
         return({
