@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getImages } from "./actions/actions";
+import './App.css';
+
 
 const Images = (props) => {
   const { images, isFetching, error, getImages } = props;
@@ -20,12 +22,12 @@ const Images = (props) => {
 
   return (
     <>
-      <div>
+      <div className="btn-container">
         <button onClick={onClick}>Click here for German Sheperds!!!</button>
       </div>
       {props.images.map((image) => (
-        <div>
-          <img src={image} />
+        <div className="img-container">
+          <img className="img"src={image} />
         </div>
       ))}
     </>
