@@ -1,0 +1,29 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header-image {
+  display: flex column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.heading {
+    display:flex;
+    text-align:center;
+    align-items:center;
+    justify-content:center;
+    width: 100%;
+    
+}
+
+h1{
+    text-align:center;
+    font-weight:bold;
+    font-family:'Courier New', Courier, monospace
+}
