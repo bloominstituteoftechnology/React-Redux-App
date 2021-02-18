@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.brewery{
+  border: 2px solid goldenrod;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: mistyrose;
+  color: red;
+}
