@@ -1,0 +1,108 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Scope+One&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width:100%;
+  font-family: 'Scope One', serif;
+}
+
+img {
+  width: 100%;
+}
+
+.header img {
+  height: 300px;
+}
+
+.bat{
+  display: flex;
+  justify-content:center;
+}
+
+.bat img{
+  height:450px;
+  width:1400px;
+  padding:4rem;
+}
+
+ .App {
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+ }
+
+
+.container{
+  width:100%;
+}
+
+.card{
+  background: rgba(199, 195, 195, 0.952);
+  flex-basis:22% ;
+  border: solid 2px rgb(131, 131, 131);
+  box-shadow: inset 12px 5px 25px 5px rgba(5, 5, 5, 0.65),
+                             6px 5px 12px 2px rgba(251, 253, 250, 0.931);           
+  border-radius: 1rem;
+  padding: 10px;
+  margin-bottom: 2rem;
+}
+
+.char{
+width:90%;
+height:100%;
+margin:0 auto;
+
+}
+
+.card img{
+  width: 50%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: inset 12px 5px 25px 5px black,
+                             6px 5px 12px 2px black ;
+}
+
+.card div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.card h2, h3 {
+  margin: 0;
+  text-align: center;
+  margin: .5rem 0;
+}
+.card h3 {
+  font-size: 1.3rem;
+}
+
+.card h2 {
+ font-size: 1.7rem;
+}
+
+.card p {
+  padding: 0 1.5rem;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+.ps p {
+  font-size: 1.2rem;
+}
+
+.map{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.base {
+  font-weight: bold;
+}
