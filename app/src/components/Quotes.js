@@ -25,7 +25,9 @@ const Quotes = (props) => {
 
   return (
     <>
-      <h2>Orange Man says: {props.quote}</h2>
+      <h3> 🍊 Man says: </h3> <br/>
+      <h2> {props.quote} </h2>
+      <br/>
       <button onClick={handleClick}>Get new quote</button>
     </>
   );
