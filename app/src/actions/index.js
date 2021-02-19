@@ -13,7 +13,7 @@ export const getDeals = () => dispatch => {
             dispatch({ type:FETCH_DEALS_SUCCESS, payload: resp.data.deals});
         })
         .catch(err => {
-            dispatch({ type:FETCH_DEALS_FAIL, payload:err.response.code});
+            dispatch({ type:FETCH_DEALS_FAIL,  payload:err.response.code});
         });
 }
 
