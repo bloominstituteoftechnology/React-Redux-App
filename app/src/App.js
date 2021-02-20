@@ -19,6 +19,7 @@ import Login from './Components/Login'
 import Register from './Components/Register'
 import Commentary from './Components/Commentary';
 import Dashboard from './Components/Dashboard';
+import TheForum from './Components/TheForum'
 import OthersCommentary from './Components/OthersCommentary';
 
 
@@ -245,6 +246,10 @@ generic information, should you choose to share it. I pray you are blessed by th
 
 <Route path='/dashboard'>
     <Dashboard />
+</Route>
+
+<Route path='/theforum'>
+    <TheForum />
 </Route>
 
 {/* Bible Book Routes--------------------------------------- */}

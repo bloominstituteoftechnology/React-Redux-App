@@ -38,7 +38,7 @@ return (
     <ul>
       <li><Link to='/dashboard'>Dashboard</Link></li>
       <li><Link to='/profile'>My Profile</Link></li>
-      <li><Link to='/forum'>The Forum</Link></li>
+      <li><Link to='/theforum'>The Forum</Link></li>
     </ul>
   </div>
   :

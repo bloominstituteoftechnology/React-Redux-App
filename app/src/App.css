@@ -316,6 +316,159 @@ textarea {
   border-radius: 50%;
 }
 
+/* The Forum Page-------------------------- */
+
+#discussionroombuttontitle {
+  color: #EAF4D3;
+  margin: 0;
+}
+
+#torahapplications-button {
+    width: 600px;
+    height: 130px;
+    background: #0C012E;
+    color: #EAF4D3;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#celebratingfeasts-button {
+  width: 600px;
+  height: 130px;
+  background: #0f3517;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#historicalbiblebooks-button {
+  width: 600px;
+  height: 130px;
+  background: #3e0555;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#ketuvim-thewritings-button {
+  width: 600px;
+  height: 130px;
+  background: #70165d;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#messianicprophecy-button {
+  width: 600px;
+  height: 130px;
+  background: #694604;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#followingyeshua-button {
+  width: 600px;
+  height: 130px;
+  background: #701b01;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#whatisthegospel-button {
+  width: 600px;
+  height: 130px;
+  background: #1d3d57;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#allthingspaul-button {
+  width: 600px;
+  height: 130px;
+  background: #704504;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#israel-button {
+  width: 600px;
+  height: 130px;
+  background: #2b539c;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#endtimesprophecy-button {
+  width: 600px;
+  height: 130px;
+  background: #6b0c43;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#thelifetocome-button {
+  width: 600px;
+  height: 130px;
+  background: #718f55;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+#prayerroom-button {
+  width: 600px;
+  height: 130px;
+  background: #000000;
+  color: #EAF4D3;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+
+
 @media (max-width: 700px) {
 
       h1 {
@@ -411,6 +564,152 @@ textarea {
       .roundedbox {
         width: 90%;
       }
+
+      /* The Forum------- */
+
+      #torahapplications-button {
+        width: 90%;
+        height: 130px;
+        background: #0C012E;
+        color: #EAF4D3;
+        margin: 15px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+    }
+    
+    #celebratingfeasts-button {
+      width: 90%;
+      height: 130px;
+      background: #0f3517;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #historicalbiblebooks-button {
+      width: 90%;
+      height: 130px;
+      background: #3e0555;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #ketuvim-thewritings-button {
+      width: 90%;
+      height: 130px;
+      background: #70165d;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #messianicprophecy-button {
+      width: 90%;
+      height: 130px;
+      background: #694604;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #followingyeshua-button {
+      width: 90%;
+      height: 130px;
+      background: #701b01;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #whatisthegospel-button {
+      width: 90%;
+      height: 130px;
+      background: #1d3d57;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #allthingspaul-button {
+      width: 90%;
+      height: 130px;
+      background: #704504;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #israel-button {
+      width: 90%;
+      height: 130px;
+      background: #2b539c;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #endtimesprophecy-button {
+      width: 90%;
+      height: 130px;
+      background: #6b0c43;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #thelifetocome-button {
+      width: 90%;
+      height: 130px;
+      background: #718f55;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
+    
+    #prayerroom-button {
+      width: 90%;
+      height: 130px;
+      background: #000000;
+      color: #EAF4D3;
+      margin: 15px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+    }
 
 }
 
