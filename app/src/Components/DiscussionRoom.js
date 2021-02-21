@@ -19,6 +19,12 @@ function DiscussionRoom (props) {
             <h2 id={props.titleid}>{props.title}</h2>
             <h4 id={props.subtitleid}>Discussion Room</h4>
 
+            <div id="discussion-room-container">
+                <div id="startconversationbox">
+                <h3 id="startconversation">Start a Conversation</h3>
+                </div>
+            </div>
+
         </div>)
 }
 

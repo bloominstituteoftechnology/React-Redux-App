@@ -7,6 +7,8 @@
   src: url('VarelaRound-Regular.ttf');
 }
 
+
+
 html {
   font-size: 62.5%;
 }
@@ -628,6 +630,36 @@ textarea {
 }
 
 
+#discussion-room-container {
+  width: 700px;
+  background: rgba(255,255,255,0.4);
+  margin: 10px auto;
+  padding: 20px 0px;
+  border-radius: 20px;
+}
+
+#startconversation {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(49, 30, 0);
+  font-size: 30px;
+  padding: 10px;
+  background: rgb(255, 255, 255, 0.4);
+}
+
+#startconversation:hover {
+  font-family: 'Roboto', sans-serif;
+  color: rgb(49, 30, 0);
+  font-size: 30px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#startconversationbox {
+  padding: 20px 0px;
+  background: rgba(255,255,255,0.4);
+
+}
+
 
 @media (max-width: 700px) {
 
@@ -873,6 +905,22 @@ textarea {
 
     h4 {
       font-size: 23px;
+    }
+
+    #discussion-room-container {
+      width: 100%;
+      background: rgba(255,255,255,0.4);
+      margin: 10px auto;
+      padding: 20px 0px;
+      border-radius: 0px;
+    }
+
+    #startconversation {
+      font-family: 'Roboto', sans-serif;
+      color: rgb(49, 30, 0);
+      font-size: 25px;
+      padding: 10px;
+      background: rgb(255, 255, 255, 0.4);
     }
 
 }
