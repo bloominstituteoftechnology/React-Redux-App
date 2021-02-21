@@ -643,21 +643,27 @@ textarea {
   color: rgb(49, 30, 0);
   font-size: 30px;
   padding: 10px;
-  background: rgb(255, 255, 255, 0.4);
+  margin-bottom: 5px;
 }
 
-#startconversation:hover {
-  font-family: 'Roboto', sans-serif;
-  color: rgb(49, 30, 0);
-  font-size: 30px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.8);
+
+
+#discussionroom-box {
+  padding: 20px 0px;
+  background: rgba(255,255,255,0.4);
 }
 
 #startconversationbox {
-  padding: 20px 0px;
-  background: rgba(255,255,255,0.4);
+  background: rgb(255, 255, 255, 0.4);
+  padding-bottom: 15px;
+}
 
+#submit {
+  width: 120px;
+  height: 40px;
+  border-radius: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
 }
 
 
