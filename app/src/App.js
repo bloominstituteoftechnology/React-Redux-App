@@ -258,7 +258,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="Torah Applications" 
         titleid="torahappications-title" 
         subtitleid="torahapplications-subtitle"
-        bg="torahapplications-bg" />
+        bg="torahapplications-bg"
+        discussionroom="torahapplications" />
 </Route>
 
 <Route path='/feasts'>
