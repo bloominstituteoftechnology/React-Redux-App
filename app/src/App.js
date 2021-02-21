@@ -21,6 +21,7 @@ import Commentary from './Components/Commentary';
 import Dashboard from './Components/Dashboard';
 import TheForum from './Components/TheForum'
 import OthersCommentary from './Components/OthersCommentary';
+import DiscussionRoom from './Components/DiscussionRoom';
 
 
 function App(props) {
@@ -251,6 +252,11 @@ generic information, should you choose to share it. I pray you are blessed by th
 <Route path='/theforum'>
     <TheForum />
 </Route>
+
+<Route path='/torahapplications'>
+    <DiscussionRoom title="Torah Applications" />
+</Route>
+
 
 {/* Bible Book Routes--------------------------------------- */}
 

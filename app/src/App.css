@@ -320,7 +320,10 @@ textarea {
 
 #discussionroombuttontitle {
   color: #EAF4D3;
+  font-size: 30px;
   margin: 0;
+  display: block;
+  text-decoration: none;
 }
 
 #torahapplications-button {
@@ -333,6 +336,20 @@ textarea {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+}
+
+#torahapplications-bg {
+  background: #0C012E;
+  height: 100vh;
+}
+
+#torahappications-title {
+  color: #98abff;
+}
+
+#torahapplications-subtitle {
+  color: #4f7eff;
+
 }
 
 #celebratingfeasts-button {
@@ -410,7 +427,7 @@ textarea {
 #allthingspaul-button {
   width: 600px;
   height: 130px;
-  background: #704504;
+  background: #998632;
   color: #EAF4D3;
   margin: 15px auto;
   display: flex;
@@ -709,6 +726,10 @@ textarea {
       align-items: center;
       justify-content: center;
       border-radius: 20px;
+    }
+
+    h4 {
+      font-size: 23px;
     }
 
 }
