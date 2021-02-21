@@ -267,7 +267,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="Celebrating the Feasts of Yahweh"
         titleid="feasts-title" 
         subtitleid="feasts-subtitle"
-        bg="feasts-bg" />
+        bg="feasts-bg"
+        discussionroom="feasts" />
 </Route>
 
 <Route path='/historicalbooks'>
@@ -275,7 +276,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="The Historical Bible Books" 
         titleid="historicalbooks-title" 
         subtitleid="historicalbooks-subtitle"
-        bg="historicalbooks-bg" />
+        bg="historicalbooks-bg"
+        discussionroom="historicalbooks" />
 </Route>
 
 <Route path='/ketuvim'>
@@ -283,7 +285,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="Ketuvim: The Writings"
         titleid="ketuvim-title" 
         subtitleid="ketuvim-subtitle"
-        bg="ketuvim-bg" />
+        bg="ketuvim-bg"
+        discussionroom="ketuvim" />
 </Route>
 
 <Route path='/messianicprophecy'>
@@ -291,7 +294,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="Messianic Prophecy"
         titleid="messianicprophecy-title" 
         subtitleid="messianicprophecy-subtitle"
-        bg="messianicprophecy-bg" />
+        bg="messianicprophecy-bg"
+        discussionroom="messianicprophecy" />
 </Route>
 
 <Route path='/followingyeshua'>
@@ -299,7 +303,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="Following Yeshua"
         titleid="followingyeshua-title" 
         subtitleid="followingyeshua-subtitle"
-        bg="followingyeshua-bg" />
+        bg="followingyeshua-bg"
+        discussionroom="followingyeshua" />
 </Route>
 
 <Route path='/gospel'>
@@ -307,7 +312,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="What is the Gospel?"
         titleid="gospel-title" 
         subtitleid="gospel-subtitle"
-        bg="gospel-bg" />
+        bg="gospel-bg"
+        discussionroom="gospel" />
 </Route>
 
 <Route path='/allthingspaul'>
@@ -315,7 +321,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="All Things Paul"
         titleid="allthingspaul-title" 
         subtitleid="allthingspaul-subtitle"
-        bg="allthingspaul-bg" />
+        bg="allthingspaul-bg"
+        discussionroom="allthingspaul" />
 </Route>
 
 <Route path='/israel'>
@@ -323,7 +330,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="Israel"
         titleid="israel-title" 
         subtitleid="israel-subtitle"
-        bg="israel-bg" />
+        bg="israel-bg" 
+        discussionroom="israel" />
 </Route>
 
 <Route path='/endtimesprophecy'>
@@ -331,7 +339,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="End Times Prophecy"
         titleid="endtimesprophecy-title" 
         subtitleid="endtimesprophecy-subtitle"
-        bg="endtimesprophecy-bg" />
+        bg="endtimesprophecy-bg"
+        discussionroom="endtimesprophecy" />
 </Route>
 
 <Route path='/thelifetocome'>
@@ -339,7 +348,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="The Life To Come"
         titleid="thelifetocome-title" 
         subtitleid="thelifetocome-subtitle"
-        bg="thelifetocome-bg" />
+        bg="thelifetocome-bg"
+        discussionroom="thelifetocome" />
 </Route>
 
 <Route path='/prayerroom'>
@@ -347,7 +357,8 @@ generic information, should you choose to share it. I pray you are blessed by th
         title="Prayer Room"
         titleid="prayerroom-title" 
         subtitleid="prayerroom-subtitle"
-        bg="prayerroom-bg" />
+        bg="prayerroom-bg"
+        discussionroom="prayerroom" />
 </Route>
 
 

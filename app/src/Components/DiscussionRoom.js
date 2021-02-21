@@ -58,9 +58,11 @@ function DiscussionRoom (props) {
 
     const [visiblePosts, setVisiblePosts] = useState([])
 
+    const [users, setUsers] = useState([])
+
     useEffect( () => {
 
-        const timer = setTimeout(() => {
+        // const timer = setTimeout(() => {
 
             axiosWithAuth()
             .get(`https://chaqar-data.herokuapp.com/posts`)
@@ -69,9 +71,15 @@ function DiscussionRoom (props) {
                 
             })
 
-        }, 2000)
+            axiosWithAuth()
+            .get('https://chaqar-data.herokuapp.com/api/auth')
+            .then((res) => {
+                setUsers(res.data)
+            })
 
-        return () => clearTimeout(timer) 
+        // }, 2000)
+
+        // return () => clearTimeout(timer) 
 
     }, [postThePost])
 
@@ -104,7 +112,15 @@ function DiscussionRoom (props) {
                     </div>
                     <div>
                     {filteredPosts.map(post => 
-                       <p className="commentary-text">{post.post}</p>
+                        users.map(user => {
+                            if (user.id === post.user_id) {
+                                return (<div id="post"><p className="commentary-text">
+                                    <b>{user.first_name} {user.last_name} Wrote:</b></p>
+                                    <p className="commentary-text">{post.post}</p>
+                                    </div>
+                                    )
+                            }
+                        })
                        )}
                     </div>
                 </div>

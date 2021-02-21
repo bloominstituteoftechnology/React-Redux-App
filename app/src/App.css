@@ -342,7 +342,7 @@ textarea {
 
 #torahapplications-bg {
   background: #0C012E;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #torahappications-title {
@@ -368,7 +368,7 @@ textarea {
 
 #feasts-bg {
   background: #0f3517;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #feasts-title {
@@ -393,7 +393,7 @@ textarea {
 
 #historicalbooks-bg {
   background: #3e0555;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #historicalbooks-title {
@@ -418,7 +418,7 @@ textarea {
 
 #ketuvim-bg {
   background: #70165d;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #ketuvim-title {
@@ -443,7 +443,7 @@ textarea {
 
 #messianicprophecy-bg {
   background: #694604;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #messianicprophecy-title {
@@ -468,7 +468,7 @@ textarea {
 
 #followingyeshua-bg {
   background: #701b01;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #followingyeshua-title {
@@ -493,7 +493,7 @@ textarea {
 
 #gospel-bg {
   background: #1d3d57;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #gospel-title {
@@ -518,7 +518,7 @@ textarea {
 
 #allthingspaul-bg {
   background: #998632;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #allthingspaul-title {
@@ -543,7 +543,7 @@ textarea {
 
 #israel-bg {
   background: #2b539c;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #israel-title {
@@ -568,7 +568,7 @@ textarea {
 
 #endtimesprophecy-bg {
   background: #6b0c43;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #endtimesprophecy-title {
@@ -593,7 +593,7 @@ textarea {
 
 #thelifetocome-bg {
   background: #718f55;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #thelifetocome-title {
@@ -618,7 +618,7 @@ textarea {
 
 #prayerroom-bg {
   background: #000000;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #prayerroom-title {
@@ -664,6 +664,10 @@ textarea {
   border-radius: 15px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+}
+
+#post {
+  padding: 15px;
 }
 
 
@@ -926,7 +930,7 @@ textarea {
       color: rgb(49, 30, 0);
       font-size: 25px;
       padding: 10px;
-      background: rgb(255, 255, 255, 0.4);
+      
     }
 
 }
