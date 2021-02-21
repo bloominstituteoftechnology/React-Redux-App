@@ -14,10 +14,10 @@ function DiscussionRoom (props) {
     
 
     return (
-        <div id="torahapplications-bg">
+        <div id={props.bg}>
             <br></br><br></br>
-            <h2 id="torahappications-title">{props.title}</h2>
-            <h4 id="torahapplications-subtitle">Discussion Room</h4>
+            <h2 id={props.titleid}>{props.title}</h2>
+            <h4 id={props.subtitleid}>Discussion Room</h4>
 
         </div>)
 }

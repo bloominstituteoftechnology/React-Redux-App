@@ -254,7 +254,99 @@ generic information, should you choose to share it. I pray you are blessed by th
 </Route>
 
 <Route path='/torahapplications'>
-    <DiscussionRoom title="Torah Applications" />
+    <DiscussionRoom 
+        title="Torah Applications" 
+        titleid="torahappications-title" 
+        subtitleid="torahapplications-subtitle"
+        bg="torahapplications-bg" />
+</Route>
+
+<Route path='/feasts'>
+    <DiscussionRoom 
+        title="Celebrating the Feasts of Yahweh"
+        titleid="feasts-title" 
+        subtitleid="feasts-subtitle"
+        bg="feasts-bg" />
+</Route>
+
+<Route path='/historicalbooks'>
+    <DiscussionRoom 
+        title="The Historical Bible Books" 
+        titleid="historicalbooks-title" 
+        subtitleid="historicalbooks-subtitle"
+        bg="historicalbooks-bg" />
+</Route>
+
+<Route path='/ketuvim'>
+    <DiscussionRoom 
+        title="Ketuvim: The Writings"
+        titleid="ketuvim-title" 
+        subtitleid="ketuvim-subtitle"
+        bg="ketuvim-bg" />
+</Route>
+
+<Route path='/messianicprophecy'>
+    <DiscussionRoom 
+        title="Messianic Prophecy"
+        titleid="messianicprophecy-title" 
+        subtitleid="messianicprophecy-subtitle"
+        bg="messianicprophecy-bg" />
+</Route>
+
+<Route path='/followingyeshua'>
+    <DiscussionRoom 
+        title="Following Yeshua"
+        titleid="followingyeshua-title" 
+        subtitleid="followingyeshua-subtitle"
+        bg="followingyeshua-bg" />
+</Route>
+
+<Route path='/gospel'>
+    <DiscussionRoom 
+        title="What is the Gospel?"
+        titleid="gospel-title" 
+        subtitleid="gospel-subtitle"
+        bg="gospel-bg" />
+</Route>
+
+<Route path='/allthingspaul'>
+    <DiscussionRoom 
+        title="All Things Paul"
+        titleid="allthingspaul-title" 
+        subtitleid="allthingspaul-subtitle"
+        bg="allthingspaul-bg" />
+</Route>
+
+<Route path='/israel'>
+    <DiscussionRoom 
+        title="Israel"
+        titleid="israel-title" 
+        subtitleid="israel-subtitle"
+        bg="israel-bg" />
+</Route>
+
+<Route path='/endtimesprophecy'>
+    <DiscussionRoom 
+        title="End Times Prophecy"
+        titleid="endtimesprophecy-title" 
+        subtitleid="endtimesprophecy-subtitle"
+        bg="endtimesprophecy-bg" />
+</Route>
+
+<Route path='/thelifetocome'>
+    <DiscussionRoom 
+        title="The Life To Come"
+        titleid="thelifetocome-title" 
+        subtitleid="thelifetocome-subtitle"
+        bg="thelifetocome-bg" />
+</Route>
+
+<Route path='/prayerroom'>
+    <DiscussionRoom 
+        title="Prayer Room"
+        titleid="prayerroom-title" 
+        subtitleid="prayerroom-subtitle"
+        bg="prayerroom-bg" />
 </Route>
 
 

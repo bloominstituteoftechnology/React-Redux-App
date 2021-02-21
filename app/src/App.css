@@ -364,6 +364,19 @@ textarea {
   border-radius: 20px;
 }
 
+#feasts-bg {
+  background: #0f3517;
+  height: 100vh;
+}
+
+#feasts-title {
+  color: #dbffbd;
+}
+
+#feasts-subtitle {
+  color: #8dcc74;
+}
+
 #historicalbiblebooks-button {
   width: 600px;
   height: 130px;
@@ -374,6 +387,19 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+}
+
+#historicalbooks-bg {
+  background: #3e0555;
+  height: 100vh;
+}
+
+#historicalbooks-title {
+  color: #e7b0fd;
+}
+
+#historicalbooks-subtitle {
+  color: #b870e7;
 }
 
 #ketuvim-thewritings-button {
@@ -388,6 +414,19 @@ textarea {
   border-radius: 20px;
 }
 
+#ketuvim-bg {
+  background: #70165d;
+  height: 100vh;
+}
+
+#ketuvim-title {
+  color: #ffaded;
+}
+
+#ketuvim-subtitle {
+  color: #f174d6;
+}
+
 #messianicprophecy-button {
   width: 600px;
   height: 130px;
@@ -398,6 +437,19 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+}
+
+#messianicprophecy-bg {
+  background: #694604;
+  height: 100vh;
+}
+
+#messianicprophecy-title {
+  color: #ffe1aa;
+}
+
+#messianicprophecy-subtitle {
+  color: #ffcd6f;
 }
 
 #followingyeshua-button {
@@ -412,6 +464,19 @@ textarea {
   border-radius: 20px;
 }
 
+#followingyeshua-bg {
+  background: #701b01;
+  height: 100vh;
+}
+
+#followingyeshua-title {
+  color: #ffb39b;
+}
+
+#followingyeshua-subtitle {
+  color: #e97e5d;
+}
+
 #whatisthegospel-button {
   width: 600px;
   height: 130px;
@@ -422,6 +487,19 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+}
+
+#gospel-bg {
+  background: #1d3d57;
+  height: 100vh;
+}
+
+#gospel-title {
+  color: #d5ecff;
+}
+
+#gospel-subtitle {
+  color: #90cbfc;
 }
 
 #allthingspaul-button {
@@ -436,6 +514,19 @@ textarea {
   border-radius: 20px;
 }
 
+#allthingspaul-bg {
+  background: #998632;
+  height: 100vh;
+}
+
+#allthingspaul-title {
+  color: #fff5c6;
+}
+
+#allthingspaul-subtitle {
+  color: #e4cf73;
+}
+
 #israel-button {
   width: 600px;
   height: 130px;
@@ -446,6 +537,19 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+}
+
+#israel-bg {
+  background: #2b539c;
+  height: 100vh;
+}
+
+#israel-title {
+  color: #d1e1ff;
+}
+
+#israel-subtitle {
+  color: #92b7fa;
 }
 
 #endtimesprophecy-button {
@@ -460,6 +564,19 @@ textarea {
   border-radius: 20px;
 }
 
+#endtimesprophecy-bg {
+  background: #6b0c43;
+  height: 100vh;
+}
+
+#endtimesprophecy-title {
+  color: #ffbfe4;
+}
+
+#endtimesprophecy-subtitle {
+  color: #ff81ca;
+}
+
 #thelifetocome-button {
   width: 600px;
   height: 130px;
@@ -472,6 +589,19 @@ textarea {
   border-radius: 20px;
 }
 
+#thelifetocome-bg {
+  background: #718f55;
+  height: 100vh;
+}
+
+#thelifetocome-title {
+  color: #e0ffc3;
+}
+
+#thelifetocome-subtitle {
+  color: #b8e78c;
+}
+
 #prayerroom-button {
   width: 600px;
   height: 130px;
@@ -482,6 +612,19 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
+}
+
+#prayerroom-bg {
+  background: #000000;
+  height: 100vh;
+}
+
+#prayerroom-title {
+  color: #bdbdbd;
+}
+
+#prayerroom-subtitle {
+  color: #8d8d8d;
 }
 
 
