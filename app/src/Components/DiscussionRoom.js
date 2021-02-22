@@ -66,7 +66,7 @@ function DiscussionRoom (props) {
 
     useEffect( () => {
 
-        // const timer = setTimeout(() => {
+        const timer = setTimeout(() => {
 
             axiosWithAuth()
             .get(`https://chaqar-data.herokuapp.com/posts`)
@@ -88,9 +88,9 @@ function DiscussionRoom (props) {
                 setUsers(res.data)
             })
 
-        // }, 2000)
+        }, 1500)
 
-        // return () => clearTimeout(timer) 
+        return () => clearTimeout(timer) 
 
     }, [postThePost])
 
