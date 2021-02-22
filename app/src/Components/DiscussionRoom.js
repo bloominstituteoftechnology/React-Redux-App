@@ -5,6 +5,8 @@ import { axiosWithAuth } from '../axiosWithAuth'
 
 import { getName } from '../Actions'
 
+import AddComment from './AddComment'
+
 import axios from 'axios'
 
 
@@ -60,6 +62,8 @@ function DiscussionRoom (props) {
 
     const [users, setUsers] = useState([])
 
+    const [comments, setComments] = useState([])
+
     useEffect( () => {
 
         // const timer = setTimeout(() => {
@@ -68,6 +72,13 @@ function DiscussionRoom (props) {
             .get(`https://chaqar-data.herokuapp.com/posts`)
             .then((res) => {
                 setVisiblePosts(res.data)
+                
+            })
+
+            axiosWithAuth()
+            .get(`https://chaqar-data.herokuapp.com/comments-on-posts`)
+            .then((res) => {
+                setComments(res.data)
                 
             })
 
@@ -87,6 +98,8 @@ function DiscussionRoom (props) {
     const filteredPosts = visiblePosts.filter(post => 
         post.discussion_room === props.discussionroom
         )
+
+    const [viewAddComment, setViewAddComment] = useState(false)
 
     
 
@@ -117,6 +130,21 @@ function DiscussionRoom (props) {
                                 return (<div id="post"><p className="commentary-text">
                                     <b>{user.first_name} {user.last_name} Wrote:</b></p>
                                     <p className="commentary-text">{post.post}</p>
+                                    {!viewAddComment ?
+                                    <button onClick={() => setViewAddComment(true)}>Respond</button>
+                                    :
+                                    <AddComment setViewAddComment={setViewAddComment} post_id={post.id} discussionroom={post.discussion_room} />
+                                    }
+                                    <div id="comments">
+                                        <br></br><br></br>
+                                        <h4 id={props.subtitleid}>Comments</h4>
+                                        {comments.map(comment =>
+
+                                            <div>
+                                                <p className="commentary-text"><b>{user.first_name} {user.last_name} Responded:</b></p>
+                                                <p className="commentary-text">{comment.comment}</p></div>
+                                            )}    
+                                    </div>
                                     </div>
                                     )
                             }
