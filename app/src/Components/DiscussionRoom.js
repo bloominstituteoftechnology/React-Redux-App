@@ -92,7 +92,7 @@ function DiscussionRoom (props) {
 
         return () => clearTimeout(timer) 
 
-    }, [postThePost])
+    }, [postThePost, viewAddComment, setViewAddComment])
 
 
     const filteredPosts = visiblePosts.filter(post => 
