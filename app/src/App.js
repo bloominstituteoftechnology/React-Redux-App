@@ -54,7 +54,7 @@ function App(props) {
       <header>
     <div id="title-subtitle">
         <h1>חקר : Bible App</h1>
-        <h3>Search, Study, Meditate</h3>
+        <h3>Search, Study, Discuss</h3>
     </div>
 </header>
 <Menus token={token}/>
