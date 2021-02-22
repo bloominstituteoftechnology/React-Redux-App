@@ -127,7 +127,7 @@ function DiscussionRoom (props) {
                     {filteredPosts.map(post => 
                         users.map(user => {
                             if (user.id === post.user_id) {
-                                return (<div id="post"><p className="commentary-text">
+                                return (<div id="postandcomments"><p className="commentary-text">
                                     <b>{user.first_name} {user.last_name} Wrote:</b></p>
                                     <p className="commentary-text">{post.post}</p>
                                     {!viewAddComment ?
@@ -137,9 +137,9 @@ function DiscussionRoom (props) {
                                     }
                                     <div id="comments">
                                         <br></br><br></br>
-                                        <h4 id={props.subtitleid}>Comments</h4>
-                                        {comments.map(comment =>
-
+                                        <h4 id="comments-title">Comments</h4>
+                                        {(comments.filter(comment => 
+                                            post.id === comment.post_id)).map(comment =>
                                             <div>
                                                 <p className="commentary-text"><b>{user.first_name} {user.last_name} Responded:</b></p>
                                                 <p className="commentary-text">{comment.comment}</p></div>

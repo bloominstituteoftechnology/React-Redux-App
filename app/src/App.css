@@ -684,6 +684,17 @@ textarea {
   margin: 0 auto;
 }
 
+#comments-title {
+  font-size: 25px;
+  color: #0e0136;
+}
+
+#postandcomments {
+  background: rgb(255, 255, 255, 0.7);
+  margin: 10px;
+  padding: 10px;
+}
+
 
 @media (max-width: 700px) {
 
