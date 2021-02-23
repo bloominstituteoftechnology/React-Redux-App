@@ -22,7 +22,7 @@ export const fetchNewCards = (currentPage) => (dispatch) => {
 		.get(
 			`https://api.magicthegathering.io/v1/cards?page=${
 				currentPage + 1
-			}&pageSize=10`
+			}&pageSize=6`
 		)
 		.then((res) => {
 			console.log(res)
