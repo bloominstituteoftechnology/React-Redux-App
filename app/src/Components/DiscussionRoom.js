@@ -18,6 +18,8 @@ function DiscussionRoom (props) {
 
     const userId = localStorage.getItem("user_id")
 
+    
+
     const starterpost = {
         user_id: userId,
         discussion_room: props.discussionroom,
@@ -64,6 +66,8 @@ function DiscussionRoom (props) {
 
     const [comments, setComments] = useState([])
 
+    const [viewAddComment, setViewAddComment] = useState(false)
+
     useEffect( () => {
 
         const timer = setTimeout(() => {
@@ -99,7 +103,7 @@ function DiscussionRoom (props) {
         post.discussion_room === props.discussionroom
         )
 
-    const [viewAddComment, setViewAddComment] = useState(false)
+    
 
     
 
@@ -135,14 +139,20 @@ function DiscussionRoom (props) {
                                     :
                                     <AddComment setViewAddComment={setViewAddComment} post_id={post.id} discussionroom={post.discussion_room} />
                                     }
+                                    
                                     <div id="comments">
                                         <br></br><br></br>
                                         <h4 id="comments-title">Comments</h4>
                                         {(comments.filter(comment => 
                                             post.id === comment.post_id)).map(comment =>
-                                            <div>
-                                                <p className="commentary-text"><b>{user.first_name} {user.last_name} Responded:</b></p>
-                                                <p className="commentary-text">{comment.comment}</p></div>
+                                                users.map(commentuser => {
+                                                    if (commentuser.id === comment.user_id) {
+                                                        return (<div>
+                                                                 <p className="commentary-text"><b>{commentuser.first_name} {commentuser.last_name} Responded:</b></p>
+                                                                <p className="commentary-text">{comment.comment}</p>
+                                                                </div>)
+                                                    }
+                                                })
                                             )}    
                                     </div>
                                     </div>
