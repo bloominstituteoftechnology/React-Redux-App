@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from 'axios'
+import { setLoggedIn } from '../Actions'
+import { connect } from 'react-redux'
+
 
 const initialRegister = {
     first_name: '',
@@ -11,7 +14,7 @@ const initialRegister = {
 
 
 
-function Register () {
+function Register (props) {
 
     const [newUser, setNewUser] = useState(initialRegister)
 
@@ -34,6 +37,7 @@ function Register () {
           .then((res) => {
             localStorage.setItem("token", JSON.stringify(res.data.token))
             localStorage.setItem("user_id", res.data.user_id)
+            props.setLoggedIn()
             history.push("/dashboard");
           })
           .catch((err) => console.log(err));
@@ -99,4 +103,14 @@ function Register () {
     )
 }
 
-export default Register
+const mapStateToProps = state => {
+
+    return {
+      first_name: state.first_name,
+      last_name: state.last_name,
+      loggedIn: state.loggedIn
+    }
+  
+  }
+  
+  export default connect(mapStateToProps, {setLoggedIn})(Register)
