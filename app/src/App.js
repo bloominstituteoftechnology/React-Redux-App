@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         
         <p>
-          App
+          App 🐋
         </p>
         <SelectSpecies/>
         

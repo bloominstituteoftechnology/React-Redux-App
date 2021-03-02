@@ -29,6 +29,7 @@ const SelectSpecies = (props) => {
   // helper function to handleClick
   const handleClick = (e) => {
     // dispatch to the action creator... change species state
+    console.log("e.target.id: ", e.target.id) // gives species name
   }
 
   return (
@@ -37,7 +38,7 @@ const SelectSpecies = (props) => {
       <div className="species-container">
         {
           data.speciesList.map(species => {
-          return <button id={species} onClick={handleClick}>{species}</button>
+          return <button key={species} id={species} onClick={handleClick}>{species}</button>
           })
         }
       </div>
