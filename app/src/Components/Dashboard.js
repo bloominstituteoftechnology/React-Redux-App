@@ -7,11 +7,12 @@ import { axiosWithAuth } from '../axiosWithAuth'
 import genericProfilePic from '../genericprofilepic.png'
 
 
-const userId = localStorage.getItem("user_id")
+
 
 
 export const uploadProfilePic = () => dispatch => {
 
+    const userId = localStorage.getItem("user_id")
     // e.preventDefault()
 
     const { files } = document.querySelector('input[type="file"]')
@@ -42,9 +43,8 @@ export const uploadProfilePic = () => dispatch => {
 
 }
 
-export const getProfilePic = () => dispatch => {
+export const getProfilePic = (userId) => dispatch => {
 
-    useEffect( () => {
 
             axiosWithAuth()
             .get(`https://chaqar-data.herokuapp.com/api/auth/${userId}`)
@@ -52,29 +52,28 @@ export const getProfilePic = () => dispatch => {
                 dispatch({
                     type: GET_PROFILE_PIC,
                     payload: res.data.profile_pic_url}
-                    )
-                
-                
+                    )   
             })        
-
-    }, []) 
 
 }
 
 
 function Dashboard (props) {
 
-    props.getProfilePic()
-
+    const [userId, setUserId] = useState('')
 
 
     useEffect( () => {
 
-        const userId = localStorage.getItem("user_id")
-        
-        props.getName(userId)
         
 
+            setUserId(localStorage.getItem("user_id"))
+            
+            props.getName(userId)
+
+            props.getProfilePic(userId)
+        
+        
     }) 
 
     
@@ -85,7 +84,7 @@ function Dashboard (props) {
             <h2>Welcome {props.first_name} {props.last_name}!</h2>
             <br></br><br></br>
             {console.log(props.profile_pic_url)}
-            {props.profile_pic_url != '' ? 
+            {props.profile_pic_url != null ? 
             <img src={props.profile_pic_url} className="profilepic"></img>
             : <img id="genericProfilePic" src={genericProfilePic}></img>
             }
