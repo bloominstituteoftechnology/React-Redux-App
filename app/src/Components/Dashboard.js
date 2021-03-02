@@ -84,6 +84,7 @@ function Dashboard (props) {
             <br></br><br></br>
             <h2>Welcome {props.first_name} {props.last_name}!</h2>
             <br></br><br></br>
+            {console.log(props.profile_pic_url)}
             {props.profile_pic_url != '' ? 
             <img src={props.profile_pic_url} className="profilepic"></img>
             : <img id="genericProfilePic" src={genericProfilePic}></img>
