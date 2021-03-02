@@ -6,7 +6,7 @@ import {
 
 } from "./Actions"
 
-import {SET_PROFILE_PIC} from "./Components/Dashboard" 
+import {SET_PROFILE_PIC, GET_PROFILE_PIC} from "./Components/Dashboard" 
 
 // import { combineReducers } from 'redux'
 
@@ -59,6 +59,12 @@ export const reducer = (state = initialState, action) => {
             }
         
         case SET_PROFILE_PIC:
+            return {
+                ...state,
+                profile_pic_url: action.payload
+            }
+
+        case GET_PROFILE_PIC:
             return {
                 ...state,
                 profile_pic_url: action.payload
