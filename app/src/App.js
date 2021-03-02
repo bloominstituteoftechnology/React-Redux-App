@@ -1,6 +1,7 @@
 import './App.css';
 
 import SelectSpecies from './components/SelectSpecies';
+import Siting from './components/Siting';
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
           App 🐋
         </p>
         <SelectSpecies/>
+
+        <Siting/>
         
       </header>
     </div>
