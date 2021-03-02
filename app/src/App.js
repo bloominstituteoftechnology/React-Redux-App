@@ -1,22 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+
+import SelectSpecies from './components/SelectSpecies';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          App
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <SelectSpecies/>
+        
       </header>
     </div>
   );
