@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 // import {useHistory} from 'react-router-dom'
 import { axiosWithAuth } from '../axiosWithAuth'
 
+import { connect } from 'react-redux'
+
 
 
 function OthersCommentary (props) {
@@ -49,7 +51,14 @@ function OthersCommentary (props) {
                 users.map(user => {
                     if (user.id === commentary.user_id) { 
                         return ( <div className="roundedbox"><p className="commentary-text">
+                            <div>
+                                {user.profile_pic_url != null ? 
+                                <div><img id="smallprofilepic" src={user.profile_pic_url}></img>
+                                <br></br>
+                                </div>
+                                : null}
                             <b>{user.first_name} {user.last_name} wrote:</b>
+                            </div>
                         </p>
                         <p className="commentary-text">{commentary.commentary}</p>
                         </div>
@@ -64,4 +73,14 @@ function OthersCommentary (props) {
     )
 }
 
-export default OthersCommentary
+const mapStateToProps = state => {
+
+    return {
+      first_name: state.first_name,
+      last_name: state.last_name,
+      profile_pic_url: state.profile_pic_url
+    }
+  
+  }
+  
+  export default connect(mapStateToProps, {})(OthersCommentary)

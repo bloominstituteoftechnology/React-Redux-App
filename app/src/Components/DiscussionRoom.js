@@ -132,6 +132,12 @@ function DiscussionRoom (props) {
                         users.map(user => {
                             if (user.id === post.user_id) {
                                 return (<div id="postandcomments"><p className="commentary-text">
+                                    {user.profile_pic_url != null ? 
+                                        <div>
+                                            <img id="mycommentarypic" src={user.profile_pic_url}></img>
+                                        </div>
+                                        : null
+                                    }
                                     <b>{user.first_name} {user.last_name} Wrote:</b></p>
                                     <p className="commentary-text">{post.post}</p>
                                     {!viewAddComment ?
@@ -148,8 +154,15 @@ function DiscussionRoom (props) {
                                                 users.map(commentuser => {
                                                     if (commentuser.id === comment.user_id) {
                                                         return (<div>
+                                                                {commentuser.profile_pic_url != null ? 
+                                                                    <div>
+                                                                        <img id="smallprofilepic" src={commentuser.profile_pic_url}></img>
+                                                                    </div>
+                                                                : null
+                                                                }
                                                                  <p className="commentary-text"><b>{commentuser.first_name} {commentuser.last_name} Responded:</b></p>
                                                                 <p className="commentary-text">{comment.comment}</p>
+                                                                <br></br><br></br>
                                                                 </div>)
                                                     }
                                                 })

@@ -291,8 +291,8 @@ input {
 .roundedbox {
   background: #EAF4D3;
   border-radius: 10px;
-  padding: 5px;
-  width: 25%;
+  padding: 8px;
+  width: 70%;
   margin: 8px auto;
 }
 
@@ -325,6 +325,7 @@ textarea {
   font-size: 30px;
   margin: 0;
   display: block;
+  padding: 20px;
   text-decoration: none;
 }
 
@@ -687,12 +688,28 @@ textarea {
 #comments-title {
   font-size: 25px;
   color: #0e0136;
+  margin-bottom: 20px;
 }
 
 #postandcomments {
   background: rgb(255, 255, 255, 0.7);
   margin: 10px;
   padding: 10px;
+}
+
+#pic-mycommentary {
+  width: auto;
+  margin: 0 auto;
+}
+
+#mycommentarypic {
+  border-radius: 50%;
+  width: 70px;
+}
+
+#smallprofilepic {
+  border-radius: 50%;
+  width: 50px;
 }
 
 

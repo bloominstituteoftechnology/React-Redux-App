@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { axiosWithAuth } from '../axiosWithAuth'
 import EditCommentary from './EditCommentary'
+import { connect } from 'react-redux'
 
 
 
@@ -93,7 +94,11 @@ function Commentary (props) {
     return (
         <div>
             <br></br>
-            <h3 className="my-commentary-title">My Commentary:</h3>
+            <div id="pic-mycommentary">
+                <img id="mycommentarypic" src={props.profile_pic_url}></img>
+                <br></br>
+                <h3 className="my-commentary-title">My Commentary:</h3>
+            </div>
             <div>{filteredCommentary.map(commentary => 
                 
                 showEditForm ? 
@@ -119,4 +124,14 @@ function Commentary (props) {
     )
 }
 
-export default Commentary
+const mapStateToProps = state => {
+
+    return {
+      first_name: state.first_name,
+      last_name: state.last_name,
+      profile_pic_url: state.profile_pic_url
+    }
+  
+  }
+  
+  export default connect(mapStateToProps, {})(Commentary)
