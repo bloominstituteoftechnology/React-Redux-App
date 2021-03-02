@@ -16,7 +16,7 @@ export const getSpecies = (dispatch) => {
   dispatch({ type: FETCH_SPECIES_START });
 
   // begin API request
-  axios.get('http://hotline.whalemuseum.org/api.json?species=gray%20whale')
+  axios.get('http://hotline.whalemuseum.org/api.json?species=orca')
   // axios.get(`http://hotline.whalemuseum.org/api.json?species=${species}`) // plug in state here in ${species}
 
   // respond to happy path & sad path, updating state with API response
