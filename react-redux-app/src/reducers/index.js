@@ -31,7 +31,7 @@ export const appReducer = (state = initialState, action) => {
       return { ...state, loading: false, error: action.payload };
     }
     case SEARCH_VALUE: {
-      log("SEARCH VALUE FROM REDUCE", action.payload);
+      log("3. SEARCH VALUE FROM REDUCER", action.payload);
       return { ...state, searchValue: action.payload };
     }
     default:
