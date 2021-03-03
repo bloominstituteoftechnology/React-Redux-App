@@ -14,12 +14,10 @@ const Fact = props => {
     loading && <h2>Loading...</h2>
 
     return (
-        <>
-        {fact.map(fact => {
-            return <h2>{fact.text}</h2>
-        })}
+        <div>
+        <h2>{fact[0].text}</h2>
         <button onClick={() => getFact(dispatch)}>Get new fact</button>
-        </>
+        </div>
     )
 }
 
