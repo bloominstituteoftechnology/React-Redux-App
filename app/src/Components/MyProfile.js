@@ -60,9 +60,11 @@ export const getProfilePic = (userId) => dispatch => {
 }
 
 
-function Dashboard (props) {
+function MyProfile (props) {
 
     const [userId, setUserId] = useState('')
+
+    const [users, setUsers] = useState([])
 
 
     useEffect( () => {
@@ -74,6 +76,12 @@ function Dashboard (props) {
             props.getName(userId)
 
             props.getProfilePic(userId)
+
+            axiosWithAuth()
+            .get('https://chaqar-data.herokuapp.com/api/auth')
+            .then((res) => {
+                setUsers(res.data)
+            })
         
         
     }, []) 
@@ -83,7 +91,7 @@ function Dashboard (props) {
     return (
         <div>
             <br></br><br></br>
-            <h2>Welcome {props.first_name} {props.last_name}!</h2>
+            <h2>My Profile</h2>
             <br></br><br></br>
             {console.log(props.profile_pic_url)}
             {props.profile_pic_url != null ? 
@@ -95,6 +103,30 @@ function Dashboard (props) {
                 <button type="button" className="btn" onClick={props.uploadProfilePic}>Submit</button>
                 {/* <button type="button" className="btn widget-btn">Upload Via Widget</button> */}
             </form>
+            <br></br>
+            {users.map(user => {
+                console.log(userId)
+                if (JSON.stringify(user.id) === userId) {
+                    return(
+                        <div>
+                            <div>
+                            <p class="profiletext">
+                                <b>Name:</b>
+                                <br></br> 
+                                {user.first_name} {user.last_name}
+                            </p>
+                            </div>
+                            <div>
+                            <p class="profiletext">
+                                <b>Location:</b>
+                                <br></br> 
+                                {user.city}, {user.state}, {user.country}
+                            </p>
+                            </div>
+                        </div>
+                    )
+                }
+            })}
         </div>
     )
 }
@@ -113,4 +145,4 @@ const mapStateToProps = state => {
   
   }
   
-  export default connect(mapStateToProps, {getName, uploadProfilePic, getProfilePic})(Dashboard)
+  export default connect(mapStateToProps, {getName, uploadProfilePic, getProfilePic})(MyProfile)

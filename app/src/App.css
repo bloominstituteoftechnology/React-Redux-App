@@ -712,6 +712,12 @@ textarea {
   width: 50px;
 }
 
+.profiletext {
+  font-family: Hebrew;
+  color:#0C012E;
+  font-size: 25px;
+}
+
 
 @media (max-width: 700px) {
 

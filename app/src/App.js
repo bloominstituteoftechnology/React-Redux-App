@@ -22,6 +22,7 @@ import Dashboard from './Components/Dashboard';
 import TheForum from './Components/TheForum'
 import OthersCommentary from './Components/OthersCommentary';
 import DiscussionRoom from './Components/DiscussionRoom';
+import MyProfile from './Components/MyProfile';
 
 
 function App(props) {
@@ -247,6 +248,10 @@ generic information, should you choose to share it. I pray you are blessed by th
 
 <Route path='/dashboard'>
     <Dashboard />
+</Route>
+
+<Route path='/profile'>
+    <MyProfile />
 </Route>
 
 <Route path='/theforum'>
