@@ -76,7 +76,7 @@ function Dashboard (props) {
             props.getProfilePic(userId)
         
         
-    }, []) 
+    }) 
 
     
 
