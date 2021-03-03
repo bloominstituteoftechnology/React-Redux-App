@@ -6,18 +6,20 @@ export const FETCH_SPECIES_START = "FETCH_SPECIES_START";
 export const FETCH_SPECIES_SUCCESS = "FETCH_SPECIES_SUCCESS";
 export const FETCH_SPECIES_FAILURE = "FETCH_SPECIES_FAILURE";
 
-export const selectSpecies = (newSpecies) => {
-  return {type: SELECT_SPECIES, payload: newSpecies};
+export const getSpecies = (selectedSpecies) => {
+  return {type: SELECT_SPECIES, payload: selectedSpecies};
 }
 
 
-export const getSpecies = (dispatch) => {
+export const selectSpecies = (dispatch, selectedSpecies) => {
   // update state to loading
-  dispatch({ type: FETCH_SPECIES_START });
+  dispatch ({ type: FETCH_SPECIES_START });
+
+  console.log("action creator has fired")
 
   // begin API request
-  axios.get('http://hotline.whalemuseum.org/api.json?species=orca')
-  // axios.get(`http://hotline.whalemuseum.org/api.json?species=${species}`) // plug in state here in ${species}
+  // axios.get('http://hotline.whalemuseum.org/api.json?species=orca')
+  axios.get(`http://hotline.whalemuseum.org/api.json?species=${selectedSpecies}`) // plug in state here in ${species}
 
   // respond to happy path & sad path, updating state with API response
     .then(res => {

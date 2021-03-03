@@ -50,10 +50,12 @@ const initialState = {
 export const appReducer = (state = initialState, action) => {
   switch (action.type) {
       case SELECT_SPECIES:
+        console.log("select species fires from reducer")
           return { ...state, species: action.payload }
       case FETCH_SPECIES_START:
           return { ...state, loading: true }
       case FETCH_SPECIES_SUCCESS:
+        console.log("in Reducer, fetch species success")
           return { ...state, loading: false, sitings: action.payload }
       case FETCH_SPECIES_FAILURE:
           return { ...state, loading: false, error: action.payload }

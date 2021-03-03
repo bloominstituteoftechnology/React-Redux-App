@@ -2,6 +2,10 @@
 
 http://hotline.whalemuseum.org/api
 
+##  Google MAP API
+
+https://developers.google.com/maps/documentation/maps-static/start
+
 ## Install redux
 
   npm install redux
@@ -74,3 +78,41 @@ http://hotline.whalemuseum.org/api
     npm install @material-ui/icons
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+
+  ## REDUX STEPS
+
+  > CREATE THE STORE
+
+    import { applyMiddleware, createStore } from 'redux';
+    import { Provider } from 'react-redux';
+    import logger from 'redux-logger';
+    import thunk from 'redux-thunk';
+
+    const store = createStore(appReducer, applyMiddleware(logger,thunk));
+
+  >  PROVIDE THE STORE - wrap the app in Provider component
+          
+          <Provider store={store}>
+            <App />
+          </Provider>
+
+  > CONNECT THE STORE TO COMPONENTS
+
+    import { connect } from "react-redux";
+
+  // Redux step 3: connect components
+
+const mapStateToProps = (state) => {
+  return {
+    editing: state.editing,
+    title: state.title
+  }
+};
+
+const mapDispatchToProps = { updateTitle, toggleEditing };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Title);
+
+// connect(mapStateToProps,mapDipatchToProps) returns a decorator function
+// We then invoke that decorator on Title
+// and magically, Title can now read from and write to the store
