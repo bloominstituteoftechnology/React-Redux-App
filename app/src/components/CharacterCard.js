@@ -2,14 +2,14 @@ import React from 'react'
 
 
 
-const CharacterCard = () => {
+const CharacterCard = ({name, species, gender, image}) => {
     
     return(
         <div>
-            <h2>Hero</h2>
-            <img alt="hero">Photo of hero</img>
-            <p>Powers</p>
-            <p>Comics</p>
+            <h2>{name}</h2>
+            <img alt="hero">{image}</img>
+            <p>{species}</p>
+            <p>{gender}</p>
         </div>
     );
 }

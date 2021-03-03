@@ -1,4 +1,4 @@
-import { FETCH_CHARACTERS, FETCH_START, FETCH_ERROR} from '../actions/appActions'
+import { FETCH_CHARACTERS, FETCH_START, FETCH_ERROR } from '../actions/appActions'
 
 
 const initialState = {
@@ -27,7 +27,6 @@ const initialState = {
                 isFetching: false,
                 error: action.payload
             }    
-
         default:
             return state;
     }
