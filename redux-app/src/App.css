@@ -1,0 +1,46 @@
+.container {
+position: fixed; /* or absolute */
+top: 20%;
+left: 32%;
+text-align: center;
+border: 2px solid black;
+width: 900px;
+height: 330px;
+border-radius: 20px;
+box-shadow: 10px 10px 8px #888888;
+background-color: #dcf2ff;
+}
+
+.quote-info {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+h1 {
+font-weight: lighter;
+color: grey;
+}
+
+
+p {
+font-style: italic;
+font-size: 20px;
+}
+                                                                                                                    
+button {
+cursor: pointer;
+border-radius: 8px;
+padding: 8px;
+margin-top: 20px;
+box-shadow: 5px 5px 5px #888888;
+font-size: 18px;
+border: none;
+}
+
+button:hover {
+background-color: black;
+color: white;
+border: none;
+font-family: Arial, Helvetica, sans-serif;
+}
