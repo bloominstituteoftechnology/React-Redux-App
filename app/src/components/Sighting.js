@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import axios from 'axios'; // for map image
+
+
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
+// import CardMedia from '@material-ui/core/CardMedia'; // for map image
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
@@ -19,6 +22,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    margin: 20,
   },
   media: {
     height: 0,
@@ -35,42 +39,52 @@ const useStyles = makeStyles((theme) => ({
     transform: 'rotate(180deg)',
   },
   avatar: {
-    backgroundColor: red[500],
+    backgroundColor: "dodgerblue",
   },
 }));
 
-// temporary initialState
-let siting = {
-    id:"5a049b7e686f743ec5040000",
-    species:"orca",
-    quantity:"5",
-    description:"Spotted from the Edmonds-Kingston ferry, near fishing boats.",url:"http://hotline.whalemuseum.org/sightings/5a049b7e686f743ec5040000",latitude:47.79953,
-    longitude:-122.47996699999999,
-    location:"",
-    sighted_at:"2017-11-09T18:11:00Z",
-    created_at:"2017-11-09T18:16:30Z",
-    updated_at:"2017-11-14T22:20:45Z",
-    orca_type:"unknown",
-}
 
-const Siting = (props) => {
+const Sighting = (props) => {
+  const { sighting } = props;
 
-  // console.log("props: ", props);
-
-  const classes = useStyles();
-  const [expanded, setExpanded] = React.useState(false);
+  const classes = useStyles()
+  const [expanded, setExpanded] = useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+  
+  /*
+  // GOOGLE API to get map image off of lat and longitude
+  const [googleImage, setGoogleImage] = useState(undefined); // what do I initialize as
+  axios.get(`https://maps.googleapis.com/maps/api/staticmap?center=${sighting.latitude},${sighting.longitude}&zoom=12&size=400x400&maptype=hybrid&key=AIzaSyASnLGhffYBRZ60GqFHOYBSoPiHpW_kJSE`) // plug in lat and long data from props / state
 
+  // respond to happy path & sad path, updating state with API response
+    .then(res => {
+        console.log("res: ", res);
+        // console.log("res.data.species: ", res.data)
+        // save to state?  what is best state versus variable
+    })
+    .catch(err => {
+        console.log("error: ", err)
+    })
+  */
+
+  // Formats date from props string of seconds, epoch
+  let parsedDate = Date.parse(sighting.sighted_at); // number of seconds
+  var dateOfSighting = Date(1000 * parsedDate);
+
+
+  if (!sighting) {
+    return <div> loading </div>
+  }
 
   return (
     <Card className={classes.root}>
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            {siting.quantity}
+          <Avatar aria-label="recipe" className={classes.avatar} >
+            {sighting.quantity || "1" }
           </Avatar>
         }
         action={
@@ -78,25 +92,27 @@ const Siting = (props) => {
             <MoreVertIcon />
           </IconButton>
         }
-        title={`${siting.species}`.toUpperCase()}
-        subheader={`${siting.sighted_at}`}
+        title={`${sighting.species}`.toUpperCase()}
+        subheader={`${dateOfSighting}`}
       />
-      <CardMedia
+      {/* <CardMedia
         className={classes.media}
         // image="/static/images/cards/paella.jpg"
-        image="`${siting.url}`"
+        image="`${sighting.url}`"
         title="Paella dish"
-      />
+      /> */}
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
-          {siting.description}
+          {sighting.description}<br/>
+          <br/>
+          Location: {sighting.location}<br/>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton href={siting.url} aria-label="web">
+        <IconButton href={sighting.url} aria-label="web">
           <WebIcon/>
         </IconButton>
         <IconButton
@@ -114,14 +130,12 @@ const Siting = (props) => {
         <CardContent>
           <Typography paragraph>
             Coordinates:<br/>
-            {siting.latitude} latitude <br/>
-            {siting.longitude} longitude <br/>
+            {sighting.latitude} latitude <br/>
+            {sighting.longitude} longitude <br/>
           </Typography>
-          <Typography paragraph>
-            Location: {siting.location}<br/>
-            
-            Type: {siting.orca_type}<br/>
-            ID: {siting.id}
+          <Typography paragraph>            
+            Type: {sighting.orca_type}<br/>
+            ID: {sighting.id}
           </Typography>
         </CardContent>
       </Collapse>
@@ -131,4 +145,4 @@ const Siting = (props) => {
 };
 
 
-export default Siting;
+export default Sighting;

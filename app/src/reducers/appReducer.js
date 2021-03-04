@@ -1,36 +1,11 @@
 import { SELECT_SPECIES, FETCH_SPECIES_START, FETCH_SPECIES_SUCCESS, FETCH_SPECIES_FAILURE } from '../actions/index';
 
-// Define initial state
-// const initialState = {
-//   editing: false,
-//   loading: false,
-//   error: "",
-  
-// }
 
 const initialState = {
-  speciesList: [
-    "orca", 
-    "minke", 
-    "gray whale", 
-    "humpback", 
-    "atlantic white-sided dolphin", 
-    "pacific white-sided dolphin", 
-    "dalls porpoise", 
-    "harbor porpoise", 
-    "harbor seal", 
-    "northern elephant seal", 
-    "southern elephant seal", 
-    "california sea Lion", 
-    "steller sea lion", 
-    "sea otter", 
-    "other", 
-    "unknown"
-  ],
-  species: "orca",
+  species: "gray whale",
   loading: false,
   error: "",
-  sitings: [
+  sightings: [
     {
       id:"5a049b7e686f743ec5040000",
       species:"orca",
@@ -48,19 +23,24 @@ const initialState = {
 
 // appReducer with all state management functions related to the species
 export const appReducer = (state = initialState, action) => {
+  console.log("appReducer: ", action);
   switch (action.type) {
       case SELECT_SPECIES:
-        console.log("select species fires from reducer")
+        console.log("select species fires from reducer");
           return { ...state, species: action.payload }
       case FETCH_SPECIES_START:
-          return { ...state, loading: true }
+          console.log("fetch species start fires from reducer")
+          console.log("log payload: ", action.payload)
+          return { ...state, loading: true, species: action.payload }
+      
       case FETCH_SPECIES_SUCCESS:
-        console.log("in Reducer, fetch species success")
-          return { ...state, loading: false, sitings: action.payload }
+        console.log("fetch species success fires from the reducer")
+          return { ...state, loading: false, sightings: action.payload }
       case FETCH_SPECIES_FAILURE:
+        console.log("fetch species failure fires from reducer")
           return { ...state, loading: false, error: action.payload }
       default:
-          // console.log("Error: unknown action type in App Reducer");
+          console.log("Error: unknown action type in App Reducer", action.type);
           return state;  
   }
 };

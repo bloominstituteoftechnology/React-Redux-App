@@ -1,7 +1,7 @@
 import './App.css';
 
 import SelectSpecies from './components/SelectSpecies';
-import Siting from './components/Siting';
+import Sightings from './components/Sightings';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         </p>
         <SelectSpecies/>
 
-        <Siting/>
+        <Sightings/>
         
       </header>
     </div>
