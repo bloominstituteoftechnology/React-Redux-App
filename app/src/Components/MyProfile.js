@@ -84,7 +84,7 @@ function MyProfile (props) {
             })
         
         
-    }, []) 
+    }) 
 
     
 
@@ -109,18 +109,25 @@ function MyProfile (props) {
                 if (JSON.stringify(user.id) === userId) {
                     return(
                         <div>
-                            <div>
+                            <div class="roundedbox">
                             <p class="profiletext">
                                 <b>Name:</b>
                                 <br></br> 
                                 {user.first_name} {user.last_name}
                             </p>
                             </div>
-                            <div>
+                            <div class="roundedbox">
                             <p class="profiletext">
                                 <b>Location:</b>
                                 <br></br> 
                                 {user.city}, {user.state}, {user.country}
+                            </p>
+                            </div>
+                            <div class="roundedbox">
+                            <p class="profiletext">
+                                <b>Bio:</b>
+                                <br></br> 
+                                <p class="commentary-text">{user.bio}</p>
                             </p>
                             </div>
                         </div>
