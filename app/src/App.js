@@ -6,8 +6,8 @@ import NewsList from './components/NewsList'
 function App() {
   return (
     <div className="App">
-      <h2>Wall Street Journals</h2>
-      <NewsList className="newslist"/>
+      <h1 className="App-heading">Wall Street Journal News</h1>
+      <NewsList />
     </div>
   );
 }

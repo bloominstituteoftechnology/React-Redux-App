@@ -11,7 +11,7 @@ export const newsReducers = (state=initialState, action) => {
         case FETCH_NEWS: 
         return {
             ...state,
-            articles: [...action.payload]
+            articles: action.payload
         }
         default: 
         return state;

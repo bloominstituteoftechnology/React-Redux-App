@@ -1,0 +1,45 @@
+.newscard {
+    /* font-family: 'Old Standard TT', serif; */
+    width: 45%;
+    color: black;
+    margin-bottom: 40px
+}
+/* img {
+    border-radius: 5px;
+} */
+.article-container {
+    font-family: 'Playfair Display', serif;
+    text-align: left;
+}
+
+.heading {
+    font-family: 'Playfair Display', serif;
+    /* color: rgb(34, 34, 34); */
+    font-size: 1.7rem;
+    padding: 8px 0;
+}
+.author-container {
+    display: flex;
+    /* justify-content: center; */
+}
+
+.author-container span {
+    font-size: 0.8rem;
+    /* color: grey; */
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* margin: 5px 15px; */
+    /* margin-bottom: 10px; */
+}
+
+.news-text {
+    text-align: left;
+}
+
+.news-text p {
+    font-size: 0.9rem;
+}
+
+
+

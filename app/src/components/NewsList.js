@@ -1,20 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NewsCard from './NewsCard';
+import './NewsList.css'
 import { fetchNews } from '../actions/newsActions';
 
 const NewsList = (props) => {
     //console.log(props.fetchNews)
     return (
-        <div className="newslist">
-             <button onClick={(e => {
-                e.preventDefault()
-                props.fetchNews()
-            })}>fetch News</button> 
+        <div>
+             <button className="button" onClick={(e => {
+                    e.preventDefault()
+                    props.fetchNews()
+                })}>Fetch News</button> 
+            <div className="newslist">
 
-        {props.articles.map((article, i) => (
-            <NewsCard key={i} article={article}/>
-        ))}
+                {props.articles.map((article, i) => (
+                    <NewsCard key={i} article={article}/>
+                ))}
+            </div>
+         
             
         </div>
     )
