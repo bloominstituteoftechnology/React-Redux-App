@@ -11,17 +11,17 @@ const initialState = {
 export const reducer =  (state = initialState, action) => {
     switch(action.type){
         case(FETCHING_QUOTE_START):
-            return ({...state});
+            return ({...state, loadingImage: true});
         case(FETCHING_QUOTE_SUCCESS):
-            return ({...state});
+            return ({...state, loadingImage: false, quote: action.payload});
         case(FETCHING_QUOTE_FAILURE):
-            return ({...state});
+            return ({...state, loadingImage: false});
         case(FETCHING_IMAGE_START):
-            return ({...state});
+            return ({...state, loadingImage: true});
         case(FETCHING_IMAGE_SUCCESS):
-            return ({...state});
+            return ({...state, loadingImage: false, image: action.payload});
         case(FETCHING_IMAGE_FAILURE):
-            return ({...state});
+            return ({...state, loadingImage: false,});
         default:
             return state;
     }
