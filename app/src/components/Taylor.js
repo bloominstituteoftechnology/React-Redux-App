@@ -12,11 +12,11 @@ const Taylor = (props) => {
     return(
         <>
             <img src={props.image} alt='Taylor pic'/>
-            <p>{props.quote}</p>
-            <button onClick={() => {
+            <p className='quotes'>{props.quote}</p>
+            <button class='myButton' onClick={() => {
                 props.getImage();
                 props.getQuote();
-            }}>Randomize!</button>
+            }}>Taylorize!</button>
         </>
     )
 
