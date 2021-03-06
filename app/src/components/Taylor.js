@@ -4,10 +4,12 @@ import { getImage, getQuote } from '../actions/index';
 
 const Taylor = (props) => {
 
+    const getImg = props.getImage;
+    const getQ = props.getQuote;
     useEffect(() => {
-        props.getImage();
-        props.getQuote();
-    },[props.getImage, props.getQuote]);
+        getImg();
+        getQ();
+    },[getImg, getQ]);
 
     return(
         <>
