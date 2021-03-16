@@ -1033,5 +1033,10 @@ textarea {
       
     }
 
+    /* The Community */
+
+    .user {
+      width: 90%;
+    }
 }
 
