@@ -40,7 +40,6 @@ export default function Users() {
         <div>
             <br></br><br></br>
             <h3>The Community</h3>
-            <br></br>
             {users.map(user => 
                 <div className="user">
                     <div><img className="user-pic" src={user.profile_pic_url}></img></div>
