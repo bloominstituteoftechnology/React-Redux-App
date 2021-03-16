@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getName } from '../Actions'
 import axios from 'axios'
 import { axiosWithAuth } from '../axiosWithAuth'
+import { Link, Route, useHistory } from 'react-router-dom'
 
 import genericProfilePic from '../genericprofilepic.png'
 
@@ -95,6 +96,10 @@ function Dashboard (props) {
                 <button type="button" className="btn" onClick={props.uploadProfilePic}>Submit</button>
                 {/* <button type="button" className="btn widget-btn">Upload Via Widget</button> */}
             </form>
+            <br></br>
+            <p class="mediumtext">See who else is studying with you in...</p>
+            <div className="brownroundbutton"><Link class="brownbuttonlink" to='/users'>The Community</Link></div>
+            <br></br><br></br><br></br>
         </div>
     )
 }

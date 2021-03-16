@@ -718,6 +718,58 @@ textarea {
   font-size: 25px;
 }
 
+/* Dashboard */
+
+.mediumtext {
+  font-family: Hebrew;
+  color:#0C012E;
+  font-size: 22px;
+}
+
+.brownroundbutton {
+  background-color: #994636;
+  border-radius: 30px;
+  color: #0C012E;
+  width: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: Hebrew;
+  font-size: 28px;
+}
+
+.brownbuttonlink {
+  font-family: Hebrew;
+  font-size: 28px;
+  color: #0C012E;
+  text-decoration: none;
+}
+
+/* The Community */
+
+.user {
+  width: 500px;
+  border-radius: 13px;
+  background: #EAF4D3;
+  display: flex;
+  margin: 12px auto;
+  text-align: left;
+
+}
+
+.user-pic {
+  border-radius: 50%;
+  width: 120px;
+  padding: 15px;
+}
+
+.user-name {
+    font-family: Hebrew;
+    color:#0C012E;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0px;
+    margin-bottom: 0px;
+}
 
 @media (max-width: 700px) {
 

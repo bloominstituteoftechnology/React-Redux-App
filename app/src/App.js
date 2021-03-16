@@ -19,6 +19,7 @@ import Login from './Components/Login'
 import Register from './Components/Register'
 import Commentary from './Components/Commentary';
 import Dashboard from './Components/Dashboard';
+import Users from './Components/Users'
 import TheForum from './Components/TheForum'
 import OthersCommentary from './Components/OthersCommentary';
 import DiscussionRoom from './Components/DiscussionRoom';
@@ -248,6 +249,10 @@ generic information, should you choose to share it. I pray you are blessed by th
 
 <Route path='/dashboard'>
     <Dashboard />
+</Route>
+
+<Route path='/users'>
+    <Users />
 </Route>
 
 <Route path='/profile'>
