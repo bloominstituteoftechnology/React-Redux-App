@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getName } from '../Actions'
 import axios from 'axios'
 import { axiosWithAuth } from '../axiosWithAuth'
+import EditProfile from './EditProfile'
 
 import genericProfilePic from '../genericprofilepic.png'
 
@@ -66,16 +67,19 @@ function MyProfile (props) {
 
     const [users, setUsers] = useState([])
 
+    const [editProfile, setEditProfile] = useState(false)
+
+    props.getProfilePic(userId)
 
     useEffect( () => {
 
-        
+        const timer = setTimeout(() => {
 
             setUserId(localStorage.getItem("user_id"))
             
             props.getName(userId)
 
-            props.getProfilePic(userId)
+            
 
             axiosWithAuth()
             .get('https://chaqar-data.herokuapp.com/api/auth')
@@ -83,8 +87,14 @@ function MyProfile (props) {
                 setUsers(res.data)
             })
         
+        }, 1200)
+
+        return () => clearTimeout(timer) 
         
-    }) 
+        
+    }, [editProfile]) 
+
+    
 
     
 
@@ -104,10 +114,12 @@ function MyProfile (props) {
                 {/* <button type="button" className="btn widget-btn">Upload Via Widget</button> */}
             </form>
             <br></br>
-            {users.map(user => {
-                console.log(userId)
+            {users.map(user => { 
                 if (JSON.stringify(user.id) === userId) {
                     return(
+                        editProfile ? 
+                            <EditProfile user={user} setEditProfile={setEditProfile} />
+                            :
                         <div>
                             <div class="roundedbox">
                             <p class="profiletext">
@@ -130,7 +142,9 @@ function MyProfile (props) {
                                 <p class="commentary-text">{user.bio}</p>
                             </p>
                             </div>
+                            <button onClick={() => setEditProfile(true)}>Edit Profile</button>
                         </div>
+                        
                     )
                 }
             })}
