@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import { axiosWithAuth } from '../axiosWithAuth'
+import { Link, Route, useHistory } from 'react-router-dom'
 
 const locationStyle = {
     fontSize: '18px',
@@ -47,6 +48,9 @@ export default function Users() {
                         <p className="user-name">{user.first_name} {user.last_name}</p>
                         <p style={locationStyle}>{user.city}, {user.state}, {user.country}</p>
                         <p style={bioStyle}>{user.bio}</p>
+                        <div className="smallbrownbutton">
+                            <Link class="smallbrownbuttonlink" to={`/${user.first_name}${user.last_name}`}>{user.first_name}'s Wall</Link>
+                        </div>
                     </div>
                 </div>
             )}

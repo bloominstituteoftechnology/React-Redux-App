@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import DOMPurify from 'dompurify'
 import './App.css';
 import { Link, Route, useHistory } from 'react-router-dom'
@@ -20,13 +20,27 @@ import Register from './Components/Register'
 import Commentary from './Components/Commentary';
 import Dashboard from './Components/Dashboard';
 import Users from './Components/Users'
+import Wall from './Components/Wall'
 import TheForum from './Components/TheForum'
 import OthersCommentary from './Components/OthersCommentary';
 import DiscussionRoom from './Components/DiscussionRoom';
 import MyProfile from './Components/MyProfile';
+import { axiosWithAuth } from './axiosWithAuth';
 
 
 function App(props) {
+
+  const [users, setUsers] = useState([])
+
+  useEffect( () => {
+
+    axiosWithAuth()
+        .get('https://chaqar-data.herokuapp.com/api/auth')
+        .then(res => {
+            setUsers(res.data)
+        })
+
+}, [])
 
   const history = useHistory()
 
@@ -60,29 +74,6 @@ function App(props) {
     </div>
 </header>
 <Menus token={token}/>
-{/* <nav>
-    <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/bible'>Read</Link></li>
-        {token === null ?
-        <li><Link to='/login'>Login</Link></li>
-        :
-        <li><button onClick={logout}>Logout</button></li>
-        }
-    </ul>
-</nav>
-{token === null ? 
-    null
-    :
-    <div id="loggedInMenu">
-      <ul>
-        <li><Link to='/dashboard'>Dashboard</Link></li>
-        <li><Link to='/profile'>My Profile</Link></li>
-        <li><Link to='/forum'>The Forum</Link></li>
-      </ul>
-    </div>
-    
-} */}
 <Route exact path='/'>
 <section id="about">
     <p>Welcome to <b>Chaqar</b>: a Bible app for studying and more!  Here you will be able to search the scriptures
@@ -254,6 +245,16 @@ generic information, should you choose to share it. I pray you are blessed by th
 <Route path='/users'>
     <Users />
 </Route>
+
+{console.log(users)}
+
+{users.map(user => 
+
+  <Route path={`/${user.first_name}${user.last_name}`}>
+    <Wall user={user} />
+  </Route>
+
+)}
 
 <Route path='/profile'>
     <MyProfile />

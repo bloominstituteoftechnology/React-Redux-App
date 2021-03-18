@@ -727,7 +727,7 @@ textarea {
 }
 
 .brownroundbutton {
-  background-color: #994636;
+  background-color: #be6957;
   border-radius: 30px;
   color: #0C012E;
   width: 250px;
@@ -769,6 +769,23 @@ textarea {
     font-weight: bold;
     padding: 0px;
     margin-bottom: 0px;
+}
+
+.smallbrownbutton {
+  background: #be6957;
+  border-radius: 30px;
+  min-width: 150px;
+  display: inline-block;
+  padding: 8px;
+  margin: 8px;
+  text-align: center;
+}
+
+.smallbrownbuttonlink {
+  font-family: Hebrew;
+  font-size: 20px;
+  color: #0C012E;
+  text-decoration: none;
 }
 
 @media (max-width: 700px) {
