@@ -788,6 +788,18 @@ textarea {
   text-decoration: none;
 }
 
+h3#wallname {
+  color: #0C012E;
+  text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255);
+  
+}
+
+#wall {
+  background-image: url('wall.jpg');
+  background-size: cover;
+  min-height: 100vh;
+}
+
 @media (max-width: 700px) {
 
       h1 {
@@ -1054,6 +1066,10 @@ textarea {
 
     .user {
       width: 90%;
+    }
+
+    .smallbrownbutton {
+      width: 100px;
     }
 }
 

@@ -27,9 +27,9 @@ export default function Wall(props) {
 
 
     return (
-        <div>
+        <div id="wall">
             <br></br><br></br>
-            <h3>{props.user.first_name}'s Wall</h3>
+            <h3 id="wallname">{props.user.first_name} {props.user.last_name}'s Wall</h3>
         </div>
     )
 }
