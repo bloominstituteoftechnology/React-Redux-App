@@ -15,7 +15,7 @@ const Enterprise = props => {
         </p>
         <button onClick={props.starTraction}>Choose</button>
        <p>What should we do?</p>
-       <p> api</p>
+       <p>{props.starTrek && props.starTrek.activity}</p>
       </header>
     </div> 
     );
