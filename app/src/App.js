@@ -15,6 +15,11 @@ import Leviticus from './Components/bible-books/Leviticus'
 import Numbers from './Components/bible-books/Numbers'
 import Deuteronomy from './Components/bible-books/Deuteronomy'
 
+import Matthew from './Components/bible-books/Matthew'
+import Mark from './Components/bible-books/Mark'
+import Luke from './Components/bible-books/Luke'
+import John from './Components/bible-books/John'
+
 import Login from './Components/Login'
 import Register from './Components/Register'
 import Commentary from './Components/Commentary';
@@ -62,6 +67,15 @@ function App(props) {
   const numberschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
 
   const deuteronomychapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
+
+  
+  const matthewchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]
+
+  const markchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+
+  const lukechapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+
+  const johnchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
 
 
 
@@ -195,10 +209,10 @@ generic information, should you choose to share it. I pray you are blessed by th
 
       <div className="bible-books-buttons">
 
-      <button className="bible-book-button"><h5>Matthew</h5></button>
-      <button className="bible-book-button"><h5>Mark</h5></button>
-      <button className="bible-book-button"><h5>Luke</h5></button>
-      <button className="bible-book-button"><h5>John</h5></button>
+      <button className="bible-book-button"><Link className="link" to='/matthew'><h5>Matthew</h5></Link></button>
+      <button className="bible-book-button"><Link className="link" to='/mark'><h5>Mark</h5></Link></button>
+      <button className="bible-book-button"><Link className="link" to='/luke'><h5>Luke</h5></Link></button>
+      <button className="bible-book-button"><Link className="link" to='/john'><h5>John</h5></Link></button>
       <button className="bible-book-button"><h5>Acts</h5></button>
       <button className="bible-book-button"><h5>Romans</h5></button>
       <button className="bible-book-button"><h5>1 Corinthians</h5></button>
@@ -397,6 +411,24 @@ generic information, should you choose to share it. I pray you are blessed by th
 
 
 
+<Route path='/matthew'>
+      <Matthew /> 
+</Route>
+
+<Route path='/mark'>
+      <Mark /> 
+</Route>
+
+<Route path='/luke'>
+      <Luke /> 
+</Route>
+
+<Route path='/john'>
+      <John /> 
+</Route>
+
+
+
 {/* Bible Chapter Routes--------------------------------------- */}
 
 {genesischapters.map(chapter =>
@@ -469,6 +501,66 @@ generic information, should you choose to share it. I pray you are blessed by th
       <div>{props.error}</div>
       <Commentary book='deuteronomy' chapter={chapter} />
       <OthersCommentary book='deuteronomy' chapter={chapter} apibook='deu' />
+    </div>
+</Route>
+
+)}
+
+{matthewchapters.map(chapter =>
+
+<Route path={`/matthew${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Matthew {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='matthew' chapter={chapter} />
+      <OthersCommentary book='matthew' chapter={chapter} apibook='mat' />
+    </div>
+</Route>
+
+)}
+
+{markchapters.map(chapter =>
+
+<Route path={`/mark${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Mark {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='mark' chapter={chapter} />
+      <OthersCommentary book='mark' chapter={chapter} apibook='mar' />
+    </div>
+</Route>
+
+)}
+
+{lukechapters.map(chapter =>
+
+<Route path={`/luke${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Luke {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='luke' chapter={chapter} />
+      <OthersCommentary book='luke' chapter={chapter} apibook='luk' />
+    </div>
+</Route>
+
+)}
+
+{johnchapters.map(chapter =>
+
+<Route path={`/john${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>John {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='john' chapter={chapter} />
+      <OthersCommentary book='john' chapter={chapter} apibook='joh' />
     </div>
 </Route>
 
