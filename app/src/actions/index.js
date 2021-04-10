@@ -9,6 +9,7 @@ import axios from 'axios'
 
 export const FETCH_START = 'FETCH_START';
 export const FETCH_SUCCESS =  "FETCH_SUCCESS"
+export const FETCH_FAILURE =  "FETCH_FAILURE"
 
 export const fetchCountry = () => (dispatch) =>{
     dispatch({ type: FETCH_START });
@@ -18,7 +19,14 @@ export const fetchCountry = () => (dispatch) =>{
         console.log(res.data)
         dispatch({type: FETCH_SUCCESS, payload: res.data })
     })
-    .catch(err => console.log(err, 'fetched failed!'))
+    .catch(err => {
+        console.log(err, 'fetched failed!')
+        dispatch({ type: FETCH_FAILURE, payload: err})
+    })
 
 
 }
+
+// changeable input to switch api call region
+// dropdown menu
+// input variable on end of axios call

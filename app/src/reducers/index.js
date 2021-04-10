@@ -1,4 +1,4 @@
-import {FETCH_START, FETCH_SUCCESS} from '../actions'
+import {FETCH_START, FETCH_SUCCESS, FETCH_FAILURE} from '../actions'
 
 const initialState = {
     country: [],
@@ -17,7 +17,14 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 country: action.payload,
-                isLoading: true
+                isLoading: false
+            }
+        case FETCH_FAILURE:
+            return {
+                ...state,
+                error: action.payload,
+                isLoading: false
+
             }
 
         default:

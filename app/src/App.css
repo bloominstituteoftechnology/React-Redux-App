@@ -25,12 +25,12 @@ html {
 
 .header-text{
   color:black;
-  opacity: 100%;
   width: 40%;
+  font-weight: bold;
 }
 
 select{
-  background-color: lightslategray;
+  background-color: oldlace;
   color:black;
   border: 2px solid black;
 }
