@@ -28,5 +28,5 @@ export const fetchCountry = () => (dispatch) =>{
 }
 
 // changeable input to switch api call region
-// dropdown menu
-// input variable on end of axios call
+// store dropdown input in state, create different dispatch calls
+// if statement on useeffect dependency array based on when state changes
