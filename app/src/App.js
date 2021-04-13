@@ -22,6 +22,7 @@ import John from './Components/bible-books/John'
 
 import Login from './Components/Login'
 import Register from './Components/Register'
+import Music from './Components/Music'
 import Commentary from './Components/Commentary';
 import Dashboard from './Components/Dashboard';
 import Users from './Components/Users'
@@ -36,6 +37,8 @@ import { axiosWithAuth } from './axiosWithAuth';
 function App(props) {
 
   const [users, setUsers] = useState([])
+
+  const [musicDisplayed, setMusicDisplayed] = useState(false)
 
   useEffect( () => {
 
@@ -88,6 +91,10 @@ function App(props) {
     </div>
 </header>
 <Menus token={token}/>
+{musicDisplayed ? 
+<Music setMusicDisplayed={setMusicDisplayed} />
+: null
+}
 <Route exact path='/'>
 <section id="about">
     <p>Welcome to <b>Chaqar</b>: a Bible app for studying and more!  Here you will be able to search the scriptures
@@ -253,7 +260,7 @@ generic information, should you choose to share it. I pray you are blessed by th
 </Route>
 
 <Route path='/dashboard'>
-    <Dashboard />
+    <Dashboard setMusicDisplayed={setMusicDisplayed}/>
 </Route>
 
 <Route path='/users'>

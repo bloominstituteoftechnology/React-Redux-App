@@ -99,7 +99,12 @@ function Dashboard (props) {
             <br></br>
             <p class="mediumtext">See who else is studying with you in...</p>
             <div className="brownroundbutton"><Link class="brownbuttonlink" to='/users'>The Community</Link></div>
-            <br></br><br></br><br></br>
+            <br></br><br></br>
+            <p class="mediumtext">Want to be inspired and more greatly filled with the Spirit as you study God's word?
+            Why not listen to some devotional background music as you study?</p>
+            <div className="brownroundbutton"><button onClick={() => props.setMusicDisplayed(true)} class="brownbuttonlink">Play Music</button></div>
+            
+            <br></br>
         </div>
     )
 }
