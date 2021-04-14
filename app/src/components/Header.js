@@ -3,6 +3,11 @@ import { connect } from "react-redux"
 import '../app.css';
 
 const Header = () => {
+
+  onChange = (e, id) => {
+
+  }
+
   return (
     <div className="Header">
         <div className="header-text">
@@ -24,4 +29,10 @@ const Header = () => {
   );
 }
 
-export default connect(null, { })(Header);
+const mapStateToProps = state => {
+  return {
+      region: state.region
+  };
+};
+
+export default connect(mapStateToProps, { })(Header);

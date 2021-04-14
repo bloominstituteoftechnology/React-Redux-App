@@ -3,7 +3,8 @@ import {FETCH_START, FETCH_SUCCESS, FETCH_FAILURE} from '../actions'
 const initialState = {
     country: [],
     isLoading: false,
-    error: ''
+    error: '',
+    region: ''
 }
 
 export const reducer = (state = initialState, action) => {
