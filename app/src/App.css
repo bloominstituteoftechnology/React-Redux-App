@@ -22,7 +22,7 @@ body {
 header {
   display: flex;
   background-color: #0E0041;
-  height: 230px;
+  height: 290px;
   justify-content: center;
   align-items: center;
   margin-bottom: 0px;
@@ -56,6 +56,10 @@ header {
       font-family: Hebrew;
       font-size: 4rem;
       margin-top: 0px;
+  }
+
+  #motto {
+    margin-bottom: 13px;
   }
 
   .my-commentary-title {
@@ -759,6 +763,18 @@ textarea {
   font-size: 28px;
 }
 
+.brownroundbutton3 {
+  background-color: #be6957;
+  border-radius: 30px;
+  border: 5px solid #0E0041;
+  color: #0C012E;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: Hebrew;
+  font-size: 22px;
+}
+
 .brownroundbutton2:hover {
   background: #f19784;
 }
@@ -876,7 +892,7 @@ h3#wallname {
       header {
         display: flex;
         background-color: #0E0041;
-        height: 200px;
+        height: 250px;
         justify-content: center;
         margin-bottom: 0px;
       }

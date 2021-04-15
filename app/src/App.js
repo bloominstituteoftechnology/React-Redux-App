@@ -52,6 +52,8 @@ function App(props) {
 
   const [musicDisplayed, setMusicDisplayed] = useState(false)
 
+  const [inSpanish, setInSpanish] = useState(false)
+
   useEffect( () => {
 
     axiosWithAuth()
@@ -95,10 +97,20 @@ function App(props) {
   return (
     <div className="App">
       <header>
-    <div id="title-subtitle">
+    
+      {inSpanish ?
+        <div id="title-subtitle">
+        <h1>חקר : App de la Biblia</h1>
+        <h3 id="motto">Buscar, Estudiar, Discutir</h3>
+        <button onClick={() => setInSpanish(false)} class="brownroundbutton3" style={{marginBottom: 40 + 'px', border: 0 + 'px', cursor: 'pointer'}}>English</button>
+        </div>
+        :
+        <div>
         <h1>חקר : Bible App</h1>
-        <h3>Search, Study, Discuss</h3>
-    </div>
+        <h3 id="motto">Search, Study, Discuss</h3>
+        <button onClick={() => setInSpanish(true)} class="brownroundbutton3" style={{marginBottom: 40 + 'px', border: 0 + 'px', cursor: 'pointer'}}>Español</button>      
+        </div>
+      }
 </header>
 <Menus token={token}/>
 {musicDisplayed ? 
