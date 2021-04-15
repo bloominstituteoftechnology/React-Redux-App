@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from "react-redux"
 import '../app.css';
+import { updateRegion } from "../actions"
 
-const Header = () => {
+const Header = (props) => {
+  const {updateRegion} = props
 
-  onChange = (e, id) => {
-
+  const handleRegionChange = (e) => {
+    updateRegion(e.target.value)
   }
 
   return (
@@ -15,13 +17,12 @@ const Header = () => {
         <h3>Click Below To Select Region</h3>
         <label>
           Pick a Region
-            <select>
-            <option>---Stretch---</option>
-            <option value="Americas">Americas</option>
-            <option value="Africa">Africa</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
+          <select onChange={handleRegionChange}>
+            <option value="africa">Africa</option>
+            <option value="americas">Americas</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="oceania">Oceania</option>
           </select>
         </label>
         </div>
@@ -29,10 +30,5 @@ const Header = () => {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-      region: state.region
-  };
-};
 
-export default connect(mapStateToProps, { })(Header);
+export default connect(null, {updateRegion})(Header);

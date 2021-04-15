@@ -7,11 +7,11 @@ import './app.css';
 
 
 function App(props) {
-  const { fetchCountry } = props
+  const { fetchCountry, region } = props
 
   useEffect(() =>{
-    fetchCountry()
-  })
+    fetchCountry(region)
+  },[region])
 
   return (
     <div className="App">
@@ -21,5 +21,11 @@ function App(props) {
   );
 }
 
-export default connect(null, { fetchCountry })(App);
+const mapStateToProps = state => {
+  return {
+      region: state.region
+  };
+};
+
+export default connect(mapStateToProps, { fetchCountry })(App);
 

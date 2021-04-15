@@ -4,7 +4,7 @@ const initialState = {
     country: [],
     isLoading: false,
     error: '',
-    region: ''
+    region: 'africa'
 }
 
 export const reducer = (state = initialState, action) => {
@@ -25,9 +25,7 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload,
                 isLoading: false
-
             }
-
         default:
             return state;
     }

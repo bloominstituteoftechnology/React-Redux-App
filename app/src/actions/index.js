@@ -10,11 +10,12 @@ import axios from 'axios'
 export const FETCH_START = 'FETCH_START';
 export const FETCH_SUCCESS =  "FETCH_SUCCESS"
 export const FETCH_FAILURE =  "FETCH_FAILURE"
+export const UPDATE_REGION = "UPDATE_REGION"
 
-export const fetchCountry = () => (dispatch) =>{
+export const fetchCountry = (region) => (dispatch) =>{
     dispatch({ type: FETCH_START });
     axios
-    .get('https://restcountries.eu/rest/v2/region/americas')
+    .get(`https://restcountries.eu/rest/v2/region/${region}`)
     .then(res => {
         console.log(res.data)
         dispatch({type: FETCH_SUCCESS, payload: res.data })
@@ -30,3 +31,6 @@ export const fetchCountry = () => (dispatch) =>{
 // changeable input to switch api call region
 // store dropdown input in state, create different dispatch calls
 // if statement on useeffect dependency array based on when state changes
+
+//docs.lambdaschool
+//eslintprettier
