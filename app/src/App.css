@@ -188,6 +188,7 @@ nav ul li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 #about p {
@@ -202,6 +203,12 @@ nav ul li a:hover {
 
 #about-greg {
   padding-top: 40px;
+}
+
+.publicitypics {
+  width: 350px;
+  border-radius: 20px;
+  border: 8px solid #ecad8f
 }
 
 
@@ -740,6 +747,22 @@ textarea {
   font-size: 28px;
 }
 
+.brownroundbutton2 {
+  background-color: #be6957;
+  border-radius: 30px;
+  border: 5px solid #0E0041;
+  color: #0C012E;
+  width: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  font-family: Hebrew;
+  font-size: 28px;
+}
+
+.brownroundbutton2:hover {
+  background: #f19784;
+}
+
 .brownbar {
   width: 100%;
   padding: 10px 0px;
@@ -859,12 +882,15 @@ h3#wallname {
       }
 
       #about p {
-        width: 100%;
+        width: 80%;
         background: rgba(255,255,255,0.5);
-        padding-left: 40px;
-        padding-right: 40px;
         text-shadow: 0px 0px 5px #ffffff;
-        text-align: left; 
+        text-align: center; 
+        margin: 10px 0px;
+      }
+
+      .publicitypics {
+        width: 80%;
       }
 
       nav ul li {

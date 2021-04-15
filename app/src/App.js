@@ -6,6 +6,8 @@ import { Link, Route, useHistory } from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getChapter} from './Actions'
 import greg from './gregtallit.jpg'
+import social from './social.jpg'
+import study from './study.jpg'
 
 import Menus from './Components/Menus'
 
@@ -14,11 +16,20 @@ import Exodus from './Components/bible-books/Exodus'
 import Leviticus from './Components/bible-books/Leviticus'
 import Numbers from './Components/bible-books/Numbers'
 import Deuteronomy from './Components/bible-books/Deuteronomy'
+import Joshua from './Components/bible-books/Joshua'
+import Judges from './Components/bible-books/Judges'
+import FirstSamuel from './Components/bible-books/1Samuel'
+import Lamentations from './Components/bible-books/Lamentations';
+import Ecclesiastes from './Components/bible-books/Ecclesiastes';
+import Esther from './Components/bible-books/Esther';
+import Daniel from './Components/bible-books/Daniel';
+
 
 import Matthew from './Components/bible-books/Matthew'
 import Mark from './Components/bible-books/Mark'
 import Luke from './Components/bible-books/Luke'
 import John from './Components/bible-books/John'
+import Acts from './Components/bible-books/Acts';
 
 import Login from './Components/Login'
 import Register from './Components/Register'
@@ -32,6 +43,7 @@ import OthersCommentary from './Components/OthersCommentary';
 import DiscussionRoom from './Components/DiscussionRoom';
 import MyProfile from './Components/MyProfile';
 import { axiosWithAuth } from './axiosWithAuth';
+
 
 
 function App(props) {
@@ -62,15 +74,13 @@ function App(props) {
 
 
   const genesischapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50] 
-
   const exoduschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
-
   const leviticuschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
-
   const numberschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
-
   const deuteronomychapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
-
+  const joshuachapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+  const judgeschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+  const firstsamuelchapters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31]
   
   const matthewchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]
 
@@ -97,15 +107,14 @@ function App(props) {
 }
 <Route exact path='/'>
 <section id="about">
-    <p>Welcome to <b>Chaqar</b>: a Bible app for studying and more!  Here you will be able to search the scriptures
-    for particular words or phrases, and then once you've found what you're interested in, you will be able to call up
-    resources like word studies and commentaries to help you understand the scripture even better!  And then,
-you can meditate on all this and write down your prayerful thoughts and commentary of Scripture to be saved under the corresponding chapter
-you were reading in the web app under your account, saved for whenever you want to go back and see your thoughts on that chapter.
-Also, you can see commentary on the same chapter from other users who are using the app, making <b>Chaqar</b> a cross between
-bible study and social media.  To come later as well will be <b>The Forum</b> which will function like a Facebook type feed to see other people's
-devotional thoughts, and where you will be able to comment on those thoughts.  You will also have a personal profile with profile pic and other
-generic information, should you choose to share it. I pray you are blessed by this endeavor.</p>
+<p class="mediumtext">Welcome to <b>Chaqar</b>: a Bible app for studying and fellowship!</p>  
+<p class="mediumtext">Want to study the Bible in a fresh, fun, and <b>new</b> way?</p>
+<img class="publicitypics" src={study}></img>
+<br></br><br></br>
+<p class="mediumtext">And do it with friends?</p>
+<img class="publicitypics" src={social}></img>
+<p class="mediumtext">Then start using Chaqar today - the cross between Bible study and social media.  You can save your own commentary on Bible chapters, see what others are saying about the same chapter, as well as start topical conversations in The Forum and more!</p>
+<div class="brownroundbutton2"><Link className="link" to='/register'><h2>Sign Up!</h2></Link></div>
 </section>
 <section id="about-greg">
   <h2>Meet the Maker</h2>
@@ -165,9 +174,9 @@ generic information, should you choose to share it. I pray you are blessed by th
 
       <div className="bible-books-buttons">
 
-      <button className="bible-book-button"><h5>Joshua</h5></button>
-      <button className="bible-book-button"><h5>Judges</h5></button>
-      <button className="bible-book-button"><h5>1 Samuel</h5></button>
+      <button className="bible-book-button"><Link className="link" to='/joshua'><h5>Joshua</h5></Link></button>
+      <button className="bible-book-button"><Link className="link" to='/judges'><h5>Judges</h5></Link></button>
+      <button className="bible-book-button"><Link className="link" to='/1samuel'><h5>1 Samuel</h5></Link></button>
       <button className="bible-book-button"><h5>2 Samuel</h5></button>
       <button className="bible-book-button"><h5>1 Kings</h5></button>
       <button className="bible-book-button"><h5>2 Kings</h5></button>
@@ -416,7 +425,137 @@ generic information, should you choose to share it. I pray you are blessed by th
       <Deuteronomy /> 
 </Route>
 
+<Route path='/joshua'>
+      <Joshua /> 
+</Route>
 
+<Route path='/judges'>
+      <Judges /> 
+</Route>
+
+<Route path='/1samuel'>
+      <FirstSamuel /> 
+</Route>
+{/* 
+<Route path='/2samuel'>
+      <SecondSamuel /> 
+</Route>
+
+<Route path='/1kings'>
+      <FirstKings /> 
+</Route>
+
+<Route path='/2kings'>
+      <SecondKings /> 
+</Route>
+
+<Route path='/isaiah'>
+      <Isaiah /> 
+</Route>
+
+<Route path='/jeremiah'>
+      <Jeremiah /> 
+</Route>
+
+<Route path='/ezekiel'>
+      <Ezekiel /> 
+</Route>
+
+<Route path='/hosea'>
+      <Hosea /> 
+</Route>
+
+<Route path='/joel'>
+      <Joel /> 
+</Route>
+
+<Route path='/amos'>
+      <Amos /> 
+</Route>
+
+<Route path='/obadiah'>
+      <Obadiah /> 
+</Route>
+
+<Route path='/jonah'>
+      <Jonah /> 
+</Route>
+
+<Route path='/micah'>
+      <Micah /> 
+</Route>
+
+<Route path='/nahum'>
+      <Nahum /> 
+</Route>
+
+<Route path='/habakkuk'>
+      <Habakkuk /> 
+</Route>
+
+<Route path='/zephaniah'>
+      <Zephaniah /> 
+</Route>
+
+<Route path='/haggai'>
+      <Haggai /> 
+</Route>
+
+<Route path='/zechariah'>
+      <Zechariah /> 
+</Route>
+
+<Route path='/malachi'>
+      <Malachi /> 
+</Route>
+
+<Route path='/psalms'>
+      <Psalms /> 
+</Route>
+
+<Route path='/proverbs'>
+      <Proverbs /> 
+</Route>
+
+<Route path='/job'>
+      <Job /> 
+</Route>
+
+<Route path='/songofsongs'>
+      <SongOfSongs /> 
+</Route>
+
+<Route path='/ruth'>
+      <Ruth /> 
+</Route>
+
+<Route path='/lamentations'>
+      <Lamentations /> 
+</Route>
+
+<Route path='/ecclesiastes'>
+      <Ecclesiastes /> 
+</Route>
+
+<Route path='/esther'>
+      <Esther /> 
+</Route>
+
+<Route path='/daniel'>
+      <Daniel /> 
+</Route>
+
+<Route path='/ezra'>
+      <Ezra /> 
+</Route>
+
+<Route path='/1chronicles'>
+      <FirstChronicles /> 
+</Route>
+
+<Route path='/2chronicles'>
+      <SecondChronicles /> 
+</Route> */}
 
 <Route path='/matthew'>
       <Matthew /> 
@@ -433,6 +572,96 @@ generic information, should you choose to share it. I pray you are blessed by th
 <Route path='/john'>
       <John /> 
 </Route>
+
+{/* <Route path='/acts'>
+      <Acts /> 
+</Route>
+
+<Route path='/romans'>
+      <Romans /> 
+</Route>
+
+<Route path='/1corinthians'>
+      <FirstCorinthians /> 
+</Route>
+
+<Route path='/2corinthians'>
+      <SecondCorinthians /> 
+</Route>
+
+<Route path='/galatians'>
+      <Galatians /> 
+</Route>
+
+<Route path='/ephesians'>
+      <Ephesians /> 
+</Route>
+
+<Route path='/philippians'>
+      <Philippians /> 
+</Route>
+
+<Route path='/colossians'>
+      <Colossians /> 
+</Route>
+
+<Route path='/1thessalonians'>
+      <FirstThessalonians /> 
+</Route>
+
+<Route path='/2thessalonians'>
+      <SecondThessalonians /> 
+</Route>
+
+<Route path='/1timothy'>
+      <FirstTimothy /> 
+</Route>
+
+<Route path='/2timothy'>
+      <SecondTimothy /> 
+</Route>
+
+<Route path='/titus'>
+      <Titus/> 
+</Route>
+
+<Route path='/philemon'>
+      <Philemon /> 
+</Route>
+
+<Route path='/hebrews'>
+      <Hebrews /> 
+</Route>
+
+<Route path='/james'>
+      <James /> 
+</Route>
+
+<Route path='/1peter'>
+      <FirstPeter /> 
+</Route>
+
+<Route path='/2peter'>
+      <SecondPeter /> 
+</Route>
+
+<Route path='/1john'>
+      <FirstJohn /> 
+</Route>
+
+<Route path='/2john'>
+      <SecondJohn /> 
+</Route>
+
+<Route path='/3john'>
+      <ThirdJohn /> 
+</Route>
+
+<Route path='/revelation'>
+      <Revelation /> 
+</Route> */}
+
+
 
 
 
@@ -508,6 +737,51 @@ generic information, should you choose to share it. I pray you are blessed by th
       <div>{props.error}</div>
       <Commentary book='deuteronomy' chapter={chapter} />
       <OthersCommentary book='deuteronomy' chapter={chapter} apibook='deu' />
+    </div>
+</Route>
+
+)}
+
+{joshuachapters.map(chapter =>
+
+<Route path={`/joshua${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Joshua {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='joshua' chapter={chapter} />
+      <OthersCommentary book='joshua' chapter={chapter} apibook='jos' />
+    </div>
+</Route>
+
+)}
+
+{judgeschapters.map(chapter =>
+
+<Route path={`/judges${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>Judges {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='judges' chapter={chapter} />
+      <OthersCommentary book='judges' chapter={chapter} apibook='jdg' />
+    </div>
+</Route>
+
+)}
+
+{firstsamuelchapters.map(chapter =>
+
+<Route path={`/1samuel${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>1 Samuel {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='1samuel' chapter={chapter} />
+      <OthersCommentary book='1samuel' chapter={chapter} apibook='1sa' />
     </div>
 </Route>
 
