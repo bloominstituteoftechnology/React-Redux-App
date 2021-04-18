@@ -28,12 +28,12 @@ const Title = (props) => {
       style={{ marginTop: "2rem", textAlign: "center" }}
     >
       <div className="d-flex bg-light header flex-column justify-content-center">
-        <h1 style={{ fontSize: "20vh" }}>GRUBSPACE</h1>
-        <h3>Find your next favorite dish today!</h3>
+        <h1 style={{ fontSize: "7vh" }}>Grubspace</h1>
+        <h4>Find your next favorite dish today!</h4>
         <h5 style={{color: 'white'}}>Choose from over 5000 delicious recipes</h5>
       </div>
       <form onSubmit={handleClick}>
-        <div>
+        <div className=''d-flex justify-content-center flex-row flex-wrap>
           {" "}
           <input
             name="searchBar"
@@ -46,7 +46,7 @@ const Title = (props) => {
               color: "lightblue",
               textAlign: "center",
               fontSize: "1.25rem",
-              margin: "3rem",
+              margin: "3rem 0",
             }}
             value={searchValues}
             onChange={handleChanges}
