@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="parallax-bg jumbotron" style={{minHeight: '100vh'}}>
-      <div className="container">
+      <div className="d-flex flex-column justify-content-center">
        
       <Title /> 
       <Recipes /> 
