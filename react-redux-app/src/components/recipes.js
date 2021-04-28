@@ -11,7 +11,7 @@ const Recipe = (props) => {
   if (props.loading) {
     return (
       <>
-        <LinearProgress style={{ alignSelf: "center", }} />
+        <LinearProgress style={{ alignSelf: "center" }} />
       </>
     );
   }
@@ -32,6 +32,7 @@ const Recipe = (props) => {
                 color: "white",
                 padding: "0vh 0vw",
                 textAlign: "center",
+                color: "white",
               }}
             >
               <a
@@ -40,7 +41,7 @@ const Recipe = (props) => {
                   color: "white",
                   alignSelf: "center",
                   justifySelf: "center",
-                  fontSize: '1.5rem'
+                  fontSize: "1.5rem",
                 }}
               >
                 {data[idx].title}

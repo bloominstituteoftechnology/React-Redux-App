@@ -14,6 +14,7 @@ const initialState = {
   searchValue: "",
 };
 
+
 //2. create a features reducer that takes in initialState, sets it equal to state, and takes in an action
 export const appReducer = (state = initialState, action) => {
   //3. initialize switch statement
