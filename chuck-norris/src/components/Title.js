@@ -26,7 +26,7 @@ const Title = (props) => {
               />
               <button
                 onClick={() => {
-                  props.updateTitle(titleText) }}>
+                  props.updateTitle(titleText)}}>
                 Update title
               </button>
             </div>
@@ -40,7 +40,8 @@ const Title = (props) => {
     const mapStateToProps = (state) => {
       return {
         editing: state.editing,
-        title: state.title
+        title: state.title,
+        joke: state.joke
       }
     };
     

@@ -6,8 +6,7 @@ const Joke = (props) => {
     
     useEffect(() => {
 
-        props.getJoke();
-    },[props.getJoke]);
+    },[]);
 
     if (props.loading) {
         return <><h2>Loading...</h2></>;
@@ -16,7 +15,7 @@ const Joke = (props) => {
 
     return (
         <>
-            <h2>Chuck Norris always says: {props.joke}</h2>
+            <h2>{props.joke}</h2>
             <button onClick={() => props.getJoke()}>Get new joke</button>
         </>
     )

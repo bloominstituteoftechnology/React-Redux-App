@@ -19,11 +19,16 @@ const headers = {
     Accept: 'application/json'
 }
 
+axios.get('http://api.icndb.com/jokes/random').then(res => {
+    console.log(res.data)
+})
+
 export const getJoke = () => (dispatch) => {
-    dispatch({ type: FETCHING_QUOTE_START });
+    dispatch({ type: "FETCHING_QUOTE_START" });
     axios.get("http://api.icndb.com/jokes/random", {headers}) 
     .then(res => {
-        dispatch({ type: FETCHING_QUOTE_SUCCESS, payload: res.data.joke});
+        console.log(res.data)
+        dispatch({ type: FETCHING_QUOTE_SUCCESS, payload: res.data.value.joke});
     })
     .catch(err => {
         dispatch({ type: FETCHING_QUOTE_FAILURE, payload: err });
