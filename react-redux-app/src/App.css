@@ -1,8 +1,8 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+@import "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
 
 body {
   background-color: black;
-  font-family: 'Baloo 2', cursive;
+  font-family: "Baloo 2", cursive;
 }
 
 a {
@@ -13,24 +13,24 @@ a {
 }
 
 .nav {
-  
-  background-color: #9F703A		;
+  background-color: #9f703a;
   padding: 3rem 0;
   opacity: 0.7;
 }
 
 h1 {
-  font-family: 'Courgette', cursive;
+  font-family: "Courgette", cursive;
   color: white;
   text-shadow: 0 0 1rem black;
 }
 
- h2, h3, h4, h6, p {
-  color: white
+h2,
+h3,
+h4,
+h6,
+p {
+  color: white;
 }
-
-
-
 
 .header {
   min-height: 50vh;
@@ -38,7 +38,6 @@ h1 {
   background-image: url(../src/images/cuttingboard.jpg);
   background-size: cover;
 }
-
 
 a:hover {
   color: lime;
@@ -69,7 +68,7 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center center;
   text-align: center;
-  align-items: center; 
+  align-items: center;
 }
 
 .btn {
@@ -86,7 +85,7 @@ a:hover {
 ========================
 */
 .btn-one {
-  color: #FFF;
+  color: #fff;
   transition: all 0.3s;
   position: relative;
   opacity: 1;
@@ -95,7 +94,7 @@ a:hover {
   transition: all 0.3s;
 }
 .btn-one::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -108,19 +107,19 @@ a:hover {
   border-bottom-width: 1px;
   border-top-style: solid;
   border-bottom-style: solid;
-  border-top-color: rgba(255,255,255,0.5);
-  border-bottom-color: rgba(255,255,255,0.5);
+  border-top-color: rgba(255, 255, 255, 0.5);
+  border-bottom-color: rgba(255, 255, 255, 0.5);
   transform: scale(0.1, 1);
 }
 .btn-one:hover span {
   letter-spacing: 2px;
 }
 .btn-one:hover::before {
-  opacity: 1; 
-  transform: scale(1, 1); 
+  opacity: 1;
+  transform: scale(1, 1);
 }
 .btn-one::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -128,9 +127,9 @@ a:hover {
   height: 100%;
   z-index: 1;
   transition: all 0.3s;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .btn-one:hover::after {
-  opacity: 0; 
+  opacity: 0;
   transform: scale(0.1, 1);
 }
