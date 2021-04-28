@@ -20,6 +20,7 @@ a {
 
 h1 {
   font-family: "Courgette", cursive;
+  font-family: 'Permanent Marker', cursive;
   color: white;
   text-shadow: 0 0 1rem black;
 }
@@ -61,7 +62,6 @@ a:hover {
 }
 
 .cards {
-  min-height: 80vh;
   background-color: white;
   background-image: url(../src/images/cuttingboard.jpg);
   background-size: cover;
@@ -69,6 +69,7 @@ a:hover {
   background-position: center center;
   text-align: center;
   align-items: center;
+
 }
 
 .btn {

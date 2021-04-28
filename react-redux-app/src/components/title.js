@@ -35,7 +35,7 @@ const Title = (props) => {
         </h5>
       </div>
       <form onSubmit={handleClick}>
-        <div>
+        <div className=''d-flex justify-content-center flex-row flex-wrap>
           {" "}
           <input
             name="searchBar"
@@ -48,7 +48,7 @@ const Title = (props) => {
               color: "lightblue",
               textAlign: "center",
               fontSize: "1.25rem",
-              margin: "3rem",
+              margin: "3rem 0",
             }}
             value={searchValues}
             onChange={handleChanges}

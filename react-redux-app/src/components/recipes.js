@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { getRecipe } from "../actions";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 const baseUri = "https://spoonacular.com/recipeImages/";
 
@@ -10,40 +11,49 @@ const Recipe = (props) => {
   if (props.loading) {
     return (
       <>
-        <h2 style={{ alignSelf: "center" }}>Loading...</h2>
+        <LinearProgress style={{ alignSelf: "center" }} />
       </>
     );
   }
 
   return (
-    <div className="d-flex container flex-row justify-content-center align-items-lg-center flex-wrap">
+    <div className="d-flex flex-row justify-content-center align-items-center flex-wrap">
       {data &&
         data.map((item, idx) => {
           return (
             <div
-              className="d-flex cards flex-column container justify-content-center align-items-lg-center"
+              className="d-flex cards flex-column justify-content-center"
               key={idx}
               style={{
-                width: "35%",
-                margin: "3rem 2rem",
+                width: "400px",
+                height: "100vh",
+                margin: "3vh 3vw",
                 border: "2px solid black",
+                color: "white",
+                padding: "0vh 0vw",
                 textAlign: "center",
                 color: "white",
               }}
             >
-              {" "}
-              <h3 style={{ margin: "3rem 0" }}>
-                <a href={data[idx].sourceUrl} style={{ color: "white" }}>
-                  {data[idx].title}
-                </a>
-              </h3>
+              <a
+                href={data[idx].sourceUrl}
+                style={{
+                  color: "white",
+                  alignSelf: "center",
+                  justifySelf: "center",
+                  fontSize: "1.5rem",
+                }}
+              >
+                {data[idx].title}
+              </a>
+
               <img
                 src={baseUri + data[idx].image}
                 alt={data[idx].title}
                 style={{
-                  maxWidth: "80%",
-                  minWidth: "80%",
-                  marginBottom: "3rem",
+                  width: "100%",
+
+                  padding: "5vh 5vw",
                 }}
               />
               <h5>Ready in: {data[idx].readyInMinutes} mins</h5>
