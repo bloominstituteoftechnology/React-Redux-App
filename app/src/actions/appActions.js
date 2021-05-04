@@ -1,5 +1,3 @@
-import React from "react";
-import axios from "axios";
 const fetch = require("node-fetch");
 
 const getRand = (x) => {
