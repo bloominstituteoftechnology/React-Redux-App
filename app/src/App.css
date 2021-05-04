@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: red;
+}
+
+.comics-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  border: 1px blue dotted;
+  background-color: papayawhip;
+  align-items: center;
+  margin: 5%;
+  padding: 3%;
+}
+
+.comic-box {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: lightcyan;
+  border: 1px blue dotted;
+  padding: 3%;
+  margin: 3%;
+  align-items: center;
+}
+
+.com-img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  margin: 2%;
+}
