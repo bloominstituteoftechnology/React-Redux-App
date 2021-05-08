@@ -30,7 +30,7 @@ function authenticator(req, res, next) {
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
   // Simulating an actual login flow, which would check against a user db:
-  if (username === "Whale" && password === "i>3whales") {
+  if (username === "Whale Lover" && password === "i<3Whales") {
     req.loggedIn = true;
     res.status(200).json({
       payload: token // Diagram step 2 is sending this token back to the client
