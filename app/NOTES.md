@@ -5,6 +5,17 @@ http://hotline.whalemuseum.org/api
 ##  Google MAP API
 
 https://developers.google.com/maps/documentation/maps-static/start
+API KEY: AIzaSyASnLGhffYBRZ60GqFHOYBSoPiHpW_kJSE
+
+EXAMPLE:
+
+https://maps.googleapis.com/maps/api/staticmap?center=7.480785,80.3402663&zoom=12&size=400x400&maptype=hybrid&key=YOUR_API_KEY
+
+## Create New React App
+npx create-react-app my-app
+cd my-app
+npm start
+
 
 ## Install redux
 
@@ -21,6 +32,11 @@ https://developers.google.com/maps/documentation/maps-static/start
     Route,
     Link
   } from "react-router-dom";
+
+## Install Greensock
+  npm install gsap
+
+  import { gsap } from "gsap";
 
 ## Intsall redux-logger
 
@@ -116,3 +132,12 @@ export default connect(mapStateToProps, mapDispatchToProps)(Title);
 // connect(mapStateToProps,mapDipatchToProps) returns a decorator function
 // We then invoke that decorator on Title
 // and magically, Title can now read from and write to the store
+
+## GOALS for today
+
+* React Router
+* Protected Routes
+* `axios` package
+* AJAX
+* Promises
+* Authentication tokens

@@ -29,7 +29,7 @@ const SelectSpecies = (props) => {
 console.log("e.target.id: ", e.target.id) // gives species name
     let selectedSpecies = e.target.id;
     props.selectSpecies(selectedSpecies);
-    props.getSpecies();
+    props.getSpecies(selectedSpecies);
   }
 
 

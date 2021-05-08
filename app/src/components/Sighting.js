@@ -145,4 +145,4 @@ const Sighting = (props) => {
 };
 
 
-export default Sighting;
+export default Sighting;// export with usestyles / withstyles

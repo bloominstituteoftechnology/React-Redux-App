@@ -8,15 +8,15 @@ export const FETCH_SPECIES_FAILURE = "FETCH_SPECIES_FAILURE";
 
 export const selectSpecies = (selectedSpecies) => {
   console.log("action creator getSpecies is fired")
-  return {type: SELECT_SPECIES, payload: selectedSpecies};
+  // return {type: SELECT_SPECIES, payload: selectedSpecies};
 }
 
 
 
-export const getSpecies = () => (dispatch, getState) => {
+export const getSpecies = (selectedSpecies) => (dispatch, getState) => {
   console.log("action creator has fired", getState())
 
-  const selectedSpecies = getState().species;
+  // const selectedSpecies = getState().species;
 
   // update state to loading
   dispatch ({ type: FETCH_SPECIES_START });
