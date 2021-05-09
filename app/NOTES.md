@@ -95,6 +95,20 @@ npm start
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
+  ## Install Notinstack
+
+  https://github.com/iamhosseindhv/notistack
+
+  npm install notistack
+
+  > Wrap the App
+
+  import { SnackbarProvider } from 'notistack';
+
+  <SnackbarProvider maxSnack={3}>
+      <App />
+  </SnackbarProvider>
+
   ## REDUX STEPS
 
   > CREATE THE STORE
@@ -141,3 +155,26 @@ export default connect(mapStateToProps, mapDispatchToProps)(Title);
 * AJAX
 * Promises
 * Authentication tokens
+
+
+## Mock Server Listens on Port 5000
+
+[] npm i
+[] npm start
+
+> server endpoints
+
+  app.post("/api/login", (req, res) => {
+    const { username, password } = req.body;
+    // Simulating an actual login flow, which would check against a user db:
+    if (username === "Whale Lover" && password === "i<3Whales") {
+      req.loggedIn = true;
+      res.status(200).json({
+        payload: token // Diagram step 2 is sending this token back to the client
+      });
+
+  app.post("/api/logout", (req, res) => {
+
+  app.get("/api/data", authenticator, (req, res) => {
+
+

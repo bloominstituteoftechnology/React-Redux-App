@@ -35,3 +35,13 @@
   background-image: url('./assets/fluke.jpg');
   background-size: cover;
 }
+
+.species-container {
+  border: red 5px solid;
+  height: 60px;
+}
+
+.sightings-container {
+  display: flex;
+  flex-flow: row wrap;
+}

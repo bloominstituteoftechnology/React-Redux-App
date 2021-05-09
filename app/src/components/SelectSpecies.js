@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import { connect } from "react-redux";
 import { selectSpecies, getSpecies } from '../actions/index';
+
+import { makeStyles } from '@material-ui/core/styles';
+import { gsap } from "gsap";
+
+import Button from '@material-ui/core/Button';
+import Snackbar from '@material-ui/core/Snackbar';
+import { useSnackbar } from 'notistack';
+
+// Material UI styles
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  button: {
+    backgroundColor: "dodgerblue",
+  },
+}));
 
 // component data
 const speciesList = [
@@ -23,27 +43,41 @@ const speciesList = [
 ];
 
 const SelectSpecies = (props) => {
+  const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleClick = (e) => {
     // dispatch to the action creator... change species state
-console.log("e.target.id: ", e.target.id) // gives species name
-    let selectedSpecies = e.target.id;
+console.log("e.currentTarget.id: ", e.currentTarget.id) // gives species name
+    let selectedSpecies = e.currentTarget.id;
+    
     props.selectSpecies(selectedSpecies);
     props.getSpecies(selectedSpecies);
   }
 
+  useEffect (() => {
+    enqueueSnackbar('Click on a species...');
+  }, []);
+
+  useEffect(() => {
+    gsap.to(".species-button", {duration: 2, y: 30});
+}, []); // creates login form animation, slide down
 
   return (
-    <>
-      <h1>Select Species</h1>
-      <div className="species-container">
+    <div className="whale-background">
+
+      <Snackbar
+        message="Get started by selecting a species..."
+      />
+      <div className={classes.root}>
+
         {
           speciesList.map(species => {
-          return <button key={species} id={species} onClick={handleClick} style={{backgroundColor: "dodgerBlue", color: "white"}}>{species}</button>
+          return <Button className="species-button" key={`${species}`} id={`${species}`} onClick={handleClick} variant="contained" color="secondary">{species}</Button>
           })
-        }
+        } 
       </div>
-    </>
+    </div>
   )
 
 };

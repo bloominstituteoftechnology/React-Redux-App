@@ -1,6 +1,7 @@
 import './App.css';
-import { Switch, Route, Link } from "react-router-dom";
-import { useState } from 'react';
+import { Switch, Route } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import { useState } from 'react';
 import Landing from './components/Landing';
 import LoginHeader from './components/LoginHeader';
 import LoginFooter from './components/LoginFooter';
@@ -10,7 +11,8 @@ import SelectSpecies from './components/SelectSpecies';
 import Sightings from './components/Sightings';
 
 function App() {
-  const [user, setUser] = useState({}); // empty object user
+  // const [user, setUser] = useState({}); // empty object user
+
   return (
       <div className="App">
       
@@ -22,15 +24,11 @@ function App() {
             </Route>
 
             <Route exact path="/login">
-              <Login
-                user={user}
-                setUser={setUser}
-              />
-              
+              <Login/>
             </Route>
 
         
-            <Route path="/species">
+            <Route path="/protected">
               <SelectSpecies/>
               <Sightings/>
             </Route>

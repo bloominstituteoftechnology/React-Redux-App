@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Button } from '@material-ui/core/';
+import { useSnackbar } from 'notistack';
+
 
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -27,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     height: 56,
     padding: '0 30px',
-  }
+  },
 }));
 
 // * The login function should save the returned token to localStorage. 
@@ -44,6 +46,7 @@ const initialCredentialValue = {
 
 const Login = () => {
   const classes = useStyles();
+  const { enqueueSnackbar } = useSnackbar();
 
   const [credentials, setCredentials] = useState(initialCredentialValue);
 
@@ -61,7 +64,8 @@ const Login = () => {
     .then(res => {
       console.log(res);
       localStorage.setItem("authToken", res.data.payload);
-      // redirect to logged in homepage
+
+      // redirect to logged in species page
       history.push("/protected");
     })
     .catch(err => console.log(err));
@@ -71,44 +75,46 @@ const Login = () => {
     console.log("handleSubmit fired")
     e.preventDefault();
     doLogin(credentials);
+    enqueueSnackbar('Yes!  You have been logged in.', 'success');
   };
 
   useEffect(() => {
-      gsap.to(".loginUserForm", {duration: 2, y: 30});
-  }, []);
+      gsap.to(".login-container", {duration: 2, y: 30});
+  }, []); // creates login form animation, slide down
 
 return (
   <div class="whale-background">
-  <div className="login-container">
-    
-    <form className={classes.root} onSubmit={handleSubmit}>
-      <TextField 
-        id="username" 
-        label="Username" 
-        variant="filled" 
-        name="username" 
-        value={credentials.username} 
-        onChange={handleChange}
-      />
-      <TextField 
-        id="password" 
-        label="Password" 
-        variant="filled" 
-        name="password" 
-        value={credentials.password} 
-        onChange={handleChange}
-      />
-      <Button 
-        variant="contained" 
-        className={classes.button} 
-        size="large"
-        type="submit"
-      >
-        Login
-      </Button>
-    </form>
+      
+    <div className="login-container">
+      
+      <form className={classes.root} onSubmit={handleSubmit}>
+        <TextField 
+          id="username" 
+          label="Username" 
+          variant="filled" 
+          name="username" 
+          value={credentials.username} 
+          onChange={handleChange}
+        />
+        <TextField 
+          id="password" 
+          label="Password" 
+          variant="filled" 
+          name="password" 
+          value={credentials.password} 
+          onChange={handleChange}
+        />
+        <Button 
+          variant="contained" 
+          className={classes.button} 
+          size="large"
+          type="submit"
+        >
+          Login
+        </Button>
+      </form>
 
-  </div>
+    </div>
 
   </div>
 )

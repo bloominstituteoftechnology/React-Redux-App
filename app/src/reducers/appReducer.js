@@ -10,7 +10,7 @@ const initialState = {
       id:"5a049b7e686f743ec5040000",
       species:"orca",
       quantity:"5",
-      description:"Spotted from the Edmonds-Kingston ferry, near fishing boats.",url:"http://hotline.whalemuseum.org/sightings/5a049b7e686f743ec5040000",latitude:47.79953,
+      description:"This is a test",url:"http://hotline.whalemuseum.org/sightings/5a049b7e686f743ec5040000",latitude:47.79953,
       longitude:-122.47996699999999,
       location:"",
       sighted_at:"2017-11-09T18:11:00Z",

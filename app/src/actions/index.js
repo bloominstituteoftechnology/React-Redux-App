@@ -8,7 +8,7 @@ export const FETCH_SPECIES_FAILURE = "FETCH_SPECIES_FAILURE";
 
 export const selectSpecies = (selectedSpecies) => {
   console.log("action creator getSpecies is fired")
-  // return {type: SELECT_SPECIES, payload: selectedSpecies};
+  return {type: SELECT_SPECIES, payload: selectedSpecies};
 }
 
 
