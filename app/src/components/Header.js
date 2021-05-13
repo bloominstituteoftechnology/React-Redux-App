@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from "react-redux"
 import '../app.css';
-import { updateRegion } from "../actions"
+//import { updateRegion } from "../actions"
 
 const Header = (props) => {
-  const {updateRegion} = props
+  let {region} = props
 
   const handleRegionChange = (e) => {
-    updateRegion(e.target.value)
+    region = (e.target.value)
   }
 
   return (
@@ -31,4 +31,4 @@ const Header = (props) => {
 }
 
 
-export default connect(null, {updateRegion})(Header);
+export default connect(null, {})(Header);

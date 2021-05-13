@@ -15,7 +15,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <Header />
+      <Header  region={region}/>
       <CountryList />
     </div>
   );
