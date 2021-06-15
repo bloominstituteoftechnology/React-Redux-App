@@ -65,6 +65,19 @@ function Dashboard (props) {
 
     const [userId, setUserId] = useState('')
 
+    const date = new Date()
+    const hour = date.getHours()
+
+    if (hour >= 4 && hour < 12) {
+        var greeting = 'Good Morning'
+    }
+    if (hour >= 12 && hour < 17) {
+        var greeting = 'Good Afternoon'
+    }
+    else {
+        var greeting = 'Good Evening'
+    }
+
 
     useEffect( () => {
 
@@ -84,7 +97,7 @@ function Dashboard (props) {
     return (
         <div>
             <br></br><br></br>
-            <h2>Welcome {props.first_name} {props.last_name}!</h2>
+            <h2>{greeting} {props.first_name} {props.last_name}!</h2>
             <br></br><br></br>
             {console.log(props.profile_pic_url)}
             {props.profile_pic_url != null ? 
