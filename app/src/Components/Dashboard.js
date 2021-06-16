@@ -64,19 +64,13 @@ export const getProfilePic = (userId) => dispatch => {
 function Dashboard (props) {
 
     const [userId, setUserId] = useState('')
+    const [greeting, setGreeting] = useState('')
 
     const date = new Date()
     const hour = date.getHours()
 
-    if (hour >= 4 && hour < 12) {
-        var greeting = 'Good Morning'
-    }
-    if (hour >= 12 && hour < 17) {
-        var greeting = 'Good Afternoon'
-    }
-    else {
-        var greeting = 'Good Evening'
-    }
+
+    
 
 
     useEffect( () => {
@@ -88,6 +82,23 @@ function Dashboard (props) {
             props.getName(userId)
 
             props.getProfilePic(userId)
+
+            function pickGreeting() {
+            if (hour >= 5 && hour < 12) {
+                return setGreeting('Good Morning')
+            }
+            if (hour >= 12 && hour < 17) {
+                return setGreeting('Good Afternoon')
+            }
+            if (hour >= 17 && hour < 22) {
+                return setGreeting('Good Evening')
+            }
+            else {
+                return setGreeting('Night Greetings')
+            }
+        }
+
+        pickGreeting()
         
         
     }) 
