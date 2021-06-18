@@ -741,6 +741,17 @@ textarea {
   font-size: 22px;
 }
 
+.notification {
+  font-family: Hebrew;
+  color:#0C012E;
+  font-size: 22px;
+  background: #fffab9;
+  width: 50%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 12px;
+}
+
 .brownroundbutton {
   background-color: #be6957;
   border-radius: 30px;
@@ -961,6 +972,13 @@ h3#wallname {
 
       .roundedbox {
         width: 90%;
+      }
+
+
+      /* Dashboard */
+
+      .notification {
+        width: 80%;
       }
 
       /* The Forum------- */
