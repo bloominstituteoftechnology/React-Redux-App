@@ -739,6 +739,9 @@ textarea {
   font-family: Hebrew;
   color:#0C012E;
   font-size: 22px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 30px;
 }
 
 .notification {
@@ -746,6 +749,18 @@ textarea {
   color:#0C012E;
   font-size: 22px;
   background: #fffab9;
+  width: 50%;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.yellownotification {
+  font-family: Hebrew;
+  color:#0C012E;
+  font-size: 22px;
+  font-weight: bold;
+  background: #f7e932;
   width: 50%;
   margin: 0 auto;
   padding: 15px;
@@ -978,6 +993,14 @@ h3#wallname {
       /* Dashboard */
 
       .notification {
+        width: 80%;
+      }
+
+      .yellownotification {
+        width: 80%;
+      }
+
+      .mediumtext {
         width: 80%;
       }
 

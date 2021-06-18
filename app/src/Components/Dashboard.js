@@ -66,6 +66,7 @@ function Dashboard (props) {
     const [userId, setUserId] = useState('')
     const [greeting, setGreeting] = useState('')
     const [weekGreeting, setWeekGreeting] = useState('')
+    const [almostShabbat, setAlmostShabbat] = useState(false)
 
     const date = new Date()
     const hour = date.getHours()
@@ -112,6 +113,10 @@ function Dashboard (props) {
                 }
             }
 
+            if ((day === 5) || (day === 6 && hour < 18)) {
+                setAlmostShabbat(true)
+            }
+
         pickGreeting()
         shabbat_shavua()
         
@@ -137,6 +142,9 @@ function Dashboard (props) {
             </form>
             <br></br>
             <div class="notification">{weekGreeting}</div>
+            <br></br>
+            {almostShabbat ? <div class="yellownotification">It's almost... SHABBAT!!!</div> : null}
+            <br></br>
             <p class="mediumtext">See who else is studying with you in...</p>
             <div className="brownroundbutton"><Link class="brownbuttonlink" to='/users'>The Community</Link></div>
             <br></br><br></br>
