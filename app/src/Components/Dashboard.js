@@ -72,6 +72,8 @@ function Dashboard (props) {
     const hour = date.getHours()
     const day = date.getDay()
 
+    console.log(day, hour)
+
 
     
 
@@ -102,18 +104,18 @@ function Dashboard (props) {
             }
 
             function shabbat_shavua() {
-                if (day < 6 && day > 1 || (day === 6 && hour < 18)) {
+                if ((day < 5 && day > 0) || (day === 5 && hour < 18)) {
                     return setWeekGreeting(`It's a weekday. May Yahweh fill your week with purpose and peace until you enter His rest on the blessed Sabbath day!`)
                 }
-                if ((day === 6 && hour >= 18) || (day === 7 && hour < 18)) {
+                if ((day === 5 && hour >= 18) || (day === 6 && hour < 18)) {
                     return setWeekGreeting(`It's the Sabbath today! Shabbat Shalom! - שבת שלום - or... Sabbath Peace to you!`)
                 }
-                if ((day === 7 && hour >= 18) || (day === 1 && hour < 18)) {
+                if ((day === 6 && hour >= 18) || (day === 0 && hour < 18)) {
                     return setWeekGreeting(`A new fresh week has started! Shavua Tov! -  שבוע טוב - or... Have a good week!`)
                 }
             }
 
-            if ((day === 5) || (day === 6 && hour < 18)) {
+            if ((day === 4) || (day === 5 && hour < 18)) {
                 setAlmostShabbat(true)
             }
 
