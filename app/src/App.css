@@ -333,6 +333,16 @@ textarea {
   border-radius: 50%;
 }
 
+/* Videos-------------- */
+
+.video {
+  background-color: #fcf3cd;
+  border-radius: 15px;
+  padding: 15px;
+  width: 50%;
+  margin: 0 auto;
+}
+
 /* The Forum Page-------------------------- */
 
 #discussionroombuttontitle {
@@ -891,6 +901,9 @@ h3#wallname {
 }
 
 @media (max-width: 700px) {
+}
+
+@media (max-width: 700px) {
 
       h1 {
         color: #EAF4D3;
@@ -1001,6 +1014,15 @@ h3#wallname {
       }
 
       .mediumtext {
+        width: 80%;
+      }
+
+      /* Videos-------------- */
+
+      .video {
+        background-color: #fcf3cd;
+        border-radius: 15px;
+        padding: 8px;
         width: 80%;
       }
 

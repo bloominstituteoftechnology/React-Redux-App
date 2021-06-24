@@ -153,7 +153,9 @@ function Dashboard (props) {
             <p class="mediumtext">Want to be inspired and more greatly filled with the Spirit as you study God's word?
             Why not listen to some devotional background music as you study?</p>
             <div className="brownroundbutton"><button onClick={() => props.setMusicDisplayed(true)} class="brownbuttonlink">Play Music</button></div>
-            
+            <br></br><br></br>
+            <p class="mediumtext">Learn more about the scriptures and how they apply to us with...</p>
+            <div className="brownroundbutton"><Link class="brownbuttonlink" to='/videos'>Video Teachings</Link></div>
             <br></br>
         </div>
     )

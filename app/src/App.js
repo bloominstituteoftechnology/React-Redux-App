@@ -19,6 +19,8 @@ import Deuteronomy from './Components/bible-books/Deuteronomy'
 import Joshua from './Components/bible-books/Joshua'
 import Judges from './Components/bible-books/Judges'
 import FirstSamuel from './Components/bible-books/1Samuel'
+import SecondSamuel from './Components/bible-books/2Samuel'
+
 import Lamentations from './Components/bible-books/Lamentations';
 import Ecclesiastes from './Components/bible-books/Ecclesiastes';
 import Esther from './Components/bible-books/Esther';
@@ -42,6 +44,8 @@ import TheForum from './Components/TheForum'
 import OthersCommentary from './Components/OthersCommentary';
 import DiscussionRoom from './Components/DiscussionRoom';
 import MyProfile from './Components/MyProfile';
+import Videos from './Components/Videos';
+
 import { axiosWithAuth } from './axiosWithAuth';
 
 
@@ -83,13 +87,11 @@ function App(props) {
   const joshuachapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
   const judgeschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
   const firstsamuelchapters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31]
+  const secondsamuelchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
   
   const matthewchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]
-
   const markchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
-
   const lukechapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-
   const johnchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
 
 
@@ -189,7 +191,7 @@ function App(props) {
       <button className="bible-book-button"><Link className="link" to='/joshua'><h5>Joshua</h5></Link></button>
       <button className="bible-book-button"><Link className="link" to='/judges'><h5>Judges</h5></Link></button>
       <button className="bible-book-button"><Link className="link" to='/1samuel'><h5>1 Samuel</h5></Link></button>
-      <button className="bible-book-button"><h5>2 Samuel</h5></button>
+      <button className="bible-book-button"><Link className="link" to='/2samuel'><h5>2 Samuel</h5></Link></button>
       <button className="bible-book-button"><h5>1 Kings</h5></button>
       <button className="bible-book-button"><h5>2 Kings</h5></button>
       <button className="bible-book-button"><h5>Isaiah</h5></button>
@@ -304,6 +306,10 @@ function App(props) {
 
 <Route path='/theforum'>
     <TheForum />
+</Route>
+
+<Route path='/videos'>
+      <Videos />
 </Route>
 
 <Route path='/torahapplications'>
@@ -448,11 +454,11 @@ function App(props) {
 <Route path='/1samuel'>
       <FirstSamuel /> 
 </Route>
-{/* 
+ 
 <Route path='/2samuel'>
       <SecondSamuel /> 
 </Route>
-
+{/*
 <Route path='/1kings'>
       <FirstKings /> 
 </Route>
@@ -798,6 +804,25 @@ function App(props) {
 </Route>
 
 )}
+
+{secondsamuelchapters.map(chapter =>
+
+<Route path={`/2samuel${chapter}`} key={chapter}>
+    <div>
+      <br></br><br></br><br></br>
+      <h2>2 Samuel {chapter}</h2>
+      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+      <div>{props.error}</div>
+      <Commentary book='2samuel' chapter={chapter} />
+      <OthersCommentary book='2samuel' chapter={chapter} apibook='2sa' />
+    </div>
+</Route>
+
+)}
+
+
+
+
 
 {matthewchapters.map(chapter =>
 
