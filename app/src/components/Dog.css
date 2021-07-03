@@ -1,0 +1,17 @@
+img {
+    height: 45vh;
+    width: 35vw;
+    margin-bottom: 2%;
+    border-radius: 5%;
+}
+
+p {
+    text-decoration: line-through;
+}
+
+h4 {
+    margin-bottom: 5%;
+ 
+    font-family: sans-serif;
+
+}
