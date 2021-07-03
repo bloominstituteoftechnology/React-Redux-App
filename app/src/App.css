@@ -21,10 +21,15 @@ h1 {
 }
 
 button {
-  font-size: 16px;
+  font-size: 20px;
   background-color: #008CBA;
   border: 2px solid antiquewhite;
-  border-radius: 2px;
+  border-radius: 30%;
+  padding: 16px;
+}
+
+button:hover {
+  background-color: azure;
 }
 
 img {

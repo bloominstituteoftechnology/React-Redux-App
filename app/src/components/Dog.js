@@ -5,7 +5,7 @@ import '../components/Dog.css'
 const Dog = (props) => {
     return (
 <div className='pokecard'>
-      <img src={props.dogImg} alt='dog' />
+    {props.dogImg ? <img src={props.dogImg} alt='dog'/> : <h4>The domesticated dog may outlive humanity*</h4> }
       <h3>{props.error}</h3>
     </div>
     )
