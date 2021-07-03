@@ -14,10 +14,12 @@
   height: 100vh;
 }
 
+
 h1 {
   font-weight: 600;
   font-size: 100px;
   text-shadow: 3px 3px #a3a3c2;
+  margin-bottom: 10%;
 }
 
 button {
@@ -26,13 +28,17 @@ button {
   border: 2px solid antiquewhite;
   border-radius: 30%;
   padding: 16px;
+  margin-bottom: 5%;
 }
 
 button:hover {
-  background-color: azure;
+  background-color:#cc919a;
+  border: 2px solid black;
 }
 
-img {
-  height: 350px;
-  width: 400px;
-}
+/* img {
+  height: 45vh;
+  width: 35vw;
+  margin-bottom: 2%;
+
+} */

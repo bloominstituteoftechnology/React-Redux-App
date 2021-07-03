@@ -1,7 +1,8 @@
 img {
-    width: 500;
-    height: 600;
-    position: relative;
+    height: 45vh;
+    width: 35vw;
+    margin-bottom: 2%;
+    border-radius: 5%;
 }
 
 p {
