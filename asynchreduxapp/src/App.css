@@ -1,0 +1,27 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: beige;
+  background-image: "../src/images/fabio-alves-_fLgxjACz5k-unsplash.jpg";
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.h1 {
+  margin: 2%;
+  padding: 2%;
+  font-size: 4rem;
+}
+div.error {
+  color: red;
+}
+.beerbutton {
+  padding: 1%;
+  margin: 2%;
+  border: 1 solid black;
+  border-radius: 5px;
+}
+.beercards {
+  display: flex;
+}
+
+
