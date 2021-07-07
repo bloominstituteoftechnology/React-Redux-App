@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'VT323-Regular';
+  src: local('VT323-Regular'), url(./fonts/VT323-Regular.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: 'VT323-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #4682B4;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
