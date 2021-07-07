@@ -1,0 +1,65 @@
+.App {
+  background-color: #2f3337;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  color: #fff;
+}
+
+.App-div {
+  position: absolute;
+  top: 35%;
+  margin-top: -50px;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .App-div {
+    top: 30%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .App-div {
+    top: 20%;
+  }
+}
+
+h3 {
+  border-bottom: inset;
+  width: 10%;
+  margin: 0 auto;
+  font-family: fantasy;
+  letter-spacing: 3px;
+}
+button:focus {
+  outline: none;
+}
+
+@keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+  }
+}
+
+.text {
+  -webkit-animation: text-pop-up-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: text-pop-up-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  color: #fff;
+  text-transform: none;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: fantasy;
+}
