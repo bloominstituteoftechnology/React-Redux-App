@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  background-color: orange;
+}
+
+h1 {
+  font-size: 39px;
+}
+
+p {
+  border: solid black 1px;
+
+  justify-content:center ;
+}
+.header {
+  font-size: 10px;
+  border-color: red;
+}
