@@ -27,7 +27,7 @@ const PokemonList = (props) => {
         <div>
             <Route path='/'>
                 <StyledCardContainer>
-                {props.pokemonCardData.map(pokemon => {
+                {props.savedPokemon.map(pokemon => {
                     return <PokemonCard key={pokemon.id} pokemonInfo={pokemon} onClick={() => console.log(`hi`)}/>
                 })}
                 </StyledCardContainer>
@@ -38,7 +38,7 @@ const PokemonList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        pokemonCardData: state.pokedexReducer.pokemon,
+        savedPokemon: state.pokedexReducer.pokemon,
     }
 }
 

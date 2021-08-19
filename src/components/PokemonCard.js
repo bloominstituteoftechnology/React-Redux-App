@@ -24,12 +24,13 @@ const PokemonCard = (props) => {
     const addPD = (e) => {
         e.preventDefault()
         console.log('adding pokemon', pokemon)
-        addToPokedex(pokemon)
+        props.addToPokedex(pokemon)
     }
     
     const removePD = (e) => {
         e.preventDefault()
-        removeFromPokedex(pokemonInfo.id)
+        console.log(pokemonInfo.id)
+        props.removeFromPokedex(pokemonInfo.id)
     }
 
     return (
