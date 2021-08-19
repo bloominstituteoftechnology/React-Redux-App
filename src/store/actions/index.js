@@ -14,6 +14,9 @@ export const SEARCH_POKE_START = 'SEARCH_POKE_START'
 export const SEARCH_POKE_SUCCESS = 'SEARCH_POKE_SUCCESS'
 export const SEARCH_POKE_FAIL = 'SEARCH_POKE_FAIL'
 
+export const ADD_POKEMON = 'ADD_POKEMON'
+export const REMOVE_POKEMON = 'REMOVE_POKEMON'
+
 // action creator (async)
 export const fetchPokemon = (limit = 9, offset = 0) => {
     // api endpoint
@@ -44,6 +47,17 @@ export const searchPokemon = (value) => {
             console.log(err)
             dispatch({type: FETCH_POKEMON_FAIL, payload: err.message})
         })
+    }
+}
+
+export const addToPokedex = (pokemon) => {
+    return (dispatch) => {
+        dispatch({type: ADD_POKEMON, payload:pokemon})
+    }
+}
+export const removeFromPokedex = (pokemon) => {
+    return (dispatch) => {
+        dispatch({type: REMOVE_POKEMON, payload:pokemon})
     }
 }
 

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import axios from 'axios'
+
+import {addToPokedex, removeFromPokedex} from '../store/actions'
 
 // import { displayPokemon } from '../store/actions'
 
@@ -18,8 +19,18 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
   first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 
 const PokemonCard = (props) => {
-    const { pokemonInfo } = props
+    const { pokemonInfo, addPokemon, removePokemon, pokemon} = props
 
+    const addPD = (e) => {
+        e.preventDefault()
+        console.log('adding pokemon', pokemon)
+        addToPokedex(pokemon)
+    }
+    
+    const removePD = (e) => {
+        e.preventDefault()
+        removeFromPokedex(pokemonInfo.id)
+    }
 
     return (
         pokemonInfo.name ? 
@@ -32,10 +43,19 @@ const PokemonCard = (props) => {
             <p>{`Height: ${pokemonInfo.height}`}</p>
             </div>
             : <p>Loading Pokemon...</p>}
+            {addPokemon
+            ? <button onClick={addPD}>Add Pokemon</button> 
+            : <button onClick={removePD}>Remove Pokemon</button>}
         </StyledDiv>) 
         : null
 
     )
 }
 
-export default PokemonCard
+const mapStateToProps = (state) => {
+    return {
+        pokemon: state.pokemonSearchReducer.pokemonSearch,
+    }
+}
+
+export default connect(mapStateToProps,{addToPokedex, removeFromPokedex})(PokemonCard)

@@ -8,7 +8,9 @@ import {FETCH_POKEMON_START,
     DISPLAY_POKE_FAIL,
     SEARCH_POKE_FAIL,
     SEARCH_POKE_START,
-    SEARCH_POKE_SUCCESS } from '../actions'
+    SEARCH_POKE_SUCCESS,
+    ADD_POKEMON,
+    REMOVE_POKEMON } from '../actions'
 
 const initialState = {
     isLoading: false,
@@ -21,6 +23,10 @@ const iniPokemonSearch = {
     isLoading: false,
     pokemonSearch:{},
     errors:""
+}
+const iniPokedex = {
+    message:"",
+    pokemon:[]
 }
 
 const pokemonReducer = (state = initialState, action) => {
@@ -87,10 +93,27 @@ const pokemonSearchReducer = (state = iniPokemonSearch, action) => {
     }
 }
 
+const pokedexReducer = (state = iniPokedex, action) => {
+    switch(action.type) {
+        case ADD_POKEMON:
+            return {
+                message:"checking and adding pokemon to pokedex",
+                pokemon:[...state.pokemon, (state.pokemon.some(pokemon => pokemon.id === action.payload.id) ? null : action.payload)]}
+        case REMOVE_POKEMON:
+            return {
+                message:"removing pokemon from pokedex",
+                pokemon:[state.pokemon.filter(pokemon => pokemon.id !== action.payload)]
+            }
+        default:
+            return state
+    }
+}
+
 export default combineReducers({
     pokemonReducer,
     pokemonCardReducer,
-    pokemonSearchReducer
+    pokemonSearchReducer,
+    pokedexReducer
 })
 
 // sorts by lowest id to highest id

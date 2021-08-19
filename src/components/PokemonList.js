@@ -23,19 +23,8 @@ align-items: center;
 
 const PokemonList = (props) => {
 
-    useEffect(() => {
-        props.fetchPokemon()
-        
-    }, [])
-    // useEffect(() => {
-    //     props.pokemonData.forEach(pokemon => props.displayPokemon(pokemon.url))
-    //     console.log(`running displayPokemon`)
-    // },[props.pokemonData])
-
     return (
         <div>
-            {props.isLoading ? <p>Loading Pokemon List...</p> : null}
-            {props.error ? <p style={{color:"red"}}>{props.error}</p> : null}
             <Route path='/'>
                 <StyledCardContainer>
                 {props.pokemonCardData.map(pokemon => {
@@ -43,17 +32,13 @@ const PokemonList = (props) => {
                 })}
                 </StyledCardContainer>
             </Route>
-
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        isLoading: state.pokemonReducer.isLoading,
-        pokemonData: state.pokemonReducer.pokemonData,
-        pokemonCardData: state.pokemonCardReducer,
-        error: state.pokemonReducer.error
+        pokemonCardData: state.pokedexReducer.pokemon,
     }
 }
 

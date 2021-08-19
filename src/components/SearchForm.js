@@ -52,7 +52,8 @@ const SearchForm = (props) => {
                 onChange={handleChange}
             />
             <Button className='submit-button' onClick={onSubmit}>Search For Pokemon</Button>
-            {pokemonInfo.name ? <PokemonCard pokemonInfo={pokemonInfo}/> : <p style={{color:'red'}}>Error Finding Pokemon {props.errors}</p>}
+            {pokemonInfo.name ? <PokemonCard pokemonInfo={pokemonInfo} addPokemon={true}/> : null}
+            {props.errors ? <p style={{color:'red'}}>Error Finding Pokemon {props.errors}</p>: null}
         </StyledForm>
     )
 }

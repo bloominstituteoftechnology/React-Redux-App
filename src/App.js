@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        {/* <PokemonList /> */}
+        <PokemonList />
       </Router>
     </div>
   );
