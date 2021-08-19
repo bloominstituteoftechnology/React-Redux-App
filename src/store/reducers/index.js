@@ -95,11 +95,12 @@ const pokemonSearchReducer = (state = iniPokemonSearch, action) => {
 
 const pokedexReducer = (state = iniPokedex, action) => {
     console.log(action.type, action.payload)
+    console.log(state)
     switch(action.type) {
         case ADD_POKEMON:
             return {
                 message:"checking and adding pokemon to pokedex",
-                pokemon:[...state.pokemon, (state.pokemon.some(pokemon => pokemon.id === action.payload.id) ? null : action.payload)]
+                pokemon:[...state.pokemon, action.payload]
             }
         case REMOVE_POKEMON:
             return {

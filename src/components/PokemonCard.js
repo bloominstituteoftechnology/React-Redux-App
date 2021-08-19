@@ -23,7 +23,9 @@ const PokemonCard = (props) => {
 
     const addPD = (e) => {
         e.preventDefault()
-        console.log('adding pokemon', pokemon)
+        if (props.savedPokemon.some(poke => poke.id === pokemon.id)) {
+            return
+        }
         props.addToPokedex(pokemon)
     }
     
@@ -56,6 +58,7 @@ const PokemonCard = (props) => {
 const mapStateToProps = (state) => {
     return {
         pokemon: state.pokemonSearchReducer.pokemonSearch,
+        savedPokemon: state.pokedexReducer.pokemon
     }
 }
 

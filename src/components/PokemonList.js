@@ -28,7 +28,7 @@ const PokemonList = (props) => {
             <Route path='/'>
                 <StyledCardContainer>
                 {props.savedPokemon.map(pokemon => {
-                    return <PokemonCard key={pokemon.id} pokemonInfo={pokemon} onClick={() => console.log(`hi`)}/>
+                    return <PokemonCard key={pokemon.id} pokemonInfo={pokemon}/>
                 })}
                 </StyledCardContainer>
             </Route>
