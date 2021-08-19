@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import axios from 'axios'
 
-import { displayPokemon } from '../store/actions'
+// import { displayPokemon } from '../store/actions'
 
 const StyledDiv = styled.div`
 border-radius: .3rem;
@@ -18,6 +19,7 @@ const capitalize = ([first, ...rest], lowerRest = false) =>
 
 const PokemonCard = (props) => {
     const { pokemonInfo } = props
+
 
     return (
         pokemonInfo.name ? 

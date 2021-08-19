@@ -35,7 +35,15 @@ export const fetchPokemon = (limit = 9, offset = 0) => {
 export const searchPokemon = (value) => {
     return (dispatch) => {
         dispatch({type: SEARCH_POKE_START})
-        axios.get()
+        axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`)
+        .then(res => {
+            console.log(res.data)
+            dispatch({type:SEARCH_POKE_SUCCESS, payload:res.data})
+        })
+        .catch(err => {
+            console.log(err)
+            dispatch({type: FETCH_POKEMON_FAIL, payload: err.message})
+        })
     }
 }
 

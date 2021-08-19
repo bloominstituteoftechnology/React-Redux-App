@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
+import {connect} from 'react-redux'
+import {searchPokemon} from '../store/actions'
 
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -11,28 +12,22 @@ const iniFormValues = {
     "search-item":''
 }
 
-const iniPokemonInfo = {
-    pokemonData:{},
-    errors:''
-}
-
 const StyledForm = styled.form`
-
 .submit-button {
     background-color: rgb(255,255,102);
     :hover {
         background-color: rgb(255,255,153);
     }
 }
-
 .pokemon-card {
     margin: 1.5rem auto 1rem auto;
 }
 `
 
-const SearchForm = () => {
+const SearchForm = (props) => {
     const [ formValues, setFormValues ] = useState(iniFormValues)
-    const [pokemonInfo, setPokemonInfo] = useState(iniPokemonInfo)
+
+    const {pokemonInfo} = props
 
     const handleChange = (event) =>{
         const { name, value } = event.target
@@ -41,22 +36,7 @@ const SearchForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-        axios.get(`https://pokeapi.co/api/v2/pokemon/${formValues['search-item']}`)
-        .then(res => {
-            console.log(res)
-            setPokemonInfo({
-                errors:'',
-                pokemonData:res.data
-            })
-        })
-        .catch(err => {
-            console.log(err)
-            console.log(err.response.data)
-            setPokemonInfo({
-                ...pokemonInfo,
-                errors:err.response.data,
-            })
-        })
+        props.searchPokemon(formValues['search-item'])
     }
 
     return (
@@ -72,9 +52,17 @@ const SearchForm = () => {
                 onChange={handleChange}
             />
             <Button className='submit-button' onClick={onSubmit}>Search For Pokemon</Button>
-            {pokemonInfo.errors ? <p style={{color:'red'}}>Pokemon {pokemonInfo.errors}</p> : <PokemonCard pokemonInfo={pokemonInfo.pokemonData}/>}
+            {pokemonInfo.name ? <PokemonCard pokemonInfo={pokemonInfo}/> : <p style={{color:'red'}}>Error Finding Pokemon {props.errors}</p>}
         </StyledForm>
     )
 }
 
-export default SearchForm
+const mapStateToProps = (state) => {
+    return {
+        isLoading: state.pokemonSearchReducer.isLoading,
+        pokemonInfo: state.pokemonSearchReducer.pokemonSearch,
+        errors: state.pokemonSearchReducer.errors
+    }
+}
+
+export default connect(mapStateToProps, {searchPokemon})(SearchForm)

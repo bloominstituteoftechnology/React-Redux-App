@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { Route, Switch, useHistory } from 'react-router-dom'
 import PokemonCard from './PokemonCard'
 import { fetchPokemon, displayPokemon } from '../store/actions'
-import SearchForm from './SearchForm'
 
 import styled from 'styled-components'
 
@@ -28,17 +27,13 @@ const PokemonList = (props) => {
         props.fetchPokemon()
         
     }, [])
-    useEffect(() => {
-        props.pokemonData.forEach(pokemon => props.displayPokemon(pokemon.url))
-        console.log(`running displayPokemon`)
-    },[props.pokemonData])
+    // useEffect(() => {
+    //     props.pokemonData.forEach(pokemon => props.displayPokemon(pokemon.url))
+    //     console.log(`running displayPokemon`)
+    // },[props.pokemonData])
 
     return (
         <div>
-            <StyledHeader>
-                <h2>My Pokemon List</h2>
-                <SearchForm />
-            </StyledHeader>
             {props.isLoading ? <p>Loading Pokemon List...</p> : null}
             {props.error ? <p style={{color:"red"}}>{props.error}</p> : null}
             <Route path='/'>
