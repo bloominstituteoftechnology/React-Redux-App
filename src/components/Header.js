@@ -15,6 +15,7 @@ const Header = () => {
     return (
         <StyledHeader>
             <h2>My Pokemon List</h2>
+            <p>IDs range from 1 - 898</p>
             <SearchForm />
         </StyledHeader>
     )
