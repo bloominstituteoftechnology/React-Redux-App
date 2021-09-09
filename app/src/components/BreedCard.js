@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Col, CardImg } from "reactstrap";
 import cat from "../assets/cat.png";
+import styled, { createGlobalStyle } from "styled-components";
+import LazyImage from "./LazyImage";
 
 import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
 import { Link } from "react-router-dom";
@@ -28,12 +30,19 @@ const BreedCard = (props) => {
             background: "#F4F4F4",
           }}
         >
+          <LazyImage
+            style={{ width: "100%", maxWidth: "5rem", objectFit: "cover" }}
+            src={props.breed.image}
+            alt="Cat"
+          />
+          {/** 
           <CardImg
             top
             width="100%"
             src={props.breed.image}
             alt="Card image cap"
           />
+*/}
           <CardBody>
             <CardTitle
               style={{
