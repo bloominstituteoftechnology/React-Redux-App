@@ -1,0 +1,82 @@
+import React from "react";
+import { connect } from "react-redux";
+import { Col, CardImg } from "reactstrap";
+import cat from "../assets/cat.png";
+import styled, { createGlobalStyle } from "styled-components";
+import LazyImage from "./LazyImage";
+
+import { Card, CardBody, CardTitle, CardSubtitle } from "reactstrap";
+import { Link } from "react-router-dom";
+
+const BreedCard = (props) => {
+  //console.log("breedCardprops", props);
+  const handleSearchToggle = () => {
+    props.setSearchToggle(true);
+    props.setSearchTerm("");
+  };
+  return (
+    <Col xs="12" md="6" xl="4">
+      <Link
+        to={`/cat/${props.breed.id}`}
+        onClick={handleSearchToggle}
+        style={{ textDecoration: "none" }}
+      >
+        <Card
+          style={{
+            margin: "0.5rem",
+            height: "auto",
+            // height: "38rem",
+            // overflowY: "scroll",
+            background: "#F4F4F4",
+          }}
+        >
+          <LazyImage
+            style={{ width: "100%", maxWidth: "5rem", objectFit: "cover" }}
+            src={props.breed.image}
+            alt="Cat"
+          />
+          {/** 
+          <CardImg
+            top
+            width="100%"
+            src={props.breed.image}
+            alt="Card image cap"
+          />
+*/}
+          <CardBody>
+            <CardTitle
+              style={{
+                fontSize: "1.5rem",
+                borderBottom: "1px solid grey",
+                color: "#4154B3",
+              }}
+            >
+              {`${props.breed.name}`}
+            </CardTitle>
+            <CardSubtitle
+              style={{ marginBottom: "0.5rem" }}
+            >{`Origin: ${props.breed.origin}`}</CardSubtitle>
+            <CardSubtitle>{`Temperament: ${props.breed.temperament}`}</CardSubtitle>
+
+            <div style={{ marginTop: "0.8rem" }}>
+              Read about me...
+              <img
+                alt="cat"
+                src={cat}
+                style={{ width: "2rem", marginLeft: "1rem" }}
+              />{" "}
+            </div>
+          </CardBody>
+        </Card>
+      </Link>
+    </Col>
+  );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    isFetchingData: state.isFetchingData,
+  };
+};
+
+export default connect(mapStateToProps, {})(BreedCard);
