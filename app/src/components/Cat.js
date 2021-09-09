@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import { useRouteMatch } from "react-router-dom";
 import { connect } from "react-redux";
@@ -8,6 +8,7 @@ import Button from "@material-ui/core/Button";
 import { Container, Row, Col } from "reactstrap";
 
 const Cat = (props) => {
+  // const [catItem, setCatItem] = useState({});
   const match = useRouteMatch();
 
   const handleGetImg = (e) => {
@@ -18,8 +19,20 @@ const Cat = (props) => {
 
   useEffect(() => {
     props.getImage(match.params.catID);
-  }, []);
+  }, [match.params.catID]);
+
+  // useEffect(() => {
+
+  //   const selectedCatItem = props.breeds.find(
+  //     (breed) => breed.id === match.params.catID
+  //   );
+  //   if (selectedCatItem) {
+  //     setCatItem(selectedCatItem);
+  //   }
+
+  // }, [match.params.catID]);
   const catItem = props.breeds.find((breed) => breed.id === match.params.catID);
+
   //console.log("catItem image", catItem);
   return (
     <Container className="themed-container" fluid={true}>
