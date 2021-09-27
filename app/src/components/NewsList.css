@@ -1,0 +1,22 @@
+.button {
+    margin-top: 30px;
+    border: 1px solid black;
+    padding: 10px 10px;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.7rem;
+}
+
+/* .button:hover {
+    background-color: rgb(53, 53, 53);
+    color: white;
+    font-weight: bold;
+} */
+
+.newslist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
