@@ -15,7 +15,7 @@ function SecondSamuel (props) {
     return (
         <div>
             <br></br><br></br><br></br>
-            <h2>1 Samuel</h2>
+            <h2>2 Samuel</h2>
 
             <div className="bible-chapters-buttons">
 
