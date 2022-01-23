@@ -8,19 +8,19 @@ import {
 } from '../../Actions'
 
 
-function John (props) {
+function Jeremiah (props) {
 
-    const johnchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+    const jeremiahchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]
 
     return (
         <div>
             <br></br><br></br><br></br>
-            <h2>John</h2>
+            <h2>Jeremiah</h2>
 
             <div className="bible-chapters-buttons">
 
-            {johnchapters.map(chapter =>
-            <button onClick={() => {props.getChapter('jhn', `${chapter}`)}} className="bible-chapter-button"><Link className="link" to={`/john${chapter}`}><h5>{chapter}</h5></Link></button>
+            {jeremiahchapters.map(chapter =>
+            <button onClick={() => {props.getChapter('jer', `${chapter}`)}} className="bible-chapter-button"><Link className="link" to={`/jeremiah${chapter}`}><h5>{chapter}</h5></Link></button>
             )}
             </div>
 
@@ -42,4 +42,4 @@ const mapStateToProps = state => {
   
   }
   
-  export default connect(mapStateToProps, {getChapter})(John)
+  export default connect(mapStateToProps, {getChapter})(Jeremiah)
