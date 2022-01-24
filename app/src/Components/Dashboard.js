@@ -104,7 +104,7 @@ function Dashboard (props) {
             }
 
             function shabbat_shavua() {
-                if ((day < 5 && day > 0) || (day === 5 && hour < 18)) {
+                if ((day < 5 && day > 0) || (day === 5 && hour < 18) || (day === 0 && hour >= 18)) {
                     return setWeekGreeting(`It's a weekday. May Yahweh fill your week with purpose and peace until you enter His rest on the blessed Sabbath day!`)
                 }
                 if ((day === 5 && hour >= 18) || (day === 6 && hour < 18)) {
