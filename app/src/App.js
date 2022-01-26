@@ -73,6 +73,8 @@ function App(props) {
 
 }, [])
 
+
+
   const history = useHistory()
 
   const userId = localStorage.getItem("user_id")
@@ -89,6 +91,7 @@ function App(props) {
   const leviticuschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
   const numberschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
   const deuteronomychapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
+  
   const joshuachapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
   const judgeschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
   const firstsamuelchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
@@ -144,7 +147,7 @@ function App(props) {
   <h2>Meet the Maker</h2>
   <div className="about-greg-box">
     <img className="gregpic" src={greg} alt="Greg the Maker"></img>
-    <p>Hey! My name is <b>Greg Wilson</b>.  I was born in 1990 and grew up in a Christian home, and yet later, I had to make 
+    <p>HHey! My name is <b>Greg Wilson</b>.  I was born in 1990 and grew up in a Christian home, and yet later, I had to make 
       my faith my own.  I also had to confess hidden sin into the light to begin that journey of finding truth and freedom.
       After I came out of some sin in high school, I was memorizing bible verses and on the right path.  Then came college: intellect.
       I had to test just far evidence can get us when seeking to know that we know the truth.  No matter what material I got my hands on,
