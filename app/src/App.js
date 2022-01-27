@@ -147,7 +147,7 @@ function App(props) {
   <h2>Meet the Maker</h2>
   <div className="about-greg-box">
     <img className="gregpic" src={greg} alt="Greg the Maker"></img>
-    <p>HHey! My name is <b>Greg Wilson</b>.  I was born in 1990 and grew up in a Christian home, and yet later, I had to make 
+    <p>Hey! My name is <b>Greg Wilson</b>.  I was born in 1990 and grew up in a Christian home, and yet later, I had to make 
       my faith my own.  I also had to confess hidden sin into the light to begin that journey of finding truth and freedom.
       After I came out of some sin in high school, I was memorizing bible verses and on the right path.  Then came college: intellect.
       I had to test just far evidence can get us when seeking to know that we know the truth.  No matter what material I got my hands on,
