@@ -86,26 +86,74 @@ function App(props) {
   }
 
 
-  const genesischapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50] 
-  const exoduschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]
-  const leviticuschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
-  const numberschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]
-  const deuteronomychapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]
-  
-  const joshuachapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-  const judgeschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
-  const firstsamuelchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
-  const secondsamuelchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-  const firstkingschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
-  const secondkingschapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]
-  const isaiahchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66]
-  const jeremiahchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]
-  const ezekielchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]
-  
-  const matthewchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]
-  const markchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
-  const lukechapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
-  const johnchapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]
+  const chaptersofbooks = [
+        {book: 'Genesis', apibook: 'gen', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50]  },
+        {book: 'Exodus', apibook: 'exo', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40]},
+        {book: 'Leviticus', apibook: 'lev', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]},
+        {book: 'Numbers', apibook: 'num', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]},
+        {book: 'Deuteronomy', apibook: 'deu', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34]},
+        {book: 'Joshua', apibook: 'jos', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]},
+        {book: 'Judges', apibook: 'jdg', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
+        {book: '1 Samuel', apibook: '1sa', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]},
+        {book: '2 Samuel', apibook: '2sa', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]},
+        {book: '1 Kings', apibook: '1ki', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},
+        {book: '2 Kings', apibook: '2ki', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]},
+        {book: 'Isaiah', apibook: 'isa', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66]},
+        {book: 'Jeremiah', apibook: 'jer', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]},
+        {book: 'Ezekiel', apibook: 'ezk', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48]},
+        {book: 'Hosea', apibook: 'hos', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]},
+        {book: 'Joel', apibook: 'joe', chapters: [1,2,3]},
+        {book: 'Amos', apibook: 'amo', chapters: [1,2,3,4,5,6,7,8,9]},
+        {book: 'Obadiah', apibook: 'obd', chapters: [1]},
+        {book: 'Jonah', apibook: 'jon', chapters: [1,2,3,4]},
+        {book: 'Micah', apibook: 'mic', chapters: [1,2,3,4,5,6,7]},
+        {book: 'Nahum', apibook: 'nah', chapters: [1,2,3]},
+        {book: 'Habakkuk', apibook: 'hab', chapters: [1,2,3]},
+        {book: 'Zephaniah', apibook: 'zep', chapters: [1,2,3]},
+        {book: 'Haggai', apibook: 'hag', chapters: [1,2]},
+        {book: 'Zechariah', apibook: 'zec', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]},
+        {book: 'Malachi', apibook: 'mal', chapters: [1,2,3,4]},
+        {book: 'Psalms', apibook: 'psa', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150]},
+        {book: 'Proverbs', apibook: 'pro', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]},
+        {book: 'Job', apibook: 'job', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42]},
+        {book: 'Song of Songs', apibook: 'son', chapters: [1,2,3,4,5,6,7,8]},
+        {book: 'Ruth', apibook: 'rut', chapters: [1,2,3,4]},
+        {book: 'Lamentations', apibook: 'lam', chapters: [1,2,3,4,5]},
+        {book: 'Ecclesiastes', apibook: 'ecc', chapters: [1,2,3,4,5,6,7,8,9,10,11,12]},
+        {book: 'Esther', apibook: 'est', chapters: [1,2,3,4,5,6,7,8,9,10]},
+        {book: 'Daniel', apibook: 'dan', chapters: [1,2,3,4,5,6,7,8,9,10,11,12]},
+        {book: 'Ezra', apibook: 'ezr', chapters: [1,2,3,4,5,6,7,8,9,10]},
+        {book: 'Nehemiah', apibook: 'neh', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13]},
+        {book: '1 Chronicles', apibook: '1cr', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29]},
+        {book: '2 Chronicles', apibook: '2cr', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36]},
+        {book: 'Matthew', apibook: 'mat', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]},
+        {book: 'Mark', apibook: 'mar', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
+        {book: 'Luke', apibook: 'luk', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]},
+        {book: 'John', apibook: 'jhn', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21]},
+        {book: 'Acts', apibook: 'act', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]},
+        {book: 'Romans', apibook: 'rom', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
+        {book: '1 Corinthians', apibook: '1co', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]},
+        {book: '2 Corinthians', apibook: '2co', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13]},
+        {book: 'Galatians', apibook: 'gal', chapters: [1,2,3,4,5,6]},
+        {book: 'Ephesians', apibook: 'eph', chapters: [1,2,3,4,5,6]},
+        {book: 'Philippians', apibook: 'phi', chapters: [1,2,3,4]},
+        {book: 'Colossians', apibook: 'col', chapters: [1,2,3,4]},
+        {book: '1 Thessalonians', apibook: '1th', chapters: [1,2,3,4,5]},
+        {book: '2 Thessalonians', apibook: '2th', chapters: [1,2,3]},
+        {book: '1 Timothy', apibook: '1ti', chapters: [1,2,3,4,5,6]},
+        {book: '2 Timothy', apibook: '2ti', chapters: [1,2,3,4]},
+        {book: 'Titus', apibook: 'tit', chapters: [1,2,3]},
+        {book: 'Philemon', apibook: 'phl', chapters: [1]},
+        {book: 'Hebrews', apibook: 'heb', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13]},
+        {book: 'James', apibook: 'jam', chapters: [1,2,3,4,5]},
+        {book: '1 Peter', apibook: '1pe', chapters: [1,2,3,4,5]},
+        {book: '2 Peter', apibook: '2pe', chapters: [1,2,3]},
+        {book: '1 John', apibook: '1jo', chapters: [1,2,3,4,5]},
+        {book: '2 John', apibook: '2jo', chapters: [1]},
+        {book: '3 John', apibook: '3jo', chapters: [1]},
+        {book: 'Jude', apibook: 'jud', chapters: [1]},
+        {book: 'Revelation', apibook: 'rev', chapters: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]},
+  ]
 
 
 
@@ -147,7 +195,7 @@ function App(props) {
   <h2>Meet the Maker</h2>
   <div className="about-greg-box">
     <img className="gregpic" src={greg} alt="Greg the Maker"></img>
-    <p>ey! My name is <b>Greg Wilson</b>.  I was born in 1990 and grew up in a Christian home, and yet later, I had to make 
+    <p>Hey! My name is <b>Greg Wilson</b>.  I was born in 1990 and grew up in a Christian home, and yet later, I had to make 
       my faith my own.  I also had to confess hidden sin into the light to begin that journey of finding truth and freedom.
       After I came out of some sin in high school, I was memorizing bible verses and on the right path.  Then came college: intellect.
       I had to test just far evidence can get us when seeking to know that we know the truth.  No matter what material I got my hands on,
@@ -188,11 +236,11 @@ function App(props) {
 
       <div className="bible-books-buttons">
 
-      <button className="bible-book-button"><Link className="link" to='/genesis'><h5>Genesis</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/exodus'><h5>Exodus</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/leviticus'><h5>Leviticus</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/numbers'><h5>Numbers</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/deuteronomy'><h5>Deuteronomy</h5></Link></button>
+      {chaptersofbooks.slice(0,5).map(bookandchapters => (
+
+            <button className="bible-book-button"><Link className="link" to={`/${bookandchapters.apibook}`}><h5>{bookandchapters.book}</h5></Link></button>  
+
+      ))}
 
       </div>
 
@@ -201,49 +249,24 @@ function App(props) {
 
       <div className="bible-books-buttons">
 
-      <button className="bible-book-button"><Link className="link" to='/joshua'><h5>Joshua</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/judges'><h5>Judges</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/1samuel'><h5>1 Samuel</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/2samuel'><h5>2 Samuel</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/1kings'><h5>1 Kings</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/2kings'><h5>2 Kings</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/isaiah'><h5>Isaiah</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/jeremiah'><h5>Jeremiah</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/ezekiel'><h5>Ezekiel</h5></Link></button>
-      <button className="bible-book-button"><h5>Hosea</h5></button>
-      <button className="bible-book-button"><h5>Joel</h5></button>
-      <button className="bible-book-button"><h5>Amos</h5></button>
-      <button className="bible-book-button"><h5>Obadiah</h5></button>
-      <button className="bible-book-button"><h5>Jonah</h5></button>
-      <button className="bible-book-button"><h5>Micah</h5></button>
-      <button className="bible-book-button"><h5>Nahum</h5></button>
-      <button className="bible-book-button"><h5>Habakkuk</h5></button>
-      <button className="bible-book-button"><h5>Zephaniah</h5></button>
-      <button className="bible-book-button"><h5>Haggai</h5></button>
-      <button className="bible-book-button"><h5>Zechariah</h5></button>
-      <button className="bible-book-button"><h5>Malachi</h5></button>
+      {chaptersofbooks.slice(5,26).map(bookandchapters => (
+
+      <button className="bible-book-button"><Link className="link" to={`/${bookandchapters.apibook}`}><h5>{bookandchapters.book}</h5></Link></button>  
+
+      ))}
 
       </div>
-
-
 
       <br></br><br></br><br></br><br></br>
       <h4>Writings</h4>
 
       <div className="bible-books-buttons">
 
-      <button className="bible-book-button"><h5>Psalms</h5></button>
-      <button className="bible-book-button"><h5>Proverbs</h5></button>
-      <button className="bible-book-button"><h5>Job</h5></button>
-      <button className="bible-book-button"><h5>Song of Songs</h5></button>
-      <button className="bible-book-button"><h5>Ruth</h5></button>
-      <button className="bible-book-button"><h5>Lamentations</h5></button>
-      <button className="bible-book-button"><h5>Ecclesiastes</h5></button>
-      <button className="bible-book-button"><h5>Esther</h5></button>
-      <button className="bible-book-button"><h5>Daniel</h5></button>
-      <button className="bible-book-button"><h5>Ezra</h5></button>
-      <button className="bible-book-button"><h5>1 Chronicles</h5></button>
-      <button className="bible-book-button"><h5>2 Chronicles</h5></button>
+      {chaptersofbooks.slice(26,39).map(bookandchapters => (
+
+      <button className="bible-book-button"><Link className="link" to={`/${bookandchapters.apibook}`}><h5>{bookandchapters.book}</h5></Link></button>  
+
+      ))}
 
       </div>
 
@@ -252,34 +275,14 @@ function App(props) {
 
       <div className="bible-books-buttons">
 
-      <button className="bible-book-button"><Link className="link" to='/matthew'><h5>Matthew</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/mark'><h5>Mark</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/luke'><h5>Luke</h5></Link></button>
-      <button className="bible-book-button"><Link className="link" to='/john'><h5>John</h5></Link></button>
-      <button className="bible-book-button"><h5>Acts</h5></button>
-      <button className="bible-book-button"><h5>Romans</h5></button>
-      <button className="bible-book-button"><h5>1 Corinthians</h5></button>
-      <button className="bible-book-button"><h5>2 Corinthians</h5></button>
-      <button className="bible-book-button"><h5>Galatians</h5></button>
-      <button className="bible-book-button"><h5>Ephesians</h5></button>
-      <button className="bible-book-button"><h5>Philippians</h5></button>
-      <button className="bible-book-button"><h5>Colossians</h5></button>
-      <button className="bible-book-button"><h5>1 Thessalonians</h5></button>
-      <button className="bible-book-button"><h5>2 Thessalonians</h5></button>
-      <button className="bible-book-button"><h5>1 Timothy</h5></button>
-      <button className="bible-book-button"><h5>2 Timothy</h5></button>
-      <button className="bible-book-button"><h5>Titus</h5></button>
-      <button className="bible-book-button"><h5>Philemon</h5></button>
-      <button className="bible-book-button"><h5>Hebrews</h5></button>
-      <button className="bible-book-button"><h5>James</h5></button>
-      <button className="bible-book-button"><h5>1 Peter</h5></button>
-      <button className="bible-book-button"><h5>2 Peter</h5></button>
-      <button className="bible-book-button"><h5>1 John</h5></button>
-      <button className="bible-book-button"><h5>2 John</h5></button>
-      <button className="bible-book-button"><h5>3 John</h5></button>
-      <button className="bible-book-button"><h5>Jude</h5></button>
-      <button className="bible-book-button"><h5>Revelation</h5></button>
+      {chaptersofbooks.slice(38,66).map(bookandchapters => (
+
+      <button className="bible-book-button"><Link className="link" to={`/${bookandchapters.apibook}`}><h5>{bookandchapters.book}</h5></Link></button>  
+
+      ))}
+
       <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+
       </div>
       
 
@@ -303,7 +306,6 @@ function App(props) {
     <Users />
 </Route>
 
-{console.log(users)}
 
 {users.map(user => 
 
@@ -434,543 +436,50 @@ function App(props) {
 </Route>
 
 
-{/* Bible Book Routes--------------------------------------- */}
-
-<Route path='/genesis'>
-      <Genesis /> 
-</Route>
-
-<Route path='/exodus'>
-      <Exodus /> 
-</Route>
-
-<Route path='/leviticus'>
-      <Leviticus /> 
-</Route>
-
-<Route path='/numbers'>
-      <Numbers /> 
-</Route>
-
-<Route path='/deuteronomy'>
-      <Deuteronomy /> 
-</Route>
-
-<Route path='/joshua'>
-      <Joshua /> 
-</Route>
-
-<Route path='/judges'>
-      <Judges /> 
-</Route>
-
-<Route path='/1samuel'>
-      <FirstSamuel /> 
-</Route>
- 
-<Route path='/2samuel'>
-      <SecondSamuel /> 
-</Route>
-
-<Route path='/1kings'>
-      <FirstKings /> 
-</Route>
-
-<Route path='/2kings'>
-      <SecondKings /> 
-</Route>
-
-<Route path='/isaiah'>
-      <Isaiah isaiahchapters={isaiahchapters}/> 
-</Route>
-
-<Route path='/jeremiah'>
-      <Jeremiah /> 
-</Route>
-
-<Route path='/ezekiel'>
-      <Ezekiel /> 
-</Route>
-{/*
-<Route path='/hosea'>
-      <Hosea /> 
-</Route>
-
-<Route path='/joel'>
-      <Joel /> 
-</Route>
-
-<Route path='/amos'>
-      <Amos /> 
-</Route>
-
-<Route path='/obadiah'>
-      <Obadiah /> 
-</Route>
-
-<Route path='/jonah'>
-      <Jonah /> 
-</Route>
-
-<Route path='/micah'>
-      <Micah /> 
-</Route>
-
-<Route path='/nahum'>
-      <Nahum /> 
-</Route>
-
-<Route path='/habakkuk'>
-      <Habakkuk /> 
-</Route>
-
-<Route path='/zephaniah'>
-      <Zephaniah /> 
-</Route>
-
-<Route path='/haggai'>
-      <Haggai /> 
-</Route>
-
-<Route path='/zechariah'>
-      <Zechariah /> 
-</Route>
-
-<Route path='/malachi'>
-      <Malachi /> 
-</Route>
-
-<Route path='/psalms'>
-      <Psalms /> 
-</Route>
-
-<Route path='/proverbs'>
-      <Proverbs /> 
-</Route>
-
-<Route path='/job'>
-      <Job /> 
-</Route>
-
-<Route path='/songofsongs'>
-      <SongOfSongs /> 
-</Route>
-
-<Route path='/ruth'>
-      <Ruth /> 
-</Route>
-
-<Route path='/lamentations'>
-      <Lamentations /> 
-</Route>
-
-<Route path='/ecclesiastes'>
-      <Ecclesiastes /> 
-</Route>
-
-<Route path='/esther'>
-      <Esther /> 
-</Route>
-
-<Route path='/daniel'>
-      <Daniel /> 
-</Route>
-
-<Route path='/ezra'>
-      <Ezra /> 
-</Route>
-
-<Route path='/1chronicles'>
-      <FirstChronicles /> 
-</Route>
-
-<Route path='/2chronicles'>
-      <SecondChronicles /> 
-</Route> */}
-
-<Route path='/matthew'>
-      <Matthew /> 
-</Route>
-
-<Route path='/mark'>
-      <Mark /> 
-</Route>
-
-<Route path='/luke'>
-      <Luke /> 
-</Route>
-
-<Route path='/john'>
-      <John /> 
-</Route>
-
-{/* <Route path='/acts'>
-      <Acts /> 
-</Route>
-
-<Route path='/romans'>
-      <Romans /> 
-</Route>
-
-<Route path='/1corinthians'>
-      <FirstCorinthians /> 
-</Route>
-
-<Route path='/2corinthians'>
-      <SecondCorinthians /> 
-</Route>
-
-<Route path='/galatians'>
-      <Galatians /> 
-</Route>
-
-<Route path='/ephesians'>
-      <Ephesians /> 
-</Route>
-
-<Route path='/philippians'>
-      <Philippians /> 
-</Route>
-
-<Route path='/colossians'>
-      <Colossians /> 
-</Route>
-
-<Route path='/1thessalonians'>
-      <FirstThessalonians /> 
-</Route>
-
-<Route path='/2thessalonians'>
-      <SecondThessalonians /> 
-</Route>
-
-<Route path='/1timothy'>
-      <FirstTimothy /> 
-</Route>
-
-<Route path='/2timothy'>
-      <SecondTimothy /> 
-</Route>
-
-<Route path='/titus'>
-      <Titus/> 
-</Route>
-
-<Route path='/philemon'>
-      <Philemon /> 
-</Route>
-
-<Route path='/hebrews'>
-      <Hebrews /> 
-</Route>
-
-<Route path='/james'>
-      <James /> 
-</Route>
-
-<Route path='/1peter'>
-      <FirstPeter /> 
-</Route>
-
-<Route path='/2peter'>
-      <SecondPeter /> 
-</Route>
-
-<Route path='/1john'>
-      <FirstJohn /> 
-</Route>
-
-<Route path='/2john'>
-      <SecondJohn /> 
-</Route>
-
-<Route path='/3john'>
-      <ThirdJohn /> 
-</Route>
-
-<Route path='/revelation'>
-      <Revelation /> 
-</Route> */}
-
-
-
-
-
-{/* Bible Chapter Routes--------------------------------------- */}
-
-{genesischapters.map(chapter =>
-
-<Route path={`/genesis${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Genesis {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='genesis' chapter={chapter} apibook='gen' />
-      <OthersCommentary book='genesis' chapter={chapter} />
-    </div>
-</Route>
-
-)}
-
-{exoduschapters.map(chapter =>
-
-<Route path={`/exodus${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Exodus {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='exodus' chapter={chapter} apibook='exo' />
-      <OthersCommentary book='exodus' chapter={chapter} />
-    </div>
-</Route>
-
-)}
-
-{leviticuschapters.map(chapter =>
-
-<Route path={`/leviticus${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Leviticus {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='leviticus' chapter={chapter} apibook='lev' />
-      <OthersCommentary book='leviticus' chapter={chapter} />
-    </div>
-</Route>
-
-)}
-
-{numberschapters.map(chapter =>
-
-<Route path={`/numbers${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Numbers {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='numbers' chapter={chapter} apibook='num' />
-      <OthersCommentary book='numbers' chapter={chapter} />
-    </div>
-</Route>
-
-)}
-
-{deuteronomychapters.map(chapter =>
-
-<Route path={`/deuteronomy${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Deuteronomy {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='deuteronomy' chapter={chapter} />
-      <OthersCommentary book='deuteronomy' chapter={chapter} apibook='deu' />
-    </div>
-</Route>
-
-)}
-
-{joshuachapters.map(chapter =>
-
-<Route path={`/joshua${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Joshua {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='joshua' chapter={chapter} />
-      <OthersCommentary book='joshua' chapter={chapter} apibook='jos' />
-    </div>
-</Route>
-
-)}
-
-{judgeschapters.map(chapter =>
-
-<Route path={`/judges${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Judges {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='judges' chapter={chapter} />
-      <OthersCommentary book='judges' chapter={chapter} apibook='jdg' />
-    </div>
-</Route>
-
-)}
-
-{firstsamuelchapters.map(chapter =>
-
-<Route path={`/1samuel${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>1 Samuel {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='1samuel' chapter={chapter} />
-      <OthersCommentary book='1samuel' chapter={chapter} apibook='1sa' />
-    </div>
-</Route>
-
-)}
-
-{secondsamuelchapters.map(chapter =>
-
-<Route path={`/2samuel${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>2 Samuel {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='2samuel' chapter={chapter} />
-      <OthersCommentary book='2samuel' chapter={chapter} apibook='2sa' />
-    </div>
-</Route>
-
-)}
-
-{firstkingschapters.map(chapter =>
-
-<Route path={`/1kings${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>1 Kings {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='1kings' chapter={chapter} />
-      <OthersCommentary book='1kings' chapter={chapter} apibook='1ki' />
-    </div>
-</Route>
-
-)}
-
-{secondkingschapters.map(chapter =>
-
-<Route path={`/2kings${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>2 Kings {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='2kings' chapter={chapter} />
-      <OthersCommentary book='2kings' chapter={chapter} apibook='2ki' />
-    </div>
-</Route>
-
-)}
-
-{isaiahchapters.map(chapter =>
-
-<Route path={`/isaiah${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Isaiah {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='isaiah' chapter={chapter} />
-      <OthersCommentary book='isaiah' chapter={chapter} apibook='isa' />
-    </div>
-</Route>
-
-)}
-
-{jeremiahchapters.map(chapter =>
-
-<Route path={`/jeremiah${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Jeremiah {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='jeremiah' chapter={chapter} />
-      <OthersCommentary book='jeremiah' chapter={chapter} apibook='jer' />
-    </div>
-</Route>
-
-)}
-
-{ezekielchapters.map(chapter =>
-
-<Route path={`/ezekiel${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Ezekiel {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='ezekiel' chapter={chapter} />
-      <OthersCommentary book='ezekiel' chapter={chapter} apibook='ezk' />
-    </div>
-</Route>
-
+{/* -------------Creating all the book pages: ------------------*/}
+
+{chaptersofbooks.map(outerElement => 
+            
+            <Route path={`/${outerElement.apibook}`} key={outerElement.book}>
+                  <div>
+                        <br></br><br></br><br></br>
+                        <h2>{outerElement.book}</h2>
+
+                              <div className="bible-chapters-buttons">
+
+                              {outerElement.chapters.map(chapter => ( 
+                                    <button onClick={() => {props.getChapter(`${outerElement.apibook}`, `${chapter}`)}} className="bible-chapter-button"><Link className="link" to={`${outerElement.apibook}${chapter}`}>
+                                          
+                                          <h5>{chapter}</h5>
+                                          
+                                          </Link>
+                                    </button>
+                              ))}
+                              
+                              </div>
+                        </div>
+            </Route>
 )}
 
 
+{/* -------------Creating all the chapter pages: ------------------*/}
 
+{chaptersofbooks.map(outerElement => {
+     
+      return outerElement.chapters.map(chapter => 
 
-
-{matthewchapters.map(chapter =>
-
-<Route path={`/matthew${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Matthew {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='matthew' chapter={chapter} />
-      <OthersCommentary book='matthew' chapter={chapter} apibook='mat' />
-    </div>
-</Route>
-
-)}
-
-{markchapters.map(chapter =>
-
-<Route path={`/mark${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Mark {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='mark' chapter={chapter} />
-      <OthersCommentary book='mark' chapter={chapter} apibook='mar' />
-    </div>
-</Route>
-
-)}
-
-{lukechapters.map(chapter =>
-
-<Route path={`/luke${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>Luke {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='luke' chapter={chapter} />
-      <OthersCommentary book='luke' chapter={chapter} apibook='luk' />
-    </div>
-</Route>
-
-)}
-
-{johnchapters.map(chapter =>
-
-<Route path={`/john${chapter}`} key={chapter}>
-    <div>
-      <br></br><br></br><br></br>
-      <h2>John {chapter}</h2>
-      <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
-      <div>{props.error}</div>
-      <Commentary book='john' chapter={chapter} />
-      <OthersCommentary book='john' chapter={chapter} apibook='joh' />
-    </div>
-</Route>
-
-)}
+            <Route path={`/${outerElement.apibook}${chapter}`} key={`${outerElement.apibook}${chapter}`}>
+                  <div>
+                        <br></br><br></br><br></br>
+                        <h2>{outerElement.book} {chapter}</h2>
+                        <div className='bible-text' dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(props.chapter)}} />
+                        <div>{props.error}</div>
+                        <Commentary book={outerElement.book} chapter={chapter} />
+                        <OthersCommentary book={outerElement.book} chapter={chapter} apibook={outerElement.apibook} />
+                  </div>
+            </Route>
+      )                          
+})}
 
     </div>
   );
