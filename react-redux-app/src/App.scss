@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  margin: 0 auto;
+  background-image: url('https://images.unsplash.com/photo-1518176258769-f227c798150e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80');
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: yellow;
+  margin: 20px;
+  font-size: 40px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.ui.card {
+  width: 320px;
+  height: 180px;
+  flex-grow: 0;
+  border: 2px solid lightgray;
+  border-radius: 30px 0 30px 0;
+  background: #e4b272;
+  opacity: 0.8;
+  margin: 20px !important;
+  padding: 0px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  .header {
+    background:linear-gradient(to bottom, rgba(0,0,0,0.09),rgba(0,0,0,0.01));
+    border-bottom: 2px solid#c3c9c8;
+    padding-bottom: 5px;
+    font-weight: bold;
+   }
+}
+
+.ui.pagination.menu{
+  width: 100%;
+  justify-content: center;
+  background: #e4b272;
+  opacity: 0.8;
+}
+
+
+
